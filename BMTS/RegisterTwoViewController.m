@@ -10,6 +10,8 @@
 
 @interface RegisterTwoViewController ()
 
+@property (strong, nonatomic) NSArray *districtArray;
+
 @end
 
 @implementation RegisterTwoViewController
@@ -17,6 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+   // NSArray *data [[[NSArray alloc] initWithObjects: @"",@"", 2] ];
+    
+    NSArray *data;
+    //[NSArray initWithObjects:@"District 001",@"District 002",@"District 003",@"District 004",@"District 005",@"District 006", nil];
+    
+    data = [[NSArray alloc] initWithObjects:@"District 001",
+                   @"Tuna Roll", @"Salmon Roll", @"Unagi Roll",
+                   @"Philadelphia Roll", @"Rainbow Roll",
+                   @"Vegetable Roll", @"Spider Roll",
+                   @"Shrimp Tempura Roll", @"Cucumber Roll",
+                   @"Yellowtail Roll", @"Spicy Tuna Roll",
+                   @"Avocado Roll", @"Scallop Roll",
+                   nil];
+    
+    self.districtArray = data;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +52,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)zipCode:(id)sender {
+    
+    NSString *select = [_districtArray objectAtIndex:[_districtPicker selectedRowInComponent:0] ];
+    
+    NSString *title = [[NSString alloc] initWithFormat:@"You selected %", select];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1; // 1 column in the picker.
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_districtArray count];
+}
+
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_districtArray objectAtIndex:row];
+    
+}
+
 
 @end

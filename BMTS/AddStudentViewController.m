@@ -10,6 +10,7 @@
 
 @interface AddStudentViewController ()
 
+@property (strong, nonatomic) NSArray *districtArray;
 @end
 
 @implementation AddStudentViewController
@@ -17,6 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *select = [_districtArray objectAtIndex:[_behaviorPicker selectedRowInComponent:0] ];
+    
+    NSString *title = [[NSString alloc] initWithFormat:@"You selected %", select];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +42,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
 
 @end

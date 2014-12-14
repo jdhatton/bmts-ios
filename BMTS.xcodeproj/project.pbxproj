@@ -16,6 +16,17 @@
 		890759A61A0B110B000A30DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890759A51A0B110B000A30DA /* Images.xcassets */; };
 		890759A91A0B110B000A30DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759A71A0B110B000A30DA /* LaunchScreen.xib */; };
 		890759B51A0B110B000A30DA /* BMTSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759B41A0B110B000A30DA /* BMTSTests.m */; };
+		890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759C81A159B4F000A30DA /* ForgotPasswordViewController.m */; };
+		890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759CB1A159BBC000A30DA /* RegisterOneViewController.m */; };
+		890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */; };
+		890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D11A159BF0000A30DA /* RegisterThreeViewController.m */; };
+		890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D41A159C23000A30DA /* AddStudentViewController.m */; };
+		890759D81A159C43000A30DA /* AddParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D71A159C43000A30DA /* AddParentViewController.m */; };
+		890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DA1A159C92000A30DA /* StudentViewViewController.m */; };
+		890759DD1A159C92000A30DA /* StudentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759DB1A159C92000A30DA /* StudentViewViewController.xib */; };
+		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
+		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
+		89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3611C1A2366700002EF25 /* DebugViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +52,31 @@
 		8907599F1A0B110B000A30DA /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		890759A01A0B110B000A30DA /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		890759A31A0B110B000A30DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		890759A51A0B110B000A30DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		890759A51A0B110B000A30DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BMTS/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		890759A81A0B110B000A30DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		890759AE1A0B110B000A30DA /* BMTSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMTSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		890759B31A0B110B000A30DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		890759B41A0B110B000A30DA /* BMTSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMTSTests.m; sourceTree = "<group>"; };
+		890759C71A159B4F000A30DA /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		890759C81A159B4F000A30DA /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		890759CA1A159BBC000A30DA /* RegisterOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterOneViewController.h; path = ../RegisterOneViewController.h; sourceTree = "<group>"; };
+		890759CB1A159BBC000A30DA /* RegisterOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterOneViewController.m; path = ../RegisterOneViewController.m; sourceTree = "<group>"; };
+		890759CD1A159BDB000A30DA /* RegisterTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTwoViewController.h; sourceTree = "<group>"; };
+		890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTwoViewController.m; sourceTree = "<group>"; };
+		890759D01A159BF0000A30DA /* RegisterThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterThreeViewController.h; sourceTree = "<group>"; };
+		890759D11A159BF0000A30DA /* RegisterThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterThreeViewController.m; sourceTree = "<group>"; };
+		890759D31A159C23000A30DA /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
+		890759D41A159C23000A30DA /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
+		890759D61A159C43000A30DA /* AddParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddParentViewController.h; sourceTree = "<group>"; };
+		890759D71A159C43000A30DA /* AddParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddParentViewController.m; sourceTree = "<group>"; };
+		890759D91A159C92000A30DA /* StudentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewViewController.h; sourceTree = "<group>"; };
+		890759DA1A159C92000A30DA /* StudentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewViewController.m; sourceTree = "<group>"; };
+		890759DB1A159C92000A30DA /* StudentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentViewViewController.xib; sourceTree = "<group>"; };
+		890759DE1A159CAF000A30DA /* ParentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewViewController.h; sourceTree = "<group>"; };
+		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
+		890759E01A159CAF000A30DA /* ParentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewViewController.xib; sourceTree = "<group>"; };
+		89D3611B1A2366700002EF25 /* DebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
+		89D3611C1A2366700002EF25 /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +118,25 @@
 		890759911A0B110B000A30DA /* BMTS */ = {
 			isa = PBXGroup;
 			children = (
+				890759E51A168761000A30DA /* TeacherView */,
+				890759E41A159CCD000A30DA /* StudentView */,
+				890759E31A159CB9000A30DA /* ParentView */,
+				890759D31A159C23000A30DA /* AddStudentViewController.h */,
+				890759D41A159C23000A30DA /* AddStudentViewController.m */,
+				890759D61A159C43000A30DA /* AddParentViewController.h */,
+				890759D71A159C43000A30DA /* AddParentViewController.m */,
+				890759CD1A159BDB000A30DA /* RegisterTwoViewController.h */,
+				890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */,
+				890759D01A159BF0000A30DA /* RegisterThreeViewController.h */,
+				890759D11A159BF0000A30DA /* RegisterThreeViewController.m */,
+				890759CA1A159BBC000A30DA /* RegisterOneViewController.h */,
+				890759CB1A159BBC000A30DA /* RegisterOneViewController.m */,
 				890759961A0B110B000A30DA /* AppDelegate.h */,
 				890759971A0B110B000A30DA /* AppDelegate.m */,
 				890759991A0B110B000A30DA /* RootViewController.h */,
 				8907599A1A0B110B000A30DA /* RootViewController.m */,
+				890759C71A159B4F000A30DA /* ForgotPasswordViewController.h */,
+				890759C81A159B4F000A30DA /* ForgotPasswordViewController.m */,
 				8907599C1A0B110B000A30DA /* DataViewController.h */,
 				8907599D1A0B110B000A30DA /* DataViewController.m */,
 				8907599F1A0B110B000A30DA /* ModelController.h */,
@@ -98,7 +144,10 @@
 				890759A21A0B110B000A30DA /* Main.storyboard */,
 				890759A51A0B110B000A30DA /* Images.xcassets */,
 				890759A71A0B110B000A30DA /* LaunchScreen.xib */,
+				890759C01A0B114C000A30DA /* Assets */,
 				890759921A0B110B000A30DA /* Supporting Files */,
+				89D3611B1A2366700002EF25 /* DebugViewController.h */,
+				89D3611C1A2366700002EF25 /* DebugViewController.m */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -127,6 +176,40 @@
 				890759B31A0B110B000A30DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		890759C01A0B114C000A30DA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		890759E31A159CB9000A30DA /* ParentView */ = {
+			isa = PBXGroup;
+			children = (
+				890759DE1A159CAF000A30DA /* ParentViewViewController.h */,
+				890759DF1A159CAF000A30DA /* ParentViewViewController.m */,
+				890759E01A159CAF000A30DA /* ParentViewViewController.xib */,
+			);
+			name = ParentView;
+			sourceTree = "<group>";
+		};
+		890759E41A159CCD000A30DA /* StudentView */ = {
+			isa = PBXGroup;
+			children = (
+				890759D91A159C92000A30DA /* StudentViewViewController.h */,
+				890759DA1A159C92000A30DA /* StudentViewViewController.m */,
+				890759DB1A159C92000A30DA /* StudentViewViewController.xib */,
+			);
+			name = StudentView;
+			sourceTree = "<group>";
+		};
+		890759E51A168761000A30DA /* TeacherView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TeacherView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				890759A41A0B110B000A30DA /* Main.storyboard in Resources */,
+				890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */,
 				890759A91A0B110B000A30DA /* LaunchScreen.xib in Resources */,
 				890759A61A0B110B000A30DA /* Images.xcassets in Resources */,
+				890759DD1A159C92000A30DA /* StudentViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890759D81A159C43000A30DA /* AddParentViewController.m in Sources */,
+				890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */,
+				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
+				890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */,
+				890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
+				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
+				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
+				890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */,
 				890759951A0B110B000A30DA /* main.m in Sources */,
+				890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */,
 				8907599B1A0B110B000A30DA /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,6 +522,7 @@
 				890759BA1A0B110B000A30DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		890759BB1A0B110B000A30DA /* Build configuration list for PBXNativeTarget "BMTSTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +531,7 @@
 				890759BD1A0B110B000A30DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

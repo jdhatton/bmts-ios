@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterTwoViewController : UIViewController
+@interface RegisterTwoViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+
+
+- (IBAction)zipCode:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *districtPicker;
+
+@property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *districts;
+
+
+
+
 
 @end

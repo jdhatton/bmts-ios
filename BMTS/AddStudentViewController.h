@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddStudentViewController : UIViewController
+@interface AddStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource >
+@property (weak, nonatomic) IBOutlet UIPickerView *behaviorPicker;
 
 @end

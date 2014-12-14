@@ -14,8 +14,13 @@
 
 @implementation DataViewController
 
+@synthesize emailAddressTextBox, passwordTextBox, createAccountButton, alreadyHaveAccountButton, debugButton ;
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"DEBUG: loading main view");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,7 +31,32 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.dataLabel.text = [self.dataObject description];
+   
+}
+
+- (void)createAccount:(id)sender
+{
+    NSLog(@"DEBUG: you touched the createAccount button");
+    
+    NSString *email = emailAddressTextBox.text ;
+    NSString *password = passwordTextBox.text ;
+    
+    [emailAddressTextBox resignFirstResponder];
+    [passwordTextBox resignFirstResponder];
+    
+//    NSString *convertResult = [[NSString alloc] initWithFormat: @"Celsius: %f", celsius];
+//    calcResult.text = convertResult;
+}
+
+- (void)alreadyHaveAccount:(id)sender
+{
+    NSLog(@"DEBUG: you touched the alreadyHaveAccount button");
+
+}
+
+- (void)debug:(id)sender
+{
+    NSLog(@"DEBUG: you touched the debug button");
 }
 
 @end
