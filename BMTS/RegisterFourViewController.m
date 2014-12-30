@@ -1,41 +1,28 @@
 //
-//  RegisterThreeViewController.m
+//  RegisterFourViewController.m
 //  BMTS
 //
-//  Created by JD Hatton on 11/13/14.
+//  Created by JD Hatton on 12/30/14.
 //  Copyright (c) 2014 Homeroom Technologies. All rights reserved.
 //
 
-#import "RegisterThreeViewController.h"
+#import "RegisterFourViewController.h"
 
-@interface RegisterThreeViewController ()
+@interface RegisterFourViewController ()
 
-@property (strong, nonatomic) NSArray *schoolsArray;
 @property (strong, nonatomic) NSArray *gradesArray;
 
 @end
 
-@implementation RegisterThreeViewController
+@implementation RegisterFourViewController
 
-@synthesize schoolPicker;
+@synthesize gradePicker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    NSArray *data1;
     NSArray *data2;
-   
-    
-    data1 = [[NSArray alloc] initWithObjects:@"School-001",
-            @"School-002", @"School-003", @"School-004",
-            @"School-005", @"School-006",
-            @"School-007", @"School-008",
-            @"School-009",
-            nil];
-    
-    self.schoolsArray = data1;
     
     data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
              @"First Grade", @"Second Grade", @"Third Grade",
@@ -48,7 +35,6 @@
     
     self.gradesArray = data2;
 
-    
     
 }
 
@@ -67,26 +53,17 @@
 }
 */
 
-
--(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)schoolPicker {
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1; // 1 column in the picker.
 }
 
--(NSInteger) pickerView:(UIPickerView *)schoolPicker numberOfRowsInComponent:(NSInteger)component {
-    return [_schoolsArray count];
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_gradesArray count];
 }
 
--(NSString *) pickerView:(UIPickerView *)schoolPicker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [_schoolsArray objectAtIndex:row];
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_gradesArray objectAtIndex:row];
     
 }
-
- 
-
-
-
-
-
-
 
 @end

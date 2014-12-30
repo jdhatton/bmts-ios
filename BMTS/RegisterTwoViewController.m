@@ -20,16 +20,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-   // NSArray *data [[[NSArray alloc] initWithObjects: @"",@"", 2] ];
-    
     NSArray *data;
-    //[NSArray initWithObjects:@"District 001",@"District 002",@"District 003",@"District 004",@"District 005",@"District 006", nil];
-    
     data = [[NSArray alloc] initWithObjects:@"District 001",
-                   @"Tuna Roll", @"Salmon Roll", @"Unagi Roll",
-                   @"Philadelphia Roll", @"Rainbow Roll",
-                   @"Vegetable Roll", @"Spider Roll",
-                   @"Shrimp Tempura Roll", @"Cucumber Roll",
+                   @"District 022", @"Blue Valley", @"Shawnee Mission",
+                   @"Kansas City", @"Wyandotte",
+                   @"Kansas City Missouri", @"Turner",
+                   @"Cherokee Hills", @"Cucumber Roll",
                    @"Yellowtail Roll", @"Spicy Tuna Roll",
                    @"Avocado Roll", @"Scallop Roll",
                    nil];
@@ -55,12 +51,12 @@
 
 - (IBAction)zipCode:(id)sender {
     
-    NSString *select = [_districtArray objectAtIndex:[_districtPicker selectedRowInComponent:0] ];
-    
-    NSString *title = [[NSString alloc] initWithFormat:@"You selected %", select];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
+//    NSString *select = [_districtArray objectAtIndex:[_districtPicker selectedRowInComponent:0] ];
+//    
+//    NSString *title = [[NSString alloc] initWithFormat:@"You selected %", select];
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//    [alert show];
 }
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
