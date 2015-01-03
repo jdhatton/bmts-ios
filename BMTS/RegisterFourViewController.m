@@ -53,15 +53,15 @@
 }
 */
 
--(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)gradePicker {
     return 1; // 1 column in the picker.
 }
 
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+-(NSInteger) pickerView:(UIPickerView *)gradePicker numberOfRowsInComponent:(NSInteger)component {
     return [_gradesArray count];
 }
 
--(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+-(NSString *) pickerView:(UIPickerView *)gradePicker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [_gradesArray objectAtIndex:row];
     
 }

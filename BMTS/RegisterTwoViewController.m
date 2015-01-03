@@ -11,6 +11,7 @@
 @interface RegisterTwoViewController ()
 
 @property (strong, nonatomic) NSArray *districtArray;
+@property (strong, nonatomic) NSArray *gradesArray;
 
 @end
 
@@ -21,6 +22,7 @@
     // Do any additional setup after loading the view.
     
     NSArray *data;
+    NSArray *data2;
     data = [[NSArray alloc] initWithObjects:@"District 001",
                    @"District 022", @"Blue Valley", @"Shawnee Mission",
                    @"Kansas City", @"Wyandotte",
@@ -31,6 +33,17 @@
                    nil];
     
     self.districtArray = data;
+    
+    data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
+             @"First Grade", @"Second Grade", @"Third Grade",
+             @"Fourth Grade", @"Fifth Grade",
+             @"Sixth grade", @"Seventh Grade",
+             @"Eight Grade", @"Ninth Grade",
+             @"Tenth Grade", @"Eleventh Grade",
+             @"Twelth Grade",
+             nil];
+    
+    self.gradesArray = data2;
     
 }
 
@@ -64,11 +77,26 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return [_districtArray count];
+    
+    
+    if (pickerView == self.districtPicker ) {
+        return [_districtArray  count];
+    }
+    else if (pickerView == self.gradePicker) {
+        return [_gradesArray  count];
+    }
+    return [_districtArray  count];
 }
 
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [_districtArray objectAtIndex:row];
+    
+    if (pickerView == self.districtPicker ) {
+        return [_districtArray  objectAtIndex:row];
+    }
+    else if (pickerView == self.gradePicker) {
+        return [_gradesArray  objectAtIndex:row];
+    }
+    return [_districtArray  objectAtIndex:row];
     
 }
 

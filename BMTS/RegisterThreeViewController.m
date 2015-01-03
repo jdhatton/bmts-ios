@@ -11,7 +11,7 @@
 @interface RegisterThreeViewController ()
 
 @property (strong, nonatomic) NSArray *schoolsArray;
-@property (strong, nonatomic) NSArray *gradesArray;
+
 
 @end
 
@@ -25,7 +25,7 @@
     
     
     NSArray *data1;
-    NSArray *data2;
+    
    
     
     data1 = [[NSArray alloc] initWithObjects:@"School-001",
@@ -37,18 +37,9 @@
     
     self.schoolsArray = data1;
     
-    data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
-             @"First Grade", @"Second Grade", @"Third Grade",
-             @"Fourth Grade", @"Fifth Grade",
-             @"Sixth grade", @"Seventh Grade",
-             @"Eight Grade", @"Ninth Grade",
-             @"Tenth Grade", @"Eleventh Grade",
-             @"Twelth Grade",
-             nil];
-    
-    self.gradesArray = data2;
 
-    
+
+
     
 }
 
@@ -68,16 +59,20 @@
 */
 
 
--(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)schoolPicker {
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1; // 1 column in the picker.
 }
 
--(NSInteger) pickerView:(UIPickerView *)schoolPicker numberOfRowsInComponent:(NSInteger)component {
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
     return [_schoolsArray count];
+    
 }
 
--(NSString *) pickerView:(UIPickerView *)schoolPicker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
     return [_schoolsArray objectAtIndex:row];
+ 
     
 }
 

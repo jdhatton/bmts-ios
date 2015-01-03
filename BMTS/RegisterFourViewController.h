@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterFourViewController :  UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface RegisterFourViewController :  UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIPickerView *gradePicker;
+@property (strong, nonatomic) IBOutlet UIPickerView *gradePicker;
 @property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *grades;
 
 @end

@@ -15,8 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *schoolPicker;
 @property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *schools;
 
-//@property (weak, nonatomic) IBOutlet UIPickerView *gradePicker;
-//@property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *grades;
+
 
 
 @end

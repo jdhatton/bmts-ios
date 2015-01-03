@@ -28,6 +28,7 @@
 		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3611C1A2366700002EF25 /* DebugViewController.m */; };
+		89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,8 @@
 		890759B41A0B110B000A30DA /* BMTSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMTSTests.m; sourceTree = "<group>"; };
 		890759C71A159B4F000A30DA /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		890759C81A159B4F000A30DA /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		890759CA1A159BBC000A30DA /* RegisterOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterOneViewController.h; path = ../RegisterOneViewController.h; sourceTree = "<group>"; };
-		890759CB1A159BBC000A30DA /* RegisterOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterOneViewController.m; path = ../RegisterOneViewController.m; sourceTree = "<group>"; };
+		890759CA1A159BBC000A30DA /* RegisterOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterOneViewController.h; sourceTree = "<group>"; };
+		890759CB1A159BBC000A30DA /* RegisterOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterOneViewController.m; sourceTree = "<group>"; };
 		890759CD1A159BDB000A30DA /* RegisterTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTwoViewController.h; sourceTree = "<group>"; };
 		890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTwoViewController.m; sourceTree = "<group>"; };
 		890759D01A159BF0000A30DA /* RegisterThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterThreeViewController.h; sourceTree = "<group>"; };
@@ -80,6 +81,8 @@
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89D3611B1A2366700002EF25 /* DebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		89D3611C1A2366700002EF25 /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
+		89DA45DD1A5860F000F7E23D /* TeacherMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherMainViewController.h; sourceTree = "<group>"; };
+		89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		890759911A0B110B000A30DA /* BMTS */ = {
 			isa = PBXGroup;
 			children = (
+				89DA45DC1A584FA000F7E23D /* images */,
 				890759E51A168761000A30DA /* TeacherView */,
 				890759E41A159CCD000A30DA /* StudentView */,
 				890759E31A159CB9000A30DA /* ParentView */,
@@ -213,8 +217,17 @@
 		890759E51A168761000A30DA /* TeacherView */ = {
 			isa = PBXGroup;
 			children = (
+				89DA45DD1A5860F000F7E23D /* TeacherMainViewController.h */,
+				89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */,
 			);
 			name = TeacherView;
+			sourceTree = "<group>";
+		};
+		89DA45DC1A584FA000F7E23D /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +338,7 @@
 				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */,
+				89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */,
 				890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
