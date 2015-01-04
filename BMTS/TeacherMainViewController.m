@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+     NSLog(@"DEBUG: TeacherMainViewController LOADING..");
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +40,8 @@
 
 -(IBAction) buttonClicked
 {
+    NSLog(@"DEBUG: you touched the button");
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world"
                                                     message:@"You clicked the button"
                                                    delegate:nil
@@ -43,5 +49,70 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
+
+
+
+
+- (IBAction)studentAvatar:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world "
+                                                    message:@"You clicked the student avatar"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+
+- (IBAction)studentName:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world"
+                                                    message:@"You clicked the student name "
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+
+- (IBAction)studentStatus:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world"
+                                                    message:@"You clicked the student status - RED, GREEN, YELLOW"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+
+- (IBAction)studentComment:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world"
+                                                    message:@"You clicked the student comment"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+
+- (IBAction)studentSettings:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello world"
+                                                    message:@"You clicked the student settings"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+}
+
+
+
+
 
 @end

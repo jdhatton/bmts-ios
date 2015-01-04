@@ -29,6 +29,7 @@
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3611C1A2366700002EF25 /* DebugViewController.m */; };
 		89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */; };
+		89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45E11A59994F00F7E23D /* AvatarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		89D3611C1A2366700002EF25 /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		89DA45DD1A5860F000F7E23D /* TeacherMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherMainViewController.h; sourceTree = "<group>"; };
 		89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherMainViewController.m; sourceTree = "<group>"; };
+		89DA45E01A59994F00F7E23D /* AvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarViewController.h; sourceTree = "<group>"; };
+		89DA45E11A59994F00F7E23D /* AvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				89D3611C1A2366700002EF25 /* DebugViewController.m */,
 				8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */,
 				8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */,
+				89DA45E01A59994F00F7E23D /* AvatarViewController.h */,
+				89DA45E11A59994F00F7E23D /* AvatarViewController.m */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
 				890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */,
 				890759951A0B110B000A30DA /* main.m in Sources */,
+				89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */,
 				890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */,
 				8907599B1A0B110B000A30DA /* RootViewController.m in Sources */,
 			);

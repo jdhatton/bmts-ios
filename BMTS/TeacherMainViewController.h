@@ -10,6 +10,18 @@
 
 @interface TeacherMainViewController : UIViewController
 
+- (IBAction)studentAvatar:(id)sender;
+- (IBAction)studentName:(id)sender;
+- (IBAction)studentStatus:(id)sender;
+- (IBAction)studentComment:(id)sender;
+- (IBAction)studentSettings:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *studentToolbar;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *studentAvatar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *studentName;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *studentStatus;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *studentComment;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *studentSettings;
 
 @end
