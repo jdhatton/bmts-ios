@@ -21,6 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"DEBUG: loading main view");
+    NSLog(@"HOME > %@", NSHomeDirectory());
+    
+    NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documents = [directories firstObject];
+    NSLog(@"DOCUMENTS > %@", documents);
+ 
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -57,6 +64,11 @@
 - (void)debug:(id)sender
 {
     NSLog(@"DEBUG: you touched the debug button");
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    return YES;
 }
 
 @end
