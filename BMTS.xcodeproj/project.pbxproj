@@ -31,6 +31,8 @@
 		89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */; };
 		89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45E11A59994F00F7E23D /* AvatarViewController.m */; };
 		89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */; };
+		89F2F6F11A605967001B0D17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F2F6F01A605967001B0D17 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		89DA45E11A59994F00F7E23D /* AvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarViewController.m; sourceTree = "<group>"; };
 		89F2F6ED1A5C9523001B0D17 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		89F2F6F01A605967001B0D17 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F2F6F11A605967001B0D17 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,8 @@
 		890759861A0B110B000A30DA = {
 			isa = PBXGroup;
 			children = (
+				89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */,
+				89F2F6F01A605967001B0D17 /* CoreData.framework */,
 				890759911A0B110B000A30DA /* BMTS */,
 				890759B11A0B110B000A30DA /* BMTSTests */,
 				890759901A0B110B000A30DA /* Products */,
@@ -352,6 +359,7 @@
 				89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */,
 				89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */,
 				890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */,
+				89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
 				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
@@ -571,6 +579,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */,
+			);
+			currentVersion = 89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */;
+			path = AppDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 890759871A0B110B000A30DA /* Project object */;
 }

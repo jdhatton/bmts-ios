@@ -28,6 +28,9 @@
 
 - (instancetype)init {
     self = [super init];
+    
+    NSLog(@"DEBUG:  >>   Loading the Model Controller. ");
+    
     if (self) {
         // Create the data model.
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
