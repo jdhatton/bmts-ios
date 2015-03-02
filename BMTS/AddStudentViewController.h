@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AddStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource >
+
 @property (weak, nonatomic) IBOutlet UIPickerView *behaviorPicker;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *intervalPicker;
+
+@property (weak, nonatomic) IBOutlet UITextField *studentName;
+
 
 @end

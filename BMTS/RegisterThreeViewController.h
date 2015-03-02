@@ -15,6 +15,11 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *schoolPicker;
 @property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *schools;
 
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gender;
 
 
 

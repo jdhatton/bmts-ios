@@ -10,6 +10,9 @@
 
 @interface AddParentViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *studentName;
+@property (nonatomic, retain) NSString *passedData;
+
 @end
 
 @implementation AddParentViewController

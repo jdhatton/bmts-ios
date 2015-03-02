@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *createAccountButton;
 @property (strong, nonatomic) IBOutlet UIButton *alreadyHaveAccountButton;
 @property (strong, nonatomic) IBOutlet UIButton *debugButton;
+@property (nonatomic, weak) IBOutlet UIImageView *remoteHostImageView;
 
 - (IBAction)createAccount:(id)sender;
 - (IBAction)alreadyHaveAccount:(id)sender;

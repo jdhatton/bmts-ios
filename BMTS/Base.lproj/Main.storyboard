@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="qvm-On-fuN">
             <objects>
-                <viewController id="kPw-F5-Uwm" sceneMemberID="viewController">
+                <viewController title="Login" id="kPw-F5-Uwm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fPn-lT-pEN"/>
                         <viewControllerLayoutGuide type="bottom" id="UPc-ec-qGm"/>
@@ -109,6 +109,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveFormData:" destination="4TI-au-4b4" eventType="touchUpInside" id="ngL-y9-cwN"/>
                                     <segue destination="hte-3k-ekS" kind="show" id="aeb-bz-71u"/>
                                 </connections>
                             </button>
@@ -120,6 +121,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveFormData:" destination="4TI-au-4b4" eventType="touchUpInside" id="KHg-sd-lv6"/>
                                     <segue destination="i1N-B9-We4" kind="show" id="OK2-7I-3bz"/>
                                 </connections>
                             </button>
@@ -174,8 +176,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="firstName" destination="ZHn-9J-2S6" id="yIO-E4-ytJ"/>
+                        <outlet property="gender" destination="IUA-Zx-Zbp" id="Mig-nx-pSW"/>
                         <outlet property="gradePicker" destination="Sul-R6-8oL" id="fPf-R3-eKm"/>
-                        <outlet property="schoolPicker" destination="QnE-Dv-ILp" id="3Z1-nJ-H3x"/>
+                        <outlet property="lastName" destination="3eZ-vX-ny4" id="Z10-vz-tbi"/>
+                        <outlet property="schoolPicker" destination="QnE-Dv-ILp" id="cca-Qy-wgB"/>
                         <outletCollection property="schools" destination="QnE-Dv-ILp" id="nKu-ub-FIW"/>
                     </connections>
                 </viewController>
@@ -186,7 +191,7 @@
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
             <objects>
-                <viewController title="Teacher Main View" id="i1N-B9-We4" customClass="TeacherMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="teacherMainView" title="Teacher Main View" id="i1N-B9-We4" customClass="TeacherMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rho-mi-6Dm"/>
                         <viewControllerLayoutGuide type="bottom" id="Yjf-ow-VrK"/>
@@ -271,6 +276,14 @@
                                     <barButtonItem id="rpY-kT-hfU"/>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
+                                <rect key="frame" x="141" y="434" width="92" height="28"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Add-Student">
+                                    <color key="titleColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -709,11 +722,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
-                                <rect key="frame" x="31" y="154" width="312" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a behavior to track." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCn-8a-DBc">
                                 <rect key="frame" x="31" y="201" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -722,6 +730,10 @@
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-3X-g6V">
                                 <rect key="frame" x="0.0" y="223" width="375" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hte-3k-ekS" id="BVd-XY-2kx"/>
+                                    <outlet property="delegate" destination="hte-3k-ekS" id="Yrr-PX-gl3"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an interval for tracking." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8b-fp-f6V">
                                 <rect key="frame" x="31" y="393" width="312" height="21"/>
@@ -730,16 +742,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-WI-Elh">
-                                <rect key="frame" x="0.0" y="422" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="411" width="375" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hte-3k-ekS" id="tye-uJ-zlM"/>
+                                    <outlet property="delegate" destination="hte-3k-ekS" id="94J-nI-YaH"/>
+                                </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-YY-UkZ">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-YY-UkZ">
                                 <rect key="frame" x="22" y="576" width="315" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add Parent">
-                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="i61-0t-HeH"/>
                                     <segue destination="tA6-Ig-cpE" kind="show" id="N4G-Fs-Q1R"/>
                                 </connections>
                             </button>
@@ -751,13 +768,24 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="MUz-wa-Zv6"/>
                                     <segue destination="i1N-B9-We4" kind="show" id="K8t-0r-Eic"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
+                                <rect key="frame" x="31" y="133" width="312" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="behaviorPicker" destination="Cah-3X-g6V" id="wi1-eZ-ozZ"/>
+                        <outlet property="intervalPicker" destination="zA5-WI-Elh" id="qsb-Sb-z2S"/>
+                        <outlet property="studentName" destination="kkA-MW-e1S" id="Voj-MN-CvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x6-4V-ofg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -829,6 +857,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveFormData:" destination="zYF-zh-829" eventType="touchUpInside" id="ae4-4K-coT"/>
                                     <segue destination="4TI-au-4b4" kind="show" id="wFk-vP-jn0"/>
                                 </connections>
                             </button>
@@ -839,6 +868,8 @@
                     <connections>
                         <outlet property="districtPicker" destination="wTD-zp-ZhY" id="Cw4-5K-qVa"/>
                         <outlet property="gradePicker" destination="Sul-R6-8oL" id="0kV-0F-BUl"/>
+                        <outlet property="saveData" destination="8eB-6G-K4J" id="RZw-aq-iqv"/>
+                        <outlet property="zipCode" destination="AYw-2e-gy5" id="wlz-KP-ylJ"/>
                         <outletCollection property="districts" destination="wTD-zp-ZhY" id="hye-CR-Co0"/>
                         <outletCollection property="grades" destination="Sul-R6-8oL" id="3mz-gS-3OV"/>
                     </connections>
@@ -927,34 +958,16 @@
                                 <rect key="frame" x="140" y="49" width="93" height="84"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj0-eL-ehA">
-                                <rect key="frame" x="16" y="617" width="62" height="30"/>
+                                <rect key="frame" x="49" y="622" width="62" height="30"/>
                                 <state key="normal" title="DEBUG">
                                     <color key="titleColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="debug:" destination="0rK-ow-lyj" eventType="touchUpInside" id="gWZ-bU-UVt"/>
-                                    <segue destination="i1N-B9-We4" kind="show" id="402-kx-CJJ"/>
+                                    <segue destination="g2h-Xr-JPG" kind="show" id="CUm-Tx-hts"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-w9-hPH">
-                                <rect key="frame" x="34" y="492" width="319" height="112"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES" summaryElement="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Start now by using our secure smart cloud driven technology for tracking and analyzing student behaviors. Invite the parents to join too!</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-pw-B9T">
                                 <rect key="frame" x="15" y="323" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -979,6 +992,36 @@
                                     <segue destination="6xf-ad-kgY" kind="show" id="YvG-3C-wjm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop-32" translatesAutoresizingMaskIntoConstraints="NO" id="USv-l7-v8g">
+                                <rect key="frame" x="16" y="624" width="26" height="25"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPr-fV-QDo">
+                                <rect key="frame" x="332" y="619" width="9" height="30"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i1N-B9-We4" kind="show" identifier="showTeacherView" id="LeJ-0E-Mmf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-w9-hPH">
+                                <rect key="frame" x="47" y="424" width="319" height="112"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" summaryElement="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Start now by using our secure smart cloud driven technology for tracking and analyzing student behaviors. Invite the parents to join too!</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -989,11 +1032,12 @@
                         <outlet property="debugButton" destination="bj0-eL-ehA" id="vOJ-h5-22V"/>
                         <outlet property="emailAddressTextBox" destination="luf-9d-Wni" id="pA9-NY-VE9"/>
                         <outlet property="passwordTextBox" destination="tJ7-ku-itL" id="qXU-Vs-FkF"/>
+                        <outlet property="remoteHostImageView" destination="USv-l7-v8g" id="tGK-Xv-WIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rK-ow-lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2160.5" y="-1610.5"/>
+            <point key="canvasLocation" x="-2152.5" y="-1610.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-Hz-nJE">
@@ -1010,6 +1054,130 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIT-sg-6Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="297" y="180"/>
+        </scene>
+        <!--Reachability-->
+        <scene sceneID="eyl-00-5ct">
+            <objects>
+                <viewController title="Reachability" id="g2h-Xr-JPG" customClass="ReachabilityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N1w-ZZ-0vV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ui9-ee-ZZp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1MN-L1-4wI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="14" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="1c1-xE-sxl">
+                                <rect key="frame" x="47" y="408" width="280" height="62"/>
+                                <string key="text">Cellular data network is available.
+Internet traffic will be routed through it.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" ambiguous="YES" misplaced="YES" image="Airport" translatesAutoresizingMaskIntoConstraints="NO" id="ONY-pO-cXQ">
+                                <rect key="frame" x="47" y="326" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="dz9-KY-FBc"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Local WiFi" clearsOnBeginEditing="YES" minimumFontSize="29" translatesAutoresizingMaskIntoConstraints="NO" id="6rU-Xl-HC7">
+                                <rect key="frame" x="47" y="292" width="80" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" ambiguous="YES" misplaced="YES" image="Airport" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-T4-Ox7">
+                                <rect key="frame" x="47" y="185" width="32" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="jah-aB-UaN"/>
+                                    <constraint firstAttribute="width" constant="32" id="k5P-P3-WmE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" ambiguous="YES" misplaced="YES" image="Airport" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-GP-T5A">
+                                <rect key="frame" x="47" y="252" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="CdK-uC-jU7"/>
+                                    <constraint firstAttribute="width" constant="32" id="ZLj-p2-79N"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ULm-Fx-94j">
+                                <rect key="frame" x="87" y="185" width="240" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Remote Host:" clearsOnBeginEditing="YES" minimumFontSize="29" translatesAutoresizingMaskIntoConstraints="NO" id="jtB-gV-Xqe">
+                                <rect key="frame" x="47" y="157" width="105" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="bmr-3o-ddH">
+                                <rect key="frame" x="87" y="252" width="240" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="DiN-Wz-bhb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TCP/IP Routing Available" clearsOnBeginEditing="YES" minimumFontSize="29" translatesAutoresizingMaskIntoConstraints="NO" id="iIP-Bf-A0N">
+                                <rect key="frame" x="47" y="224" width="187" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSA-QG-cYF">
+                                <rect key="frame" x="96" y="517" width="167" height="58"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2DX-bM-jzU" kind="show" id="vvw-d5-SbK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network  Reachability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-IL-pFr">
+                                <rect key="frame" x="47" y="55" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="IIK-lX-haf">
+                                <rect key="frame" x="87" y="327" width="240" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="1kp-wI-nWE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="aFB-T4-Ox7" firstAttribute="top" secondItem="jtB-gV-Xqe" secondAttribute="bottom" constant="8" symbolic="YES" id="2eV-Hx-gz7"/>
+                            <constraint firstItem="ULm-Fx-94j" firstAttribute="leading" secondItem="aFB-T4-Ox7" secondAttribute="trailing" constant="8" symbolic="YES" id="2yh-8w-JZL"/>
+                            <constraint firstItem="iIP-Bf-A0N" firstAttribute="top" secondItem="aFB-T4-Ox7" secondAttribute="bottom" constant="8" symbolic="YES" id="7gb-iG-nto"/>
+                            <constraint firstItem="bmr-3o-ddH" firstAttribute="leading" secondItem="TOo-GP-T5A" secondAttribute="trailing" constant="8" symbolic="YES" id="NHj-Pr-JUB"/>
+                            <constraint firstItem="jtB-gV-Xqe" firstAttribute="leading" secondItem="aFB-T4-Ox7" secondAttribute="leading" id="bOV-Lp-fEB"/>
+                            <constraint firstItem="bmr-3o-ddH" firstAttribute="leading" secondItem="ULm-Fx-94j" secondAttribute="leading" id="gGD-Ok-AMo"/>
+                            <constraint firstItem="bmr-3o-ddH" firstAttribute="top" secondItem="iIP-Bf-A0N" secondAttribute="bottom" constant="8" symbolic="YES" id="hKt-SE-F9w"/>
+                            <constraint firstItem="ULm-Fx-94j" firstAttribute="bottom" secondItem="aFB-T4-Ox7" secondAttribute="bottom" id="ord-C3-EdX"/>
+                            <constraint firstItem="ULm-Fx-94j" firstAttribute="leading" secondItem="bmr-3o-ddH" secondAttribute="leading" id="q5d-LE-ATR"/>
+                            <constraint firstItem="TOo-GP-T5A" firstAttribute="top" secondItem="iIP-Bf-A0N" secondAttribute="bottom" constant="8" symbolic="YES" id="tQ0-k5-oVA"/>
+                            <constraint firstItem="ULm-Fx-94j" firstAttribute="top" secondItem="jtB-gV-Xqe" secondAttribute="bottom" constant="8" symbolic="YES" id="ucK-al-lzI"/>
+                            <constraint firstItem="iIP-Bf-A0N" firstAttribute="leading" secondItem="aFB-T4-Ox7" secondAttribute="leading" id="vTA-wO-4Km"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="internetConnectionImageView" destination="TOo-GP-T5A" id="e7K-gM-ayM"/>
+                        <outlet property="internetConnectionStatusField" destination="bmr-3o-ddH" id="hS3-hS-8S3"/>
+                        <outlet property="localWiFiConnectionImageView" destination="ONY-pO-cXQ" id="wtf-dj-CyM"/>
+                        <outlet property="localWiFiConnectionStatusField" destination="IIK-lX-haf" id="AQP-nB-ucL"/>
+                        <outlet property="remoteHostImageView" destination="aFB-T4-Ox7" id="JJS-yf-K7v"/>
+                        <outlet property="remoteHostLabel" destination="jtB-gV-Xqe" id="7PJ-ym-p7K"/>
+                        <outlet property="remoteHostStatusField" destination="ULm-Fx-94j" id="DKX-9w-zOL"/>
+                        <outlet property="summaryLabel" destination="1c1-xE-sxl" id="S5N-K1-NDL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2R-hh-JIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3065.5" y="-673.5"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="GRG-F3-AMm">
@@ -1114,17 +1282,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STT-HP-hxP">
-                                <rect key="frame" x="28" y="255" width="319" height="39"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="I am a Teacher">
-                                    <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zYF-zh-829" kind="show" id="IMf-Qx-TTB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fje-gw-xeO">
                                 <rect key="frame" x="27" y="302" width="319" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1132,14 +1289,9 @@
                                     <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-4D-vVL">
-                                <rect key="frame" x="28" y="349" width="319" height="39"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="I am a Student">
-                                    <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="saveParent:" destination="6xf-ad-kgY" eventType="touchUpInside" id="45y-Uc-5Gh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHF-ze-MFh">
                                 <rect key="frame" x="28" y="396" width="319" height="39"/>
@@ -1148,6 +1300,9 @@
                                     <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePrincipal:" destination="6xf-ad-kgY" eventType="touchUpInside" id="dEF-Jz-rOg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kJ-7r-6iw">
                                 <rect key="frame" x="28" y="443" width="319" height="39"/>
@@ -1156,11 +1311,55 @@
                                     <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveDistrict:" destination="6xf-ad-kgY" eventType="touchUpInside" id="6Ee-8S-zM1"/>
+                                    <action selector="saveDistrictAdmin:" destination="6xf-ad-kgY" eventType="touchUpInside" id="WGJ-5Y-rvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-4D-vVL">
+                                <rect key="frame" x="28" y="349" width="319" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="I am a Student">
+                                    <color key="titleColor" red="0.98739346589999999" green="0.98739346589999999" blue="0.98739346589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveStudent:" destination="6xf-ad-kgY" eventType="touchUpInside" id="5CQ-ac-oOj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVb-Fy-Qjl">
+                                <rect key="frame" x="133" y="607" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveFormData:" destination="zYF-zh-829" eventType="touchUpInside" id="Hz1-wJ-Egd"/>
+                                    <segue destination="zYF-zh-829" kind="show" id="lP6-SF-CKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-L9-j4E">
+                                <rect key="frame" x="27" y="252" width="320" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="I am a Teacher">
+                                    <color key="titleColor" red="0.99749447599999996" green="0.99749447599999996" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTeacher:" destination="6xf-ad-kgY" eventType="touchUpInside" id="fTn-MT-jbO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="districtButton" destination="6kJ-7r-6iw" id="HaE-sr-mLe"/>
+                        <outlet property="parentButton" destination="Fje-gw-xeO" id="go5-JN-nM3"/>
+                        <outlet property="principalButton" destination="DHF-ze-MFh" id="3UH-k4-h4l"/>
+                        <outlet property="studentButton" destination="BYh-4D-vVL" id="AHb-qU-5PH"/>
+                        <outlet property="teacherButton" destination="U7z-L9-j4E" id="UXp-zO-GxV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuW-pl-d4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1201,12 +1400,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parent Name Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s16-U3-D9C">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parent Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s16-U3-D9C">
                                 <rect key="frame" x="16" y="234" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parent Email or Phone# Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0u-bH-yk6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parent Email " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0u-bH-yk6">
                                 <rect key="frame" x="16" y="272" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
@@ -1223,6 +1422,9 @@
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="studentName" destination="XRY-FK-4VF" id="Tt9-pe-fwb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMl-lo-Phk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1230,6 +1432,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Airport" width="32" height="32"/>
         <image name="EmailIcon4" width="34" height="28"/>
         <image name="EmailIcon5" width="34" height="28"/>
         <image name="LockIcon3" width="25" height="33"/>
@@ -1252,6 +1455,7 @@
         <image name="police-24" width="24" height="24"/>
         <image name="police-26" width="26" height="26"/>
         <image name="settings-24" width="24" height="24"/>
+        <image name="stop-32" width="32" height="32"/>
         <image name="student-26" width="26" height="26"/>
         <image name="surfing-26" width="26" height="26"/>
         <image name="user-26" width="26" height="26"/>
@@ -1260,7 +1464,7 @@
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OK2-7I-3bz"/>
+        <segue reference="LeJ-0E-Mmf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

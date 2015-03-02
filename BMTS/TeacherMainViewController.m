@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Homeroom Technologies. All rights reserved.
 //
 
+#import "AppDelegate.h"
+#import "User.h"
 #import "TeacherMainViewController.h"
 
 @interface TeacherMainViewController ()
@@ -18,8 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-     NSLog(@"DEBUG: TeacherMainViewController LOADING..");
+    NSLog(@"DEBUG: TeacherMainViewController LOADING...");
     
+    NSLog(@"DEBUG: TeacherMainViewController LOADING COMPLETE...");
     
 }
 

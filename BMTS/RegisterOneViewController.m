@@ -7,6 +7,8 @@
 //
 
 #import "RegisterOneViewController.h"
+#import "AppDelegate.h"
+#import "User.h"
 
 @interface RegisterOneViewController ()
 
@@ -33,5 +35,68 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)saveTeacher:(id)sender {
+    
+    NSLog(@"DEBUG: >>>     you touched the TEACHER button");
+    
+    NSError *error;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+//    User *user = nil;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (User *info in fetchedObjects) {
+        NSLog(@" Found User : userId: %@", info.id);
+//        if(info.id == [NSNumber numberWithInt:1]) {
+            //user = info;
+            info.role = [NSNumber numberWithInt:1];
+            NSLog(@" UPDATING  User : Role  :  %@", info.role);
+            
+            if (![context save:&error]) {
+                NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+            } else {
+                NSLog(@"\n SUCCESS  - User - UPDATED  ");
+                NSLog(@"-----------------------------------");
+                NSLog(@" SUCCESS  - User: id    :  %@", info.id);
+                NSLog(@" SUCCESS  - User: email :  %@", info.email);
+                NSLog(@" SUCCESS  - User: role  :  %@", info.role);
+                NSLog(@"-----------------------------------");
+            }
+        }
+//    }
+    
+    
+}
+
+- (IBAction)saveParent:(id)sender {
+    //
+    // TODO: copy the code from saveTeacher changing the user.role to = the number for the role selected
+    // TODO: until that is hooked up completely we should show a pop-up message.
+    //
+}
+
+- (IBAction)saveStudent:(id)sender {
+    //
+    // TODO: copy the code from saveTeacher changing the user.role to = the number for the role selected
+    // TODO: until that is hooked up completely we should show a pop-up message.
+    //
+}
+
+- (IBAction)savePrincipal:(id)sender {
+    //
+    // TODO: copy the code from saveTeacher changing the user.role to = the number for the role selected
+    // TODO: until that is hooked up completely we should show a pop-up message.
+    //
+}
+
+- (IBAction)saveDistrict:(id)sender {
+    //
+    // TODO: copy the code from saveTeacher changing the user.role to = the number for the role selected
+    // TODO: until that is hooked up completely we should show a pop-up message.
+    //
+}
 
 @end
