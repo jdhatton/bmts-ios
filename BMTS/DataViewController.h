@@ -30,7 +30,7 @@
 - (IBAction)alreadyHaveAccount:(id)sender;
 - (IBAction)debug:(id)sender;
 
-
+@property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) IBOutlet UILabel *dataLabel;
 @property (strong, nonatomic) id dataObject;

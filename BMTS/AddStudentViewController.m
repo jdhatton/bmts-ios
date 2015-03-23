@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "ClassroomBehaviors.h"
+#import "TeacherMainViewController.h"
 
 
 @interface AddStudentViewController ()
@@ -23,6 +24,9 @@ NSInteger selectedBehavior = 0;
 NSInteger selectedInterval = 0;
 
 @implementation AddStudentViewController
+
+@synthesize window = _window, studentName;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +58,16 @@ NSInteger selectedInterval = 0;
     
     self.intervalArray = data2;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+}
+
+-(void)dismissKeyboard {
+    [studentName resignFirstResponder];
+     [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -222,7 +236,14 @@ NSInteger selectedInterval = 0;
         NSLog(@" ----------------------------------------");
     }
     
-    
+    //
+    // Segway to the TeacherMainView
+    //
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+    [self.window makeKeyAndVisible];
+    [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+
     
 }
 

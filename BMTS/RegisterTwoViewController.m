@@ -19,6 +19,7 @@
 
 @implementation RegisterTwoViewController
 
+@synthesize zipCode;
 
 NSInteger selectedDistrict = 0;
 NSInteger selectedGrade = 0;
@@ -73,6 +74,25 @@ NSInteger selectedGrade = 0;
         
     }
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (UIView * txt in self.view.subviews){
+        if ([txt isKindOfClass:[UITextField class]] && [txt isFirstResponder]) {
+            [txt resignFirstResponder];
+        }
+    }
+}
+
+-(void)dismissKeyboard {
+    [zipCode resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

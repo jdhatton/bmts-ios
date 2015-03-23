@@ -26,7 +26,12 @@
 		890759DD1A159C92000A30DA /* StudentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759DB1A159C92000A30DA /* StudentViewViewController.xib */; };
 		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
 		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
+		89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F661ABDD589007CEDFE /* FeedbackViewController.m */; };
+		89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F691ABF032C007CEDFE /* StudentStatusViewController.m */; };
+		89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
+		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
+		89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */; };
 		89D327541A956C4300CF3214 /* SyncService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327531A956C4300CF3214 /* SyncService.m */; };
 		89D327571A963FCD00CF3214 /* ReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327561A963FCD00CF3214 /* ReachabilityViewController.m */; };
 		89D3275A1A96435900CF3214 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327591A96435900CF3214 /* Reachability.m */; };
@@ -96,8 +101,17 @@
 		890759DE1A159CAF000A30DA /* ParentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewViewController.h; sourceTree = "<group>"; };
 		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
 		890759E01A159CAF000A30DA /* ParentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewViewController.xib; sourceTree = "<group>"; };
+		89442F651ABDD589007CEDFE /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		89442F661ABDD589007CEDFE /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		89442F681ABF032C007CEDFE /* StudentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentStatusViewController.h; sourceTree = "<group>"; };
+		89442F691ABF032C007CEDFE /* StudentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentStatusViewController.m; sourceTree = "<group>"; };
+		89442F6D1ABF10B7007CEDFE /* UserUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUIBarButtonItem.h; sourceTree = "<group>"; };
+		89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUIBarButtonItem.m; sourceTree = "<group>"; };
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
+		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
+		89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentBehaviors.h; sourceTree = "<group>"; };
+		89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentBehaviors.m; sourceTree = "<group>"; };
 		89D327521A956C4300CF3214 /* SyncService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncService.h; sourceTree = "<group>"; };
 		89D327531A956C4300CF3214 /* SyncService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncService.m; sourceTree = "<group>"; };
 		89D327551A963FCD00CF3214 /* ReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityViewController.h; sourceTree = "<group>"; };
@@ -162,6 +176,7 @@
 		890759861A0B110B000A30DA = {
 			isa = PBXGroup;
 			children = (
+				89AF63051AA9E6A10022F035 /* listastic-2014.png */,
 				89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */,
 				89F2F6F01A605967001B0D17 /* CoreData.framework */,
 				890759911A0B110B000A30DA /* BMTS */,
@@ -226,6 +241,10 @@
 				89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */,
 				89D327521A956C4300CF3214 /* SyncService.h */,
 				89D327531A956C4300CF3214 /* SyncService.m */,
+				89442F651ABDD589007CEDFE /* FeedbackViewController.h */,
+				89442F661ABDD589007CEDFE /* FeedbackViewController.m */,
+				89442F681ABF032C007CEDFE /* StudentStatusViewController.h */,
+				89442F691ABF032C007CEDFE /* StudentStatusViewController.m */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -286,6 +305,8 @@
 		890759E51A168761000A30DA /* TeacherView */ = {
 			isa = PBXGroup;
 			children = (
+				89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */,
+				89442F6D1ABF10B7007CEDFE /* UserUIBarButtonItem.h */,
 				89DA45DD1A5860F000F7E23D /* TeacherMainViewController.h */,
 				89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */,
 			);
@@ -319,6 +340,8 @@
 				89D3275F1A968A4E00CF3214 /* ClassroomBehaviors.m */,
 				89D3275B1A968A4D00CF3214 /* ClassroomStudents.h */,
 				89D3275C1A968A4D00CF3214 /* ClassroomStudents.m */,
+				89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */,
+				89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -411,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */,
 				890759A41A0B110B000A30DA /* Main.storyboard in Resources */,
 				890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */,
 				890759A91A0B110B000A30DA /* LaunchScreen.xib in Resources */,
@@ -439,6 +463,7 @@
 				89D3277B1A968A4F00CF3214 /* ClassroomParents.m in Sources */,
 				890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */,
 				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
+				89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */,
 				89D327601A968A4E00CF3214 /* ClassroomBehaviors.m in Sources */,
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
@@ -450,6 +475,7 @@
 				89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */,
 				890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */,
 				89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */,
+				89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */,
 				89D327541A956C4300CF3214 /* SyncService.m in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
@@ -458,8 +484,10 @@
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
 				89D327721A968A4F00CF3214 /* User.m in Sources */,
 				89D327661A968A4E00CF3214 /* IntervalEnum.m in Sources */,
+				89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */,
 				89D3276F1A968A4F00CF3214 /* StatusEnums.m in Sources */,
 				89D3275D1A968A4D00CF3214 /* ClassroomStudents.m in Sources */,
+				89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */,
 				890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */,
 				890759951A0B110B000A30DA /* main.m in Sources */,
 				89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */,
@@ -589,7 +617,8 @@
 		890759B91A0B110B000A30DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;
@@ -602,7 +631,8 @@
 		890759BA1A0B110B000A30DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;

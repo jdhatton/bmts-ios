@@ -42,9 +42,18 @@ NSInteger selectedSchool = 0;
     self.schoolsArray = data1;
     
 
-
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 
     
+}
+
+-(void)dismissKeyboard {
+    [lastName resignFirstResponder];
+    [firstName resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

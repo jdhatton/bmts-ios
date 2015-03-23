@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "UserCookie.h"
+#import "RegisterOneViewController.h"
 #import "TeacherMainViewController.h"
 
 
@@ -24,6 +25,7 @@
 @implementation DataViewController
 
 @synthesize emailAddressTextBox, passwordTextBox, createAccountButton, alreadyHaveAccountButton, debugButton, remoteHostImageView ;
+@synthesize window = _window;
 
 NSManagedObjectContext *context = nil;
 
@@ -185,31 +187,58 @@ NSManagedObjectContext *context = nil;
 {
     NSLog(@"DEBUG: you touched the createAccount button");
     
-    [emailAddressTextBox resignFirstResponder];
-    [passwordTextBox resignFirstResponder];
+    NSLog(@"DEBUG: validating the form when clicking create account.");
     
-    NSError *error;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    UserCookie *userCookie1 = [NSEntityDescription
+    // Email and Password must be provided for form submission.
+    
+    // If both are not provided show alert.
+    
+    if( ! emailAddressTextBox.text.length > 0 && ! passwordTextBox.text.length > 0 ) {
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+        message:@"Please provided an email and password to get started! "
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles: nil];
+        [alert show];
+    } else {
+    
+        // If both are provided - goto next view.
+    
+        [emailAddressTextBox resignFirstResponder];
+        [passwordTextBox resignFirstResponder];
+        
+        NSError *error;
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        UserCookie *userCookie1 = [NSEntityDescription
                                           insertNewObjectForEntityForName:@"UserCookie"
                                           inManagedObjectContext:context];
-    userCookie1.userId = [NSNumber numberWithInt:1];
-    userCookie1.email = emailAddressTextBox.text;
-    userCookie1.password = passwordTextBox.text;
+        userCookie1.userId = [NSNumber numberWithInt:1];
+        userCookie1.email = emailAddressTextBox.text;
+        userCookie1.password = passwordTextBox.text;
     
-    User *user = [NSEntityDescription
+        User *user = [NSEntityDescription
                 insertNewObjectForEntityForName:@"User"
                 inManagedObjectContext:context];
-    user.id = [NSNumber numberWithInt:1];
-    user.email = emailAddressTextBox.text;
+        user.id = [NSNumber numberWithInt:1];
+        user.email = emailAddressTextBox.text;
     
-    if (![context save:&error]) {
-        NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-    } else {
-        NSLog(@"\n SUCCESS  - User & UserCookie SAVED ");
+        if (![context save:&error]) {
+            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+        } else {
+            NSLog(@"\n SUCCESS  - User & UserCookie SAVED ");
+        }
+        
+ 
+        
+        //
+        // Segway to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        RegisterOneViewController *registerOneViewController = [storyboard instantiateViewControllerWithIdentifier:@"registerOneView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:registerOneViewController animated:YES completion:NULL];
+
     }
-
-
     
 }
 
@@ -228,5 +257,20 @@ NSManagedObjectContext *context = nil;
 {
     return YES;
 }
+
+-(BOOL) NSStringIsValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = NO; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
+}
+
+
+- (IBAction)validateBeforeSubmit:(id)sender {
+}
+
 
 @end

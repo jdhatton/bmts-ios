@@ -68,6 +68,8 @@
         }
 //    }
     
+    [self.teacherButton setBackgroundColor:[UIColor blueColor]];
+    
     
 }
 
@@ -97,6 +99,15 @@
     // TODO: copy the code from saveTeacher changing the user.role to = the number for the role selected
     // TODO: until that is hooked up completely we should show a pop-up message.
     //
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-1   - ");
+    [self.view setNeedsDisplay];
+    [self viewDidLoad];
+    NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-2  - ");
+    
 }
 
 @end

@@ -131,11 +131,24 @@ AppDelegate *appDelegate = nil;
         //        [context deleteObject:info];
     }
     
-    //    if (![context save:&error]) {
-    //        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    //    } else {
-    //        NSLog(@"\n SUCCESS - Deleted all Users from SqlLite");
-    //    }
+
+    //
+    // Delete all students
+    //
+//    for (User *user in fetchedObjects2) {
+//        if( user.id > 0 ){
+//            NSLog(@" FOR TESTING PURPOSES WE ARE GOING TO DELETE THE ALL STUDENTS ");
+//            NSLog(@" Deleting: User : userId: %@", user.id);
+//            [context deleteObject:user];
+//        }
+//        
+//    }
+//    
+//    if (![context save:&error]) {
+//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//    } else {
+//        NSLog(@"\n SUCCESS - Deleted all STUDENTS from SqlLite");
+//    }
     
     
     
@@ -144,6 +157,11 @@ AppDelegate *appDelegate = nil;
     //
     if(hasUser == TRUE && hasUserCookie == TRUE) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        //
+        // TODO: once we have the other views completed we need to check the User.Role to determine the view to go to here.
+        //
+        
         TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
         [self.window makeKeyAndVisible];
         [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -19,7 +19,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmj-fz-lV0">
                                 <rect key="frame" x="168" y="28" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6G-KG-UKA">
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ryJ-TQ-iyJ">
                                 <rect key="frame" x="0.0" y="254" width="375" height="27"/>
@@ -69,7 +69,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Notebook3" translatesAutoresizingMaskIntoConstraints="NO" id="6T4-2s-rji">
                                 <rect key="frame" x="143" y="57" width="88" height="76"/>
@@ -98,7 +98,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Your School" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn6-MS-ZZW">
                                 <rect key="frame" x="112" y="20" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kD-BG-kum">
@@ -133,7 +133,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will display the selected district." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpx-mi-cIG">
                                 <rect key="frame" x="13" y="283" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnE-Dv-ILp">
@@ -188,10 +188,69 @@
             </objects>
             <point key="canvasLocation" x="-595.5" y="-1610.5"/>
         </scene>
+        <!--Feedback View Controller-->
+        <scene sceneID="Qv2-J4-EKx">
+            <objects>
+                <viewController id="agV-c6-dxF" customClass="FeedbackViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v8P-Lx-XBV"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ni-am-A6h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cg8-IG-lQX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89J-Aw-V86">
+                                <rect key="frame" x="26" y="28" width="322" height="67"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Please provided feedbac to help us make this better for you!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CGe-Fy-U6W">
+                                <rect key="frame" x="37" y="116" width="294" height="393"/>
+                                <color key="backgroundColor" red="0.85150552818792702" green="0.85707134037502009" blue="0.87628235479797978" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-L6-BkK">
+                                <rect key="frame" x="26" y="571" width="102" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i1N-B9-We4" kind="show" id="pN9-YT-7xJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-Zk-83V">
+                                <rect key="frame" x="229" y="571" width="102" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveFormData:" destination="agV-c6-dxF" eventType="touchUpInside" id="8sp-cn-Erw"/>
+                                    <segue destination="i1N-B9-We4" kind="show" id="cJF-9D-4F7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXR-NT-zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1500.5" y="168.5"/>
+        </scene>
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
             <objects>
-                <viewController storyboardIdentifier="teacherMainView" title="Teacher Main View" id="i1N-B9-We4" customClass="TeacherMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="teacherMainView" title="Teacher Main View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i1N-B9-We4" customClass="TeacherMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rho-mi-6Dm"/>
                         <viewControllerLayoutGuide type="bottom" id="Yjf-ow-VrK"/>
@@ -214,75 +273,142 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4S-s6-pRg">
-                                <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem image="user-26" width="35" id="tIj-E7-1iS">
+                                    <barButtonItem image="user-26" width="35" id="tIj-E7-1iS" customClass="UserUIBarButtonItem">
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="5iK-Lp-RdV" kind="show" id="thH-6o-n7O"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="gLu-Wa-frr">
+                                    <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="gLu-Wa-frr" customClass="UserUIBarButtonItem">
                                         <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="J9Q-pP-Wqj"/>
+                                            <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="vCa-tn-VeL"/>
+                                            <segue destination="7x5-HR-zIs" kind="show" identifier="showStudentStatusSegue" id="xWW-Ft-f0w"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="emw-UZ-7kB">
+                                    <barButtonItem image="add_file-26" id="emw-UZ-7kB" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <segue destination="a1m-Cq-yIh" kind="show" id="CaW-Eu-tbr"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="Msj-rc-6LM"/>
+                                    <barButtonItem image="settings-24" width="54" id="Msj-rc-6LM" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="VQF-Lz-Dru"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-ct-d1b">
-                                <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-Px-Y8h">
+                                <rect key="frame" x="0.0" y="214" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem image="user-26" width="35" id="1kS-8V-8pE">
+                                    <barButtonItem image="user-26" width="35" id="7Y5-Dp-tqL" customClass="UserUIBarButtonItem">
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="Ofi-HO-PE6"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="tsA-pP-h7f"/>
-                                    <barButtonItem image="add_file-26" id="ACN-uN-8GK"/>
-                                    <barButtonItem image="settings-24" width="54" id="Um1-y8-HPO"/>
-                                    <barButtonItem id="0LH-pt-jTp"/>
+                                    <barButtonItem title="Name of student" width="140" id="nmN-uG-pb9" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="5A1-7I-d0p" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="S6I-uv-Est" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="mCk-TR-dv7" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="8HC-T0-tKj"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-eR-gHe">
-                                <rect key="frame" x="0.0" y="281" width="375" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzK-pL-Vgd">
+                                <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem image="user-26" width="35" id="TR1-LJ-eG0">
+                                    <barButtonItem image="user-26" width="35" id="3iY-iT-FVH" customClass="UserUIBarButtonItem">
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="Mad-zy-wef"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="zru-Kg-bHV"/>
-                                    <barButtonItem image="add_file-26" id="tcm-zI-723"/>
-                                    <barButtonItem image="settings-24" width="54" id="S1Y-4m-qF4"/>
-                                    <barButtonItem id="2fJ-Au-uJF"/>
+                                    <barButtonItem title="Name of student" width="140" id="AO6-Ty-fzw" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="Tss-ql-JV2" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="686-q7-gVD" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="5rF-MO-283" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="MqX-A3-QXH"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tK8-Oj-aIE">
-                                <rect key="frame" x="0.0" y="347" width="375" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nvm-MR-KZk">
+                                <rect key="frame" x="0.0" y="325" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem image="user-26" width="35" id="LhP-i9-LcI">
+                                    <barButtonItem image="user-26" width="35" id="u6c-f4-5JH" customClass="UserUIBarButtonItem">
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="pV9-I5-ber"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="iM9-Ns-0xU"/>
-                                    <barButtonItem image="add_file-26" id="Lhw-mv-Etp"/>
-                                    <barButtonItem image="settings-24" width="54" id="tzi-rq-vQw"/>
-                                    <barButtonItem id="rpY-kT-hfU"/>
+                                    <barButtonItem title="Name of student" width="140" id="tYc-FK-Xm5" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="2da-Q5-Yr3" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="Rcp-SH-bxA" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="ZA5-4V-7Tw" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="1iP-di-8Rn"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-Uc-tjH">
+                                <rect key="frame" x="0.0" y="382" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="6NP-Hr-yx0" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="eSQ-7Q-ubI" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="WEy-SK-RSS" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="Ucn-9A-nXq" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="eZk-BG-aw6" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="zzr-jL-KJE"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Du9-Fh-3hg">
+                                <rect key="frame" x="0.0" y="438" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="tvr-Py-Jtr" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="D9V-7r-n60" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="pFL-4s-PaD" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="MQd-sp-eKl" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="rz1-Zl-BGs" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="1lA-dW-BPe"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-6R-zkV">
+                                <rect key="frame" x="0.0" y="495" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="gL1-Nf-H8y" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="f6b-GB-mtA" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="8lt-Rb-yy2" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="whB-OJ-tUh" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="nql-y8-Y4U" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="iXx-J8-YJo"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-WK-Ds1">
+                                <rect key="frame" x="0.0" y="159" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="lsd-L8-b2X" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="pY4-V3-h8a" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="VgT-ee-7yX" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="4Ts-6e-cTg" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="SgF-cz-dkC" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="r89-V9-j10"/>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
-                                <rect key="frame" x="141" y="434" width="92" height="28"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="567" width="343" height="35"/>
+                                <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add-Student">
-                                    <color key="titleColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hte-3k-ekS" kind="show" id="SCN-zt-OSQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-J5-Vwc">
+                                <rect key="frame" x="16" y="617" width="159" height="30"/>
+                                <color key="backgroundColor" red="0.64308227482626257" green="0.0044912458505202571" blue="0.10443089641781425" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Give Feedback!">
+                                    <color key="titleColor" red="0.70678142114915421" green="0.74914288088686876" blue="0.69382800255705457" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="agV-c6-dxF" kind="show" id="iXG-oF-wjo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,17 +416,67 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addStudentButton" destination="Fht-Fp-Drh" id="OQM-5z-pJv"/>
                         <outlet property="studentAvatar" destination="tIj-E7-1iS" id="mq9-OW-NJL"/>
                         <outlet property="studentComment" destination="emw-UZ-7kB" id="Dev-YL-Gcz"/>
+                        <outlet property="studentEightAvatar" destination="gL1-Nf-H8y" id="jTg-hY-9kY"/>
+                        <outlet property="studentEightName" destination="f6b-GB-mtA" id="dwd-eP-UzJ"/>
+                        <outlet property="studentEightNote" destination="whB-OJ-tUh" id="Z0t-oU-YrC"/>
+                        <outlet property="studentEightSettings" destination="nql-y8-Y4U" id="qpc-k0-H7m"/>
+                        <outlet property="studentEightStatus" destination="8lt-Rb-yy2" id="DFE-da-NG4"/>
+                        <outlet property="studentFiveAvatar" destination="u6c-f4-5JH" id="kme-oI-vql"/>
+                        <outlet property="studentFiveName" destination="tYc-FK-Xm5" id="i0b-s8-3ca"/>
+                        <outlet property="studentFiveNote" destination="Rcp-SH-bxA" id="jag-3k-xAR"/>
+                        <outlet property="studentFiveSettings" destination="ZA5-4V-7Tw" id="ilq-K4-S7f"/>
+                        <outlet property="studentFiveStatus" destination="2da-Q5-Yr3" id="QuI-oG-jEK"/>
+                        <outlet property="studentFourAvatar" destination="3iY-iT-FVH" id="G81-FG-aAP"/>
+                        <outlet property="studentFourName" destination="AO6-Ty-fzw" id="IgW-6f-pQb"/>
+                        <outlet property="studentFourNote" destination="686-q7-gVD" id="adb-AO-GL5"/>
+                        <outlet property="studentFourSettings" destination="5rF-MO-283" id="vG7-hC-aUr"/>
+                        <outlet property="studentFourStatus" destination="Tss-ql-JV2" id="zyi-Gr-I1S"/>
                         <outlet property="studentName" destination="HBz-JO-aYp" id="o5T-VU-AQX"/>
+                        <outlet property="studentOneAvatar" destination="tIj-E7-1iS" id="GBS-Ub-TFR"/>
+                        <outlet property="studentOneName" destination="HBz-JO-aYp" id="NvU-YF-FJB"/>
+                        <outlet property="studentOneNote" destination="emw-UZ-7kB" id="JRT-Nx-MoH"/>
+                        <outlet property="studentOneSettings" destination="Msj-rc-6LM" id="CoX-OX-svV"/>
+                        <outlet property="studentOneStatus" destination="gLu-Wa-frr" id="asR-fi-GEN"/>
                         <outlet property="studentSettings" destination="Msj-rc-6LM" id="Y9m-1l-j27"/>
+                        <outlet property="studentSevenAvatar" destination="tvr-Py-Jtr" id="rxO-Te-VEV"/>
+                        <outlet property="studentSevenName" destination="D9V-7r-n60" id="v87-Wr-Mcm"/>
+                        <outlet property="studentSevenNote" destination="MQd-sp-eKl" id="yqY-Ow-cPJ"/>
+                        <outlet property="studentSevenSettings" destination="rz1-Zl-BGs" id="c5r-50-De7"/>
+                        <outlet property="studentSevenStatus" destination="pFL-4s-PaD" id="jm8-vF-vni"/>
+                        <outlet property="studentSixAvatar" destination="6NP-Hr-yx0" id="4vR-0b-1dD"/>
+                        <outlet property="studentSixName" destination="eSQ-7Q-ubI" id="JuQ-Ze-wcI"/>
+                        <outlet property="studentSixNote" destination="Ucn-9A-nXq" id="NB3-zI-OQ6"/>
+                        <outlet property="studentSixSettings" destination="eZk-BG-aw6" id="mkT-ei-YIe"/>
+                        <outlet property="studentSixStatus" destination="WEy-SK-RSS" id="tGF-0t-4uL"/>
                         <outlet property="studentStatus" destination="gLu-Wa-frr" id="NBv-6d-ElX"/>
+                        <outlet property="studentThreeAvatar" destination="7Y5-Dp-tqL" id="tN6-Yl-txA"/>
+                        <outlet property="studentThreeName" destination="nmN-uG-pb9" id="r86-FO-gz5"/>
+                        <outlet property="studentThreeNote" destination="S6I-uv-Est" id="ccq-DB-cw9"/>
+                        <outlet property="studentThreeSettings" destination="mCk-TR-dv7" id="dOo-94-Toq"/>
+                        <outlet property="studentThreeStatus" destination="5A1-7I-d0p" id="D57-Cv-f5z"/>
                         <outlet property="studentToolbar" destination="Z4S-s6-pRg" id="Kk1-Hp-mEa"/>
+                        <outlet property="studentTwoAvatar" destination="lsd-L8-b2X" id="c4S-3f-9E3"/>
+                        <outlet property="studentTwoName" destination="pY4-V3-h8a" id="JK2-CX-bn1"/>
+                        <outlet property="studentTwoNote" destination="4Ts-6e-cTg" id="aDS-TY-zax"/>
+                        <outlet property="studentTwoSettings" destination="SgF-cz-dkC" id="zrI-fJ-wgF"/>
+                        <outlet property="studentTwoStatus" destination="VgT-ee-7yX" id="NgL-xx-dLs"/>
+                        <outlet property="teacherHeader" destination="RKl-2x-TiO" id="Zab-CZ-Bys"/>
+                        <outlet property="toolBarEight" destination="QeA-6R-zkV" id="PBp-UU-R5L"/>
+                        <outlet property="toolBarFive" destination="Nvm-MR-KZk" id="1WQ-Gx-1qC"/>
+                        <outlet property="toolBarFour" destination="hzK-pL-Vgd" id="UB5-H8-3d1"/>
+                        <outlet property="toolBarOne" destination="Z4S-s6-pRg" id="JqH-e2-Dx5"/>
+                        <outlet property="toolBarSeven" destination="Du9-Fh-3hg" id="zf9-rF-8Pg"/>
+                        <outlet property="toolBarSix" destination="vVf-Uc-tjH" id="sIV-az-1uD"/>
+                        <outlet property="toolBarThree" destination="Eme-Px-Y8h" id="rfp-yU-hs4"/>
+                        <outlet property="toolBarTwo" destination="Iur-WK-Ds1" id="bwl-8Y-M5F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNW-ad-Fav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1561.5" y="-545.5"/>
+            <point key="canvasLocation" x="-1007.5" y="-667.5"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="yWE-3h-lQ7">
@@ -317,7 +493,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Avatar Selection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7k-Ss-YV2">
                                 <rect key="frame" x="16" y="36" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k28-Kc-cYP">
@@ -472,27 +648,56 @@
             </objects>
             <point key="canvasLocation" x="-430.5" y="-673.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Status View Controller-->
         <scene sceneID="V1N-1B-EMZ">
             <objects>
-                <viewController id="7x5-HR-zIs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="studentStatusView" id="7x5-HR-zIs" customClass="StudentStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qWz-ko-toh"/>
                         <viewControllerLayoutGuide type="bottom" id="lXZ-MX-vAV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IAo-u9-uAm">
+                    <view key="view" contentMode="scaleToFill" id="IAo-u9-uAm" customClass="StudentStatus">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1G-Uf-Xjz">
-                                <rect key="frame" x="152" y="598" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-Ff-8FO">
+                                <rect key="frame" x="78" y="243" width="218" height="111"/>
+                                <color key="backgroundColor" red="0.88045601220000003" green="0.80196422909840692" blue="0.12864722057913369" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="clickedYellowStatus:" destination="7x5-HR-zIs" eventType="touchUpInside" id="hdA-m4-xWF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-It-V0w">
+                                <rect key="frame" x="78" y="92" width="218" height="114"/>
+                                <color key="backgroundColor" red="0.050797815489123765" green="0.88045601220000003" blue="0.039303237737600638" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="clickedGreenStatus:" destination="7x5-HR-zIs" eventType="touchUpInside" id="dW3-di-Tex"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-WH-P6o">
+                                <rect key="frame" x="78" y="393" width="218" height="108"/>
+                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="clickedRedStatus:" destination="7x5-HR-zIs" eventType="touchUpInside" id="KaH-ot-Kap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyJ-EP-epC">
+                                <rect key="frame" x="241" y="575" width="93" height="30"/>
+                                <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i1N-B9-We4" kind="show" id="1EX-20-Ym0"/>
+                                    <action selector="save:" destination="7x5-HR-zIs" eventType="touchUpInside" id="1mi-cQ-hKj"/>
+                                    <segue destination="i1N-B9-We4" kind="show" identifier="savedStatusSegue" id="UhK-gH-syQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2e-0X-onC">
+                                <rect key="frame" x="52" y="575" width="67" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i1N-B9-We4" kind="show" id="The-Vb-03G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uF-RD-fng">
@@ -508,108 +713,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niM-Ym-Dqf">
-                                <rect key="frame" x="34" y="153" width="284" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="The students behavior history :">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99749447601010099" green="0.99749447601010099" blue="0.99749447601010099" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZN-Ah-7H8">
-                                <rect key="frame" x="223" y="213" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-Ff-8FO">
-                                <rect key="frame" x="145" y="87" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.80196422909840692" blue="0.12864722057913369" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-It-V0w">
-                                <rect key="frame" x="267" y="87" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.050797815489123765" green="0.88045601220000003" blue="0.039303237737600638" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-U3-bln">
-                                <rect key="frame" x="34" y="217" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-O7-aVQ">
-                                <rect key="frame" x="224" y="259" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWS-Wk-o6S">
-                                <rect key="frame" x="35" y="263" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbR-xb-5OF">
-                                <rect key="frame" x="35" y="310" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP8-8e-vgc">
-                                <rect key="frame" x="35" y="358" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7h8-fk-dah">
-                                <rect key="frame" x="224" y="402" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-pZ-qEq">
-                                <rect key="frame" x="35" y="406" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-Fr-9ce">
-                                <rect key="frame" x="34" y="456" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pb-nx-t9q">
-                                <rect key="frame" x="224" y="496" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30 AM  01/05/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah2-2L-ZJA">
-                                <rect key="frame" x="35" y="500" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ9-nO-aVY">
-                                <rect key="frame" x="224" y="306" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.80196422909999998" blue="0.1286472206" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKM-8N-WUS">
-                                <rect key="frame" x="224" y="354" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.80196422909999998" blue="0.1286472206" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE0-qi-UTD">
-                                <rect key="frame" x="223" y="452" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.050797815490000002" green="0.88045601220000003" blue="0.039303237739999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-WH-P6o">
-                                <rect key="frame" x="27" y="87" width="84" height="29"/>
-                                <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k40-FO-dO0">
-                                <rect key="frame" x="16" y="135" width="343" height="5"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -617,7 +720,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1109.5" y="354.5"/>
+            <point key="canvasLocation" x="-884.5" y="168.5"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Mac-g0-RuQ">
@@ -634,7 +737,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Document Behavior on Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piv-GL-ljf">
                                 <rect key="frame" x="16" y="20" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-v2-mOd">
@@ -691,7 +794,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Root View Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-XH-lnw">
                                 <rect key="frame" x="102" y="20" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -719,17 +822,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Student" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-M9-IHQ">
                                 <rect key="frame" x="130" y="28" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a behavior to track." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCn-8a-DBc">
                                 <rect key="frame" x="31" y="201" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-3X-g6V">
-                                <rect key="frame" x="0.0" y="223" width="375" height="162"/>
+                                <rect key="frame" x="-8" y="207" width="375" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="hte-3k-ekS" id="BVd-XY-2kx"/>
                                     <outlet property="delegate" destination="hte-3k-ekS" id="Yrr-PX-gl3"/>
@@ -738,45 +841,45 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an interval for tracking." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8b-fp-f6V">
                                 <rect key="frame" x="31" y="393" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-WI-Elh">
-                                <rect key="frame" x="0.0" y="411" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="399" width="375" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="hte-3k-ekS" id="tye-uJ-zlM"/>
                                     <outlet property="delegate" destination="hte-3k-ekS" id="94J-nI-YaH"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-YY-UkZ">
-                                <rect key="frame" x="22" y="576" width="315" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add Parent">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="i61-0t-HeH"/>
-                                    <segue destination="tA6-Ig-cpE" kind="show" id="N4G-Fs-Q1R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWY-s7-TFS">
-                                <rect key="frame" x="132" y="620" width="95" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="MUz-wa-Zv6"/>
-                                    <segue destination="i1N-B9-We4" kind="show" id="K8t-0r-Eic"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
                                 <rect key="frame" x="31" y="133" width="312" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWY-s7-TFS">
+                                <rect key="frame" x="31" y="597" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="MUz-wa-Zv6"/>
+                                    <segue destination="i1N-B9-We4" kind="show" id="Atb-nY-AhG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUu-qb-NjZ">
+                                <rect key="frame" x="248" y="597" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveFormData:" destination="hte-3k-ekS" eventType="touchUpInside" id="caM-NT-USX"/>
+                                    <segue destination="i1N-B9-We4" kind="show" id="rVD-ml-ZCn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -806,7 +909,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKc-Iw-hlp">
                                 <rect key="frame" x="124" y="28" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJa-15-jk8">
@@ -850,7 +953,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-6G-K4J">
-                                <rect key="frame" x="138" y="610" width="99" height="30"/>
+                                <rect key="frame" x="138" y="599" width="99" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -920,7 +1023,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C66-R9-1L8">
                                 <rect key="frame" x="167" y="28" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9G-b1-Pch"/>
@@ -937,7 +1040,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-nx-zWY">
                                 <rect key="frame" x="0.0" y="246" width="375" height="27"/>
@@ -952,12 +1055,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Notebook3" translatesAutoresizingMaskIntoConstraints="NO" id="HrL-JO-408">
                                 <rect key="frame" x="140" y="49" width="93" height="84"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj0-eL-ehA">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj0-eL-ehA">
                                 <rect key="frame" x="49" y="622" width="62" height="30"/>
                                 <state key="normal" title="DEBUG">
                                     <color key="titleColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
@@ -989,7 +1092,8 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccount:" destination="0rK-ow-lyj" eventType="touchUpInside" id="JgR-2p-aCw"/>
-                                    <segue destination="6xf-ad-kgY" kind="show" id="YvG-3C-wjm"/>
+                                    <action selector="validateBeforeSubmit:" destination="2DX-bM-jzU" eventType="touchUpInside" id="ed8-QO-nmX"/>
+                                    <segue destination="6xf-ad-kgY" kind="show" id="XzJ-By-bFA"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop-32" translatesAutoresizingMaskIntoConstraints="NO" id="USv-l7-v8g">
@@ -1135,7 +1239,7 @@ Internet traffic will be routed through it.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network  Reachability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-IL-pFr">
                                 <rect key="frame" x="47" y="55" width="280" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="IIK-lX-haf">
@@ -1194,7 +1298,7 @@ Internet traffic will be routed through it.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1f-1S-gL3">
                                 <rect key="frame" x="116" y="28" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Notebook3" translatesAutoresizingMaskIntoConstraints="NO" id="QfR-oz-5Vx">
@@ -1229,7 +1333,7 @@ Internet traffic will be routed through it.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thh-Wc-4fC">
                                 <rect key="frame" x="127" y="629" width="120" height="30"/>
@@ -1251,7 +1355,7 @@ Internet traffic will be routed through it.</string>
         <!--Register One View Controller-->
         <scene sceneID="duS-m9-0Ma">
             <objects>
-                <viewController id="6xf-ad-kgY" customClass="RegisterOneViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerOneView" id="6xf-ad-kgY" customClass="RegisterOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bmN-cZ-M20"/>
                         <viewControllerLayoutGuide type="bottom" id="DDP-wV-AiG"/>
@@ -1263,7 +1367,7 @@ Internet traffic will be routed through it.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-my-yiu">
                                 <rect key="frame" x="125" y="28" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shY-XJ-4h1">
@@ -1327,8 +1431,19 @@ Internet traffic will be routed through it.</string>
                                     <action selector="saveStudent:" destination="6xf-ad-kgY" eventType="touchUpInside" id="5CQ-ac-oOj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-L9-j4E">
+                                <rect key="frame" x="27" y="252" width="320" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="I am a Teacher">
+                                    <color key="titleColor" red="0.99749447599999996" green="0.99749447599999996" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTeacher:" destination="6xf-ad-kgY" eventType="touchUpInside" id="fTn-MT-jbO"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVb-Fy-Qjl">
-                                <rect key="frame" x="133" y="607" width="99" height="30"/>
+                                <rect key="frame" x="137" y="600" width="99" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1337,16 +1452,6 @@ Internet traffic will be routed through it.</string>
                                 <connections>
                                     <action selector="saveFormData:" destination="zYF-zh-829" eventType="touchUpInside" id="Hz1-wJ-Egd"/>
                                     <segue destination="zYF-zh-829" kind="show" id="lP6-SF-CKa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-L9-j4E">
-                                <rect key="frame" x="27" y="252" width="320" height="42"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="I am a Teacher">
-                                    <color key="titleColor" red="0.99749447599999996" green="0.99749447599999996" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveTeacher:" destination="6xf-ad-kgY" eventType="touchUpInside" id="fTn-MT-jbO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1380,7 +1485,7 @@ Internet traffic will be routed through it.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Parent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-cX-OAO">
                                 <rect key="frame" x="16" y="20" width="343" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MS-Wy-Pnr">
@@ -1397,7 +1502,7 @@ Internet traffic will be routed through it.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student name here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRY-FK-4VF">
                                 <rect key="frame" x="16" y="179" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parent Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s16-U3-D9C">
@@ -1464,7 +1569,8 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LeJ-0E-Mmf"/>
+        <segue reference="SCN-zt-OSQ"/>
+        <segue reference="UhK-gH-syQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

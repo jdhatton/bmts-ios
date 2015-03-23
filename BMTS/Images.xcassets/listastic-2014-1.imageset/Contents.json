@@ -1,15 +1,16 @@
 {
   "images" : [
     {
-      "size" : "57x57",
-      "idiom" : "iphone",
-      "filename" : "listastic-2014.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "iphone",
-      "size" : "57x57",
+      "idiom" : "universal",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
