@@ -13,5 +13,8 @@
 
 @property (weak, nonatomic) User *student;
 @property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) IBOutlet UIButton *greenButton;
+@property (weak, nonatomic) IBOutlet UIButton *yellowButon;
+@property (weak, nonatomic) IBOutlet UIButton *redButton;
 
 @end

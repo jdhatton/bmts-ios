@@ -32,6 +32,11 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="IntervalEnum" representedClassName="IntervalEnum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -93,5 +98,6 @@
         <element name="UserCookie" positionX="-54" positionY="-9" width="128" height="88"/>
         <element name="UserRoleEnums" positionX="9" positionY="54" width="128" height="75"/>
         <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="90"/>
+        <element name="Comments" positionX="0" positionY="99" width="128" height="90"/>
     </elements>
 </model>

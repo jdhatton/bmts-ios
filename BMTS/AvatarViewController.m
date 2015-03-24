@@ -12,13 +12,17 @@
 
 @end
 
+
+
 @implementation AvatarViewController
+
+@synthesize student;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+        
     NSLog(@"DEBUG: Loading the Avatar View Controller...");
+    NSLog(@"DEBUG: AvatarViewController::loading...   student = %@", student);
     
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {

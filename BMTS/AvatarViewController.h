@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface AvatarViewController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
@@ -57,5 +58,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *JokerAvatar;
 
 @property (weak, nonatomic) IBOutlet UIImageView *SmileyAvatar;
+
+@property (weak, nonatomic) User *student;
 
 @end

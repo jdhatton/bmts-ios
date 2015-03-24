@@ -12,6 +12,8 @@
 #import "StudentStatusViewController.h"
 #import "UserUIBarButtonItem.h"
 #import "StudentStatusViewController.h"
+#import "AvatarViewController.h"
+#import "CommentViewController.h"
 
 @interface TeacherMainViewController ()
 
@@ -127,65 +129,88 @@ User *userEight;
             studentCount ++;
             NSLog(@" Found Student - [%ld]  : %@", (long)studentCount, user.firstName);
             
+            // studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings
+            
             if(studentCount == 1){
                 toolBarOne.hidden = NO;
-                studentOneStatus.title = @"studentOne";
-                studentOneStatus.student = user;
-                studentOneNote.student = user;
-               // studentOneAvatar = user.avatar;
+                studentOneStatus.title = @"studentOneStatus";
+                studentOneAvatar.title = @"studentOneAvatar";
+                studentOneNote.title = @"studentOneNote";
+                studentOneName.title = @"studentOneName";
+                studentOneSettings.title = @"studentOneSettings";
                 studentOneName.title = user.firstName;
-                
                 userOne = user;
                 
             }
             else if(studentCount == 2){
                 toolBarTwo.hidden = NO;
-                studentTwoStatus.student = user;
-                studentTwoNote.student = user;
-                // studentTwoAvatar = user.avatar;
+                studentTwoStatus.title = @"studentTwoStatus";
+                studentTwoAvatar.title = @"studentTwoAvatar";
+                studentTwoNote.title = @"studentTwoNote";
+                studentTwoName.title = @"studentTwoName";
+                studentTwoSettings.title = @"studentTwoSettings";
                 studentTwoName.title = user.firstName;
+                userTwo = user;
             }
             else if(studentCount == 3){
                 toolBarThree.hidden = NO;
-                studentThreeStatus.student = user;
-                studentThreeNote.student = user;
-                // studentThreeAvatar = user.avatar;
+                studentThreeStatus.title = @"studentThreeStatus";
+                studentThreeAvatar.title = @"studentThreeAvatar";
+                studentThreeNote.title = @"studentThreeNote";
+                studentThreeName.title = @"studentThreeName";
+                studentThreeSettings.title = @"studentThreeSettings";
                 studentThreeName.title = user.firstName;
+                userThree = user;
             }
             else if(studentCount == 4){
                 toolBarFour.hidden = NO;
-                studentFourStatus.student = user;
-                studentFourNote.student = user;
-                // studentFourAvatar = user.avatar;
+                studentFourStatus.title = @"studentFourStatus";
+                studentFourAvatar.title = @"studentFourAvatar";
+                studentFourNote.title = @"studentFourNote";
+                studentFourName.title = @"studentFourName";
+                studentFourSettings.title = @"studentFourSettings";
                 studentFourName.title = user.firstName;
+                userFour = user;
             }
             else if(studentCount == 5){
                 toolBarFive.hidden = NO;
-                studentFiveStatus.student = user;
-                studentFiveNote.student = user;
-                // studentFiveAvatar = user.avatar;
+                studentFiveStatus.title = @"studentFiveStatus";
+                studentFiveAvatar.title = @"studentFiveAvatar";
+                studentFiveNote.title = @"studentFiveNote";
+                studentFiveName.title = @"studentFiveName";
+                studentFiveSettings.title = @"studentFiveSettings";
                 studentFiveName.title = user.firstName;
+                userFive = user;
             }
             else if(studentCount == 6){
                 toolBarSix.hidden = NO;
-                studentSixStatus.student = user;
-                studentSixNote.student = user;
-                // studentSixAvatar = user.avatar;
+                studentSixStatus.title = @"studentSixStatus";
+                studentSixAvatar.title = @"studentSixAvatar";
+                studentSixNote.title = @"studentSixNote";
+                studentSixName.title = @"studentSixName";
+                studentSixSettings.title = @"studentSixSettings";
                 studentSixName.title = user.firstName;
+                userSix = user;
             }
             else if(studentCount == 7){
                 toolBarSeven.hidden = NO;
-                studentSevenStatus.student = user;
-                studentSevenNote.student = user;
-                // studentSevenAvatar = user.avatar;
+                studentSevenStatus.title = @"studentSevenStatus";
+                studentSevenAvatar.title = @"studentSevenAvatar";
+                studentSevenNote.title = @"studentSevenNote";
+                studentSevenName.title = @"studentSevenName";
+                studentSevenSettings.title = @"studentSevenSettings";
                 studentSevenName.title = user.firstName;
+                userSeven = user;
             }
             else if(studentCount == 8){
                 toolBarEight.hidden = NO;
-                studentEightStatus.student = user;
-                studentEightNote.student = user;
-                // studentEightAvatar = user.avatar;
+                studentEightStatus.title = @"studentEightStatus";
+                studentEightAvatar.title = @"studentEightAvatar";
+                studentEightNote.title = @"studentEightNote";
+                studentEightName.title = @"studentEightName";
+                studentEightSettings.title = @"studentEightSettings";
                 studentEightName.title = user.firstName;
+                userEight = user;
             }
             else {
               NSLog(@" TOO MANY STUDENTS !!!  Fix!");
@@ -206,21 +231,61 @@ User *userEight;
     
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    return YES;
+    
+}
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
      NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
     
-        if([segue.identifier isEqualToString:@"showStudentStatusSegue"]){
-            StudentStatusViewController *controller = (StudentStatusViewController *)segue.destinationViewController;
-            
-            UserUIBarButtonItem *selected = sender;
-            
-            if( [selected.title  isEqual: @"studentOne"]  ){
-                selectedStudent = userOne;  //studentOneStatus.student;
-            }
-            
-            controller.student = selectedStudent;
+    //
+    //
+    // TODO: currently this is setup to use the status view controller only
+    //       this method needs to add the selectedUse to the comment view controller
+    //       and the settings view controller so this use is set on those when we segue.
+    //
+    //
+    
+    //
+    // TODO: when tapping AddStudent we need to know that here and skip the processing here..
+    //
+    if([segue.identifier isEqualToString:@"addStudentSegue"]) {
+        
+        NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
+    } else {
+    
+        StudentStatusViewController *controller = (StudentStatusViewController *)segue.destinationViewController;
+        CommentViewController *commentCtrl = (CommentViewController *)segue.destinationViewController;
+        AvatarViewController *avatarCtrl = (AvatarViewController *)segue.destinationViewController;
+        
+        UserUIBarButtonItem *selected = sender;
+        
+        
+        if( [selected.title  rangeOfString: @"studentOne" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userOne;
+        } else if( [selected.title  rangeOfString: @"studentTwo" options: NSCaseInsensitiveSearch].location != NSNotFound   ){
+            selectedStudent = userTwo;
+        } else if( [selected.title  rangeOfString: @"studentThree" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userThree;
+        } else if( [selected.title  rangeOfString: @"studentFour" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userFour;
+        } else if( [selected.title  rangeOfString: @"studentFive" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userFive;
+        } else if( [selected.title  rangeOfString: @"studentSix" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userSix;
+        } else if( [selected.title  rangeOfString: @"studentSeven" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userSeven;
+        } else if( [selected.title  rangeOfString: @"studentEight" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+            selectedStudent = userEight;
         }
+        
+        controller.student = selectedStudent;
+        commentCtrl.student = selectedStudent;
+        avatarCtrl.student = selectedStudent;
+    }
     
 }
 

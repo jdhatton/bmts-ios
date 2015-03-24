@@ -11,6 +11,7 @@
 #import "User.h"
 #import "TeacherMainViewController.h"
 #import "StudentBehaviors.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface StudentStatusViewController ()
 
@@ -19,7 +20,7 @@
 
 @implementation StudentStatusViewController
 
-@synthesize student, window = _window;
+@synthesize student, window = _window, greenButton, yellowButon, redButton;
 
 
 
@@ -53,6 +54,15 @@ int selectedStatus;
     
     NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
     selectedStatus = 1;
+    
+    greenButton.layer.borderWidth=2.0f;
+    greenButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    yellowButon.layer.borderWidth=0.0f;
+    yellowButon.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    redButton.layer.borderWidth=0.0f;
+    redButton.layer.borderColor=[[UIColor blackColor] CGColor];
 }
 
 
@@ -60,6 +70,15 @@ int selectedStatus;
     
     NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
     selectedStatus = 2;
+    
+    greenButton.layer.borderWidth=0.0f;
+    greenButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    yellowButon.layer.borderWidth=2.0f;
+    yellowButon.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    redButton.layer.borderWidth=0.0f;
+    redButton.layer.borderColor=[[UIColor blackColor] CGColor];
 
 }
 
@@ -68,6 +87,15 @@ int selectedStatus;
 - (IBAction)clickedRedStatus:(id)sender {
     NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
     selectedStatus = 3;
+    
+    greenButton.layer.borderWidth=0.0f;
+    greenButton.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    yellowButon.layer.borderWidth=0.0f;
+    yellowButon.layer.borderColor=[[UIColor blackColor] CGColor];
+    
+    redButton.layer.borderWidth=2.0f;
+    redButton.layer.borderColor=[[UIColor blackColor] CGColor];
 
 }
 
@@ -144,7 +172,7 @@ int selectedStatus;
             
         }
 
-}
+    }
 
  
     

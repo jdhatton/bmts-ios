@@ -203,7 +203,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89J-Aw-V86">
                                 <rect key="frame" x="26" y="28" width="322" height="67"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Please provided feedbac to help us make this better for you!">
+                                    <fragment content="Please provided feedback to help us make this better for you!">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="19" name="HelveticaNeue"/>
@@ -234,7 +234,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveFormData:" destination="agV-c6-dxF" eventType="touchUpInside" id="8sp-cn-Erw"/>
+                                    <action selector="saveComment:" destination="agV-c6-dxF" eventType="touchUpInside" id="kIM-Ri-Lzc"/>
+                                    <action selector="saveFormData:" destination="agV-c6-dxF" eventType="touchUpInside" id="6bP-Gs-RzO"/>
                                     <segue destination="i1N-B9-We4" kind="show" id="cJF-9D-4F7"/>
                                 </connections>
                             </button>
@@ -304,7 +305,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="nmN-uG-pb9" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="5A1-7I-d0p" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="5A1-7I-d0p" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="ril-ot-1dw"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="S6I-uv-Est" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="mCk-TR-dv7" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="8HC-T0-tKj"/>
@@ -317,7 +322,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="AO6-Ty-fzw" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="Tss-ql-JV2" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="Tss-ql-JV2" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="ebv-Ot-ie5"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="686-q7-gVD" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="5rF-MO-283" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="MqX-A3-QXH"/>
@@ -330,7 +339,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="tYc-FK-Xm5" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="2da-Q5-Yr3" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="2da-Q5-Yr3" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="Aci-Z8-ENE"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="Rcp-SH-bxA" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="ZA5-4V-7Tw" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="1iP-di-8Rn"/>
@@ -343,7 +356,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="eSQ-7Q-ubI" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="WEy-SK-RSS" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="WEy-SK-RSS" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="QiD-18-otE"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="Ucn-9A-nXq" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="eZk-BG-aw6" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="zzr-jL-KJE"/>
@@ -356,7 +373,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="D9V-7r-n60" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="pFL-4s-PaD" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="pFL-4s-PaD" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="RcK-nn-GMC"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="MQd-sp-eKl" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="rz1-Zl-BGs" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="1lA-dW-BPe"/>
@@ -369,7 +390,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="f6b-GB-mtA" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="8lt-Rb-yy2" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="8lt-Rb-yy2" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="a2J-wy-WMn"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="whB-OJ-tUh" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="nql-y8-Y4U" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="iXx-J8-YJo"/>
@@ -382,7 +407,11 @@
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="pY4-V3-h8a" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem image="full_moon-24" width="50" id="VgT-ee-7yX" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="VgT-ee-7yX" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="7x5-HR-zIs" kind="show" id="5AG-90-lbd"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem image="add_file-26" id="4Ts-6e-cTg" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="settings-24" width="54" id="SgF-cz-dkC" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="r89-V9-j10"/>
@@ -396,10 +425,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hte-3k-ekS" kind="show" id="SCN-zt-OSQ"/>
+                                    <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-J5-Vwc">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-J5-Vwc">
                                 <rect key="frame" x="16" y="617" width="159" height="30"/>
                                 <color key="backgroundColor" red="0.64308227482626257" green="0.0044912458505202571" blue="0.10443089641781425" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Give Feedback!">
@@ -717,6 +746,11 @@
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="greenButton" destination="rv3-It-V0w" id="ZcW-Uh-q7r"/>
+                        <outlet property="redButton" destination="hZG-WH-P6o" id="K3v-ek-5nx"/>
+                        <outlet property="yellowButon" destination="MXA-Ff-8FO" id="8Xu-PZ-1bg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -740,22 +774,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-v2-mOd">
-                                <rect key="frame" x="280" y="563" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="i1N-B9-We4" kind="show" id="RmB-SS-x1j"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-NI-nge">
                                 <rect key="frame" x="46" y="563" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="i1N-B9-We4" kind="show" id="9j8-wI-Kjk"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" borderStyle="bezel" placeholder="Enter comment..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-Ds-q2y">
                                 <rect key="frame" x="36" y="81" width="303" height="347"/>
@@ -767,6 +794,17 @@
                                     <outlet property="delegate" destination="a1m-Cq-yIh" id="plN-au-qb6"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-v2-mOd">
+                                <rect key="frame" x="280" y="563" width="46" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveComment:" destination="a1m-Cq-yIh" eventType="touchUpInside" id="B3J-pW-gDy"/>
+                                    <segue destination="i1N-B9-We4" kind="show" identifier="studentCommentSegue" id="RmB-SS-x1j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1570,7 +1608,8 @@ Internet traffic will be routed through it.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SCN-zt-OSQ"/>
-        <segue reference="UhK-gH-syQ"/>
+        <segue reference="pN9-YT-7xJ"/>
+        <segue reference="xWW-Ft-f0w"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

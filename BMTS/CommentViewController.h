@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface CommentViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 
-
+@property (weak, nonatomic) User *student;
+@property (strong, nonatomic) UIWindow *window;
 
 @end

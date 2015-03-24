@@ -32,6 +32,7 @@
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
 		89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */; };
+		89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EFA1AC0E741002B20D0 /* Comments.m */; };
 		89D327541A956C4300CF3214 /* SyncService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327531A956C4300CF3214 /* SyncService.m */; };
 		89D327571A963FCD00CF3214 /* ReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327561A963FCD00CF3214 /* ReachabilityViewController.m */; };
 		89D3275A1A96435900CF3214 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327591A96435900CF3214 /* Reachability.m */; };
@@ -112,6 +113,8 @@
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
 		89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentBehaviors.h; sourceTree = "<group>"; };
 		89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentBehaviors.m; sourceTree = "<group>"; };
+		89CD4EF91AC0E741002B20D0 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
+		89CD4EFA1AC0E741002B20D0 /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		89D327521A956C4300CF3214 /* SyncService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncService.h; sourceTree = "<group>"; };
 		89D327531A956C4300CF3214 /* SyncService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncService.m; sourceTree = "<group>"; };
 		89D327551A963FCD00CF3214 /* ReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityViewController.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				89D3275C1A968A4D00CF3214 /* ClassroomStudents.m */,
 				89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */,
 				89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */,
+				89CD4EF91AC0E741002B20D0 /* Comments.h */,
+				89CD4EFA1AC0E741002B20D0 /* Comments.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 				89D3277E1A968A4F00CF3214 /* UserRoleEnums.m in Sources */,
 				890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */,
 				89D327781A968A4F00CF3214 /* Behaviors.m in Sources */,
+				89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */,
 				89D327631A968A4E00CF3214 /* Classroom.m in Sources */,
 				89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */,
 				89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */,
