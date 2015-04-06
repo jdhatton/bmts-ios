@@ -12,6 +12,7 @@
 #import "TeacherMainViewController.h"
 #import "StudentBehaviors.h"
 #import <QuartzCore/QuartzCore.h>
+#import "App.h"
 
 @interface StudentStatusViewController ()
 
@@ -20,8 +21,7 @@
 
 @implementation StudentStatusViewController
 
-@synthesize student, window = _window, greenButton, yellowButon, redButton;
-
+@synthesize student, window = _window, greenButton, yellowButon, redButton, statusHeaderLabel;
 
 
 int selectedStatus;
@@ -31,7 +31,9 @@ int selectedStatus;
     
     NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
     
-   
+    
+    NSString *headerText = [NSString stringWithFormat:@"%@%@%@", @"Select ", student.firstName, @"'s current status."];
+    statusHeaderLabel.text = headerText;
     
 }
 
@@ -53,7 +55,7 @@ int selectedStatus;
 - (IBAction)clickedGreenStatus:(id)sender {
     
     NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
-    selectedStatus = 1;
+    selectedStatus = 1; //App.STATUS_GREEN
     
     greenButton.layer.borderWidth=2.0f;
     greenButton.layer.borderColor=[[UIColor blackColor] CGColor];
@@ -132,6 +134,35 @@ int selectedStatus;
         //        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
         //        newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
         //        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+        
+        [fetchRequest setEntity:entity];
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        for (User *user in fetchedObjects) {
+            NSLog(@" RTeacherMainViewController::Exiting() ");
+            NSLog(@" ----------------------------------------");
+            NSLog(@" Found User : userId      :  %@", user.id);
+            NSLog(@" Found User : email       :  %@", user.email);
+            NSLog(@" Found User : role        :  %@", user.role);
+            NSLog(@" Found User : zipcode     :  %@", user.zipCode);
+            NSLog(@" Found User : district    :  %@", user.schoolDistrict);
+            NSLog(@" Found User : grade       :  %@", user.schoolGrade);
+            NSLog(@" Found User : firstName   :  %@", user.firstName);
+            NSLog(@" Found User : lastName    :  %@", user.lastName);
+            NSLog(@" Found User : gender      :  %@", user.gender);
+            NSLog(@" Found User : schoolName  :  %@", user.schoolName);
+            NSLog(@" ----------------------------------------");
+            
+            if(user.id == self.student.id ){
+                user.status = [NSNumber numberWithInt:selectedStatus];
+                break;
+            }
+            
+        }
+        
+        
         
         NSLog(@" AddStudent SAVING ");
         if (![context save:&error]) {

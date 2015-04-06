@@ -9,6 +9,7 @@
 #import "RegisterTwoViewController.h"
 #import "AppDelegate.h"
 #import "User.h"
+#import "TeacherMainViewController.h"
 
 @interface RegisterTwoViewController ()
 
@@ -19,25 +20,27 @@
 
 @implementation RegisterTwoViewController
 
-@synthesize zipCode;
+@synthesize schoolName, zipCode;
+@synthesize window = _window;
 
 NSInteger selectedDistrict = 0;
 NSInteger selectedGrade = 0;
+bool isSchoolSelected = false;
+bool isValidForSegueToMain = false;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.zipCode = appDelegate.zipCode;
+    NSLog(@" LOADING: RegisterTwoViewController  :  zipCode =  %@", zipCode);
     
     NSArray *data;
     NSArray *data2;
-    data = [[NSArray alloc] initWithObjects:@"District 001",
-                   @"District 022", @"Blue Valley", @"Shawnee Mission",
+    data = [[NSArray alloc] initWithObjects: @"Blue Valley", @"Shawnee Mission",
                    @"Kansas City", @"Wyandotte",
                    @"Kansas City Missouri", @"Turner",
-                   @"Cherokee Hills", @"Cucumber Roll",
-                   @"Yellowtail Roll", @"Spicy Tuna Roll",
-                   @"Avocado Roll", @"Scallop Roll",
+                   @"Cherokee Hills", @"Desoto",
                    nil];
     
     self.districtArray = data;
@@ -90,14 +93,16 @@ NSInteger selectedGrade = 0;
     }
 }
 
--(void)dismissKeyboard {
-    [zipCode resignFirstResponder];
-    [self.view endEditing:YES];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dismissKeyboard {
+    [schoolName resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 /*
@@ -179,33 +184,23 @@ NSInteger selectedGrade = 0;
     for (User *user in fetchedObjects) {
         NSLog(@" Found User : userId: %@", user.id);
 //        if(user.id == [NSNumber numberWithInt:1]) {
-        
-            NSLog(@" Register-2 > UPDATING  User : userId: %@", user.id);
-            //
-            // Set the zipCode on to the User.
-            //
-            //  NSString *distanceString = [self.selectedBeacon.distance stringValue];
-            NSString *strZip = [self.zipCode text];
-            NSLog(@" Register-2 String ZIP : %@", strZip);
 
-            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-            f.numberStyle = NSNumberFormatterDecimalStyle;
-            NSNumber *zip = [f numberFromString:strZip];
-            user.zipCode = zip;
-            NSLog(@" Register-2 Added ZIP : %@", strZip);
+        //
+        // Find and set the selected school district on to the User.
+        //
+        user.schoolDistrict = [self.districtArray objectAtIndex:selectedDistrict];
         
-            //
-            // Find and set the selected school district on to the User.
-            //
- 
-            user.schoolDistrict = [self.districtArray objectAtIndex:selectedDistrict];
+        NSLog(@" Register-2 Added schoolDistrict : %@", user.schoolDistrict);
         
-            NSLog(@" Register-2 Added schoolDistrict : %@", user.schoolDistrict);
-            
-            //
-            // Find and set the selected Grade on to the User.
-            //
-            NSString *selGrade = [self.gradesArray objectAtIndex:selectedGrade];
+        //
+        // Find and set the selected school name on to the User.
+        //
+        user.schoolName = self.schoolName.text;
+        
+        //
+        // Find and set the selected Grade on to the User.
+        //
+        NSString *selGrade = [self.gradesArray objectAtIndex:selectedGrade];
         
         NSLog(@" Register-2 Adding Grade : %@", selGrade);
         //
@@ -320,9 +315,33 @@ NSInteger selectedGrade = 0;
             NSLog(@" ----------------------------------------");
             
         }
+        
+        
+        isValidForSegueToMain = true;
+        
+        //
+        // Segway to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+        
     }
     
-    
-    
 }
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+     NSLog(@" AppDelegate::zipCode  =  %@  ", appDelegate.zipCode);
+    
+    if (!isValidForSegueToMain) {
+        //prevent segue from occurring
+        return NO;
+    }
+    
+    // by default perform the segue transition
+    return YES;
+}
+
 @end

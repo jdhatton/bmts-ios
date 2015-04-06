@@ -10,9 +10,6 @@
 
 @interface RegisterTwoViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITextField *zipCode;
-
-- (IBAction)zipCode:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *districtPicker;
 
@@ -24,7 +21,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *saveData;
 
+@property (weak, nonatomic) IBOutlet UITextField *schoolName;
 
 - (IBAction)saveFormData:(id)sender;
+
+@property (strong, nonatomic) UIWindow *window;
+
+@property (weak, nonatomic)  NSString *zipCode;
 
 @end

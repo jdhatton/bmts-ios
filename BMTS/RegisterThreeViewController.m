@@ -9,50 +9,43 @@
 #import "RegisterThreeViewController.h"
 #import "AppDelegate.h"
 #import "User.h"
+#import "RegisterTwoViewController.h"
 
 @interface RegisterThreeViewController ()
-
-@property (strong, nonatomic) NSArray *schoolsArray;
-
 
 @end
 
 @implementation RegisterThreeViewController
 
-@synthesize schoolPicker, firstName, lastName, gender;
+@synthesize firstName, lastName, gender, zipCode;
+@synthesize window = _window;
 
-NSInteger selectedSchool = 0;
+
+bool isFirstNameProvided = false;
+bool isLastNameProvided = false;
+bool isZipCodeProvided = false;
+bool isValidForSegueNext = false;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-    NSArray *data1;
-    
-   
-    
-    data1 = [[NSArray alloc] initWithObjects:@"School-001",
-            @"School-002", @"School-003", @"School-004",
-            @"School-005", @"School-006",
-            @"School-007", @"School-008",
-            @"School-009",
-            nil];
-    
-    self.schoolsArray = data1;
+ 
     
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-
+    
+    self.firstName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    self.lastName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
 }
 
 -(void)dismissKeyboard {
     [lastName resignFirstResponder];
     [firstName resignFirstResponder];
+    [zipCode resignFirstResponder];
     [self.view endEditing:YES];
 }
 
@@ -60,6 +53,8 @@ NSInteger selectedSchool = 0;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -72,27 +67,6 @@ NSInteger selectedSchool = 0;
 */
 
 
--(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1; // 1 column in the picker.
-}
-
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-
-    return [_schoolsArray  count];
-}
-
--(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    
-
-    return [_schoolsArray  objectAtIndex:row];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    selectedSchool = row;
-}
-
-
 - (NSString *) getTitleForSelectedSegment: (UISegmentedControl *) segment {
     return [segment titleForSegmentAtIndex:[segment selectedSegmentIndex]];
 }
@@ -102,8 +76,36 @@ NSInteger selectedSchool = 0;
 - (IBAction)saveFormData:(id)sender {
     
     
-    NSLog(@"DEBUG: saving form data Register-2 ");
+    NSLog(@"DEBUG: saving form data Register-3 ");
     
+    //
+    // Set the zipCode on to the User.
+    //
+    //  NSString *distanceString = [self.selectedBeacon.distance stringValue];
+    NSString *strZip = [self.zipCode text];
+    NSLog(@" Register-2 String ZIP : %@", strZip);
+    
+  
+    if( self.firstName.text.length > 0){
+        isFirstNameProvided = true;
+    }
+    if( self.lastName.text.length > 0) {
+        isLastNameProvided = true;
+    }
+    if( self.zipCode.text.length > 0) {
+        isZipCodeProvided = true;
+    }
+ 
+    if( ! isFirstNameProvided || !isLastNameProvided || isZipCodeProvided) {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+                                                         message:@"Please provided your first name, last name, and zipCode to get started! "
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        [alert show];
+        isValidForSegueNext = false;
+    
+    } else {
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
@@ -130,11 +132,16 @@ NSInteger selectedSchool = 0;
         user.lastName = strLastName;
         NSLog(@" Register-2 Added LASTNAME : %@", strLastName);
         
-        //
-        // Find and set the selected school name on to the User.
-        //
-        user.schoolName = [self.schoolsArray objectAtIndex:selectedSchool];
         
+  
+       
+        
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        f.numberStyle = NSNumberFormatterDecimalStyle;
+        NSNumber *zip = [f numberFromString:strZip];
+        user.zipCode = zip;
+        NSLog(@" Register-2 Added ZIP : %@", strZip);
+
         //
         // Find and set the Gender on the User.
         //
@@ -145,7 +152,7 @@ NSInteger selectedSchool = 0;
         NSLog(@" UPDATING  User : firstName   :  %@", user.firstName);
         NSLog(@" UPDATING  User : lastName    :  %@", user.lastName);
         NSLog(@" UPDATING  User : gender      :  %@", user.gender);
-        NSLog(@" UPDATING  User : schoolName  :  %@", user.schoolName);
+        NSLog(@" UPDATING  User : zipcode     :  %@", user.zipCode);
         
         
         
@@ -153,8 +160,9 @@ NSInteger selectedSchool = 0;
             NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
             NSLog(@"\n SUCCESS  - User - UPDATED  ");
+            isValidForSegueNext = true;
         }
-        //        }
+        
         
         //
         // Let's dump the User data we know we should have here
@@ -183,6 +191,22 @@ NSInteger selectedSchool = 0;
             NSLog(@" ----------------------------------------");
             
         }
+
+    }
+        
+        isValidForSegueNext = true;
+        
+        //
+        // Segway to the RegisterTwo
+        //
+        NSLog(@" \n\n >>  Attempting to segue to REGISTERTWO  view controller :  strZip  =  %@", strZip);
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        RegisterTwoViewController *registerTwoViewController = [storyboard instantiateViewControllerWithIdentifier:@"registerTwoMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:registerTwoViewController animated:YES completion:NULL];
+        registerTwoViewController.zipCode = strZip;
+        appDelegate.zipCode = strZip;
+
     }
     
     
@@ -190,6 +214,20 @@ NSInteger selectedSchool = 0;
 
 
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+    [self saveFormData:sender ];
+    
+    NSLog(@" \n  AppDelegate::zipCode  =  %@", appDelegate.zipCode);
+    
+    if (!isValidForSegueNext) {
+        //prevent segue from occurring
+        return NO;
+    }
+    
+    // by default perform the segue transition
+    return YES;
+}
 
 
 @end

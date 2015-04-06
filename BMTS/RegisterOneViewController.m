@@ -14,11 +14,32 @@
 
 @end
 
+
 @implementation RegisterOneViewController
+
+@synthesize parentButton,studentButton, principalButton, districtButton;
+
+
+bool isTeacherSelected = false;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //
+    // Disable all buttons except the teacher button
+    //
+    
+    parentButton.enabled = NO;
+    parentButton.alpha = 0.5;
+    
+    studentButton.enabled = NO;
+    studentButton.alpha = 0.5;
+    
+    principalButton.enabled = NO;
+    principalButton.alpha = 0.5;
+    
+    districtButton.enabled = NO;
+    districtButton.alpha = 0.5;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,10 +57,22 @@
 }
 */
 
-- (IBAction)saveTeacher:(id)sender {
+- (IBAction)teacherButtonClicked:(id)sender {
     
     NSLog(@"DEBUG: >>>     you touched the TEACHER button");
+    [self.teacherButton setBackgroundColor:[UIColor blueColor]];
+    isTeacherSelected = true;
+}
+
+
+
+- (IBAction)saveTeacher:(id)sender {
     
+    NSLog(@"DEBUG: >>>  saving teacher  ");
+    
+//    if( ! isTeacherSelected ){
+    
+//    } else {
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
@@ -68,7 +101,8 @@
         }
 //    }
     
-    [self.teacherButton setBackgroundColor:[UIColor blueColor]];
+   
+//    }
     
     
 }

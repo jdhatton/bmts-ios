@@ -18,12 +18,24 @@
 
 @implementation CommentViewController
 
-@synthesize student, commentTextField;
+@synthesize student, commentTextField, headerLabel;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"DEBUG: CommentViewController::loading...   student = %@", student);
+    
+    
+    NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Comments for ", student.firstName];
+    headerLabel.text = headerText;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    self.commentTextField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -28,6 +28,7 @@
 @synthesize window = _window;
 
 NSManagedObjectContext *context = nil;
+BOOL isValidForSegue = true;
 
 
 - (void)viewDidLoad {
@@ -193,17 +194,29 @@ NSManagedObjectContext *context = nil;
     
     // If both are not provided show alert.
     
-    if( ! emailAddressTextBox.text.length > 0 && ! passwordTextBox.text.length > 0 ) {
+    if( ! self.emailAddressTextBox.text.length > 0 ) {
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
         message:@"Please provided an email and password to get started! "
                                                     delegate:self
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles: nil];
         [alert show];
-    } else {
+        isValidForSegue = false;
+    } else if( ! self.passwordTextBox.text.length > 0 ){
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+                                                         message:@"Please provided an email and password to get started! "
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        [alert show];
+        isValidForSegue = false;
+    }
+//    else if( self.passwordTextBox.text.length > 0 && [self.NSStringIsValidEmail:self.passwordTextBox.text]){
+//        
+//    }
+    else {
     
         // If both are provided - goto next view.
-    
         [emailAddressTextBox resignFirstResponder];
         [passwordTextBox resignFirstResponder];
         
@@ -228,7 +241,7 @@ NSManagedObjectContext *context = nil;
             NSLog(@"\n SUCCESS  - User & UserCookie SAVED ");
         }
         
- 
+        isValidForSegue = true;
         
         //
         // Segway to the TeacherMainView
@@ -237,6 +250,7 @@ NSManagedObjectContext *context = nil;
         RegisterOneViewController *registerOneViewController = [storyboard instantiateViewControllerWithIdentifier:@"registerOneView"];
         [self.window makeKeyAndVisible];
         [self.window.rootViewController presentViewController:registerOneViewController animated:YES completion:NULL];
+        
 
     }
     
@@ -272,5 +286,16 @@ NSManagedObjectContext *context = nil;
 - (IBAction)validateBeforeSubmit:(id)sender {
 }
 
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    
+        if (!isValidForSegue) {
+            //prevent segue from occurring
+            return NO;
+        }
+    
+    // by default perform the segue transition
+    return YES;
+}
 
 @end

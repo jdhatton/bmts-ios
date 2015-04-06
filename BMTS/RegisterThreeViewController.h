@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterThreeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface RegisterThreeViewController : UIViewController
 
 
+- (IBAction)zipCode:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UIPickerView *schoolPicker;
-@property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *schools;
+- (IBAction)saveFormData:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 
@@ -21,6 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gender;
 
+@property (weak, nonatomic) IBOutlet UITextField *zipCode;
 
+@property (strong, nonatomic) UIWindow *window;
 
 @end

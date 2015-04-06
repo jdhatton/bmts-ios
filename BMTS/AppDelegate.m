@@ -19,7 +19,7 @@
 #import "IntervalEnum.h"
 #import "ClassroomStudents.h"
 #import "TeacherMainViewController.h"
-
+#import "RestController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +27,7 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window, zipCode;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -247,6 +247,12 @@ AppDelegate *appDelegate = nil;
     
     
   
+    
+    //
+    // Load and test a REST call
+    //
+    RestController *restCntrlr  = [RestController alloc];
+    [restCntrlr fetchGreeting];
 
     
     

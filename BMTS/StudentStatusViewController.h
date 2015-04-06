@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *greenButton;
 @property (weak, nonatomic) IBOutlet UIButton *yellowButon;
 @property (weak, nonatomic) IBOutlet UIButton *redButton;
+@property (weak, nonatomic) IBOutlet UILabel *statusHeaderLabel;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource >
+@interface AddStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIPickerView *behaviorPicker;
 
@@ -18,5 +18,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)saveFormData:(id)sender;
 
+ 
 @end

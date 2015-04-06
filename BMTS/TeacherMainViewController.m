@@ -44,11 +44,21 @@ User *userEight;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
     
+    NSNumber *STATUS_GREEN = [NSNumber numberWithInt:1];
+    NSNumber *STATUS_YELLOW = [NSNumber numberWithInt:2];
+    NSNumber *STATUS_RED = [NSNumber numberWithInt:3];
+    
     NSString *userName = @"";
+    
+    
+    UIImage *redCircle = [UIImage imageNamed:@"statusCircleRED-1"];
+    UIImage *yellowCircle = [UIImage imageNamed:@"statusCircleYELLOW"];
+    UIImage *greenCircle = [UIImage imageNamed:@"statusCircleRGREEN"];
+  
+    
     //
     // Get the User = 1 for the teacher who installed app.
     //
@@ -123,6 +133,7 @@ User *userEight;
         NSLog(@" Found User : lastName    :  %@", user.lastName);
         NSLog(@" Found User : gender      :  %@", user.gender);
         NSLog(@" Found User : schoolName  :  %@", user.schoolName);
+        NSLog(@" Found User : status      :  %@", user.status);
         NSLog(@" ----------------------------------------");
         
         if([user.role integerValue] == 2 ){
@@ -141,6 +152,19 @@ User *userEight;
                 studentOneName.title = user.firstName;
                 userOne = user;
                 
+                 NSLog(@"  Student Status - [%ld]  : %@", (long)studentCount, user.status);
+                if([user.status intValue] == [STATUS_GREEN intValue]){
+                    studentOneStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){
+                    studentOneStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){
+                    studentOneStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
+              
             }
             else if(studentCount == 2){
                 toolBarTwo.hidden = NO;
@@ -151,6 +175,18 @@ User *userEight;
                 studentTwoSettings.title = @"studentTwoSettings";
                 studentTwoName.title = user.firstName;
                 userTwo = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){
+                    studentTwoStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){
+                    studentTwoStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){
+                    studentTwoStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 3){
                 toolBarThree.hidden = NO;
@@ -161,6 +197,18 @@ User *userEight;
                 studentThreeSettings.title = @"studentThreeSettings";
                 studentThreeName.title = user.firstName;
                 userThree = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentThreeStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentThreeStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentThreeStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 4){
                 toolBarFour.hidden = NO;
@@ -171,6 +219,18 @@ User *userEight;
                 studentFourSettings.title = @"studentFourSettings";
                 studentFourName.title = user.firstName;
                 userFour = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentFourStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentFourStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentFourStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 5){
                 toolBarFive.hidden = NO;
@@ -181,6 +241,18 @@ User *userEight;
                 studentFiveSettings.title = @"studentFiveSettings";
                 studentFiveName.title = user.firstName;
                 userFive = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentFiveStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentFiveStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentFiveStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 6){
                 toolBarSix.hidden = NO;
@@ -191,6 +263,18 @@ User *userEight;
                 studentSixSettings.title = @"studentSixSettings";
                 studentSixName.title = user.firstName;
                 userSix = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentSixStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentSixStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentSixStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 7){
                 toolBarSeven.hidden = NO;
@@ -201,6 +285,18 @@ User *userEight;
                 studentSevenSettings.title = @"studentSevenSettings";
                 studentSevenName.title = user.firstName;
                 userSeven = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentSevenStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentSevenStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentSevenStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else if(studentCount == 8){
                 toolBarEight.hidden = NO;
@@ -211,6 +307,18 @@ User *userEight;
                 studentEightSettings.title = @"studentEightSettings";
                 studentEightName.title = user.firstName;
                 userEight = user;
+                
+                if( [user.status intValue] == [STATUS_GREEN intValue]){  
+                    studentEightStatus.tintColor = [UIColor greenColor];
+                    //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
+                } else if( [user.status intValue] == [STATUS_YELLOW intValue]){  
+                    studentEightStatus.tintColor = [UIColor yellowColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:yellowCircle] ;
+                    
+                } else if( [user.status intValue] == [STATUS_RED intValue]){  
+                    studentEightStatus.tintColor = [UIColor redColor];
+                    //  [[ self.studentOneStatus.class appearance] setImage:redCircle] ;
+                }
             }
             else {
               NSLog(@" TOO MANY STUDENTS !!!  Fix!");

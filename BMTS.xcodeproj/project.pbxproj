@@ -22,8 +22,6 @@
 		890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D11A159BF0000A30DA /* RegisterThreeViewController.m */; };
 		890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D41A159C23000A30DA /* AddStudentViewController.m */; };
 		890759D81A159C43000A30DA /* AddParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D71A159C43000A30DA /* AddParentViewController.m */; };
-		890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DA1A159C92000A30DA /* StudentViewViewController.m */; };
-		890759DD1A159C92000A30DA /* StudentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759DB1A159C92000A30DA /* StudentViewViewController.xib */; };
 		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
 		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
 		89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F661ABDD589007CEDFE /* FeedbackViewController.m */; };
@@ -31,8 +29,10 @@
 		89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
+		89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549B1AD08B8A00740DB3 /* RestController.m */; };
 		89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */; };
 		89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EFA1AC0E741002B20D0 /* Comments.m */; };
+		89D277AC1AC7830200673CC2 /* StudentMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D277AB1AC7830200673CC2 /* StudentMainView.m */; };
 		89D327541A956C4300CF3214 /* SyncService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327531A956C4300CF3214 /* SyncService.m */; };
 		89D327571A963FCD00CF3214 /* ReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327561A963FCD00CF3214 /* ReachabilityViewController.m */; };
 		89D3275A1A96435900CF3214 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327591A96435900CF3214 /* Reachability.m */; };
@@ -54,6 +54,7 @@
 		89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */; };
 		89F2F6F11A605967001B0D17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F2F6F01A605967001B0D17 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */; };
+		89F4A7C91AC6E38600F2203F /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F4A7C81AC6E38600F2203F /* App.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,12 +94,9 @@
 		890759D01A159BF0000A30DA /* RegisterThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterThreeViewController.h; sourceTree = "<group>"; };
 		890759D11A159BF0000A30DA /* RegisterThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterThreeViewController.m; sourceTree = "<group>"; };
 		890759D31A159C23000A30DA /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
-		890759D41A159C23000A30DA /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
+		890759D41A159C23000A30DA /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		890759D61A159C43000A30DA /* AddParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddParentViewController.h; sourceTree = "<group>"; };
 		890759D71A159C43000A30DA /* AddParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddParentViewController.m; sourceTree = "<group>"; };
-		890759D91A159C92000A30DA /* StudentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewViewController.h; sourceTree = "<group>"; };
-		890759DA1A159C92000A30DA /* StudentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewViewController.m; sourceTree = "<group>"; };
-		890759DB1A159C92000A30DA /* StudentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentViewViewController.xib; sourceTree = "<group>"; };
 		890759DE1A159CAF000A30DA /* ParentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewViewController.h; sourceTree = "<group>"; };
 		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
 		890759E01A159CAF000A30DA /* ParentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewViewController.xib; sourceTree = "<group>"; };
@@ -111,10 +109,14 @@
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
+		89C8549A1AD08B8A00740DB3 /* RestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestController.h; sourceTree = "<group>"; };
+		89C8549B1AD08B8A00740DB3 /* RestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestController.m; sourceTree = "<group>"; };
 		89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentBehaviors.h; sourceTree = "<group>"; };
 		89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentBehaviors.m; sourceTree = "<group>"; };
 		89CD4EF91AC0E741002B20D0 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
 		89CD4EFA1AC0E741002B20D0 /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
+		89D277AA1AC7830200673CC2 /* StudentMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentMainView.h; sourceTree = "<group>"; };
+		89D277AB1AC7830200673CC2 /* StudentMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentMainView.m; sourceTree = "<group>"; };
 		89D327521A956C4300CF3214 /* SyncService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncService.h; sourceTree = "<group>"; };
 		89D327531A956C4300CF3214 /* SyncService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncService.m; sourceTree = "<group>"; };
 		89D327551A963FCD00CF3214 /* ReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityViewController.h; sourceTree = "<group>"; };
@@ -155,6 +157,8 @@
 		89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		89F2F6F01A605967001B0D17 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDataModel.xcdatamodel; sourceTree = "<group>"; };
+		89F4A7C71AC6E38600F2203F /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		89F4A7C81AC6E38600F2203F /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 		890759911A0B110B000A30DA /* BMTS */ = {
 			isa = PBXGroup;
 			children = (
+				89C854991AD089E600740DB3 /* REST */,
 				89D327581A96435900CF3214 /* Reachability.h */,
 				89D327591A96435900CF3214 /* Reachability.m */,
 				899711831A75D9480044AB66 /* Models */,
@@ -248,6 +253,8 @@
 				89442F661ABDD589007CEDFE /* FeedbackViewController.m */,
 				89442F681ABF032C007CEDFE /* StudentStatusViewController.h */,
 				89442F691ABF032C007CEDFE /* StudentStatusViewController.m */,
+				89F4A7C71AC6E38600F2203F /* App.h */,
+				89F4A7C81AC6E38600F2203F /* App.m */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -298,9 +305,8 @@
 		890759E41A159CCD000A30DA /* StudentView */ = {
 			isa = PBXGroup;
 			children = (
-				890759D91A159C92000A30DA /* StudentViewViewController.h */,
-				890759DA1A159C92000A30DA /* StudentViewViewController.m */,
-				890759DB1A159C92000A30DA /* StudentViewViewController.xib */,
+				89D277AA1AC7830200673CC2 /* StudentMainView.h */,
+				89D277AB1AC7830200673CC2 /* StudentMainView.m */,
 			);
 			name = StudentView;
 			sourceTree = "<group>";
@@ -349,6 +355,15 @@
 				89CD4EFA1AC0E741002B20D0 /* Comments.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		89C854991AD089E600740DB3 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				89C8549A1AD08B8A00740DB3 /* RestController.h */,
+				89C8549B1AD08B8A00740DB3 /* RestController.m */,
+			);
+			name = REST;
 			sourceTree = "<group>";
 		};
 		89DA45DC1A584FA000F7E23D /* images */ = {
@@ -444,7 +459,6 @@
 				890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */,
 				890759A91A0B110B000A30DA /* LaunchScreen.xib in Resources */,
 				890759A61A0B110B000A30DA /* Images.xcassets in Resources */,
-				890759DD1A159C92000A30DA /* StudentViewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +479,7 @@
 				8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */,
 				89D327571A963FCD00CF3214 /* ReachabilityViewController.m in Sources */,
 				890759D81A159C43000A30DA /* AddParentViewController.m in Sources */,
+				89D277AC1AC7830200673CC2 /* StudentMainView.m in Sources */,
 				89D3277B1A968A4F00CF3214 /* ClassroomParents.m in Sources */,
 				890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */,
 				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
@@ -473,7 +488,7 @@
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
 				89D3277E1A968A4F00CF3214 /* UserRoleEnums.m in Sources */,
-				890759DC1A159C92000A30DA /* StudentViewViewController.m in Sources */,
+				89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */,
 				89D327781A968A4F00CF3214 /* Behaviors.m in Sources */,
 				89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */,
 				89D327631A968A4E00CF3214 /* Classroom.m in Sources */,
@@ -487,6 +502,7 @@
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
 				89D3275A1A96435900CF3214 /* Reachability.m in Sources */,
 				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
+				89F4A7C91AC6E38600F2203F /* App.m in Sources */,
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
 				89D327721A968A4F00CF3214 /* User.m in Sources */,
 				89D327661A968A4E00CF3214 /* IntervalEnum.m in Sources */,
