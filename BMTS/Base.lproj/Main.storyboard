@@ -86,7 +86,6 @@
         <!--Register Three View Controller-->
         <scene sceneID="5Wq-ad-VHz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j8x-eH-TnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Register Three View Controller" id="4TI-au-4b4" customClass="RegisterThreeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xo3-Nj-MGb"/>
@@ -102,11 +101,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please provide your first name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-9J-2S6">
-                                <rect key="frame" x="45" y="164" width="279" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please provide your last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-vX-ny4">
                                 <rect key="frame" x="45" y="242" width="279" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -121,7 +115,8 @@
                                     <fragment content="Enter a zip code to find your school district.">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -129,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ZipCode here." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-2e-gy5">
-                                <rect key="frame" x="56" y="430" width="251" height="30"/>
+                                <rect key="frame" x="92" y="430" width="191" height="30"/>
                                 <color key="backgroundColor" red="0.87891782510000005" green="0.94055771079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,7 +142,8 @@
                                     <fragment content="First name:">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -163,7 +159,7 @@
                                     <fragment content="Last name:">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -190,6 +186,11 @@
                                     <segue destination="zYF-zh-829" kind="show" id="dgp-Vc-PwO"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please provide your first name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-9J-2S6">
+                                <rect key="frame" x="45" y="164" width="279" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -202,6 +203,7 @@
                         <outlet property="zipCode" destination="AYw-2e-gy5" id="vOn-hu-2OJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8x-eH-TnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1178.5" y="-1610.5"/>
         </scene>
@@ -467,9 +469,6 @@
                                 <items>
                                     <barButtonItem image="user-26" width="35" id="tIj-E7-1iS" customClass="UserUIBarButtonItem">
                                         <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="5iK-Lp-RdV" kind="show" id="thH-6o-n7O"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp" customClass="UserUIBarButtonItem">
                                         <connections>
@@ -753,7 +752,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xob-dC-uHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-585.5" y="-685.5"/>
+            <point key="canvasLocation" x="264.5" y="-18.5"/>
         </scene>
         <!--StudentMainView-->
         <scene sceneID="zYt-IH-rH3">
@@ -875,7 +874,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-OD-rWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116.5" y="-673.5"/>
+            <point key="canvasLocation" x="-130.5" y="-660.5"/>
         </scene>
         <!--Student Status View Controller-->
         <scene sceneID="V1N-1B-EMZ">
@@ -955,7 +954,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-884.5" y="168.5"/>
+            <point key="canvasLocation" x="-1007.5" y="204.5"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Mac-g0-RuQ">
@@ -1017,7 +1016,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-c1-rTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430.5" y="168.5"/>
+            <point key="canvasLocation" x="-525.5" y="223.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
@@ -1094,7 +1093,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
                                 <rect key="frame" x="31" y="133" width="312" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="hte-3k-ekS" id="fQ7-ho-iiO"/>
                                 </connections>
@@ -1163,18 +1162,6 @@
                                     <outlet property="delegate" destination="zYF-zh-829" id="XuV-fS-lDt"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-6G-K4J">
-                                <rect key="frame" x="138" y="599" width="99" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveFormData:" destination="zYF-zh-829" eventType="touchUpInside" id="ae4-4K-coT"/>
-                                    <segue destination="i1N-B9-We4" kind="show" id="rm4-BD-LGK"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sul-R6-8oL">
                                 <rect key="frame" x="-3" y="372" width="375" height="162"/>
                                 <connections>
@@ -1191,7 +1178,8 @@
                                     <fragment content="Please select your school district:">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -1199,15 +1187,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-kH-YV5">
-                                <rect key="frame" x="37" y="265" width="284" height="34"/>
+                                <rect key="frame" x="37" y="265" width="329" height="34"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" summaryElement="YES"/>
                                 </accessibility>
                                 <attributedString key="attributedText">
-                                    <fragment content="Please provide the name of the school:">
+                                    <fragment content="Please provide the name of your school:">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -1223,7 +1212,8 @@
                                     <fragment content="Please select your grade :">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -1233,8 +1223,19 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0UU-gO-F94">
                                 <rect key="frame" x="37" y="307" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-2G-eTm">
+                                <rect key="frame" x="97" y="580" width="175" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i1N-B9-We4" kind="show" id="rdg-64-fLU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1242,7 +1243,6 @@
                     <connections>
                         <outlet property="districtPicker" destination="wTD-zp-ZhY" id="Cw4-5K-qVa"/>
                         <outlet property="gradePicker" destination="Sul-R6-8oL" id="0kV-0F-BUl"/>
-                        <outlet property="saveData" destination="8eB-6G-K4J" id="RZw-aq-iqv"/>
                         <outlet property="schoolName" destination="0UU-gO-F94" id="itO-Gv-7gi"/>
                         <outlet property="zipCode" destination="AYw-2e-gy5" id="wlz-KP-ylJ"/>
                         <outletCollection property="districts" destination="wTD-zp-ZhY" id="hye-CR-Co0"/>
@@ -1365,24 +1365,6 @@
                                     <segue destination="i1N-B9-We4" kind="show" identifier="showTeacherView" id="LeJ-0E-Mmf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-w9-hPH">
-                                <rect key="frame" x="47" y="424" width="319" height="112"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES" summaryElement="YES"/>
-                                </accessibility>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Start now by using our secure smart cloud driven technology for tracking and analyzing student behaviors. Invite the parents to join too!</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
-                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHN-9c-7l0"/>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vH-pT-ITE">
                                 <rect key="frame" x="0.0" y="188" width="375" height="39"/>
@@ -1398,6 +1380,24 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-w9-hPH">
+                                <rect key="frame" x="28" y="428" width="319" height="112"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" summaryElement="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Start now by using our secure smart cloud driven technology for tracking and analyzing student behaviors. Invite the parents to join too!</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="14" name="HelveticaNeue-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1429,7 +1429,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIT-sg-6Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="688"/>
+            <point key="canvasLocation" x="255" y="704"/>
         </scene>
         <!--Reachability-->
         <scene sceneID="eyl-00-5ct">
@@ -1645,7 +1645,8 @@ Internet traffic will be routed through it.</string>
                                     <fragment content="Please choose a role. ">
                                         <attributes>
                                             <color key="NSColor" red="0.91163589015151514" green="0.91163589015151514" blue="0.91163589015151514" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Light"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Light"/>
+                                            <font key="NSOriginalFont" size="18" name="HelveticaNeue-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -1845,10 +1846,10 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rm4-BD-LGK"/>
-        <segue reference="ggJ-eW-Q4t"/>
-        <segue reference="CaW-Eu-tbr"/>
+        <segue reference="rdg-64-fLU"/>
         <segue reference="a2J-wy-WMn"/>
+        <segue reference="bSV-0L-yVm"/>
+        <segue reference="CaW-Eu-tbr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

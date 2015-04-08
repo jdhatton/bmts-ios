@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "TeacherMainViewController.h"
+#import "RestController.h"
 
 @interface RegisterTwoViewController ()
 
@@ -35,16 +36,34 @@ bool isValidForSegueToMain = false;
     self.zipCode = appDelegate.zipCode;
     NSLog(@" LOADING: RegisterTwoViewController  :  zipCode =  %@", zipCode);
     
-    NSArray *data;
+    //
+    // Load and test a REST call
+    //
+    RestController *restCntrlr  = [RestController alloc];
+    NSArray *results =[restCntrlr fetchDistrictsForZipCode:zipCode];
+    NSLog(@" LOADING: RegisterTwoViewController  :  results  =  %@", results);
+    
+
+    self.districtArray = results;
+    
+    if(results.count > 0){
+        self.districtArray = results;
+    } else {
+        NSArray *data;
+        data = [[NSArray alloc] initWithObjects: @"Blue Valley", @"Shawnee Mission",
+                @"Kansas City", @"Wyandotte",
+                @"Kansas City Missouri", @"Turner",
+                @"Cherokee Hills", @"Desoto",
+                nil];
+        self.districtArray = data;
+        
+    }
+    
+    
+    //
+    // Hard coding the grades here for now is OK.
+    //
     NSArray *data2;
-    data = [[NSArray alloc] initWithObjects: @"Blue Valley", @"Shawnee Mission",
-                   @"Kansas City", @"Wyandotte",
-                   @"Kansas City Missouri", @"Turner",
-                   @"Cherokee Hills", @"Desoto",
-                   nil];
-    
-    self.districtArray = data;
-    
     data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
              @"First Grade", @"Second Grade", @"Third Grade",
              @"Fourth Grade", @"Fifth Grade",
@@ -53,35 +72,13 @@ bool isValidForSegueToMain = false;
              @"Tenth Grade", @"Eleventh Grade",
              @"Twelth Grade",
              nil];
-    
     self.gradesArray = data2;
     
-    //
-    // Let's dump the User data we know we should have here
-    //
-    NSError *error;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (User *user in fetchedObjects) {
-        NSLog(@" RegisterTwoViewController:Loading() ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Found User : userId    :  %@", user.id);
-        NSLog(@" Found User : email     :  %@", user.email);
-        NSLog(@" Found User : role      :  %@", user.role);
-        NSLog(@" ----------------------------------------");
-        
-    }
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    
     
 }
 
@@ -92,7 +89,6 @@ bool isValidForSegueToMain = false;
         }
     }
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -116,13 +112,6 @@ bool isValidForSegueToMain = false;
 */
 
 - (IBAction)zipCode:(id)sender {
-    
-//    NSString *select = [_districtArray objectAtIndex:[_districtPicker selectedRowInComponent:0] ];
-//    
-//    NSString *title = [[NSString alloc] initWithFormat:@"You selected %", select];
-//    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    [alert show];
 }
 
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -164,8 +153,6 @@ bool isValidForSegueToMain = false;
     
     
 }
-
-
 
 
 - (IBAction)saveFormData:(id)sender {
@@ -292,6 +279,7 @@ bool isValidForSegueToMain = false;
             }
 //        }
         
+        User *completedUser;
         //
         // Let's dump the User data we know we should have here
         //
@@ -304,6 +292,7 @@ bool isValidForSegueToMain = false;
         [fetchRequest setEntity:entity];
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
+            completedUser = user;
             NSLog(@" RegisterTwoViewController:Exiting() ");
             NSLog(@" ----------------------------------------");
             NSLog(@" Found User : userId    : %@", user.id);
@@ -315,6 +304,21 @@ bool isValidForSegueToMain = false;
             NSLog(@" ----------------------------------------");
             
         }
+        
+        
+        //
+        // Here we need to POST the user to the registerUser web service to be registered.
+        //
+        //
+        // Load and test a REST call
+        //
+        RestController *restCntrlr  = [RestController alloc];
+        [restCntrlr registerUser:completedUser];
+        NSLog(@" LOADING: RegisterTwoViewController  :  POSTED - DONE  ");
+        
+        
+
+        
         
         
         isValidForSegueToMain = true;
@@ -333,7 +337,8 @@ bool isValidForSegueToMain = false;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
-     NSLog(@" AppDelegate::zipCode  =  %@  ", appDelegate.zipCode);
+  
+    [self saveFormData:sender ];
     
     if (!isValidForSegueToMain) {
         //prevent segue from occurring

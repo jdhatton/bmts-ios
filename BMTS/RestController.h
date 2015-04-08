@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface RestController : NSObject
 
 - (IBAction)fetchGreeting;
 
+- (NSArray*)fetchDistrictsForZipCode:(NSString *)srcZipCode;
+
+- (IBAction)registerUser:(User *)user;
 
 @end

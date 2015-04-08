@@ -96,7 +96,7 @@ bool isValidForSegueNext = false;
         isZipCodeProvided = true;
     }
  
-    if( ! isFirstNameProvided || !isLastNameProvided || isZipCodeProvided) {
+    if( ! isFirstNameProvided || !isLastNameProvided || !isZipCodeProvided) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
                                                          message:@"Please provided your first name, last name, and zipCode to get started! "
                                                         delegate:self
