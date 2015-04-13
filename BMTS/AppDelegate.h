@@ -17,6 +17,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) NSString *zipCode;
 
+@property (strong, nonatomic) NSArray *behaviorListData;
+@property (strong, nonatomic) NSArray *intervalListData;
 
 extern AppDelegate *appDelegate;
 

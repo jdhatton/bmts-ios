@@ -30,6 +30,7 @@
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
 		89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549B1AD08B8A00740DB3 /* RestController.m */; };
+		89C8549F1AD7336100740DB3 /* ManageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */; };
 		89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */; };
 		89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EFA1AC0E741002B20D0 /* Comments.m */; };
 		89D277AC1AC7830200673CC2 /* StudentMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D277AB1AC7830200673CC2 /* StudentMainView.m */; };
@@ -111,6 +112,8 @@
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
 		89C8549A1AD08B8A00740DB3 /* RestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestController.h; sourceTree = "<group>"; };
 		89C8549B1AD08B8A00740DB3 /* RestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestController.m; sourceTree = "<group>"; };
+		89C8549D1AD7336100740DB3 /* ManageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageStudentViewController.h; sourceTree = "<group>"; };
+		89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageStudentViewController.m; sourceTree = "<group>"; };
 		89CD4EF61ABF98EC002B20D0 /* StudentBehaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentBehaviors.h; sourceTree = "<group>"; };
 		89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentBehaviors.m; sourceTree = "<group>"; };
 		89CD4EF91AC0E741002B20D0 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				89442F6D1ABF10B7007CEDFE /* UserUIBarButtonItem.h */,
 				89DA45DD1A5860F000F7E23D /* TeacherMainViewController.h */,
 				89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */,
+				89C8549D1AD7336100740DB3 /* ManageStudentViewController.h */,
+				89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */,
 			);
 			name = TeacherView;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
 				89D3277E1A968A4F00CF3214 /* UserRoleEnums.m in Sources */,
 				89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */,
+				89C8549F1AD7336100740DB3 /* ManageStudentViewController.m in Sources */,
 				89D327781A968A4F00CF3214 /* Behaviors.m in Sources */,
 				89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */,
 				89D327631A968A4E00CF3214 /* Classroom.m in Sources */,

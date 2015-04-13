@@ -6,9 +6,11 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sortOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="Classroom" representedClassName="Classroom" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="teacherId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="ClassroomBehaviors" representedClassName="ClassroomBehaviors" syncable="YES">
@@ -19,6 +21,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="trackingInterval" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="ClassroomParents" representedClassName="ClassroomParents" syncable="YES">
@@ -26,38 +29,46 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="parentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="ClassroomStudents" representedClassName="ClassroomStudents" syncable="YES">
         <attribute name="classroomId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="Comments" representedClassName="Comments" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="IntervalEnum" representedClassName="IntervalEnum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="PaidEnum" representedClassName="PaidEnum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="Status" representedClassName="Status" syncable="YES">
         <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="StatusEnums" representedClassName="StatusEnums" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="StudentBehaviors" representedClassName="StudentBehaviors" syncable="YES">
         <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -68,36 +79,40 @@
         <attribute name="paid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="registered" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="remoteId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="schoolDistrict" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schoolGrade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="schoolName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="zipCode" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="UserCookie" representedClassName="UserCookie" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="UserRoleEnums" representedClassName="UserRoleEnums" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Behaviors" positionX="-18" positionY="27" width="128" height="120"/>
-        <element name="Classroom" positionX="0" positionY="45" width="128" height="75"/>
-        <element name="ClassroomBehaviors" positionX="-9" positionY="36" width="128" height="165"/>
-        <element name="ClassroomParents" positionX="36" positionY="81" width="128" height="105"/>
-        <element name="ClassroomStudents" positionX="18" positionY="63" width="128" height="90"/>
-        <element name="IntervalEnum" positionX="27" positionY="72" width="128" height="75"/>
-        <element name="PaidEnum" positionX="18" positionY="63" width="128" height="75"/>
-        <element name="Status" positionX="-36" positionY="9" width="128" height="90"/>
-        <element name="StatusEnums" positionX="0" positionY="45" width="128" height="75"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="255"/>
-        <element name="UserCookie" positionX="-54" positionY="-9" width="128" height="88"/>
-        <element name="UserRoleEnums" positionX="9" positionY="54" width="128" height="75"/>
-        <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="90"/>
-        <element name="Comments" positionX="0" positionY="99" width="128" height="90"/>
+        <element name="Behaviors" positionX="-18" positionY="27" width="128" height="135"/>
+        <element name="Classroom" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="ClassroomBehaviors" positionX="-9" positionY="36" width="128" height="180"/>
+        <element name="ClassroomParents" positionX="36" positionY="81" width="128" height="120"/>
+        <element name="ClassroomStudents" positionX="18" positionY="63" width="128" height="105"/>
+        <element name="Comments" positionX="0" positionY="99" width="128" height="105"/>
+        <element name="IntervalEnum" positionX="27" positionY="72" width="128" height="90"/>
+        <element name="PaidEnum" positionX="18" positionY="63" width="128" height="90"/>
+        <element name="Status" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="StatusEnums" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="105"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="283"/>
+        <element name="UserCookie" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="UserRoleEnums" positionX="9" positionY="54" width="128" height="90"/>
     </elements>
 </model>

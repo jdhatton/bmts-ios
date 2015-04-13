@@ -27,13 +27,12 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window, zipCode;
+@synthesize window = _window, zipCode, behaviorListData, intervalListData ;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 AppDelegate *appDelegate = nil;
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -68,24 +67,8 @@ AppDelegate *appDelegate = nil;
         NSLog(@" Found UserCookie : %@", info.password);
         NSLog(@"--------------------------------------------");
         
-//        NSLog(@" FOR TESTING PURPOSES WE ARE GOING TO DELETE THE UserCookie if found then create a new one! This should cleanup any data from previous test.");
-//        NSLog(@" Deleting: UserCookie : userId: %@", info.userId);
-//        [context deleteObject:info];
-//     
-//    
-//        if (![context save:&error]) {
-//            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//        } else {
-//            NSLog(@"\n SUCCESS - Deleted all UserCookies from SqlLite");
-//        }
- 
-        
     }
-
     
-    //
-    // TODO: Remove - just deleting to clean up testing.
-    //
     NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
     [fetchRequest2 setEntity:entity2];
@@ -105,15 +88,9 @@ AppDelegate *appDelegate = nil;
         NSLog(@" Found User : schoolName  :  %@", user.schoolName);
         NSLog(@"--------------------------------------------");
         
-//        NSLog(@" FOR TESTING PURPOSES WE ARE GOING TO DELETE THE UserCookie if found then create a new one! This should cleanup any data from previous test.");
-//        NSLog(@" Deleting: User : userId: %@", user.id);
-//        [context deleteObject:user];
         
     }
-    
-    //
-    // TODO: Remove - just here for clean up while testing.
-    //
+ 
     NSFetchRequest *fetchRequest3 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity3 = [NSEntityDescription entityForName:@"ClassroomBehaviors" inManagedObjectContext:context];
     [fetchRequest3 setEntity:entity3];
@@ -128,28 +105,29 @@ AppDelegate *appDelegate = nil;
         NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
         NSLog(@" ----------------------------------------");
         
-        //        [context deleteObject:info];
     }
     
 
     //
-    // Delete all students
+    // TODO: move both of these array data elements to a NSDefault List to be read in from disk synced to WS.
     //
-//    for (User *user in fetchedObjects2) {
-//        if( user.id > 0 ){
-//            NSLog(@" FOR TESTING PURPOSES WE ARE GOING TO DELETE THE ALL STUDENTS ");
-//            NSLog(@" Deleting: User : userId: %@", user.id);
-//            [context deleteObject:user];
-//        }
-//        
-//    }
-//    
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    } else {
-//        NSLog(@"\n SUCCESS - Deleted all STUDENTS from SqlLite");
-//    }
+    behaviorListData = [[NSArray alloc] initWithObjects:@"Head Exploding",
+            @"Demon Summoning", @"Screaming",
+            @"Fighting", @"Drinking Blood",
+            @"Running", @"Open Portal",
+            @"Attention Off", @"Disruptions",
+            @"Spell Casting", @"Shape Shifting",
+            nil];
     
+    
+    intervalListData = [[NSArray alloc] initWithObjects:@"15 Minutes",
+             @"30 Minutes", @"45 Minutes", @"1 Hour",
+             @"2 Hours", @"3 Hours",
+             @"4 Hours", @"5 Hours",
+             @"6 Hours", @"Once a Day",
+             @"Every Other Day", @"Once a Week",
+             @"Every Other Week",@"Once a Month",@"Other",
+             nil];
     
     
     //
@@ -168,93 +146,6 @@ AppDelegate *appDelegate = nil;
     } else {
         NSLog(@" FAILED TO FIND THE USERCOOKIE and USER to forward to main view - Showing Login/CreateAccount flow........ ");
     }
-    
-    
-    
-
-    
-    
-
-
-    
-
-//    
-//    UserCookie *userCookie1 = [NSEntityDescription
-//                                      insertNewObjectForEntityForName:@"UserCookie"
-//                                      inManagedObjectContext:context];
-//    userCookie1.userId = [NSNumber numberWithInt:1];
-//    userCookie1.email = @"test001@email-test.com";
-//    userCookie1.password = @"testing123";
-//    
-//    
-//    UserCookie *userCookie2 = [NSEntityDescription
-//                               insertNewObjectForEntityForName:@"UserCookie"
-//                               inManagedObjectContext:context];
-//    userCookie2.userId = [NSNumber numberWithInt:2];
-//    userCookie2.email = @"test001@email-test.com";
-//    userCookie2.password = @"testing123";
-    
-    
-    
-//    FailedBankDetails *failedBankDetails = [NSEntityDescription
-//                                            insertNewObjectForEntityForName:@"FailedBankDetails"
-//                                            inManagedObjectContext:context];
-//    failedBankDetails.closeDate = [NSDate date];
-//    failedBankDetails.updateDate = [NSDate date];
-//    failedBankDetails.zip = [NSNumber numberWithInt:12345];
-//    failedBankDetails.info = failedBankInfo;
-//    failedBankInfo.details = failedBankDetails;
-    
-    
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    }
-    
-    // Test listing all FailedBankInfos from the store
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserCookie"
-//                                              inManagedObjectContext:context];
-//    [fetchRequest setEntity:entity];
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//    for (UserCookie *info in fetchedObjects) {
-//        NSLog(@" Found UserCookie : userId: %@", info.userId);
-////        FailedBankDetails *details = info.details;
-////        NSLog(@"Zip: %@", details.zip);
-//    }
-    
-    // Override point for customization after application launch.
-//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-//    FBCDMasterViewController *controller = (FBCDMasterViewController *)navigationController.topViewController;
-//    controller.managedObjectContext = self.managedObjectContext;
-    
-    
-    //
-    // Verefied saved to the DB - now let's delete them!
-    //
-    
-//    for (UserCookie *info2 in fetchedObjects) {
-//        NSLog(@" Deleting: UserCookie : userId: %@", info2.userId);
-//        [context deleteObject:info2];
-//    }
-//    
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    }
-//
-//    for (UserCookie *info2 in fetchedObjects) {
-//        NSLog(@" After Delete : UserCookie : userId: %@", info2.userId);
-//    }
-    
-    
-  
-    
-    //
-    // Load and test a REST call
-    //
-    RestController *restCntrlr  = [RestController alloc];
-    [restCntrlr fetchGreeting];
-
-    
     
     return YES;
 }

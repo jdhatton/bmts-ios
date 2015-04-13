@@ -101,17 +101,11 @@
 {
     
     NSLog(@"\n >>>>  ..1..    REST::POST::    registerUser ");
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://homeroomtechnologies.com:8080/registerUser"]];
-
-    // Specify that it will be a POST request
-    request.HTTPMethod = @"POST";
-
-    // This is how we set header fields
-    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
 
     // Convert your data and set your request's HTTPBody property
     //NSString *stringData = @"some data";
- 
+    NSString *jsonString;
+    
     NSMutableDictionary *fields = [NSMutableDictionary dictionary];
     for (NSAttributeDescription *attribute in [[user entity] properties]) {
         NSString *attributeName = attribute.name;
@@ -125,23 +119,43 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
-    
+    NSLog(@"\n jsonData = %@", jsonData);
+ 
     if (! jsonData) {
         NSLog(@"Got an error: %@", error);
     } else {
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
+ 
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/registerUser"];
+    NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
+    [rq setHTTPMethod:@"POST"];
     
+ //   NSData *jsonData = [@"{ \"foo\": 1337 }" dataUsingEncoding:NSUTF8StringEncoding];
+    [rq setHTTPBody:jsonData];
     
+    [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
     
+    [NSURLConnection sendAsynchronousRequest:rq
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             NSLog(@"\n\n    >>>>>    POST sent!");
+             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
+             NSLog(@"\n\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
+             NSLog(@"\n\n >>>>     REST:: RESP : CONTENT %@", [resp objectForKey:@"content"] );
+             //
+             // set this User record to synced = true.
+             //
+             
+         }
+     }];
     
-    
-    NSData *requestBodyData = jsonData;
-    request.HTTPBody = requestBodyData;
-
-    // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
+     NSLog(@"did it happen???");
 
 }
 

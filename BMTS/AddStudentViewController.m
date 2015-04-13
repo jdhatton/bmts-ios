@@ -32,32 +32,9 @@ BOOL isCancelledAdd = false;
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    //
-    // TODO: move both of these array data elements to a NSDefault List to be read in from disk synced to WS.
-    //
+    self.behaviorArray = [appDelegate behaviorListData];
     
-    NSArray *data;
-    NSArray *data2;
-    data = [[NSArray alloc] initWithObjects:@"Head Exploding",
-            @"Demon Summoning", @"Screaming",
-            @"Fighting", @"Drinking Blood",
-            @"Running", @"Open Portal",
-            @"Attention Off", @"Disruptions",
-            @"Spell Casting", @"Shape Shifting",
-            nil];
-    
-    self.behaviorArray = data;
-    
-    data2 = [[NSArray alloc] initWithObjects:@"15 Minutes",
-             @"30 Minutes", @"45 Minutes", @"1 Hour",
-             @"2 Hours", @"3 Hours",
-             @"4 Hours", @"5 Hours",
-             @"6 Hours", @"Once a Day",
-             @"Every Other Day", @"Once a Week",
-             @"Every Other Week",@"Once a Month",@"Other",
-             nil];
-    
-    self.intervalArray = data2;
+    self.intervalArray = [appDelegate intervalListData];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self

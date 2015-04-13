@@ -50,7 +50,7 @@
     NSLog(@"DEBUG: hiding the keyboard.");
     NSLog(@"DEBUG: done.");
     
-    [commentTextField resignFirstResponder];
+    [self.commentTextField resignFirstResponder];
     return YES;
     
 }

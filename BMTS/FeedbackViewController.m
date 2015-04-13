@@ -14,6 +14,8 @@
 
 @implementation FeedbackViewController
 
+@synthesize student, feedback;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,6 +31,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)commentTextField
+{
+    
+    NSLog(@"DEBUG: saving the comment.");
+    NSLog(@"DEBUG: hiding the keyboard.");
+    NSLog(@"DEBUG: done.");
+    
+    [self.feedback resignFirstResponder];
+    return YES;
+    
 }
 
 /*
