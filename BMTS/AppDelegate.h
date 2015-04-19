@@ -16,7 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) NSString *zipCode;
-
+@property (strong, nonatomic) NSString *userRemoteId;
+@property (strong, nonatomic) NSString *userPassword;
 @property (strong, nonatomic) NSArray *behaviorListData;
 @property (strong, nonatomic) NSArray *intervalListData;
 

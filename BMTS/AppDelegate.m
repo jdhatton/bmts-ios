@@ -31,6 +31,8 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize userRemoteId, userPassword;
+
 
 AppDelegate *appDelegate = nil;
 

@@ -195,14 +195,15 @@ BOOL isValidForSegue = true;
     // If both are not provided show alert.
     
     if( ! self.emailAddressTextBox.text.length > 0 ) {
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
         message:@"Please provided an email and password to get started! "
                                                     delegate:self
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles: nil];
         [alert show];
         isValidForSegue = false;
-    } else if( ! self.passwordTextBox.text.length > 0 ){
+    }
+    else if( ! self.passwordTextBox.text.length > 0 ){
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
                                                          message:@"Please provided an email and password to get started! "
                                                         delegate:self
@@ -211,6 +212,16 @@ BOOL isValidForSegue = true;
         [alert show];
         isValidForSegue = false;
     }
+    else if( [self isValidEmail:self.emailAddressTextBox.text ] == false) {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+                                                         message:@"Please provided a valid email to get started! "
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        [alert show];
+        isValidForSegue = false;
+    }
+    
 //    else if( self.passwordTextBox.text.length > 0 && [self.NSStringIsValidEmail:self.passwordTextBox.text]){
 //        
 //    }
@@ -243,6 +254,8 @@ BOOL isValidForSegue = true;
         
         isValidForSegue = true;
         
+        appDelegate.userPassword = passwordTextBox.text;
+        
         //
         // Segway to the TeacherMainView
         //
@@ -272,7 +285,7 @@ BOOL isValidForSegue = true;
     return YES;
 }
 
--(BOOL) NSStringIsValidEmail:(NSString *)checkString
+-(BOOL) isValidEmail:(NSString *)checkString
 {
     BOOL stricterFilter = NO; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
     NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";

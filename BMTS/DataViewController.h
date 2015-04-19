@@ -29,7 +29,7 @@
 - (IBAction)createAccount:(id)sender;
 - (IBAction)alreadyHaveAccount:(id)sender;
 - (IBAction)debug:(id)sender;
--(BOOL) NSStringIsValidEmail:(NSString *)checkString;
+-(BOOL) isValidEmail:(NSString *)checkString;
 
 @property (strong, nonatomic) UIWindow *window;
 

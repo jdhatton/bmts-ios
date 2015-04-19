@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-wV-RVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2152.5" y="-685.5"/>
+            <point key="canvasLocation" x="-2536.5" y="-403.5"/>
         </scene>
         <!--Register Three View Controller-->
         <scene sceneID="5Wq-ad-VHz">
@@ -118,16 +118,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ZipCode here." textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-2e-gy5">
-                                <rect key="frame" x="92" y="430" width="191" height="30"/>
-                                <color key="backgroundColor" red="0.87891782510000005" green="0.94055771079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="zipCode:" destination="zYF-zh-829" eventType="editingDidEnd" id="eKA-01-mmu"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPI-TB-Wdh">
                                 <rect key="frame" x="45" y="122" width="284" height="34"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -182,14 +172,26 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please provide your first name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-9J-2S6">
-                                <rect key="frame" x="45" y="157" width="279" height="30"/>
+                                <rect key="frame" x="40" y="164" width="287" height="30"/>
+                                <color key="backgroundColor" red="0.99749447599999996" green="0.99749447599999996" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please provide your last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-vX-ny4">
-                                <rect key="frame" x="45" y="238" width="279" height="30"/>
+                                <rect key="frame" x="40" y="237" width="287" height="30"/>
+                                <color key="backgroundColor" red="0.99749447599999996" green="0.99749447599999996" blue="0.99749447599999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ZipCode" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYw-2e-gy5">
+                                <rect key="frame" x="105" y="430" width="153" height="30"/>
+                                <color key="backgroundColor" red="0.87891782510000005" green="0.94055771079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="zipCode:" destination="zYF-zh-829" eventType="editingDidEnd" id="eKA-01-mmu"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXR-NT-zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1502.5" y="198.5"/>
+            <point key="canvasLocation" x="-1470.5" y="432.5"/>
         </scene>
         <!--Manage Student View Controller-->
         <scene sceneID="0BT-Pc-ep8">
@@ -282,20 +284,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-zo-n5A">
-                                <rect key="frame" x="16" y="20" width="343" height="30"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Manage Student">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a behavior to track." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a2-OU-Nvk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update selected behavior." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a2-OU-Nvk">
                                 <rect key="frame" x="35" y="159" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,7 +297,7 @@
                                     <outlet property="delegate" destination="hte-3k-ekS" id="rwp-1A-ZZ2"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select an interval for tracking." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-kD-nJo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update selected interval for tracking." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXK-kD-nJo">
                                 <rect key="frame" x="35" y="351" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,17 +310,9 @@
                                     <outlet property="delegate" destination="hte-3k-ekS" id="OZE-nG-fm8"/>
                                 </connections>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-1N-5oq">
-                                <rect key="frame" x="35" y="91" width="312" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hte-3k-ekS" id="PgP-tD-ivb"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-ni-6Yo">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-ni-6Yo">
                                 <rect key="frame" x="16" y="522" width="141" height="38"/>
-                                <color key="backgroundColor" red="0.64308227480000002" green="0.0044912458510000001" blue="0.1044308964" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.59739098692121217" green="0.0033598833192663271" blue="0.097952303956424625" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Delete Student">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -344,6 +325,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveStudentUpdate:" destination="wrl-0o-CLV" eventType="touchUpInside" id="epa-xA-8zJ"/>
+                                    <segue destination="i1N-B9-We4" kind="show" id="Fcs-e2-oge"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSc-sp-m7o">
                                 <rect key="frame" x="16" y="597" width="141" height="35"/>
@@ -352,23 +337,53 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelUpdate:" destination="wrl-0o-CLV" eventType="touchUpInside" id="hWb-g8-lEx"/>
+                                    <segue destination="i1N-B9-We4" kind="show" id="JSn-cG-zV3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-eE-oHn">
                                 <rect key="frame" x="206" y="522" width="153" height="38"/>
                                 <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="InviteParent">
+                                <state key="normal" title="Invite Student">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46h-bu-uwg">
+                                <rect key="frame" x="16" y="20" width="331" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-qj-Ewv">
+                                <rect key="frame" x="31" y="108" width="312" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-1N-5oq">
+                                <rect key="frame" x="31" y="70" width="312" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hte-3k-ekS" id="PgP-tD-ivb"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="behaviorUpdatePicker" destination="qX8-wK-kZo" id="kbj-QW-pJK"/>
+                        <outlet property="intervalUpdatePicker" destination="mfW-jI-8iG" id="V8k-uM-PeA"/>
+                        <outlet property="studentHeaderLabel" destination="46h-bu-uwg" id="rck-Vy-5u1"/>
+                        <outlet property="studentIDNumber" destination="9hE-qj-Ewv" id="bqJ-7o-LIW"/>
+                        <outlet property="studentNameTextField" destination="7ds-1N-5oq" id="wfB-Eb-6xa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mJ-hV-cjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1594.5" y="-667.5"/>
+            <point key="canvasLocation" x="-1482.5" y="-653.5"/>
         </scene>
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
@@ -416,7 +431,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="AC7-wn-QMf"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="mCk-TR-dv7" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="mCk-TR-dv7" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="m9m-Oh-ruP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="8HC-T0-tKj"/>
                                 </items>
                             </toolbar>
@@ -441,7 +460,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="2Vx-K9-zE6"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="5rF-MO-283" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="5rF-MO-283" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="tTX-Kc-Ipu"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="MqX-A3-QXH"/>
                                 </items>
                             </toolbar>
@@ -466,7 +489,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="VpQ-SG-yUS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="ZA5-4V-7Tw" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="ZA5-4V-7Tw" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="LHr-Qb-keH"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="1iP-di-8Rn"/>
                                 </items>
                             </toolbar>
@@ -491,7 +518,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="ie8-rn-5nP"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="rz1-Zl-BGs" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="rz1-Zl-BGs" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="th1-ej-GdS"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="1lA-dW-BPe"/>
                                 </items>
                             </toolbar>
@@ -516,7 +547,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="mG7-uy-fYr"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="nql-y8-Y4U" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="nql-y8-Y4U" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="LbC-Ht-ll1"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="iXx-J8-YJo"/>
                                 </items>
                             </toolbar>
@@ -541,7 +576,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="It3-7t-ndp"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="SgF-cz-dkC" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="SgF-cz-dkC" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="toX-GW-WPJ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="r89-V9-j10"/>
                                 </items>
                             </toolbar>
@@ -556,33 +595,6 @@
                                     <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4S-s6-pRg" customClass="ManageStu">
-                                <rect key="frame" x="0.0" y="101" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="tIj-E7-1iS" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="QC3-97-A0x"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="gLu-Wa-frr" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="vCa-tn-VeL"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" identifier="showStudentStatusSegue" id="xWW-Ft-f0w"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="emw-UZ-7kB" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="CaW-Eu-tbr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="Msj-rc-6LM" customClass="UserUIBarButtonItem"/>
-                                    <barButtonItem id="VQF-Lz-Dru"/>
-                                </items>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-Uc-tjH">
                                 <rect key="frame" x="0.0" y="382" width="375" height="44"/>
                                 <items>
@@ -604,7 +616,11 @@
                                             <segue destination="a1m-Cq-yIh" kind="show" id="dqC-6r-nx0"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="eZk-BG-aw6" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="eZk-BG-aw6" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="lgu-qY-8FB"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem id="zzr-jL-KJE"/>
                                 </items>
                             </toolbar>
@@ -618,6 +634,37 @@
                                     <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4S-s6-pRg" customClass="ManageStu">
+                                <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="tIj-E7-1iS" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="ifV-aA-ZTq" kind="show" id="QC3-97-A0x"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="full_moon-24" width="50" id="gLu-Wa-frr" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="vCa-tn-VeL"/>
+                                            <segue destination="7x5-HR-zIs" kind="show" identifier="showStudentStatusSegue" id="xWW-Ft-f0w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="emw-UZ-7kB" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="a1m-Cq-yIh" kind="show" id="CaW-Eu-tbr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="settings-24" width="54" id="Msj-rc-6LM" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <segue destination="wrl-0o-CLV" kind="show" id="mjQ-gX-Yhb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem id="VQF-Lz-Dru"/>
+                                </items>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -684,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNW-ad-Fav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007.5" y="-667.5"/>
+            <point key="canvasLocation" x="-981.5" y="-653.5"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="yWE-3h-lQ7">
@@ -869,13 +916,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student's Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-vy-m1M">
-                                <rect key="frame" x="51" y="41" width="273" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="51" y="28" width="273" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpL-Ys-x6F">
-                                <rect key="frame" x="121" y="116" width="139" height="21"/>
+                                <rect key="frame" x="159" y="90" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -892,86 +939,41 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleRED-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-Fj-AlI">
-                                <rect key="frame" x="39" y="111" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZC1-fy-zzJ">
-                                <rect key="frame" x="121" y="168" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleRED-1" translatesAutoresizingMaskIntoConstraints="NO" id="2ux-8r-9fE">
-                                <rect key="frame" x="39" y="163" width="34" height="32"/>
+                                <rect key="frame" x="77" y="85" width="34" height="32"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poT-ur-M3i">
-                                <rect key="frame" x="121" y="221" width="139" height="21"/>
+                                <rect key="frame" x="159" y="142" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleYELLOW" translatesAutoresizingMaskIntoConstraints="NO" id="C6y-lX-Uja">
-                                <rect key="frame" x="39" y="216" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGL-v6-6jv">
-                                <rect key="frame" x="121" y="276" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleRED-1" translatesAutoresizingMaskIntoConstraints="NO" id="U5V-ZS-p57">
-                                <rect key="frame" x="39" y="271" width="34" height="32"/>
+                                <rect key="frame" x="77" y="137" width="34" height="32"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDN-Me-iMD">
-                                <rect key="frame" x="121" y="328" width="139" height="21"/>
+                                <rect key="frame" x="159" y="190" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleGREEN" translatesAutoresizingMaskIntoConstraints="NO" id="583-fM-54u">
-                                <rect key="frame" x="39" y="323" width="34" height="32"/>
+                                <rect key="frame" x="77" y="185" width="34" height="32"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b69-dJ-1GB">
-                                <rect key="frame" x="121" y="381" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleGREEN" translatesAutoresizingMaskIntoConstraints="NO" id="DRD-44-mOn">
-                                <rect key="frame" x="39" y="376" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JO1-wb-vz4">
-                                <rect key="frame" x="121" y="429" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleRED-1" translatesAutoresizingMaskIntoConstraints="NO" id="PNo-Gt-fQX">
-                                <rect key="frame" x="39" y="424" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLU-m8-SdK">
-                                <rect key="frame" x="121" y="481" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-Mg-coE">
-                                <rect key="frame" x="121" y="534" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleYELLOW" translatesAutoresizingMaskIntoConstraints="NO" id="Ati-vd-74S">
-                                <rect key="frame" x="39" y="529" width="34" height="32"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleGREEN" translatesAutoresizingMaskIntoConstraints="NO" id="mde-bA-Vsz">
-                                <rect key="frame" x="39" y="476" width="34" height="32"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="euP-s7-cPH">
+                                <rect key="frame" x="34" y="235" width="309" height="334"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ifV-aA-ZTq" id="uV2-FY-jXa"/>
+                                    <outlet property="delegate" destination="ifV-aA-ZTq" id="gg3-n1-fAR"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="dayHeaderLabel" destination="W7s-vy-m1M" id="M3o-sC-Cz3"/>
+                        <outlet property="dayHeaderLabel" destination="W7s-vy-m1M" id="1BE-Z1-kTC"/>
+                        <outlet property="itemList" destination="euP-s7-cPH" id="Ytd-6W-OMm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-OD-rWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1056,7 +1058,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007.5" y="204.5"/>
+            <point key="canvasLocation" x="-971.5" y="432.5"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Mac-g0-RuQ">
@@ -1118,7 +1120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-c1-rTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-539.5" y="204.5"/>
+            <point key="canvasLocation" x="-427.5" y="432.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
@@ -1193,7 +1195,7 @@
                                 </connections>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
-                                <rect key="frame" x="31" y="133" width="312" height="30"/>
+                                <rect key="frame" x="47" y="66" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
@@ -1225,6 +1227,11 @@
                                     <segue destination="i1N-B9-We4" kind="show" id="X0Z-VT-WKG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpK-Wi-OSU">
+                                <rect key="frame" x="47" y="121" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1232,6 +1239,7 @@
                     <connections>
                         <outlet property="behaviorPicker" destination="Cah-3X-g6V" id="wi1-eZ-ozZ"/>
                         <outlet property="intervalPicker" destination="zA5-WI-Elh" id="qsb-Sb-z2S"/>
+                        <outlet property="studentIdNumber" destination="mpK-Wi-OSU" id="eq1-8M-9Wd"/>
                         <outlet property="studentName" destination="kkA-MW-e1S" id="Voj-MN-CvF"/>
                     </connections>
                 </viewController>
@@ -1405,14 +1413,14 @@
                                 <rect key="frame" x="-1" y="238" width="375" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zGo-AL-2Ao"/>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LockIcon5" translatesAutoresizingMaskIntoConstraints="NO" id="lRs-J5-36r">
-                                        <rect key="frame" x="8" y="4" width="30" height="27"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJ7-ku-itL">
-                                        <rect key="frame" x="46" y="4" width="321" height="27"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJ7-ku-itL">
+                                        <rect key="frame" x="46" y="-5" width="321" height="47"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LockIcon5" translatesAutoresizingMaskIntoConstraints="NO" id="lRs-J5-36r">
+                                        <rect key="frame" x="8" y="2" width="30" height="31"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
@@ -1471,14 +1479,14 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vH-pT-ITE">
                                 <rect key="frame" x="0.0" y="188" width="375" height="39"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EmailIcon5" translatesAutoresizingMaskIntoConstraints="NO" id="osp-TD-OVI">
-                                        <rect key="frame" x="8" y="4" width="30" height="27"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Email Address" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luf-9d-Wni">
-                                        <rect key="frame" x="41" y="6" width="326" height="27"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luf-9d-Wni">
+                                        <rect key="frame" x="41" y="-8" width="326" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EmailIcon5" translatesAutoresizingMaskIntoConstraints="NO" id="osp-TD-OVI">
+                                        <rect key="frame" x="3" y="4" width="35" height="27"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
@@ -1724,7 +1732,7 @@ Internet traffic will be routed through it.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpS-fW-r8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2644.5" y="-673.5"/>
+            <point key="canvasLocation" x="-3028.5" y="404.5"/>
         </scene>
         <!--Register One View Controller-->
         <scene sceneID="duS-m9-0Ma">
@@ -1948,9 +1956,10 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="DsT-Yk-rgK"/>
+        <segue reference="QC3-97-A0x"/>
         <segue reference="a2J-wy-WMn"/>
-        <segue reference="pN9-YT-7xJ"/>
-        <segue reference="bSV-0L-yVm"/>
+        <segue reference="toX-GW-WPJ"/>
         <segue reference="CaW-Eu-tbr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

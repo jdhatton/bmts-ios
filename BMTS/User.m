@@ -2,7 +2,7 @@
 //  User.m
 //  BMTS
 //
-//  Created by JD Hatton on 2/19/15.
+//  Created by JD Hatton on 4/17/15.
 //  Copyright (c) 2015 Homeroom Technologies. All rights reserved.
 //
 
@@ -19,11 +19,14 @@
 @dynamic paid;
 @dynamic phone;
 @dynamic registered;
+@dynamic remoteId;
 @dynamic role;
 @dynamic schoolDistrict;
 @dynamic schoolGrade;
 @dynamic schoolName;
 @dynamic status;
+@dynamic synced;
 @dynamic zipCode;
-
+@dynamic password;
+@dynamic studentIdNumber;
 @end

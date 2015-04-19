@@ -29,6 +29,8 @@
 		89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
+		89C0B91A1AE1BF6D0059F9D8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C0B9191AE1BF6D0059F9D8 /* User.m */; };
+		89C0B91D1AE2A4D60059F9D8 /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C0B91C1AE2A4D60059F9D8 /* Feedback.m */; };
 		89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549B1AD08B8A00740DB3 /* RestController.m */; };
 		89C8549F1AD7336100740DB3 /* ManageStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */; };
 		89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */; };
@@ -44,7 +46,6 @@
 		89D327691A968A4E00CF3214 /* UserCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327681A968A4E00CF3214 /* UserCookie.m */; };
 		89D3276C1A968A4F00CF3214 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3276B1A968A4F00CF3214 /* Status.m */; };
 		89D3276F1A968A4F00CF3214 /* StatusEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3276E1A968A4F00CF3214 /* StatusEnums.m */; };
-		89D327721A968A4F00CF3214 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327711A968A4F00CF3214 /* User.m */; };
 		89D327751A968A4F00CF3214 /* PaidEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327741A968A4F00CF3214 /* PaidEnum.m */; };
 		89D327781A968A4F00CF3214 /* Behaviors.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D327771A968A4F00CF3214 /* Behaviors.m */; };
 		89D3277B1A968A4F00CF3214 /* ClassroomParents.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3277A1A968A4F00CF3214 /* ClassroomParents.m */; };
@@ -110,6 +111,10 @@
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
+		89C0B9181AE1BF6D0059F9D8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = BMTS/User.h; sourceTree = "<group>"; };
+		89C0B9191AE1BF6D0059F9D8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = BMTS/User.m; sourceTree = "<group>"; };
+		89C0B91B1AE2A4D60059F9D8 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = BMTS/Feedback.h; sourceTree = "<group>"; };
+		89C0B91C1AE2A4D60059F9D8 /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feedback.m; path = BMTS/Feedback.m; sourceTree = "<group>"; };
 		89C8549A1AD08B8A00740DB3 /* RestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestController.h; sourceTree = "<group>"; };
 		89C8549B1AD08B8A00740DB3 /* RestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestController.m; sourceTree = "<group>"; };
 		89C8549D1AD7336100740DB3 /* ManageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageStudentViewController.h; sourceTree = "<group>"; };
@@ -140,8 +145,6 @@
 		89D3276B1A968A4F00CF3214 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		89D3276D1A968A4F00CF3214 /* StatusEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusEnums.h; sourceTree = "<group>"; };
 		89D3276E1A968A4F00CF3214 /* StatusEnums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusEnums.m; sourceTree = "<group>"; };
-		89D327701A968A4F00CF3214 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		89D327711A968A4F00CF3214 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		89D327731A968A4F00CF3214 /* PaidEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaidEnum.h; sourceTree = "<group>"; };
 		89D327741A968A4F00CF3214 /* PaidEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaidEnum.m; sourceTree = "<group>"; };
 		89D327761A968A4F00CF3214 /* Behaviors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Behaviors.h; sourceTree = "<group>"; };
@@ -186,6 +189,10 @@
 		890759861A0B110B000A30DA = {
 			isa = PBXGroup;
 			children = (
+				89C0B91B1AE2A4D60059F9D8 /* Feedback.h */,
+				89C0B91C1AE2A4D60059F9D8 /* Feedback.m */,
+				89C0B9181AE1BF6D0059F9D8 /* User.h */,
+				89C0B9191AE1BF6D0059F9D8 /* User.m */,
 				89AF63051AA9E6A10022F035 /* listastic-2014.png */,
 				89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */,
 				89F2F6F01A605967001B0D17 /* CoreData.framework */,
@@ -338,8 +345,6 @@
 				89D327771A968A4F00CF3214 /* Behaviors.m */,
 				89D327731A968A4F00CF3214 /* PaidEnum.h */,
 				89D327741A968A4F00CF3214 /* PaidEnum.m */,
-				89D327701A968A4F00CF3214 /* User.h */,
-				89D327711A968A4F00CF3214 /* User.m */,
 				89D3276D1A968A4F00CF3214 /* StatusEnums.h */,
 				89D3276E1A968A4F00CF3214 /* StatusEnums.m */,
 				89D3276A1A968A4F00CF3214 /* Status.h */,
@@ -489,6 +494,7 @@
 				890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */,
 				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
 				89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */,
+				89C0B91A1AE1BF6D0059F9D8 /* User.m in Sources */,
 				89D327601A968A4E00CF3214 /* ClassroomBehaviors.m in Sources */,
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
@@ -502,6 +508,7 @@
 				89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */,
 				890759D21A159BF0000A30DA /* RegisterThreeViewController.m in Sources */,
 				89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */,
+				89C0B91D1AE2A4D60059F9D8 /* Feedback.m in Sources */,
 				89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */,
 				89D327541A956C4300CF3214 /* SyncService.m in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
@@ -510,7 +517,6 @@
 				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
 				89F4A7C91AC6E38600F2203F /* App.m in Sources */,
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
-				89D327721A968A4F00CF3214 /* User.m in Sources */,
 				89D327661A968A4E00CF3214 /* IntervalEnum.m in Sources */,
 				89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */,
 				89D3276F1A968A4F00CF3214 /* StatusEnums.m in Sources */,

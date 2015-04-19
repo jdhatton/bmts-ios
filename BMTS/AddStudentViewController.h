@@ -16,6 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *studentName;
 
+@property (weak, nonatomic) IBOutlet UITextField *studentIdNumber;
+
+
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)saveFormData:(id)sender;

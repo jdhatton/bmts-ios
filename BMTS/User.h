@@ -2,7 +2,7 @@
 //  User.h
 //  BMTS
 //
-//  Created by JD Hatton on 2/19/15.
+//  Created by JD Hatton on 4/17/15.
 //  Copyright (c) 2015 Homeroom Technologies. All rights reserved.
 //
 
@@ -20,11 +20,14 @@
 @property (nonatomic, retain) NSNumber * paid;
 @property (nonatomic, retain) NSString * phone;
 @property (nonatomic, retain) NSNumber * registered;
+@property (nonatomic, retain) NSString * remoteId;
 @property (nonatomic, retain) NSNumber * role;
 @property (nonatomic, retain) NSString * schoolDistrict;
 @property (nonatomic, retain) NSNumber * schoolGrade;
 @property (nonatomic, retain) NSString * schoolName;
 @property (nonatomic, retain) NSNumber * status;
+@property (nonatomic, retain) NSNumber * synced;
 @property (nonatomic, retain) NSNumber * zipCode;
-
+@property (nonatomic, retain) NSString * password;
+@property (nonatomic, retain) NSString * studentIdNumber;
 @end

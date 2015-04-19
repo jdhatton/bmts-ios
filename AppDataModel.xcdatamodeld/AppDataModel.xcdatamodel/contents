@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1510" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Behaviors" representedClassName="Behaviors" syncable="YES">
         <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -43,6 +43,10 @@
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
+    <entity name="Feedback" representedClassName="Feedback" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="IntervalEnum" representedClassName="IntervalEnum" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -70,6 +74,15 @@
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
+    <entity name="StudentStatusLog" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="modifiedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="teacherId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -77,14 +90,16 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="registered" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="remoteId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="remoteId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="schoolDistrict" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="schoolGrade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="schoolName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentIdNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="zipCode" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
@@ -111,8 +126,10 @@
         <element name="Status" positionX="-36" positionY="9" width="128" height="105"/>
         <element name="StatusEnums" positionX="0" positionY="45" width="128" height="90"/>
         <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="105"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="283"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="315"/>
         <element name="UserCookie" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="UserRoleEnums" positionX="9" positionY="54" width="128" height="90"/>
+        <element name="Feedback" positionX="-9" positionY="108" width="128" height="75"/>
+        <element name="StudentStatusLog" positionX="0" positionY="117" width="128" height="150"/>
     </elements>
 </model>

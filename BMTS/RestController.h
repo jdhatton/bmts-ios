@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "AppDelegate.h"
 
 @interface RestController : NSObject
 
@@ -16,5 +17,8 @@
 - (NSArray*)fetchDistrictsForZipCode:(NSString *)srcZipCode;
 
 - (IBAction)registerUser:(User *)user;
+
+- (IBAction)sendFeedback:(NSString *)comment;
+
 
 @end

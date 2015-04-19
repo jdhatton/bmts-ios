@@ -42,7 +42,7 @@ BOOL isCancelledAdd = false;
     [self.view addGestureRecognizer:tap];
     
     studentName.delegate = self;
-    
+
     self.studentName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
 }
@@ -151,6 +151,7 @@ BOOL isCancelledAdd = false;
         newUser.id = userId;
         newUser.firstName = strStudentName;
         newUser.role = [NSNumber numberWithInt:2]; // 2 = student
+        newUser.studentIdNumber = self.studentIdNumber.text;
         NSLog(@" Created Student : %@", newUser);
         
         //

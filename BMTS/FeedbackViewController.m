@@ -7,6 +7,7 @@
 //
 
 #import "FeedbackViewController.h"
+#import "RestController.h"
 
 @interface FeedbackViewController ()
 
@@ -26,6 +27,11 @@
     [self.view addGestureRecognizer:tap];
     
     
+}
+
+-(void)dismissKeyboard {
+    [feedback resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,80 +62,13 @@
 */
 
 - (IBAction)saveComment:(id)sender {
-    
-     NSLog(@"DEBUG: Saving Feedback... ");
+    NSLog(@"DEBUG: Saving Feedback... ");
+    RestController *restCntrlr  = [RestController alloc];
+    [restCntrlr sendFeedback:self.feedback.text];
 }
 
 - (IBAction)saveFormData:(id)sender {
-    
-    
     NSLog(@"DEBUG: Saving Feedback... ");
-    
-//    
-//    if( self.student != nil) {
-//        
-//        
-//        
-//        NSError *error;
-//        NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//        
-//        //
-//        // Create a new classroomBehavior record for the student-behavior-interval
-//        //
-//        NSLog(@" Creating a new StudentBehaviors");
-//        StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
-//        newStudentBehavior.createdDate =  [NSDate date];
-//        newStudentBehavior.studentId = self.student.id;
-//        newStudentBehavior.statusId = [NSNumber numberWithInt:selectedStatus];
-//        NSLog(@" Createing a new StudentBehaviors - 2  ");
-//        
-//        //        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-//        //        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
-//        //        newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-//        //        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
-//        
-//        NSLog(@" AddStudent SAVING ");
-//        if (![context save:&error]) {
-//            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-//        } else {
-//            
-//            
-//            
-//            //
-//            // Dump the saved behaviors for this student
-//            //
-//            NSError *error;
-//            NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//            
-//            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//            NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentBehaviors" inManagedObjectContext:context];
-//            
-//            [fetchRequest setEntity:entity];
-//            NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//            for (StudentBehaviors *behavior in fetchedObjects) {
-//                NSLog(@" StudentStatusViewController::Exiting() ");
-//                NSLog(@" ----------------------------------------");
-//                NSLog(@" Found StudentBehaviors : studentId      :  %@", behavior.studentId);
-//                NSLog(@" Found StudentBehaviors : statusId       :  %@", behavior.statusId);
-//                NSLog(@" Found StudentBehaviors : createdDate    :  %@", behavior.createdDate);
-//                NSLog(@" ----------------------------------------");
-//            }
-//            
-//            
-//            
-//            //
-//            // savedStatusSegue to the TeacherMainView
-//            //
-//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-//            [self.window makeKeyAndVisible];
-//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//            
-//        }
-//        
-//    }
-    
- 
 }
 
 

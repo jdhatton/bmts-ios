@@ -8,6 +8,9 @@
 
 #import "RestController.h"
 #import "User.h"
+#import "Comments.h"
+#import "AppDelegate.h"
+#import "Feedback.h"
 
 @implementation RestController
 
@@ -102,8 +105,10 @@
     
     NSLog(@"\n >>>>  ..1..    REST::POST::    registerUser ");
 
+    // Add the password to be sent
+    user.password = appDelegate.userPassword;
+    
     // Convert your data and set your request's HTTPBody property
-    //NSString *stringData = @"some data";
     NSString *jsonString;
     
     NSMutableDictionary *fields = [NSMutableDictionary dictionary];
@@ -127,7 +132,7 @@
         jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
  
-    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/registerUser"];
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/registerUser/add"];
     NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
     [rq setHTTPMethod:@"POST"];
     
@@ -144,21 +149,98 @@
      {
          if (data.length > 0 && connectionError == nil)
          {
-             NSLog(@"\n\n    >>>>>    POST sent!");
+             NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+             NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
              NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
-             NSLog(@"\n\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
-             NSLog(@"\n\n >>>>     REST:: RESP : CONTENT %@", [resp objectForKey:@"content"] );
-             //
-             // set this User record to synced = true.
-             //
+             NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+             NSLog(@"\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
+             NSLog(@"\n >>>>     REST:: RESP : CONTENT %@", [resp objectForKey:@"remoteId"] );
+             
+             user.registered = @1;
+             user.synced = @1;
+             user.remoteId = [resp objectForKey:@"remoteId"];
+             appDelegate.userRemoteId = [resp objectForKey:@"remoteId"];
+             
+             NSError *error;
+             NSManagedObjectContext *context = [appDelegate managedObjectContext];
+             if (![context save:&error]) {
+                 NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+             } else {
+                 NSLog(@"\n SUCCESS  - User - UPDATED  ");
+             }
              
          }
      }];
     
-     NSLog(@"did it happen???");
-
 }
 
+
+
+
+- (IBAction)sendFeedback:(NSString *)comment;
+{
+    
+    NSLog(@"\n >>>>  ..1..    REST::POST::    sendFeedback ");
+    
+    NSError *error;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    Feedback  *comments = [NSEntityDescription  insertNewObjectForEntityForName:@"Feedback" inManagedObjectContext:context];
+    comments.comment = comment;
+    comments.id = appDelegate.userRemoteId;
+    
+    // Convert your data and set your request's HTTPBody property
+    NSString *jsonString;
+    
+    NSMutableDictionary *fields = [NSMutableDictionary dictionary];
+    for (NSAttributeDescription *attribute in [[comments entity] properties]) {
+        NSString *attributeName = attribute.name;
+        id attributeValue = [comments valueForKey:attributeName];
+        if (attributeValue) {
+            [fields setObject:attributeValue forKey:attributeName];
+        }
+    }
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields options:NSJSONWritingPrettyPrinted error:&error];
+    NSLog(@"\n jsonData = %@", jsonData);
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8080/feedback/add"];
+    NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
+    [rq setHTTPMethod:@"POST"];
+    [rq setHTTPBody:jsonData];
+    
+    [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+    
+    [NSURLConnection sendAsynchronousRequest:rq
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+             NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
+             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
+             NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+             
+         }
+     }];
+    
+    NSLog(@"did it happen???");
+    
+}
+
+
+- (IBAction)addStudent:(User *)user;
+{
+    
+}
 
 
 @end

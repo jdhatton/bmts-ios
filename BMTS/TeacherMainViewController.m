@@ -14,6 +14,8 @@
 #import "StudentStatusViewController.h"
 #import "AvatarViewController.h"
 #import "CommentViewController.h"
+#import "ManageStudentViewController.h"
+#import "StudentMainView.h"
 
 @interface TeacherMainViewController ()
 
@@ -83,6 +85,7 @@ User *userEight;
         NSLog(@" Found User : lastName    :  %@", user.lastName);
         NSLog(@" Found User : gender      :  %@", user.gender);
         NSLog(@" Found User : schoolName  :  %@", user.schoolName);
+        NSLog(@" Found User : remoteId    :  %@", user.remoteId);
         NSLog(@" ----------------------------------------");
         
         if([user.id integerValue] == 1 ){
@@ -95,7 +98,6 @@ User *userEight;
     //
     // Set the header label
     //
-    
     teacherHeader.text = userName;
     [teacherHeader setFont:[UIFont fontWithName:@"Helvetica" size:17.0]];
     teacherHeader.textColor = [UIColor colorWithRed:(11/255.0) green:(11/255.0) blue:(11/255.0) alpha:1];
@@ -144,11 +146,11 @@ User *userEight;
             
             if(studentCount == 1){
                 toolBarOne.hidden = NO;
-                studentOneStatus.title = @"studentOneStatus";
-                studentOneAvatar.title = @"studentOneAvatar";
-                studentOneNote.title = @"studentOneNote";
-                studentOneName.title = @"studentOneName";
-                studentOneSettings.title = @"studentOneSettings";
+                studentOneStatus.accessibilityIdentifier = @"studentOneStatus";
+                studentOneAvatar.accessibilityIdentifier = @"studentOneAvatar";
+                studentOneNote.accessibilityIdentifier = @"studentOneNote";
+                studentOneName.accessibilityIdentifier = @"studentOneName";
+                studentOneSettings.accessibilityIdentifier = @"studentOneSettings";
                 studentOneName.title = user.firstName;
                 userOne = user;
                 
@@ -168,11 +170,11 @@ User *userEight;
             }
             else if(studentCount == 2){
                 toolBarTwo.hidden = NO;
-                studentTwoStatus.title = @"studentTwoStatus";
-                studentTwoAvatar.title = @"studentTwoAvatar";
-                studentTwoNote.title = @"studentTwoNote";
-                studentTwoName.title = @"studentTwoName";
-                studentTwoSettings.title = @"studentTwoSettings";
+                studentTwoStatus.accessibilityIdentifier = @"studentTwoStatus";
+                studentTwoAvatar.accessibilityIdentifier = @"studentTwoAvatar";
+                studentTwoNote.accessibilityIdentifier = @"studentTwoNote";
+                studentTwoName.accessibilityIdentifier = @"studentTwoName";
+                studentTwoSettings.accessibilityIdentifier = @"studentTwoSettings";
                 studentTwoName.title = user.firstName;
                 userTwo = user;
                 
@@ -190,11 +192,11 @@ User *userEight;
             }
             else if(studentCount == 3){
                 toolBarThree.hidden = NO;
-                studentThreeStatus.title = @"studentThreeStatus";
-                studentThreeAvatar.title = @"studentThreeAvatar";
-                studentThreeNote.title = @"studentThreeNote";
-                studentThreeName.title = @"studentThreeName";
-                studentThreeSettings.title = @"studentThreeSettings";
+                studentThreeStatus.accessibilityIdentifier = @"studentThreeStatus";
+                studentThreeAvatar.accessibilityIdentifier = @"studentThreeAvatar";
+                studentThreeNote.accessibilityIdentifier = @"studentThreeNote";
+                studentThreeName.accessibilityIdentifier = @"studentThreeName";
+                studentThreeSettings.accessibilityIdentifier = @"studentThreeSettings";
                 studentThreeName.title = user.firstName;
                 userThree = user;
                 
@@ -212,11 +214,11 @@ User *userEight;
             }
             else if(studentCount == 4){
                 toolBarFour.hidden = NO;
-                studentFourStatus.title = @"studentFourStatus";
-                studentFourAvatar.title = @"studentFourAvatar";
-                studentFourNote.title = @"studentFourNote";
-                studentFourName.title = @"studentFourName";
-                studentFourSettings.title = @"studentFourSettings";
+                studentFourStatus.accessibilityIdentifier = @"studentFourStatus";
+                studentFourAvatar.accessibilityIdentifier = @"studentFourAvatar";
+                studentFourNote.accessibilityIdentifier = @"studentFourNote";
+                studentFourName.accessibilityIdentifier = @"studentFourName";
+                studentFourSettings.accessibilityIdentifier = @"studentFourSettings";
                 studentFourName.title = user.firstName;
                 userFour = user;
                 
@@ -234,11 +236,11 @@ User *userEight;
             }
             else if(studentCount == 5){
                 toolBarFive.hidden = NO;
-                studentFiveStatus.title = @"studentFiveStatus";
-                studentFiveAvatar.title = @"studentFiveAvatar";
-                studentFiveNote.title = @"studentFiveNote";
-                studentFiveName.title = @"studentFiveName";
-                studentFiveSettings.title = @"studentFiveSettings";
+                studentFiveStatus.accessibilityIdentifier = @"studentFiveStatus";
+                studentFiveAvatar.accessibilityIdentifier = @"studentFiveAvatar";
+                studentFiveNote.accessibilityIdentifier = @"studentFiveNote";
+                studentFiveName.accessibilityIdentifier = @"studentFiveName";
+                studentFiveSettings.accessibilityIdentifier = @"studentFiveSettings";
                 studentFiveName.title = user.firstName;
                 userFive = user;
                 
@@ -256,11 +258,11 @@ User *userEight;
             }
             else if(studentCount == 6){
                 toolBarSix.hidden = NO;
-                studentSixStatus.title = @"studentSixStatus";
-                studentSixAvatar.title = @"studentSixAvatar";
-                studentSixNote.title = @"studentSixNote";
-                studentSixName.title = @"studentSixName";
-                studentSixSettings.title = @"studentSixSettings";
+                studentSixStatus.accessibilityIdentifier = @"studentSixStatus";
+                studentSixAvatar.accessibilityIdentifier = @"studentSixAvatar";
+                studentSixNote.accessibilityIdentifier = @"studentSixNote";
+                studentSixName.accessibilityIdentifier = @"studentSixName";
+                studentSixSettings.accessibilityIdentifier = @"studentSixSettings";
                 studentSixName.title = user.firstName;
                 userSix = user;
                 
@@ -278,11 +280,11 @@ User *userEight;
             }
             else if(studentCount == 7){
                 toolBarSeven.hidden = NO;
-                studentSevenStatus.title = @"studentSevenStatus";
-                studentSevenAvatar.title = @"studentSevenAvatar";
-                studentSevenNote.title = @"studentSevenNote";
-                studentSevenName.title = @"studentSevenName";
-                studentSevenSettings.title = @"studentSevenSettings";
+                studentSevenStatus.accessibilityIdentifier = @"studentSevenStatus";
+                studentSevenAvatar.accessibilityIdentifier = @"studentSevenAvatar";
+                studentSevenNote.accessibilityIdentifier = @"studentSevenNote";
+                studentSevenName.accessibilityIdentifier = @"studentSevenName";
+                studentSevenSettings.accessibilityIdentifier = @"studentSevenSettings";
                 studentSevenName.title = user.firstName;
                 userSeven = user;
                 
@@ -300,11 +302,11 @@ User *userEight;
             }
             else if(studentCount == 8){
                 toolBarEight.hidden = NO;
-                studentEightStatus.title = @"studentEightStatus";
-                studentEightAvatar.title = @"studentEightAvatar";
-                studentEightNote.title = @"studentEightNote";
-                studentEightName.title = @"studentEightName";
-                studentEightSettings.title = @"studentEightSettings";
+                studentEightStatus.accessibilityIdentifier = @"studentEightStatus";
+                studentEightAvatar.accessibilityIdentifier = @"studentEightAvatar";
+                studentEightNote.accessibilityIdentifier = @"studentEightNote";
+                studentEightName.accessibilityIdentifier = @"studentEightName";
+                studentEightSettings.accessibilityIdentifier = @"studentEightSettings";
                 studentEightName.title = user.firstName;
                 userEight = user;
                 
@@ -348,15 +350,7 @@ User *userEight;
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
      NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
-    
-    //
-    //
-    // TODO: currently this is setup to use the status view controller only
-    //       this method needs to add the selectedUse to the comment view controller
-    //       and the settings view controller so this use is set on those when we segue.
-    //
-    //
-    
+
     //
     // TODO: when tapping AddStudent we need to know that here and skip the processing here..
     //
@@ -368,31 +362,36 @@ User *userEight;
         StudentStatusViewController *controller = (StudentStatusViewController *)segue.destinationViewController;
         CommentViewController *commentCtrl = (CommentViewController *)segue.destinationViewController;
         AvatarViewController *avatarCtrl = (AvatarViewController *)segue.destinationViewController;
+        ManageStudentViewController *settingsCtrl = (ManageStudentViewController *)segue.destinationViewController;
+        
+        StudentMainView *studentMainCtrl = (StudentMainView *)segue.destinationViewController;
         
         UserUIBarButtonItem *selected = sender;
         
         
-        if( [selected.title  rangeOfString: @"studentOne" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        if( [selected.accessibilityIdentifier  rangeOfString: @"studentOne" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userOne;
-        } else if( [selected.title  rangeOfString: @"studentTwo" options: NSCaseInsensitiveSearch].location != NSNotFound   ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentTwo" options: NSCaseInsensitiveSearch].location != NSNotFound   ){
             selectedStudent = userTwo;
-        } else if( [selected.title  rangeOfString: @"studentThree" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentThree" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userThree;
-        } else if( [selected.title  rangeOfString: @"studentFour" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentFour" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userFour;
-        } else if( [selected.title  rangeOfString: @"studentFive" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentFive" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userFive;
-        } else if( [selected.title  rangeOfString: @"studentSix" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentSix" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userSix;
-        } else if( [selected.title  rangeOfString: @"studentSeven" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentSeven" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userSeven;
-        } else if( [selected.title  rangeOfString: @"studentEight" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
+        } else if( [selected.accessibilityIdentifier  rangeOfString: @"studentEight" options: NSCaseInsensitiveSearch].location != NSNotFound  ){
             selectedStudent = userEight;
         }
         
         controller.student = selectedStudent;
         commentCtrl.student = selectedStudent;
         avatarCtrl.student = selectedStudent;
+        settingsCtrl.student = selectedStudent;
+        studentMainCtrl.student = selectedStudent;
     }
     
 }
@@ -434,13 +433,6 @@ User *userEight;
 
     
 }
-
-
-
-
-
-
-
 
 
 
