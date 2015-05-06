@@ -310,14 +310,6 @@
                                     <outlet property="delegate" destination="hte-3k-ekS" id="OZE-nG-fm8"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-ni-6Yo">
-                                <rect key="frame" x="16" y="522" width="141" height="38"/>
-                                <color key="backgroundColor" red="0.59739098692121217" green="0.0033598833192663271" blue="0.097952303956424625" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Delete Student">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-2v-i7Y">
                                 <rect key="frame" x="206" y="597" width="153" height="35"/>
                                 <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -349,13 +341,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="inviteStudent:" destination="wrl-0o-CLV" eventType="touchUpInside" id="NMf-pW-ZN8"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46h-bu-uwg">
-                                <rect key="frame" x="16" y="20" width="331" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student ID Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hE-qj-Ewv">
                                 <rect key="frame" x="31" y="108" width="312" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -369,15 +358,33 @@
                                     <outlet property="delegate" destination="hte-3k-ekS" id="PgP-tD-ivb"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46h-bu-uwg">
+                                <rect key="frame" x="16" y="20" width="331" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpc-Hc-gSl">
+                                <rect key="frame" x="16" y="522" width="141" height="38"/>
+                                <color key="backgroundColor" red="0.46188446970000002" green="0.0067540864760000001" blue="0.049645731739999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Delete Student">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteStudent:" destination="wrl-0o-CLV" eventType="touchUpInside" id="ppO-og-F4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="behaviorUpdatePicker" destination="qX8-wK-kZo" id="kbj-QW-pJK"/>
+                        <outlet property="deleteStudentBtn" destination="cpc-Hc-gSl" id="AKR-GQ-6KN"/>
                         <outlet property="intervalUpdatePicker" destination="mfW-jI-8iG" id="V8k-uM-PeA"/>
+                        <outlet property="inviteStudentBtn" destination="qcz-eE-oHn" id="p8l-al-Dbc"/>
                         <outlet property="studentHeaderLabel" destination="46h-bu-uwg" id="rck-Vy-5u1"/>
-                        <outlet property="studentIDNumber" destination="9hE-qj-Ewv" id="bqJ-7o-LIW"/>
+                        <outlet property="studentIDNumber" destination="9hE-qj-Ewv" id="dRr-a5-sMF"/>
                         <outlet property="studentNameTextField" destination="7ds-1N-5oq" id="wfB-Eb-6xa"/>
                     </connections>
                 </viewController>
@@ -915,18 +922,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student's Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-vy-m1M">
-                                <rect key="frame" x="51" y="28" width="273" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpL-Ys-x6F">
-                                <rect key="frame" x="159" y="90" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrB-vX-7sK">
                                 <rect key="frame" x="121" y="601" width="131" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -938,35 +933,21 @@
                                     <segue destination="i1N-B9-We4" kind="show" id="DsT-Yk-rgK"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleRED-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-Fj-AlI">
-                                <rect key="frame" x="77" y="85" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poT-ur-M3i">
-                                <rect key="frame" x="159" y="142" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleYELLOW" translatesAutoresizingMaskIntoConstraints="NO" id="C6y-lX-Uja">
-                                <rect key="frame" x="77" y="137" width="34" height="32"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:12:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDN-Me-iMD">
-                                <rect key="frame" x="159" y="190" width="139" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="statusCircleGREEN" translatesAutoresizingMaskIntoConstraints="NO" id="583-fM-54u">
-                                <rect key="frame" x="77" y="185" width="34" height="32"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="euP-s7-cPH">
-                                <rect key="frame" x="34" y="235" width="309" height="334"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="euP-s7-cPH">
+                                <rect key="frame" x="28" y="71" width="319" height="510"/>
+                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ifV-aA-ZTq" id="uV2-FY-jXa"/>
                                     <outlet property="delegate" destination="ifV-aA-ZTq" id="gg3-n1-fAR"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student's Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-vy-m1M">
+                                <rect key="frame" x="51" y="28" width="273" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1944,9 +1925,6 @@ Internet traffic will be routed through it.</string>
         <image name="police-24" width="24" height="24"/>
         <image name="police-26" width="26" height="26"/>
         <image name="settings-24" width="24" height="24"/>
-        <image name="statusCircleGREEN" width="24" height="24"/>
-        <image name="statusCircleRED-1" width="24" height="24"/>
-        <image name="statusCircleYELLOW" width="24" height="24"/>
         <image name="stop-32" width="32" height="32"/>
         <image name="student-26" width="26" height="26"/>
         <image name="surfing-26" width="26" height="26"/>
@@ -1956,11 +1934,11 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DsT-Yk-rgK"/>
         <segue reference="QC3-97-A0x"/>
-        <segue reference="a2J-wy-WMn"/>
+        <segue reference="pN9-YT-7xJ"/>
         <segue reference="toX-GW-WPJ"/>
         <segue reference="CaW-Eu-tbr"/>
+        <segue reference="a2J-wy-WMn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

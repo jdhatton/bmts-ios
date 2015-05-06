@@ -37,6 +37,8 @@ BOOL isCancelledUpdate = false;
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Manage ", student.firstName];
     studentHeaderLabel.text = headerText;
+    
+    self.studentIDNumber.text = student.studentIdNumber;
 
     self.studentNameTextField.text = student.firstName;
     
@@ -226,9 +228,26 @@ BOOL isCancelledUpdate = false;
 
 
 
+- (IBAction)deleteStudent:(id)sender {
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"COMING SOON"
+                                                     message:@"This feature is still under development."
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles: nil];
+    [alert show];
+    
+}
 
 
 
+- (IBAction)inviteStudent:(id)sender {
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"COMING SOON"
+                                                     message:@"This feature is still under development."
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles: nil];
+    [alert show];
+}
 
 
 

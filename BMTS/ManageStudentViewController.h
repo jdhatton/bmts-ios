@@ -25,4 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *studentIDNumber;
 
+@property (weak, nonatomic) IBOutlet UIButton *inviteStudentBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *deleteStudentBtn;
 @end

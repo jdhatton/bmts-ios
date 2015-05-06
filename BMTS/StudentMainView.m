@@ -15,7 +15,8 @@
 @synthesize student, window, dayHeaderLabel,trackedBehaviorLbl;
 
 
- NSArray *items;
+ NSMutableArray *items;
+ NSMutableArray *behaviorList; // = [[NSMutableArray alloc] init];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +24,7 @@
     NSLog(@"DEBUG: StudentViewController::loading...   student = %@", student);
     
     
-    NSMutableArray *behaviorList = [[NSMutableArray alloc] init];
+    
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @" ", student.firstName];
@@ -31,13 +32,20 @@
     
     if( self.student != nil) {
         
-        items = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+        items = [NSMutableArray arrayWithObjects: nil];
+        behaviorList = [NSMutableArray arrayWithObjects: nil];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm:ss"];
+        //Optionally for time zone conversions
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
+        
+ 
+        
         
         
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        
-
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentBehaviors" inManagedObjectContext:context];
         [fetchRequest setEntity:entity];
@@ -45,7 +53,9 @@
         for (StudentBehaviors *behavior in fetchedObjects) {
             
             if( behavior.studentId == student.id ){
-                [behaviorList addObject:behavior];
+                [behaviorList addObject:behavior.statusId];
+                NSString *stringCreatedDate = [formatter stringFromDate:behavior.createdDate];
+                [items addObject:stringCreatedDate];
             }
         }
         
@@ -60,9 +70,10 @@
             }
             
         }
+        
+        //unless ARC is active
+        //[formatter release];
     }
-    
-    
     
  
 }
@@ -80,16 +91,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = [items objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"statusCircleRED-1.jpg"];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+   cell.backgroundColor = [UIColor clearColor];
+    
+    NSNumber *status = [behaviorList objectAtIndex:indexPath.row];
+ 
+        if( status == [NSNumber numberWithInteger:1])
+            cell.imageView.image = [UIImage imageNamed:@"statusCircleGREEN.jpg"];
+        else if( status ==  [NSNumber numberWithInteger:2])
+            cell.imageView.image = [UIImage imageNamed:@"statusCircleYELLOW.jpg"];
+        else if( status ==  [NSNumber numberWithInteger:3])
+            cell.imageView.image = [UIImage imageNamed:@"statusCircleRED-1.jpg"];
+        else
+            cell.imageView.image = [UIImage imageNamed:@"statusCircleGREEN.jpg"];
+ 
+    cell.textLabel.text = [items objectAtIndex:indexPath.row];
+    
 }
 
 @end

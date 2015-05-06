@@ -164,7 +164,7 @@ int selectedStatus;
         
         
         
-        NSLog(@" AddStudent SAVING ");
+        NSLog(@"\n >>>> Add Student Behavior SAVING ");
         if (![context save:&error]) {
             NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
