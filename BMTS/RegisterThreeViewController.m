@@ -30,7 +30,6 @@ bool isValidForSegueNext = false;
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -39,6 +38,10 @@ bool isValidForSegueNext = false;
     
     self.firstName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     self.lastName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
+    
+    lastName.delegate = self;
+    firstName.delegate = self;
+    zipCode.delegate = self;
     
 }
 
@@ -54,6 +57,13 @@ bool isValidForSegueNext = false;
     // Dispose of any resources that can be recreated.
 }
 
+-(BOOL) textFieldShouldReturn: (UITextField *) textField {
+    [lastName resignFirstResponder];
+    [firstName resignFirstResponder];
+    [zipCode resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
+}
 
 
 /*

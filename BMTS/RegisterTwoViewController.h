@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterTwoViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface RegisterTwoViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource ,UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIPickerView *districtPicker;

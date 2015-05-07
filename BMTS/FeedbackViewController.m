@@ -26,6 +26,7 @@
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
+    self.feedback.delegate = self;
     
 }
 
@@ -39,14 +40,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)commentTextField
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+
+    if([text isEqualToString:@"\n"]) {
+        [self.feedback resignFirstResponder];
+        return NO;
+    }
     
-    NSLog(@"DEBUG: saving the comment.");
-    NSLog(@"DEBUG: hiding the keyboard.");
-    NSLog(@"DEBUG: done.");
-    
-    [self.feedback resignFirstResponder];
     return YES;
     
 }

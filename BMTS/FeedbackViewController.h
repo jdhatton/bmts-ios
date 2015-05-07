@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface FeedbackViewController : UIViewController
+@interface FeedbackViewController : UIViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) User *student;
 @property (weak, nonatomic) IBOutlet UITextView *feedback;

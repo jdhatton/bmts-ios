@@ -34,6 +34,7 @@ bool isValidForSegueToMain = false;
     [super viewDidLoad];
     
     self.zipCode = appDelegate.zipCode;
+    schoolName.delegate = self;
     NSLog(@" LOADING: RegisterTwoViewController  :  zipCode =  %@", zipCode);
     
     //
@@ -99,6 +100,13 @@ bool isValidForSegueToMain = false;
 -(void)dismissKeyboard {
     [schoolName resignFirstResponder];
     [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [schoolName resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
 }
 
 /*

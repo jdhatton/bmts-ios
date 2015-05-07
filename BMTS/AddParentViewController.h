@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddParentViewController : UIViewController
+@interface AddParentViewController : UIViewController <UITextFieldDelegate>
 
 @end

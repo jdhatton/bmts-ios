@@ -57,6 +57,7 @@ BOOL isCancelledUpdate = false;
     self.intervalUpdatePicker.dataSource = self;
     self.intervalUpdatePicker.delegate = self;
     studentIDNumber.delegate = self;
+    studentNameTextField.delegate = self;
     
     self.studentNameTextField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
@@ -86,7 +87,16 @@ BOOL isCancelledUpdate = false;
 
 -(void)dismissKeyboard {
     [studentNameTextField resignFirstResponder];
+    [studentIDNumber resignFirstResponder];
     [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [studentNameTextField resignFirstResponder];
+    [studentIDNumber resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
 }
 
 /*

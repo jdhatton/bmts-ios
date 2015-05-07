@@ -14,7 +14,7 @@
 
 @implementation RestController
 
-
+///  NSString *REST_SERVER_HOST = [@"http://homeroomtechnologies.com:8080"];
 
 - (IBAction)fetchGreeting;
 {
@@ -159,7 +159,7 @@
              user.registered = @1;
              user.synced = @1;
              user.remoteId = [resp objectForKey:@"remoteId"];
-             appDelegate.userRemoteId = [resp objectForKey:@"remoteId"];
+             appDelegate.userRemoteId = user.remoteId;
              
              NSError *error;
              NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -187,6 +187,9 @@
     Feedback  *comments = [NSEntityDescription  insertNewObjectForEntityForName:@"Feedback" inManagedObjectContext:context];
     comments.comment = comment;
     comments.id = appDelegate.userRemoteId;
+    
+    NSLog(@"\n >>>>  ..2..    REST::POST::    appDelegate.userRemoteId  =   %@", appDelegate.userRemoteId);
+
     
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;

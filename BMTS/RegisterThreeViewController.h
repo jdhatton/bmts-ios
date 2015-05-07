@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterThreeViewController : UIViewController
+@interface RegisterThreeViewController : UIViewController <UITextFieldDelegate>
 
 
 - (IBAction)zipCode:(id)sender;

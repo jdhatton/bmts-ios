@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>131AF68F-B673-4002-B87A-39AAF7F84381</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>BMTS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6BCA0E8FC92CB92D513F68F6A424F627DB27B597</key>
 		<string>github.com:jdhatton/bmts-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BMTS.xcodeproj/project.xcworkspace</string>
+	<string>BMTS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6BCA0E8FC92CB92D513F68F6A424F627DB27B597</key>

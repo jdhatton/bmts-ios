@@ -22,7 +22,7 @@
 
 @implementation AddStudentViewController
 
-@synthesize window = _window, studentName;
+@synthesize window = _window, studentName, studentIdNumber;
 NSInteger selectedBehavior = 0;
 NSInteger selectedInterval = 0;
 BOOL isValidStudentName = true;
@@ -42,19 +42,28 @@ BOOL isCancelledAdd = false;
     [self.view addGestureRecognizer:tap];
     
     studentName.delegate = self;
+    studentIdNumber.delegate = self;
 
     self.studentName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
 }
 
 -(void)dismissKeyboard {
-    [studentName resignFirstResponder];
+     [studentName resignFirstResponder];
      [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [studentName resignFirstResponder];
+    [studentIdNumber resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
 }
 
 /*
