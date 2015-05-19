@@ -31,7 +31,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize userRemoteId, userPassword;
+@synthesize userRemoteId, userPassword, teacherUser;
 
 
 AppDelegate *appDelegate = nil;
@@ -52,6 +52,9 @@ AppDelegate *appDelegate = nil;
     NSManagedObjectContext *context = [self managedObjectContext];
   
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    
+    
+    teacherUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     
     //
     // On App Startup lets check for the UserCookie, if found proceed to the main view.
@@ -173,10 +176,6 @@ AppDelegate *appDelegate = nil;
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
-
-
 
 
 - (void)saveContext

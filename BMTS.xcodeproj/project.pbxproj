@@ -214,6 +214,7 @@
 		890759911A0B110B000A30DA /* BMTS */ = {
 			isa = PBXGroup;
 			children = (
+				8941B43D1B0BE8C200ADE9C7 /* Registration */,
 				89C854991AD089E600740DB3 /* REST */,
 				89D327581A96435900CF3214 /* Reachability.h */,
 				89D327591A96435900CF3214 /* Reachability.m */,
@@ -332,6 +333,13 @@
 				89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */,
 			);
 			name = TeacherView;
+			sourceTree = "<group>";
+		};
+		8941B43D1B0BE8C200ADE9C7 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		899711831A75D9480044AB66 /* Models */ = {

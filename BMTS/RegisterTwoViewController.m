@@ -11,6 +11,7 @@
 #import "User.h"
 #import "TeacherMainViewController.h"
 #import "RestController.h"
+#import "UserCookie.h"
 
 @interface RegisterTwoViewController ()
 
@@ -173,24 +174,18 @@ bool isValidForSegueToMain = false;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (User *user in fetchedObjects) {
-        NSLog(@" Found User : userId: %@", user.id);
-//        if(user.id == [NSNumber numberWithInt:1]) {
 
         //
         // Find and set the selected school district on to the User.
         //
-        user.schoolDistrict = [self.districtArray objectAtIndex:selectedDistrict];
+        appDelegate.teacherUser.schoolDistrict = [self.districtArray objectAtIndex:selectedDistrict];
         
-        NSLog(@" Register-2 Added schoolDistrict : %@", user.schoolDistrict);
+        NSLog(@" Register-2 Added schoolDistrict : %@", appDelegate.teacherUser.schoolDistrict);
         
         //
         // Find and set the selected school name on to the User.
         //
-        user.schoolName = self.schoolName.text;
+        appDelegate.teacherUser.schoolName = self.schoolName.text;
         
         //
         // Find and set the selected Grade on to the User.
@@ -204,79 +199,85 @@ bool isValidForSegueToMain = false;
         if ([selGrade isEqualToString:@"Kindergarten"])
         {
             NSLog(@" Register-2 Matched Kindergarten   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:1];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:1];
         }
         else if ([selGrade isEqualToString:@"First Grade"])
         {
             NSLog(@" Register-2 Matched First Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:2];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:2];
         }
         else if ([selGrade isEqualToString:@"Second Grade"])
         {
             NSLog(@" Register-2 Matched Second Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:3];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:3];
         }
         else if ([selGrade isEqualToString:@"Third Grade"])
         {
             NSLog(@" Register-2 Matched Third Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:4];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:4];
         }
         else if ([selGrade isEqualToString:@"Fourth Grade"])
         {
             NSLog(@" Register-2 Matched Fourth Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:5];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:5];
         }
         else if ([selGrade isEqualToString:@"Fifth Grade"])
         {
             NSLog(@" Register-2 Matched Fifth Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:6];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:6];
         }
         else if ([selGrade isEqualToString:@"Sixth grade"])
         {
             NSLog(@" Register-2 Matched Sixth grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:7];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:7];
         }
         else if ([selGrade isEqualToString:@"Seventh Grade"])
         {
             NSLog(@" Register-2 Matched Seventh Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:8];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:8];
         }
         else if ([selGrade isEqualToString:@"Eight Grade"])
         {
             NSLog(@" Register-2 Matched Eight Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:9];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:9];
         }
         else if ([selGrade isEqualToString:@"Ninth Grade"])
         {
             NSLog(@" Register-2 Matched Ninth Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:10];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:10];
         }
         else if ([selGrade isEqualToString:@"Tenth Grade"])
         {
             NSLog(@" Register-2 Matched Tenth Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:11];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:11];
         }
         else if ([selGrade isEqualToString:@"Eleventh Grade"])
         {
             NSLog(@" Register-2 Matched Eleventh Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:12];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:12];
         }
         else if ([selGrade isEqualToString:@"Twelth Grade"])
         {
             NSLog(@" Register-2 Matched Twelth Grade   :  %@", selGrade);
-            user.schoolGrade = [NSNumber numberWithInteger:13];
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:13];
         }
         else {
             NSLog(@" Register-2 FAILED TO MATCH - Grade   :  %@", selGrade);
         }
         
         
-            NSLog(@" Register-2 Added grade : %@", user.schoolGrade);
-        
-        
-            NSLog(@" UPDATING  User : zipCode   :  %@", user.zipCode);
-            NSLog(@" UPDATING  User : district  :  %@", user.schoolDistrict);
-            NSLog(@" UPDATING  User : grade     :  %@", user.schoolGrade);
+        NSLog(@" Register-2 Added grade : %@", appDelegate.teacherUser.schoolGrade);
+        NSLog(@" UPDATING  User : zipCode   :  %@", appDelegate.teacherUser.zipCode);
+        NSLog(@" UPDATING  User : district  :  %@", appDelegate.teacherUser.schoolDistrict);
+        NSLog(@" UPDATING  User : grade     :  %@", appDelegate.teacherUser.schoolGrade);
+    
+        UserCookie *userCookie1 = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"UserCookie"
+                                   inManagedObjectContext:context];
+        userCookie1.userId = [NSNumber numberWithInt:1];
+        userCookie1.email = appDelegate.teacherUser.email;
+        userCookie1.password = appDelegate.teacherUser.password;
+    
             
             
             
@@ -288,15 +289,7 @@ bool isValidForSegueToMain = false;
 //        }
         
         User *completedUser;
-        //
-        // Let's dump the User data we know we should have here
-        //
-        NSError *error;
-        NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-        
+ 
         [fetchRequest setEntity:entity];
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
@@ -339,7 +332,7 @@ bool isValidForSegueToMain = false;
         [self.window makeKeyAndVisible];
         [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
         
-    }
+   
     
 }
 

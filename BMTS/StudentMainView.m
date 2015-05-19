@@ -36,7 +36,8 @@
         behaviorList = [NSMutableArray arrayWithObjects: nil];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm:ss"];
+        [formatter setDateFormat:@"EEE,  MM/dd/yyyy - hh:mma"];
+        // MM/dd/yyyy hh:mma
         //Optionally for time zone conversions
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
         

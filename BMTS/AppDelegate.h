@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "User.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -20,6 +22,8 @@
 @property (strong, nonatomic) NSString *userPassword;
 @property (strong, nonatomic) NSArray *behaviorListData;
 @property (strong, nonatomic) NSArray *intervalListData;
+
+@property (strong, nonatomic) User *teacherUser;
 
 extern AppDelegate *appDelegate;
 

@@ -61,13 +61,7 @@ BOOL isValidForSegue = true;
 //        [context deleteObject:user];
         
     }
-//    if (![context save:&error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    } else {
-//        NSLog(@"\n SUCCESS - Deleted all Users from SqlLite");
-//    }
 
-    
     
     /*
      Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
@@ -79,15 +73,6 @@ BOOL isValidForSegue = true;
     [self updateInterfaceWithReachability:self.hostReachability];
     
 
-    //
-    // Trying to segui over to main view..  This might work, if it does use it if not DELETE it.
-    //
-   
-    //
-    // TODO: this should be conditional on a User and UserCookie existing.
-    //
-    //    [self performSegueWithIdentifier:@"showTeacherView" sender:self];
-    
     NSLog(@"DEBUG: Attempting Segway to TeacherMainView");
 //    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    TeacherMainViewController *main = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
@@ -231,26 +216,12 @@ BOOL isValidForSegue = true;
         [emailAddressTextBox resignFirstResponder];
         [passwordTextBox resignFirstResponder];
         
-        NSError *error;
-        NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        UserCookie *userCookie1 = [NSEntityDescription
-                                          insertNewObjectForEntityForName:@"UserCookie"
-                                          inManagedObjectContext:context];
-        userCookie1.userId = [NSNumber numberWithInt:1];
-        userCookie1.email = emailAddressTextBox.text;
-        userCookie1.password = passwordTextBox.text;
-    
-        User *user = [NSEntityDescription
-                insertNewObjectForEntityForName:@"User"
-                inManagedObjectContext:context];
-        user.id = [NSNumber numberWithInt:1];
-        user.email = emailAddressTextBox.text;
-    
-        if (![context save:&error]) {
-            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-        } else {
-            NSLog(@"\n SUCCESS  - User & UserCookie SAVED ");
-        }
+
+        
+        appDelegate.teacherUser.id = [NSNumber numberWithInt:1];
+        appDelegate.teacherUser.email = emailAddressTextBox.text;
+        appDelegate.teacherUser.password = passwordTextBox.text;
+
         
         isValidForSegue = true;
         

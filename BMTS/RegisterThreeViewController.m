@@ -85,13 +85,7 @@ bool isValidForSegueNext = false;
 
 - (IBAction)saveFormData:(id)sender {
     
-    
     NSLog(@"DEBUG: saving form data Register-3 ");
-    
-    //
-    // Set the zipCode on to the User.
-    //
-    //  NSString *distanceString = [self.selectedBeacon.distance stringValue];
     NSString *strZip = [self.zipCode text];
     NSLog(@" Register-2 String ZIP : %@", strZip);
     
@@ -116,91 +110,25 @@ bool isValidForSegueNext = false;
         isValidForSegueNext = false;
     
     } else {
-    NSError *error;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (User *user in fetchedObjects) {
-        NSLog(@" Found User : userId: %@", user.id);
-        //        if(user.id == [NSNumber numberWithInt:1]) {
-        
-        NSLog(@" Register-2 > UPDATING  User : userId: %@", user.id);
-        //
-        // Set the firstName, lastName on to the User.
-        //
+
         NSString *strFirstName = [self.firstName text];
-        NSLog(@" Register-2 String FIRSTNAME : %@", strFirstName);
-        user.firstName = strFirstName;
-        NSLog(@" Register-2 Added FIRSTNAME : %@", strFirstName);
-        
+        appDelegate.teacherUser.firstName = strFirstName;
         NSString *strLastName = [self.lastName text];
-        NSLog(@" Register-2 String LASTNAME : %@", strLastName);
-        user.lastName = strLastName;
-        NSLog(@" Register-2 Added LASTNAME : %@", strLastName);
-        
-        
-  
-       
+        appDelegate.teacherUser.lastName = strLastName;
         
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
         NSNumber *zip = [f numberFromString:strZip];
-        user.zipCode = zip;
-        NSLog(@" Register-2 Added ZIP : %@", strZip);
-
-        //
-        // Find and set the Gender on the User.
-        //
+        appDelegate.teacherUser.zipCode = zip;
+       
         NSString * selectedGender = [self getTitleForSelectedSegment:gender];
-        user.gender = selectedGender;
+        appDelegate.teacherUser.gender = selectedGender;
         
-
-        NSLog(@" UPDATING  User : firstName   :  %@", user.firstName);
-        NSLog(@" UPDATING  User : lastName    :  %@", user.lastName);
-        NSLog(@" UPDATING  User : gender      :  %@", user.gender);
-        NSLog(@" UPDATING  User : zipcode     :  %@", user.zipCode);
-        
-        
-        
-        if (![context save:&error]) {
-            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-        } else {
-            NSLog(@"\n SUCCESS  - User - UPDATED  ");
-            isValidForSegueNext = true;
-        }
-        
-        
-        //
-        // Let's dump the User data we know we should have here
-        //
-        NSError *error;
-        NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-        
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (User *user in fetchedObjects) {
-            NSLog(@" RegisterThreeViewController:Exiting() ");
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Found User : userId      :  %@", user.id);
-            NSLog(@" Found User : email       :  %@", user.email);
-            NSLog(@" Found User : role        :  %@", user.role);
-            NSLog(@" Found User : zipcode     :  %@", user.zipCode);
-            NSLog(@" Found User : district    :  %@", user.schoolDistrict);
-            NSLog(@" Found User : grade       :  %@", user.schoolGrade);
-            NSLog(@" Found User : firstName   :  %@", user.firstName);
-            NSLog(@" Found User : lastName    :  %@", user.lastName);
-            NSLog(@" Found User : gender      :  %@", user.gender);
-            NSLog(@" Found User : schoolName  :  %@", user.schoolName);
-            NSLog(@" ----------------------------------------");
-            
-        }
+        NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
+        NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
+        NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
+        NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
+    
 
     }
         
@@ -217,7 +145,7 @@ bool isValidForSegueNext = false;
         registerTwoViewController.zipCode = strZip;
         appDelegate.zipCode = strZip;
 
-    }
+
     
     
 }
