@@ -19,5 +19,6 @@
 @dynamic statusId;
 @dynamic studentId;
 @dynamic trackingInterval;
+@dynamic synced;
 
 @end

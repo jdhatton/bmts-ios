@@ -13,5 +13,6 @@
 
 @dynamic comment;
 @dynamic id;
+@dynamic synced;
 
 @end

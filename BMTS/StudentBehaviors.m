@@ -14,5 +14,6 @@
 @dynamic statusId;
 @dynamic studentId;
 @dynamic createdDate;
+@dynamic synced;
 
 @end

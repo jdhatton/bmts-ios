@@ -21,4 +21,21 @@
 - (IBAction)sendFeedback:(NSString *)comment;
 
 
+
+- (IBAction)addStudent:(User *)user;
+
+- (IBAction)syncComments:(User *)user;
+
+- (IBAction)syncBehaviors:(User *)user;
+
+- (IBAction)syncAll:(User *)user;
+
+
+//
+// TODO: Implement these.
+//
+- (IBAction)updateStudent:(User *)user;
+
+- (IBAction)inviteStudent:(User *)user;
+
 @end

@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * sortOrder;
 @property (nonatomic, retain) NSNumber * statusId;
+@property (nonatomic, retain) NSNumber * synced;
 
 @end

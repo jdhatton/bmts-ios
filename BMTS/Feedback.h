@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * comment;
 @property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSNumber * synced;
 
 @end

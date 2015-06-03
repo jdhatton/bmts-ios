@@ -239,12 +239,54 @@ BOOL isCancelledUpdate = false;
 
 
 - (IBAction)deleteStudent:(id)sender {
+    
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"COMING SOON"
                                                      message:@"This feature is still under development."
                                                     delegate:self
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles: nil];
     [alert show];
+ 
+    
+//    
+//    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+//    f.numberStyle = NSNumberFormatterDecimalStyle;
+// 
+//    
+//    NSError *error;
+//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+//    NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+//    
+//    [fetchRequest5 setEntity:entity5];
+//    NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
+//    for (User *user in fetchedObjects5) {
+//        if(user.id == [f numberFromString:student.studentIdNumber] ){
+//            NSLog(@" Deleting the student :  %@ ", student.studentIdNumber);
+//            [context deleteObject:user];
+//        }
+// 
+//    }
+//    
+//
+//    
+//    if (![context save:&error]) {
+//        NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+//    } else {
+//        NSLog(@"\n SUCCESS  - STUDENT DELETED  ");
+//    }
+//    
+//    isCancelledUpdate = false;
+//    
+//    //
+//    // Segway to the TeacherMainView
+//    //
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+//    [self.window makeKeyAndVisible];
+//    [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//    
+
     
 }
 

@@ -15,7 +15,6 @@
 		890759A41A0B110B000A30DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 890759A21A0B110B000A30DA /* Main.storyboard */; };
 		890759A61A0B110B000A30DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 890759A51A0B110B000A30DA /* Images.xcassets */; };
 		890759A91A0B110B000A30DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759A71A0B110B000A30DA /* LaunchScreen.xib */; };
-		890759B51A0B110B000A30DA /* BMTSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759B41A0B110B000A30DA /* BMTSTests.m */; };
 		890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759C81A159B4F000A30DA /* ForgotPasswordViewController.m */; };
 		890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759CB1A159BBC000A30DA /* RegisterOneViewController.m */; };
 		890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */; };
@@ -59,18 +58,8 @@
 		89F4A7C91AC6E38600F2203F /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F4A7C81AC6E38600F2203F /* App.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		890759AF1A0B110B000A30DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 890759871A0B110B000A30DA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8907598E1A0B110B000A30DA;
-			remoteInfo = BMTS;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		8907598F1A0B110B000A30DA /* BMTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMTS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8907598F1A0B110B000A30DA /* Homeroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		890759931A0B110B000A30DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		890759941A0B110B000A30DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		890759961A0B110B000A30DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,7 +73,7 @@
 		890759A31A0B110B000A30DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		890759A51A0B110B000A30DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BMTS/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		890759A81A0B110B000A30DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		890759AE1A0B110B000A30DA /* BMTSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMTSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		890759AE1A0B110B000A30DA /* HomeroomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeroomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		890759B31A0B110B000A30DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		890759B41A0B110B000A30DA /* BMTSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMTSTests.m; sourceTree = "<group>"; };
 		890759C71A159B4F000A30DA /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
@@ -111,10 +100,10 @@
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
-		89C0B9181AE1BF6D0059F9D8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = BMTS/User.h; sourceTree = "<group>"; };
-		89C0B9191AE1BF6D0059F9D8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = BMTS/User.m; sourceTree = "<group>"; };
-		89C0B91B1AE2A4D60059F9D8 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Feedback.h; path = BMTS/Feedback.h; sourceTree = "<group>"; };
-		89C0B91C1AE2A4D60059F9D8 /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Feedback.m; path = BMTS/Feedback.m; sourceTree = "<group>"; };
+		89C0B9181AE1BF6D0059F9D8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		89C0B9191AE1BF6D0059F9D8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		89C0B91B1AE2A4D60059F9D8 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feedback.h; sourceTree = "<group>"; };
+		89C0B91C1AE2A4D60059F9D8 /* Feedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feedback.m; sourceTree = "<group>"; };
 		89C8549A1AD08B8A00740DB3 /* RestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestController.h; sourceTree = "<group>"; };
 		89C8549B1AD08B8A00740DB3 /* RestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestController.m; sourceTree = "<group>"; };
 		89C8549D1AD7336100740DB3 /* ManageStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageStudentViewController.h; sourceTree = "<group>"; };
@@ -189,10 +178,6 @@
 		890759861A0B110B000A30DA = {
 			isa = PBXGroup;
 			children = (
-				89C0B91B1AE2A4D60059F9D8 /* Feedback.h */,
-				89C0B91C1AE2A4D60059F9D8 /* Feedback.m */,
-				89C0B9181AE1BF6D0059F9D8 /* User.h */,
-				89C0B9191AE1BF6D0059F9D8 /* User.m */,
 				89AF63051AA9E6A10022F035 /* listastic-2014.png */,
 				89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */,
 				89F2F6F01A605967001B0D17 /* CoreData.framework */,
@@ -205,8 +190,8 @@
 		890759901A0B110B000A30DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8907598F1A0B110B000A30DA /* BMTS.app */,
-				890759AE1A0B110B000A30DA /* BMTSTests.xctest */,
+				8907598F1A0B110B000A30DA /* Homeroom.app */,
+				890759AE1A0B110B000A30DA /* HomeroomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -345,6 +330,10 @@
 		899711831A75D9480044AB66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				89C0B91B1AE2A4D60059F9D8 /* Feedback.h */,
+				89C0B91C1AE2A4D60059F9D8 /* Feedback.m */,
+				89C0B9181AE1BF6D0059F9D8 /* User.h */,
+				89C0B9191AE1BF6D0059F9D8 /* User.m */,
 				89D3277C1A968A4F00CF3214 /* UserRoleEnums.h */,
 				89D3277D1A968A4F00CF3214 /* UserRoleEnums.m */,
 				89D327791A968A4F00CF3214 /* ClassroomParents.h */,
@@ -394,9 +383,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8907598E1A0B110B000A30DA /* BMTS */ = {
+		8907598E1A0B110B000A30DA /* Homeroom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 890759B81A0B110B000A30DA /* Build configuration list for PBXNativeTarget "BMTS" */;
+			buildConfigurationList = 890759B81A0B110B000A30DA /* Build configuration list for PBXNativeTarget "Homeroom" */;
 			buildPhases = (
 				8907598B1A0B110B000A30DA /* Sources */,
 				8907598C1A0B110B000A30DA /* Frameworks */,
@@ -406,14 +395,14 @@
 			);
 			dependencies = (
 			);
-			name = BMTS;
+			name = Homeroom;
 			productName = BMTS;
-			productReference = 8907598F1A0B110B000A30DA /* BMTS.app */;
+			productReference = 8907598F1A0B110B000A30DA /* Homeroom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		890759AD1A0B110B000A30DA /* BMTSTests */ = {
+		890759AD1A0B110B000A30DA /* HomeroomTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 890759BB1A0B110B000A30DA /* Build configuration list for PBXNativeTarget "BMTSTests" */;
+			buildConfigurationList = 890759BB1A0B110B000A30DA /* Build configuration list for PBXNativeTarget "HomeroomTests" */;
 			buildPhases = (
 				890759AA1A0B110B000A30DA /* Sources */,
 				890759AB1A0B110B000A30DA /* Frameworks */,
@@ -422,11 +411,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				890759B01A0B110B000A30DA /* PBXTargetDependency */,
 			);
-			name = BMTSTests;
+			name = HomeroomTests;
 			productName = BMTSTests;
-			productReference = 890759AE1A0B110B000A30DA /* BMTSTests.xctest */;
+			productReference = 890759AE1A0B110B000A30DA /* HomeroomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -448,7 +436,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8907598A1A0B110B000A30DA /* Build configuration list for PBXProject "BMTS" */;
+			buildConfigurationList = 8907598A1A0B110B000A30DA /* Build configuration list for PBXProject "Homeroom" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -461,8 +449,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8907598E1A0B110B000A30DA /* BMTS */,
-				890759AD1A0B110B000A30DA /* BMTSTests */,
+				8907598E1A0B110B000A30DA /* Homeroom */,
+				890759AD1A0B110B000A30DA /* HomeroomTests */,
 			);
 		};
 /* End PBXProject section */
@@ -544,19 +532,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				890759B51A0B110B000A30DA /* BMTSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		890759B01A0B110B000A30DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8907598E1A0B110B000A30DA /* BMTS */;
-			targetProxy = 890759AF1A0B110B000A30DA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		890759A21A0B110B000A30DA /* Main.storyboard */ = {
@@ -665,7 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Homeroom;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -679,7 +658,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Homeroom;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -687,7 +666,6 @@
 		890759BC1A0B110B000A30DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -698,30 +676,29 @@
 				);
 				INFOPLIST_FILE = BMTSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMTS.app/BMTS";
+				PRODUCT_NAME = HomeroomTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homeroom.app/Homeroom";
 			};
 			name = Debug;
 		};
 		890759BD1A0B110B000A30DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = BMTSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BMTS.app/BMTS";
+				PRODUCT_NAME = HomeroomTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homeroom.app/Homeroom";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8907598A1A0B110B000A30DA /* Build configuration list for PBXProject "BMTS" */ = {
+		8907598A1A0B110B000A30DA /* Build configuration list for PBXProject "Homeroom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				890759B61A0B110B000A30DA /* Debug */,
@@ -730,7 +707,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		890759B81A0B110B000A30DA /* Build configuration list for PBXNativeTarget "BMTS" */ = {
+		890759B81A0B110B000A30DA /* Build configuration list for PBXNativeTarget "Homeroom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				890759B91A0B110B000A30DA /* Debug */,
@@ -739,7 +716,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		890759BB1A0B110B000A30DA /* Build configuration list for PBXNativeTarget "BMTSTests" */ = {
+		890759BB1A0B110B000A30DA /* Build configuration list for PBXNativeTarget "HomeroomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				890759BC1A0B110B000A30DA /* Debug */,

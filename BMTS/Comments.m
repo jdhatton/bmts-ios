@@ -14,5 +14,6 @@
 @dynamic comment;
 @dynamic studentId;
 @dynamic createdDate;
+@dynamic synced;
 
 @end

@@ -92,7 +92,7 @@ AppDelegate *appDelegate = nil;
         NSLog(@" Found User : gender      :  %@", user.gender);
         NSLog(@" Found User : schoolName  :  %@", user.schoolName);
         NSLog(@"--------------------------------------------");
-        
+        userRemoteId = user.remoteId;
         
     }
  
@@ -133,6 +133,22 @@ AppDelegate *appDelegate = nil;
              @"Every Other Day", @"Once a Week",
              @"Every Other Week",@"Once a Month",@"Other",
              nil];
+    
+    
+    //
+    // Perform the data syncs on load up of the app.
+    //
+    if (appDelegate.userRemoteId == nil || appDelegate.userRemoteId == (id)[NSNull null]) {
+        NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
+        
+    } else {
+        NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
+        RestController *restCntrlr  = [RestController alloc];
+        [restCntrlr syncComments: teacherUser];
+        [restCntrlr syncBehaviors: teacherUser];
+    }
+    
+
     
     
     //

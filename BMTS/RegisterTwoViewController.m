@@ -284,7 +284,7 @@ bool isValidForSegueToMain = false;
             if (![context save:&error]) {
                 NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
             } else {
-                NSLog(@"\n SUCCESS  - User - UPDATED  ");
+                NSLog(@"\n SUCCESS  - Teacher Created. ");
             }
 //        }
         

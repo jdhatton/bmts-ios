@@ -14,6 +14,6 @@
 @dynamic email;
 @dynamic password;
 @dynamic userId;
-
+@dynamic synced;
 
 @end

@@ -14,5 +14,6 @@
 @dynamic classroomId;
 @dynamic id;
 @dynamic studentId;
+@dynamic synced;
 
 @end

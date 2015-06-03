@@ -15,5 +15,7 @@
 @property (nonatomic, retain) NSNumber * classroomId;
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSNumber * studentId;
+@property (nonatomic, retain) NSNumber * synced;
+
 
 @end

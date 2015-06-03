@@ -16,5 +16,6 @@
 @dynamic name;
 @dynamic sortOrder;
 @dynamic statusId;
+@dynamic synced;
 
 @end

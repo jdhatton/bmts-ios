@@ -20,5 +20,6 @@
 @property (nonatomic, retain) NSNumber * statusId;
 @property (nonatomic, retain) NSNumber * studentId;
 @property (nonatomic, retain) NSNumber * trackingInterval;
+@property (nonatomic, retain) NSNumber * synced;
 
 @end

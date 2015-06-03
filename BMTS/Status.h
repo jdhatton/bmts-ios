@@ -15,5 +15,5 @@
 @property (nonatomic, retain) NSString * descr;
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * name;
-
+@property (nonatomic, retain) NSNumber * synced;
 @end

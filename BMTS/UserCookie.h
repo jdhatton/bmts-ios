@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber * synced;
 
 @end

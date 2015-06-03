@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString * comment;
 @property (nonatomic, retain) NSNumber * studentId;
 @property (nonatomic, retain) NSDate * createdDate;
+@property (nonatomic, retain) NSNumber * synced;
 
 @end

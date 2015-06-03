@@ -55,12 +55,6 @@ User *userEight;
     
     NSString *userName = @"";
     
-    
-    UIImage *redCircle = [UIImage imageNamed:@"statusCircleRED-1"];
-    UIImage *yellowCircle = [UIImage imageNamed:@"statusCircleYELLOW"];
-    UIImage *greenCircle = [UIImage imageNamed:@"statusCircleRGREEN"];
-  
-    
     //
     // Get the User = 1 for the teacher who installed app.
     //
@@ -90,6 +84,8 @@ User *userEight;
         
         if([user.id integerValue] == 1 ){
             userName = [NSString stringWithFormat:@"%@%@%@%@", user.firstName,@" ", user.lastName, @"'s Class Room "];
+            appDelegate.teacherUser.remoteId = user.remoteId;
+            appDelegate.userRemoteId = user.remoteId;
         }
         
     }

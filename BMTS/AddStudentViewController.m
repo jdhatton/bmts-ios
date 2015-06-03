@@ -11,7 +11,7 @@
 #import "User.h"
 #import "ClassroomBehaviors.h"
 #import "TeacherMainViewController.h"
- 
+#import "RestController.h"
 
 @interface AddStudentViewController ()
 
@@ -137,6 +137,9 @@ BOOL isCancelledAdd = false;
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
         [fetchRequest setEntity:entity];
         
+        //
+        // Find the next available userId
+        //
         NSNumber *userId = @(2);
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
@@ -196,12 +199,12 @@ BOOL isCancelledAdd = false;
         //
         // Find and set the selected Interval.
         //
-        NSString *selInterval = [self.intervalArray objectAtIndex:selectedInterval];
-        NSLog(@" AddStudent Adding Interval : %@", selInterval);
-        //    NSLog(@" AddStudent Matched    :  %@", selInterval);
-        newCRB.trackingInterval = [NSNumber numberWithInteger:selectedInterval];
-        NSLog(@" AddStudent Added interval : %@", newCRB.trackingInterval);
-        
+//        NSString *selInterval = [self.intervalArray objectAtIndex:selectedInterval];
+//        NSLog(@" AddStudent Adding Interval : %@", selInterval);
+//        //    NSLog(@" AddStudent Matched    :  %@", selInterval);
+//        newCRB.trackingInterval = [NSNumber numberWithInteger:selectedInterval];
+//        NSLog(@" AddStudent Added interval : %@", newCRB.trackingInterval);
+//        
         NSLog(@" AddStudent SAVING ");
         if (![context save:&error]) {
             NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
@@ -209,6 +212,11 @@ BOOL isCancelledAdd = false;
             NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
         }
         
+        //
+        // Call the rest service to save the student on the server.
+        //
+        RestController *restCntrlr  = [RestController alloc];
+        [restCntrlr addStudent: newUser];
         
         //
         // Lets dump the User (student) and the ClassRoomBehavior objects created.

@@ -13,5 +13,5 @@
 
 @dynamic id;
 @dynamic teacherId;
-
+@dynamic synced;
 @end

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-               BuildableName = "BMTS.app"
-               BlueprintName = "BMTS"
-               ReferencedContainer = "container:BMTS.xcodeproj">
+               BuildableName = "Homeroom.app"
+               BlueprintName = "Homeroom"
+               ReferencedContainer = "container:Homeroom.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "890759AD1A0B110B000A30DA"
-               BuildableName = "BMTSTests.xctest"
-               BlueprintName = "BMTSTests"
-               ReferencedContainer = "container:BMTS.xcodeproj">
+               BuildableName = "HomeroomTests.xctest"
+               BlueprintName = "HomeroomTests"
+               ReferencedContainer = "container:Homeroom.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "890759AD1A0B110B000A30DA"
-               BuildableName = "BMTSTests.xctest"
-               BlueprintName = "BMTSTests"
-               ReferencedContainer = "container:BMTS.xcodeproj">
+               BuildableName = "HomeroomTests.xctest"
+               BlueprintName = "HomeroomTests"
+               ReferencedContainer = "container:Homeroom.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "BMTS.app"
-            BlueprintName = "BMTS"
-            ReferencedContainer = "container:BMTS.xcodeproj">
+            BuildableName = "Homeroom.app"
+            BlueprintName = "Homeroom"
+            ReferencedContainer = "container:Homeroom.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "BMTS.app"
-            BlueprintName = "BMTS"
-            ReferencedContainer = "container:BMTS.xcodeproj">
+            BuildableName = "Homeroom.app"
+            BlueprintName = "Homeroom"
+            ReferencedContainer = "container:Homeroom.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -96,13 +97,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "BMTS.app"
-            BlueprintName = "BMTS"
-            ReferencedContainer = "container:BMTS.xcodeproj">
+            BuildableName = "Homeroom.app"
+            BlueprintName = "Homeroom"
+            ReferencedContainer = "container:Homeroom.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

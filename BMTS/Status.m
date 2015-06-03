@@ -14,5 +14,6 @@
 @dynamic descr;
 @dynamic id;
 @dynamic name;
+@dynamic synced;
 
 @end
