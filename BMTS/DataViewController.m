@@ -40,29 +40,7 @@ BOOL isValidForSegue = true;
     NSString *documents = [directories firstObject];
     NSLog(@"DOCUMENTS > %@", documents);
  
-    
-    NSLog(@"DEBUG: DataViewController LOADING...");
-    NSLog(@"DEBUG: DataViewController appDelegate  =  %@",appDelegate);
-    
-    
-    NSError *error;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (User *user in fetchedObjects) {
-        NSLog(@" Found User : userId: %@", user.id);
 
-    
-//        NSLog(@" Deleting: User : userId: %@", user.id);
-//        [context deleteObject:user];
-        
-    }
-
-    
     /*
      Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the method reachabilityChanged will be called.
      */
@@ -124,6 +102,15 @@ BOOL isValidForSegue = true;
              Minor interface detail- connectionRequired may return YES even when the host is unreachable. We cover that up here...
              */
             connectionRequired = NO;
+            
+//            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Connectivity:"
+//                                                             message:@"Please connect to a netwrok before registering. "
+//                                                            delegate:self
+//                                                   cancelButtonTitle:@"OK"
+//                                                   otherButtonTitles: nil];
+//            [alert show];
+//            isValidForSegue = false;
+//            
             break;
         }
             
