@@ -12,10 +12,11 @@
 #import "ClassroomBehaviors.h"
 #import "TeacherMainViewController.h"
 #import "RestController.h"
+#import "Behaviors.h"
 
 @interface AddStudentViewController ()
 
-@property (strong, nonatomic) NSArray *behaviorArray;
+@property (strong, nonatomic) NSMutableArray *behaviorArray;
 @property (strong, nonatomic) NSArray *intervalArray;
 
 @end
@@ -32,8 +33,23 @@ BOOL isCancelledAdd = false;
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    self.behaviorArray = [appDelegate behaviorListData];
+    //self.behaviorArray = [appDelegate behaviorListData];
+    self.behaviorArray = [NSMutableArray array];
     
+    //
+    // Load the behaviors from core data.
+    //
+//    NSError *error;
+//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+//    NSFetchRequest *fetchRequest6 = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity6 = [NSEntityDescription entityForName:@"Behaviors"  inManagedObjectContext:context];
+//    [fetchRequest6 setEntity:entity6];
+//    NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
+//    for (Behaviors *behavior in fetchedObjects6) {
+//        NSLog(@" Found Behavior : id: %@", behavior.id);
+//        [self.behaviorArray  addObject:behavior.name];
+//    }
+ 
     self.intervalArray = [appDelegate intervalListData];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -122,10 +138,10 @@ BOOL isCancelledAdd = false;
     }
     else if( ! [self.studentName text].length > 0  ) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
-                                                         message:@"Please provided a name for your student! "
-                                                        delegate:self
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles: nil];
+                                            message:@"Please provided a name for your student! "
+                                            delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles: nil];
         [alert show];
         isValidStudentName = false;
     } else {
@@ -327,5 +343,25 @@ BOOL isCancelledAdd = false;
     return (newLength > 17) ? NO : YES;
 }
 
+//
+// Force the view to refresh
+//
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [self.view setNeedsDisplay];
+    
+    NSError *error;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *fetchRequest6 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity6 = [NSEntityDescription entityForName:@"Behaviors"  inManagedObjectContext:context];
+    [fetchRequest6 setEntity:entity6];
+    NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
+    for (Behaviors *behavior in fetchedObjects6) {
+        NSLog(@" Found Behavior : id: %@", behavior.id);
+        [self.behaviorArray  addObject:behavior.name];
+    }
 
+    
+    [self.behaviorPicker reloadAllComponents];
+}
 @end

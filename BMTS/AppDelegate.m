@@ -20,12 +20,16 @@
 #import "ClassroomStudents.h"
 #import "TeacherMainViewController.h"
 #import "RestController.h"
+#import "TeacherIpadMainViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
 
 @synthesize window = _window, zipCode, behaviorListData, intervalListData ;
 @synthesize managedObjectContext = __managedObjectContext;
@@ -111,18 +115,57 @@ AppDelegate *appDelegate = nil;
         NSLog(@" ----------------------------------------");
         
     }
-    
+  
+    //
+    // Load the behaviors.
+    //
+    NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity4 = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
+    [fetchRequest4 setEntity:entity4];
+    NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
+    for (Behaviors *behavior in fetchedObjects4) {
+        NSLog(@"   ");
+        NSLog(@" ----------------------------------------");
+        NSLog(@" Found Behavior : Id       : %@", behavior.id);
+        NSLog(@" Found Behavior : name     : %@", behavior.name);
+        NSLog(@" Found Behavior : descr    : %@", behavior.descr );
+        NSLog(@" Found Behavior : synced   : %@", behavior.synced );
+        NSLog(@" ----------------------------------------");
+        
+        
+    }
 
     //
     // TODO: move both of these array data elements to a NSDefault List to be read in from disk synced to WS.
     //
-    behaviorListData = [[NSArray alloc] initWithObjects:@"Head Exploding",
-            @"Demon Summoning", @"Screaming",
-            @"Fighting", @"Drinking Blood",
-            @"Running", @"Open Portal",
-            @"Attention Off", @"Disruptions",
-            @"Spell Casting", @"Shape Shifting",
-            nil];
+    behaviorListData = [[NSMutableArray alloc] initWithObjects:
+                        @"off task",
+                        @"blurting out",
+                        @"defiance",
+                        @"out of seat",
+                        @"work completion",
+                        @"homework",
+                        @"disruptive",
+                        @"unsafe",
+                        @"independent work",
+                        @"group work",
+                        @"partner work",
+                        @"transitions",
+                        @"specials classes",
+                        @"recess",
+                        @"hitting",
+                        @"inappropriate language",
+                        @"bully behavior",
+                        @"talking back",
+                        @"following directions",
+                        @"hands to self",
+                        @"hallway behavior",
+                        @"lunchroom behavior",
+                        @"manners",
+                        @"showing patience",
+                        nil];
+                        
+
     
     
     intervalListData = [[NSArray alloc] initWithObjects:@"15 Minutes",
@@ -161,9 +204,19 @@ AppDelegate *appDelegate = nil;
         // TODO: once we have the other views completed we need to check the User.Role to determine the view to go to here.
         //
         
-        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-        [self.window makeKeyAndVisible];
-        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        if ( IDIOM == IPAD ) {
+//            /* do something specifically for iPad. */
+//            TeacherIpadMainViewController *teacherIpadMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherIpadMainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherIpadMainViewController animated:YES completion:NULL];
+//        } else {
+            /* do something specifically for iPhone or iPod touch. */
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+        
+
     } else {
         NSLog(@" FAILED TO FIND THE USERCOOKIE and USER to forward to main view - Showing Login/CreateAccount flow........ ");
     }

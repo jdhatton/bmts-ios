@@ -12,6 +12,7 @@
 #import "TeacherMainViewController.h"
 #import "RestController.h"
 #import "UserCookie.h"
+#import "Behaviors.h"
 
 @interface RegisterTwoViewController ()
 
@@ -278,13 +279,24 @@ bool isValidForSegueToMain = false;
         userCookie1.email = appDelegate.teacherUser.email;
         userCookie1.password = appDelegate.teacherUser.password;
     
-            
-            
-            
+        //
+        // Here we are going to load the list of behaviors one time from the static list.
+        // Now we can add a new behavior to the list when the user performs that flow.
+        //
+        NSInteger count = @1;
+        for(NSString *behaviorName in appDelegate.behaviorListData ){
+            Behaviors *newBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"Behaviors" inManagedObjectContext:context];
+            newBehavior.id = [NSNumber numberWithInteger:count];
+            newBehavior.name = behaviorName;
+            newBehavior.descr = behaviorName;
+            newBehavior.synced = false;
+            count ++;
+        }
+    
             if (![context save:&error]) {
                 NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
             } else {
-                NSLog(@"\n SUCCESS  - Teacher Created. ");
+                NSLog(@"\n SUCCESS  - Behavior loaded. ");
             }
 //        }
         

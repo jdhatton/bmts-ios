@@ -17,6 +17,7 @@
 
 @interface DataViewController ()
 
+
 @property (nonatomic) Reachability *hostReachability;
 @property (nonatomic, weak) IBOutlet UITextField *remoteHostStatusField;
 

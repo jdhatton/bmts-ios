@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSString *zipCode;
 @property (strong, nonatomic) NSString *userRemoteId;
 @property (strong, nonatomic) NSString *userPassword;
-@property (strong, nonatomic) NSArray *behaviorListData;
+@property (strong, nonatomic) NSMutableArray *behaviorListData;
 @property (strong, nonatomic) NSArray *intervalListData;
 
 @property (strong, nonatomic) User *teacherUser;

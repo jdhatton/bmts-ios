@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-wV-RVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2536.5" y="-403.5"/>
+            <point key="canvasLocation" x="-2942.5" y="-947.5"/>
         </scene>
         <!--Register Three View Controller-->
         <scene sceneID="5Wq-ad-VHz">
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXR-NT-zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1482.5" y="442.5"/>
+            <point key="canvasLocation" x="-2577.5" y="131.5"/>
         </scene>
         <!--Manage Student View Controller-->
         <scene sceneID="0BT-Pc-ep8">
@@ -497,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mJ-hV-cjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1684.5" y="-645.5"/>
+            <point key="canvasLocation" x="-2098.5" y="-689.5"/>
         </scene>
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
@@ -761,21 +761,6 @@
                                     <barButtonItem id="iXx-J8-YJo"/>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
-                                <rect key="frame" x="16" y="567" width="343" height="35"/>
-                                <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="0Uc-6v-Qf2"/>
-                                    <constraint firstAttribute="width" constant="343" id="iGw-Fd-tlS"/>
-                                </constraints>
-                                <state key="normal" title="Add-Student">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-Uc-tjH">
                                 <rect key="frame" x="0.0" y="382" width="375" height="44"/>
                                 <constraints>
@@ -821,6 +806,21 @@
                                 </state>
                                 <connections>
                                     <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
+                                <rect key="frame" x="16" y="567" width="343" height="35"/>
+                                <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0Uc-6v-Qf2"/>
+                                    <constraint firstAttribute="width" constant="343" id="iGw-Fd-tlS"/>
+                                </constraints>
+                                <state key="normal" title="Add-Student">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -913,7 +913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNW-ad-Fav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946.5" y="-693.5"/>
+            <point key="canvasLocation" x="-1292.5" y="-689.5"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="yWE-3h-lQ7">
@@ -1083,7 +1083,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xob-dC-uHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526.5" y="-403.5"/>
+            <point key="canvasLocation" x="223.5" y="-577.5"/>
         </scene>
         <!--StudentMainView-->
         <scene sceneID="zYt-IH-rH3">
@@ -1154,7 +1154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-OD-rWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208.5" y="-653.5"/>
+            <point key="canvasLocation" x="-394.5" y="-689.5"/>
         </scene>
         <!--Student Status View Controller-->
         <scene sceneID="V1N-1B-EMZ">
@@ -1272,7 +1272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-853.5" y="458.5"/>
+            <point key="canvasLocation" x="-864.5" y="444.5"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Mac-g0-RuQ">
@@ -1352,7 +1352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-c1-rTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208.5" y="262.5"/>
+            <point key="canvasLocation" x="-252.5" y="444.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
@@ -1372,12 +1372,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2763.5" y="-1624.5"/>
+            <point key="canvasLocation" x="-2781.5" y="-1736.5"/>
         </scene>
         <!--Add Student View Controller-->
         <scene sceneID="MH8-1S-H8X">
             <objects>
-                <viewController id="hte-3k-ekS" customClass="AddStudentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddStudent" id="hte-3k-ekS" customClass="AddStudentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6zR-mX-nqy"/>
                         <viewControllerLayoutGuide type="bottom" id="HnO-EF-rF1"/>
@@ -1406,13 +1406,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-WI-Elh">
-                                <rect key="frame" x="27" y="530" width="320" height="18"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="hte-3k-ekS" id="tye-uJ-zlM"/>
-                                    <outlet property="delegate" destination="hte-3k-ekS" id="94J-nI-YaH"/>
-                                </connections>
-                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Student Name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-MW-e1S">
                                 <rect key="frame" x="42" y="154" width="291" height="30"/>
                                 <constraints>
@@ -1468,7 +1461,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-3X-g6V">
-                                <rect key="frame" x="42" y="307" width="291" height="162"/>
+                                <rect key="frame" x="42" y="306" width="291" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="Oox-iY-Oja"/>
                                     <constraint firstAttribute="width" constant="291" id="UCK-IO-JwI"/>
@@ -1484,6 +1477,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYg-vj-eGq">
+                                <rect key="frame" x="79" y="477" width="217" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add a New Behavior">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IId-0x-DMY" kind="show" id="ziZ-7m-MVa"/>
+                                </connections>
+                            </button>
+                            <pickerView hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-WI-Elh">
+                                <rect key="frame" x="27" y="533" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hte-3k-ekS" id="tye-uJ-zlM"/>
+                                    <outlet property="delegate" destination="hte-3k-ekS" id="94J-nI-YaH"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1520,6 +1531,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x6-4V-ofg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148.5" y="-1610.5"/>
+        </scene>
+        <!--Add Behavior View Controller-->
+        <scene sceneID="ap9-If-hoQ">
+            <objects>
+                <viewController id="IId-0x-DMY" customClass="AddBehaviorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q65-iu-BFr"/>
+                        <viewControllerLayoutGuide type="bottom" id="j3l-lk-dNQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vd7-lK-Whn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here you can add a new behavior to the list of behaviors for tracking.   Save then select from the list." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-sk-Ngf">
+                                <rect key="frame" x="43" y="158" width="288" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The behavior name to be added here!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghU-dV-zLq">
+                                <rect key="frame" x="48" y="305" width="278" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-3f-UX5">
+                                <rect key="frame" x="139" y="388" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="IId-0x-DMY" eventType="touchUpInside" id="LOk-ef-fD5"/>
+                                    <segue destination="hte-3k-ekS" kind="show" id="bkl-86-E2c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="behavior" destination="ghU-dV-zLq" id="n9D-Ve-Qag"/>
+                        <outlet property="saveBehavior" destination="a9Z-3f-UX5" id="OWR-6n-OQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4V-aF-MBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384.5" y="-1270.5"/>
         </scene>
         <!--Register Two View Controller-->
         <scene sceneID="ocI-RB-d3M">
@@ -1721,8 +1780,12 @@
                                     <constraint firstAttribute="width" constant="93" id="uwo-O2-qma"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-pw-B9T">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-pw-B9T">
                                 <rect key="frame" x="15" y="376" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HjS-be-AFv"/>
                                     <constraint firstAttribute="width" constant="343" id="alm-PH-e4M"/>
@@ -1829,6 +1892,11 @@
                             <constraint firstItem="OTf-pw-B9T" firstAttribute="top" secondItem="BSe-eO-SmZ" secondAttribute="bottom" constant="25" id="zkm-IP-lJ1"/>
                             <constraint firstAttribute="centerX" secondItem="C66-R9-1L8" secondAttribute="centerX" constant="1" id="zl9-NE-vNr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OTf-pw-B9T"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -1842,6 +1910,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rK-ow-lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1752.5" y="-1610.5"/>
+        </scene>
+        <!--iPadMainView-->
+        <scene sceneID="VQO-Uf-lLS">
+            <objects>
+                <viewController storyboardIdentifier="teacherIpadMainView" title="iPadMainView" id="AJ9-uI-JiX" customClass="TeacherIpadMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfc-Ru-thF"/>
+                        <viewControllerLayoutGuide type="bottom" id="UcF-3p-d7J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IfQ-oA-pmB">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwk-aQ-39b">
+                                <rect key="frame" x="142" y="92" width="485" height="826"/>
+                                <subviews>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsU-Ka-uPf" customClass="ManageStu">
+                                        <rect key="frame" x="29" y="24" width="427" height="44"/>
+                                        <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                        <items>
+                                            <barButtonItem image="user-26" width="35" id="HYl-m4-g9I" customClass="UserUIBarButtonItem">
+                                                <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Name of student" width="157" id="cEP-ES-q9Y" customClass="UserUIBarButtonItem"/>
+                                            <barButtonItem id="4vR-W0-bqk"/>
+                                            <barButtonItem image="full_moon-24" width="58" id="4nN-rG-edx" customClass="UserUIBarButtonItem">
+                                                <connections>
+                                                    <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="uue-1F-54P"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="add_file-26" id="ShR-n3-ysW" customClass="UserUIBarButtonItem"/>
+                                            <barButtonItem image="settings-24" width="54" id="V7F-wg-lDw" customClass="UserUIBarButtonItem"/>
+                                        </items>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </toolbar>
+                                </subviews>
+                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-B8-epd">
+                                <rect key="frame" x="213" y="20" width="343" height="30"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Mrs. Hatton's Classrom">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-rV-2j1">
+                                <rect key="frame" x="38" y="938" width="172" height="48"/>
+                                <color key="backgroundColor" red="0.46188446970000002" green="0.0067540864760000001" blue="0.049645731739999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Provide Feedback">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-MW-fKq">
+                                <rect key="frame" x="299" y="938" width="343" height="46"/>
+                                <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add-Student">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-uf-jSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1902" y="916"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-Hz-nJE">
@@ -1981,7 +2124,7 @@ Internet traffic will be routed through it.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2R-hh-JIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3065.5" y="-673.5"/>
+            <point key="canvasLocation" x="-2343.5" y="-1880.5"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="GRG-F3-AMm">
@@ -2050,7 +2193,7 @@ Internet traffic will be routed through it.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpS-fW-r8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3028.5" y="404.5"/>
+            <point key="canvasLocation" x="-3076.5" y="-159.5"/>
         </scene>
         <!--Register One View Controller-->
         <scene sceneID="duS-m9-0Ma">
@@ -2269,12 +2412,13 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toX-GW-WPJ"/>
-        <segue reference="rdg-64-fLU"/>
-        <segue reference="aK1-Qg-wuc"/>
         <segue reference="CaW-Eu-tbr"/>
-        <segue reference="QC3-97-A0x"/>
+        <segue reference="X0Z-VT-WKG"/>
+        <segue reference="bkl-86-E2c"/>
         <segue reference="a2J-wy-WMn"/>
+        <segue reference="QC3-97-A0x"/>
+        <segue reference="toX-GW-WPJ"/>
+        <segue reference="aK1-Qg-wuc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

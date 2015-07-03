@@ -23,11 +23,13 @@
 		890759D81A159C43000A30DA /* AddParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D71A159C43000A30DA /* AddParentViewController.m */; };
 		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
 		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
+		89088C201B3C58F600F2CDC7 /* AddBehaviorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */; };
 		89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F661ABDD589007CEDFE /* FeedbackViewController.m */; };
 		89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F691ABF032C007CEDFE /* StudentStatusViewController.m */; };
 		89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
+		89B6F5851B2DD7F200CE7C06 /* TeacherIpadMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6F5841B2DD7F200CE7C06 /* TeacherIpadMainViewController.m */; };
 		89C0B91A1AE1BF6D0059F9D8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C0B9191AE1BF6D0059F9D8 /* User.m */; };
 		89C0B91D1AE2A4D60059F9D8 /* Feedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C0B91C1AE2A4D60059F9D8 /* Feedback.m */; };
 		89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8549B1AD08B8A00740DB3 /* RestController.m */; };
@@ -91,6 +93,8 @@
 		890759DE1A159CAF000A30DA /* ParentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewViewController.h; sourceTree = "<group>"; };
 		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
 		890759E01A159CAF000A30DA /* ParentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewViewController.xib; sourceTree = "<group>"; };
+		89088C1E1B3C58F600F2CDC7 /* AddBehaviorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBehaviorViewController.h; sourceTree = "<group>"; };
+		89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBehaviorViewController.m; sourceTree = "<group>"; };
 		89442F651ABDD589007CEDFE /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		89442F661ABDD589007CEDFE /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		89442F681ABF032C007CEDFE /* StudentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentStatusViewController.h; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
+		89B6F5831B2DD7F200CE7C06 /* TeacherIpadMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherIpadMainViewController.h; sourceTree = "<group>"; };
+		89B6F5841B2DD7F200CE7C06 /* TeacherIpadMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherIpadMainViewController.m; sourceTree = "<group>"; };
 		89C0B9181AE1BF6D0059F9D8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		89C0B9191AE1BF6D0059F9D8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		89C0B91B1AE2A4D60059F9D8 /* Feedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feedback.h; sourceTree = "<group>"; };
@@ -251,6 +257,8 @@
 				89442F691ABF032C007CEDFE /* StudentStatusViewController.m */,
 				89F4A7C71AC6E38600F2203F /* App.h */,
 				89F4A7C81AC6E38600F2203F /* App.m */,
+				89088C1E1B3C58F600F2CDC7 /* AddBehaviorViewController.h */,
+				89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -316,6 +324,8 @@
 				89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */,
 				89C8549D1AD7336100740DB3 /* ManageStudentViewController.h */,
 				89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */,
+				89B6F5831B2DD7F200CE7C06 /* TeacherIpadMainViewController.h */,
+				89B6F5841B2DD7F200CE7C06 /* TeacherIpadMainViewController.m */,
 			);
 			name = TeacherView;
 			sourceTree = "<group>";
@@ -494,6 +504,7 @@
 				89D327601A968A4E00CF3214 /* ClassroomBehaviors.m in Sources */,
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
+				89B6F5851B2DD7F200CE7C06 /* TeacherIpadMainViewController.m in Sources */,
 				89D3277E1A968A4F00CF3214 /* UserRoleEnums.m in Sources */,
 				89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */,
 				89C8549F1AD7336100740DB3 /* ManageStudentViewController.m in Sources */,
@@ -512,6 +523,7 @@
 				89D3275A1A96435900CF3214 /* Reachability.m in Sources */,
 				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
 				89F4A7C91AC6E38600F2203F /* App.m in Sources */,
+				89088C201B3C58F600F2CDC7 /* AddBehaviorViewController.m in Sources */,
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
 				89D327661A968A4E00CF3214 /* IntervalEnum.m in Sources */,
 				89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */,
