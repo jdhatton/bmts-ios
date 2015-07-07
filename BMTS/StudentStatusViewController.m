@@ -102,81 +102,33 @@ int selectedStatus;
 }
 
 
-
-
-
-
 - (IBAction)save:(id)sender {
     
-    NSLog(@"DEBUG: you touched the createAccount button");
-    
-    NSLog(@"DEBUG: validating the form when clicking create account.");
-    
-    
     if( self.student != nil) {
-        
-        
         
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
         
-        //
-        // Create a new classroomBehavior record for the student-behavior-interval
-        //
         NSLog(@" Creating a new StudentBehaviors");
         StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
         newStudentBehavior.createdDate =  [NSDate date];
         newStudentBehavior.studentId = self.student.id;
         newStudentBehavior.statusId = [NSNumber numberWithInt:selectedStatus];
-        NSLog(@" Createing a new StudentBehaviors - 2  ");
+        newStudentBehavior.synced = false;
+      
         
         //        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
         //        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
         //        newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
         //        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-        
-        [fetchRequest setEntity:entity];
-        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (User *user in fetchedObjects) {
-            NSLog(@" RTeacherMainViewController::Exiting() ");
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Found User : userId      :  %@", user.id);
-            NSLog(@" Found User : email       :  %@", user.email);
-            NSLog(@" Found User : role        :  %@", user.role);
-            NSLog(@" Found User : zipcode     :  %@", user.zipCode);
-            NSLog(@" Found User : district    :  %@", user.schoolDistrict);
-            NSLog(@" Found User : grade       :  %@", user.schoolGrade);
-            NSLog(@" Found User : firstName   :  %@", user.firstName);
-            NSLog(@" Found User : lastName    :  %@", user.lastName);
-            NSLog(@" Found User : gender      :  %@", user.gender);
-            NSLog(@" Found User : schoolName  :  %@", user.schoolName);
-            NSLog(@" ----------------------------------------");
-            
-            if(user.id == self.student.id ){
-                user.status = [NSNumber numberWithInt:selectedStatus];
-                break;
-            }
-            
-        }
-        
-        
         
         NSLog(@"\n >>>> Add Student Behavior SAVING ");
         if (![context save:&error]) {
             NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
-            
-            
-            
-            //
-            // Dump the saved behaviors for this student
-            //
-            NSError *error;
-            NSManagedObjectContext *context = [appDelegate managedObjectContext];
-            
+        
+ 
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
             NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentBehaviors" inManagedObjectContext:context];
             
@@ -185,23 +137,22 @@ int selectedStatus;
             for (StudentBehaviors *behavior in fetchedObjects) {
                 NSLog(@" StudentStatusViewController::Exiting() ");
                 NSLog(@" ----------------------------------------");
-                NSLog(@" Found StudentBehaviors : studentId      :  %@", behavior.studentId);
-                NSLog(@" Found StudentBehaviors : statusId       :  %@", behavior.statusId);
-                NSLog(@" Found StudentBehaviors : createdDate    :  %@", behavior.createdDate);
+                NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
+                NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
+                NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
                 NSLog(@" ----------------------------------------");
             }
-            
-            
-            
-            //
-            // savedStatusSegue to the TeacherMainView
-            //
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-            [self.window makeKeyAndVisible];
-            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-            
         }
+        
+        
+        //
+        // Segue to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+        
 
     }
 

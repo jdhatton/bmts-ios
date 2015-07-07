@@ -20,9 +20,7 @@
 
 - (IBAction)sendFeedback:(NSString *)comment;
 
-
-
-- (IBAction)addStudent:(User *)user;
+- (IBAction)addStudent:(User *)user :(NSString *) behavior;
 
 - (IBAction)syncComments:(User *)user;
 

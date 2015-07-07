@@ -21,6 +21,7 @@
 #import "TeacherMainViewController.h"
 #import "RestController.h"
 #import "TeacherIpadMainViewController.h"
+#import "Comments.h"
 
 @interface AppDelegate ()
 
@@ -113,27 +114,9 @@ AppDelegate *appDelegate = nil;
         NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
         NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
         NSLog(@" ----------------------------------------");
-        
     }
   
-    //
-    // Load the behaviors.
-    //
-    NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity4 = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
-    [fetchRequest4 setEntity:entity4];
-    NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
-    for (Behaviors *behavior in fetchedObjects4) {
-        NSLog(@"   ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Found Behavior : Id       : %@", behavior.id);
-        NSLog(@" Found Behavior : name     : %@", behavior.name);
-        NSLog(@" Found Behavior : descr    : %@", behavior.descr );
-        NSLog(@" Found Behavior : synced   : %@", behavior.synced );
-        NSLog(@" ----------------------------------------");
-        
-        
-    }
+
 
     //
     // TODO: move both of these array data elements to a NSDefault List to be read in from disk synced to WS.
@@ -187,6 +170,28 @@ AppDelegate *appDelegate = nil;
     } else {
         NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
         RestController *restCntrlr  = [RestController alloc];
+        
+        
+        
+        NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
+        [fetchRequest5 setEntity:entity5];
+        NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
+        for (Comments *comment in fetchedObjects5) {
+            NSLog(@" ----------------------------------------");
+            NSLog(@" Found Comment : comment     : %@", comment.comment);
+            NSLog(@" Found Comment : studentId   : %@", comment.studentId );
+            NSLog(@" Found Comment : synced      : %@", comment.synced );
+            NSLog(@" ----------------------------------------");
+        }
+        
+        
+        //
+        //
+        //synced is null on some data and cuasing issues.
+        //
+        //
+        
         [restCntrlr syncComments: teacherUser];
         [restCntrlr syncBehaviors: teacherUser];
     }

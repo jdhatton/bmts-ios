@@ -35,21 +35,6 @@ BOOL isCancelledAdd = false;
  
     //self.behaviorArray = [appDelegate behaviorListData];
     self.behaviorArray = [NSMutableArray array];
-    
-    //
-    // Load the behaviors from core data.
-    //
-//    NSError *error;
-//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//    NSFetchRequest *fetchRequest6 = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity6 = [NSEntityDescription entityForName:@"Behaviors"  inManagedObjectContext:context];
-//    [fetchRequest6 setEntity:entity6];
-//    NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
-//    for (Behaviors *behavior in fetchedObjects6) {
-//        NSLog(@" Found Behavior : id: %@", behavior.id);
-//        [self.behaviorArray  addObject:behavior.name];
-//    }
- 
     self.intervalArray = [appDelegate intervalListData];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -92,8 +77,6 @@ BOOL isCancelledAdd = false;
 }
 */
 
-
-
 -(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1; // 1 column in the picker.
 }
@@ -127,11 +110,11 @@ BOOL isCancelledAdd = false;
     }
 }
 
-
+//
+// Persist the form data...
+//
 - (void)saveFormData:(id)sender {
     
-    
-    NSLog(@"DEBUG: AddStudent - Saving FormData ");
     
     if( isCancelledAdd ) {
         isValidStudentName = true;
@@ -148,7 +131,6 @@ BOOL isCancelledAdd = false;
 
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
         [fetchRequest setEntity:entity];
@@ -180,6 +162,7 @@ BOOL isCancelledAdd = false;
         newUser.firstName = strStudentName;
         newUser.role = [NSNumber numberWithInt:2]; // 2 = student
         newUser.studentIdNumber = self.studentIdNumber.text;
+        newUser.synced = false;
         NSLog(@" Created Student : %@", newUser);
         
         //
@@ -210,7 +193,7 @@ BOOL isCancelledAdd = false;
         NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
         newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
         NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
-        
+        newCRB.synced = false;
         
         //
         // Find and set the selected Interval.
@@ -232,7 +215,7 @@ BOOL isCancelledAdd = false;
         // Call the rest service to save the student on the server.
         //
         RestController *restCntrlr  = [RestController alloc];
-        [restCntrlr addStudent: newUser];
+        [restCntrlr addStudent:newUser :selBehavior];
         
         //
         // Lets dump the User (student) and the ClassRoomBehavior objects created.
@@ -246,14 +229,17 @@ BOOL isCancelledAdd = false;
         for (User *user in fetchedObjects5) {
             NSLog(@" AddStudentController:Exiting() ");
             NSLog(@" ----------------------------------------");
-            NSLog(@" Found User : userId     : %@", user.id);
-            NSLog(@" Found User : firstName  : %@", user.firstName);
-            NSLog(@" Found User : email      : %@", user.email);
-            NSLog(@" Found User : role       : %@", user.role);
-            NSLog(@" Found User : zipcode    : %@", user.zipCode);
-            NSLog(@" Found User : district   : %@", user.schoolDistrict);
-            NSLog(@" Found User : grade      : %@", user.schoolGrade);
-            NSLog(@" ----------------------------------------");
+            NSLog(@" Added Student  :  userId      : %@", user.id);
+            NSLog(@" Added Student  :  firstName   : %@", user.firstName);
+            NSLog(@" Added Student  :  email       : %@", user.email);
+            NSLog(@" Added Student  :  role        : %@", user.role);
+            NSLog(@" Added Student  :  zipcode     : %@", user.zipCode);
+            NSLog(@" Added Student  :  district    : %@", user.schoolDistrict);
+            NSLog(@" Added Student  :  grade       : %@", user.schoolGrade);
+            NSLog(@" Added Student  :  studentId   : %@", user.studentIdNumber);
+            NSLog(@" Added Student  :  status      : %@", user.status);
+            NSLog(@" Added Student  :  synced      : %@", user.synced);
+            NSLog(@" ----------------------------------------\n\n");
         }
         
         NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];

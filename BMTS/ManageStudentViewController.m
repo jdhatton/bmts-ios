@@ -34,6 +34,8 @@ BOOL isCancelledUpdate = false;
     
     NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
     
+    self.inviteStudentBtn.hidden=YES;
+    self.deleteStudentBtn.hidden=YES;
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Manage ", student.firstName];
     studentHeaderLabel.text = headerText;

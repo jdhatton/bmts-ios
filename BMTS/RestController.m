@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "Feedback.h"
 #import "Behaviors.h"
+#import "ClassroomBehaviors.h"
 
 @implementation RestController
 
@@ -24,6 +25,10 @@
   NSString *const SERVICES_HOST_PORT = @"8080";
 
 
+//
+// This a method to perform a ping that validates connectivity.
+// TODO: integrate this into the flow for validating connectivity.
+//
 - (IBAction)fetchGreeting;
 {
     NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/hello-world"];
@@ -43,14 +48,14 @@
      }];
 }
 
-
+//
+// This is a method to call the server to get the list of school districts available
+//  for the provided zipcode.
+//
 - (NSArray*)fetchDistrictsForZipCode:(NSString *)srcZipCode;
 {
  
-    NSLog(@"\n >>>>  ..1..    REST::  fetchDistrictsForZipCode ");
     NSArray *districts;
-    
- 
     NSString *searchURL = [@"http://homeroomtechnologies.com:8080/schoolSearch?zip=" stringByAppendingString:srcZipCode];
     NSLog(@"\n >>>>  ..2..    REST::  fsearchURL =  %@", searchURL);
     
@@ -73,7 +78,6 @@
     if (error == nil)
     {
         NSLog(@"\n >>>>     REST:: response =  %@", [response debugDescription] );
-//        NSLog(@"\n >>>>     REST:: data =  %@", data );
         if (data.length > 0 )
         {
             
@@ -95,19 +99,17 @@
         }
 
     }
-    NSLog(@"\n >>>>  ..5..    REST::  returning districts  =  %@", districts);
-    NSLog(@"\n >>>>  ..6..    REST::  request =  %@", @"Done");
     return districts;
-
-    
 }
 
 
+//
+// This is a method to save the registered user information to the server on completion of register.
+//
+//
 - (IBAction)registerUser:(User *)user;
 {
     
-    NSLog(@"\n >>>>  ..1..    REST::POST::    registerUser ");
-
     // Add the password to be sent
     user.password = appDelegate.userPassword;
     
@@ -178,22 +180,18 @@
 }
 
 
-
-
+//
+// This is a method to save the user feedback to the server.
+//
 - (IBAction)sendFeedback:(NSString *)comment;
 {
-    
-    NSLog(@"\n >>>>  ..1..    REST::POST::    sendFeedback ");
     
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     Feedback  *comments = [NSEntityDescription  insertNewObjectForEntityForName:@"Feedback" inManagedObjectContext:context];
     comments.comment = comment;
     comments.id = appDelegate.userRemoteId;
-    
-    NSLog(@"\n >>>>  ..2..    REST::POST::    appDelegate.userRemoteId  =   %@", appDelegate.userRemoteId);
 
-    
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;
     
@@ -231,25 +229,17 @@
          if (data.length > 0 && connectionError == nil)
          {
              NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
-             NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
              NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
              NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
-             
          }
      }];
-    
-    NSLog(@"did it happen???");
-    
 }
 
 //
-// TODO: Implement these.
+// This is a method to add a student to the server.
 //
-- (IBAction)addStudent:(User *)user;
+- (IBAction)addStudent:(User *)user :(NSString *) selectedBehavior;
 {
-    
-    NSLog(@"\n >>>>  ..1..    REST::POST::  addStudent ");
-    
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;
     
@@ -272,6 +262,7 @@
         NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
     }
     [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
+    [fields setObject:selectedBehavior forKey:@"behavior"];
     
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
@@ -327,14 +318,10 @@
 
 
 
-
-
-
-
 - (IBAction)syncComments:(User *)user;
 {
     
-    NSLog(@"\n >>>>  ..1..    REST::POST::  syncComments ");
+    NSLog(@"\n\n\n\n     >>>>     REST::POST::  syncComments ");
     NSMutableDictionary *fields = [NSMutableDictionary dictionary];
     
     //
@@ -345,12 +332,16 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
-    
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest2 setEntity:entity2];
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error];
+    
     for (Comments *comment in fetchedObjects) {
-        if( comment.synced  == false ){ //0
-
+        if( comment.synced  == NULL ){ //0
             NSLog(@" syncComments() Syncing: ");
             NSLog(@" ----------------------------------------");
             NSLog(@" Comment : comment      :  %@", comment.comment);
@@ -359,6 +350,14 @@
             NSLog(@" Comment : synced       :  %@", comment.synced);
             NSLog(@" ----------------------------------------");
             
+            
+            for (User *user in fetchedObjects2) {
+                if( user.id == comment.studentId ){ //0
+                    NSLog(@" MATCHED user to comment: ");
+                    comment.studentId = user.remoteId;
+                }
+            }
+
             for (NSAttributeDescription *attribute in [[comment entity] properties]) {
                 NSString *attributeName = attribute.name;
                 id attributeValue = [comment valueForKey:attributeName];
@@ -368,12 +367,13 @@
             }
         }
     }
+    
+
+
 
     
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;
-    
-  
     
     //
     // Add the teacherId to associate this student to.

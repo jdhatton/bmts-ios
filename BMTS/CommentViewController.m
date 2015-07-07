@@ -29,10 +29,10 @@
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Comments for ", student.firstName];
     headerLabel.text = headerText;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+//                                   initWithTarget:self
+//                                   action:@selector(dismissKeyboard)];
+//    [self.view addGestureRecognizer:tap];
     
     self.commentTextField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
@@ -67,67 +67,56 @@
 
 - (IBAction)saveComment:(id)sender {
     
-    
-    NSLog(@"DEBUG: Saving Comment... ");
-    
-    
-        if( self.student != nil) {
-    
-    
-    
-            NSError *error;
-            NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
+    if( self.student != nil) {
+        
+        NSError *error;
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
+        NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+        
+        Comments *newComment = [NSEntityDescription  insertNewObjectForEntityForName:@"Comments" inManagedObjectContext:context];
+        newComment.createdDate =  stringFromDate;
+        newComment.studentId = self.student.id;
+        newComment.comment = self.commentTextField.text;
+        newComment.synced = 0L;
+ 
+        NSLog(@" Add Comments SAVING ");
+        if (![context save:&error]) {
+            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+        } else {
             //
-            // Create a new classroomBehavior record for the student-behavior-interval
+            // Nothing to do here ??
             //
-            NSLog(@" Creating a new StudentBehaviors");
-            Comments *newComment = [NSEntityDescription  insertNewObjectForEntityForName:@"Comments" inManagedObjectContext:context];
-            newComment.createdDate =  [NSDate date];
-            newComment.studentId = self.student.id;
-            newComment.comment = self.commentTextField.text;
-            NSLog(@" Creating a new Comments - 2  ");
-    
-            NSLog(@" Add Comments SAVING ");
-            if (![context save:&error]) {
-                NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-            } else {
-    
-    
-    
-                //
-                // Dump the saved behaviors for this student
-                //
-                NSError *error;
-                NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
-                NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-                NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
-    
-                [fetchRequest setEntity:entity];
-                NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-                for (Comments *comment in fetchedObjects) {
-                    NSLog(@" StudentStatusViewController::Exiting() ");
-                    NSLog(@" ----------------------------------------");
-                    NSLog(@" Found Comments : studentId      :  %@", comment.studentId);
-                    NSLog(@" Found Comments : statusId       :  %@", comment.comment);
-                    NSLog(@" Found Comments : createdDate    :  %@", comment.createdDate);
-                    NSLog(@" ----------------------------------------");
-                }
-    
-    
-    
-                //
-                // savedStatusSegue to the TeacherMainView
-                //
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-                [self.window makeKeyAndVisible];
-                [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-                
-            }
-            
         }
+        
+        //
+        // Dump the saved behaviors for this student
+        //
+//        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
+//        
+//        [fetchRequest setEntity:entity];
+//        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+//        for (Comments *comment in fetchedObjects) {
+//            NSLog(@" StudentStatusViewController::Exiting() ");
+//            NSLog(@" ----------------------------------------");
+//            NSLog(@" Saved Comments : studentId      :  %@", comment.studentId);
+//            NSLog(@" Saved Comments : statusId       :  %@", comment.comment);
+//            NSLog(@" Saved Comments : createdDate    :  %@", comment.createdDate);
+//            NSLog(@" Saved Comments : synced         :  %@", comment.synced);
+//            NSLog(@" ----------------------------------------");
+//        }
+        
+        //
+        // Segue to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+    }
     
 }
 
