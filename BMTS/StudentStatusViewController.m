@@ -109,9 +109,13 @@ int selectedStatus;
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
         
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
+        NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+        
         NSLog(@" Creating a new StudentBehaviors");
         StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
-        newStudentBehavior.createdDate =  [NSDate date];
+        newStudentBehavior.createdDate =  stringFromDate;
         newStudentBehavior.studentId = self.student.id;
         newStudentBehavior.statusId = [NSNumber numberWithInt:selectedStatus];
         newStudentBehavior.synced = false;

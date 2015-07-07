@@ -13,7 +13,7 @@
 @interface Comments : NSManagedObject
 
 @property (nonatomic, retain) NSString * comment;
-@property (nonatomic, retain) NSNumber * studentId;
+@property (nonatomic, retain) NSString * studentId;
 @property (nonatomic, retain) NSString * createdDate;
 @property (nonatomic, retain) NSNumber * synced;
 

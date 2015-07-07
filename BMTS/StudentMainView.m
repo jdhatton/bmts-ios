@@ -42,8 +42,12 @@
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
         
  
-        
-        
+        //
+        //
+        // TODO: only show the items for TODAY.
+        //
+        //
+ 
         
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -55,7 +59,17 @@
             
             if( behavior.studentId == student.id ){
                 [behaviorList addObject:behavior.statusId];
-                NSString *stringCreatedDate = [formatter stringFromDate:behavior.createdDate];
+                
+                NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
+                NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
+                NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
+                
+                NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
+                [formatter2 setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
+
+                NSDate *dateObject = [formatter2 dateFromString:behavior.createdDate];
+                
+                NSString *stringCreatedDate = [formatter stringFromDate:dateObject];
                 [items addObject:stringCreatedDate];
             }
         }

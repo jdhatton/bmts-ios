@@ -65,19 +65,7 @@ AppDelegate *appDelegate = nil;
     // On App Startup lets check for the UserCookie, if found proceed to the main view.
     //
     NSError *error;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserCookie" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (UserCookie *info in fetchedObjects) {
-        hasUserCookie = TRUE;
-        NSLog(@"--------------------------------------------");
-        NSLog(@" Found UserCookie : %@", info.userId);
-        NSLog(@" Found UserCookie : %@", info.email);
-        NSLog(@" Found UserCookie : %@", info.password);
-        NSLog(@"--------------------------------------------");
-        
-    }
+  
     
     NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
@@ -85,39 +73,13 @@ AppDelegate *appDelegate = nil;
     NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error];
     for (User *user in fetchedObjects2) {
         hasUser = TRUE;
-        NSLog(@"--------------------------------------------");
-        NSLog(@" Found User : userId      :  %@", user.id);
-        NSLog(@" Found User : email       :  %@", user.email);
-        NSLog(@" Found User : role        :  %@", user.role);
-        NSLog(@" Found User : zipcode     :  %@", user.zipCode);
-        NSLog(@" Found User : district    :  %@", user.schoolDistrict);
-        NSLog(@" Found User : grade       :  %@", user.schoolGrade);
-        NSLog(@" Found User : firstName   :  %@", user.firstName);
-        NSLog(@" Found User : lastName    :  %@", user.lastName);
-        NSLog(@" Found User : gender      :  %@", user.gender);
-        NSLog(@" Found User : schoolName  :  %@", user.schoolName);
-        NSLog(@"--------------------------------------------");
         userRemoteId = user.remoteId;
-        
+        if([user.id integerValue] == 1 ){
+            self.teacherUser.remoteId = user.remoteId;
+            self.userRemoteId = user.remoteId;
+        }
     }
  
-    NSFetchRequest *fetchRequest3 = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity3 = [NSEntityDescription entityForName:@"ClassroomBehaviors" inManagedObjectContext:context];
-    [fetchRequest3 setEntity:entity3];
-    NSArray *fetchedObjects3 = [context executeFetchRequest:fetchRequest3 error:&error];
-    for (ClassroomBehaviors *crb in fetchedObjects3) {
-        NSLog(@" AddStudentController:Exiting() ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Found CRB : Id          : %@", crb.id);
-        NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-        NSLog(@" Found CRB : status      : %@", crb.statusId);
-        NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-        NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-        NSLog(@" ----------------------------------------");
-    }
-  
-
-
     //
     // TODO: move both of these array data elements to a NSDefault List to be read in from disk synced to WS.
     //
@@ -162,35 +124,15 @@ AppDelegate *appDelegate = nil;
     
     
     //
-    // Perform the data syncs on load up of the app.
+    // Perform the data syncs on load up of the app.  appDelegate.userRemoteId
     //
-    if (appDelegate.userRemoteId == nil || appDelegate.userRemoteId == (id)[NSNull null]) {
+    NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is  :  %@  ", self.userRemoteId);
+    if (self.userRemoteId == nil || self.userRemoteId == (id)[NSNull null]) {
         NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
         
     } else {
         NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
         RestController *restCntrlr  = [RestController alloc];
-        
-        
-        
-        NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
-        [fetchRequest5 setEntity:entity5];
-        NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
-        for (Comments *comment in fetchedObjects5) {
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Found Comment : comment     : %@", comment.comment);
-            NSLog(@" Found Comment : studentId   : %@", comment.studentId );
-            NSLog(@" Found Comment : synced      : %@", comment.synced );
-            NSLog(@" ----------------------------------------");
-        }
-        
-        
-        //
-        //
-        //synced is null on some data and cuasing issues.
-        //
-        //
         
         [restCntrlr syncComments: teacherUser];
         [restCntrlr syncBehaviors: teacherUser];

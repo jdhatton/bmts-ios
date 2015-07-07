@@ -40,7 +40,7 @@
     <entity name="Comments" representedClassName="Comments" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="Feedback" representedClassName="Feedback" syncable="YES">
@@ -70,7 +70,7 @@
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="StudentBehaviors" representedClassName="StudentBehaviors" syncable="YES">
-        <attribute name="createdDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>

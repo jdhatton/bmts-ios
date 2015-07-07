@@ -78,7 +78,7 @@
         
         Comments *newComment = [NSEntityDescription  insertNewObjectForEntityForName:@"Comments" inManagedObjectContext:context];
         newComment.createdDate =  stringFromDate;
-        newComment.studentId = self.student.id;
+        newComment.studentId = [self.student.id stringValue]; 
         newComment.comment = self.commentTextField.text;
         newComment.synced = 0L;
  
@@ -91,9 +91,6 @@
             //
         }
         
-        //
-        // Dump the saved behaviors for this student
-        //
 //        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 //        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
 //        

@@ -13,6 +13,7 @@
 #import "Feedback.h"
 #import "Behaviors.h"
 #import "ClassroomBehaviors.h"
+#import "StudentBehaviors.h"
 
 @implementation RestController
 
@@ -340,8 +341,10 @@
     [fetchRequest2 setEntity:entity2];
     NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error];
     
+    NSInteger count = 0;
     for (Comments *comment in fetchedObjects) {
         if( comment.synced  == NULL ){ //0
+            count ++;
             NSLog(@" syncComments() Syncing: ");
             NSLog(@" ----------------------------------------");
             NSLog(@" Comment : comment      :  %@", comment.comment);
@@ -352,9 +355,13 @@
             
             
             for (User *user in fetchedObjects2) {
-                if( user.id == comment.studentId ){ //0
+                 NSLog(@" User studentIdNumber :  %@", user.studentIdNumber);
+                 NSLog(@" User ID              :  %@", user.id);
+                 NSLog(@" Comment StudentID    :  %@", comment.studentId);
+                if( user.id == [NSNumber numberWithInteger: [comment.studentId integerValue] ]){ //0
                     NSLog(@" MATCHED user to comment: ");
-                    comment.studentId = user.remoteId;
+                    //comment.studentId = user.studentIdNumber;
+                    [fields setObject:user.studentIdNumber forKey:[[NSString stringWithFormat:@"%ld", (long)count ] stringByAppendingString:@"studentIdNumber"]];
                 }
             }
 
@@ -362,79 +369,69 @@
                 NSString *attributeName = attribute.name;
                 id attributeValue = [comment valueForKey:attributeName];
                 if (attributeValue) {
-                    [fields setObject:attributeValue forKey:attributeName];
+                    [fields setObject:attributeValue forKey:[[NSString stringWithFormat:@"%ld", (long)count ] stringByAppendingString:attributeName]];
                 }
             }
+            
         }
     }
     
-
-
-
-    
-    // Convert your data and set your request's HTTPBody property
-    NSString *jsonString;
-    
-    //
-    // Add the teacherId to associate this student to.
-    //
-    if (appDelegate.userRemoteId == (id)[NSNull null]) {
-        NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
+    if(count > 0 ){
+        [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
         
-    } else {
-        NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
-    }
-    [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
-    
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    NSLog(@"\n jsonData = %@", jsonString);
-    
-    NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/remoteSync/comments"];
-    NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
-    [rq setHTTPMethod:@"POST"];
-    [rq setHTTPBody:jsonData];
-    
-    [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
-    
-    
-    [NSURLConnection sendAsynchronousRequest:rq
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response,
-                                               NSData *data, NSError *connectionError)
-     {
-         if (data.length > 0 && connectionError == nil)
+        
+        // Convert your data and set your request's HTTPBody property
+        NSString *jsonString;
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
+                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                             error:&error];
+        if (! jsonData) {
+            NSLog(@"Got an error: %@", error);
+        } else {
+            jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        }
+        NSLog(@"\n jsonData = %@", jsonString);
+        
+        NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/remoteSync/comments"];
+        NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
+        [rq setHTTPMethod:@"POST"];
+        [rq setHTTPBody:jsonData];
+        
+        [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+        
+        
+        [NSURLConnection sendAsynchronousRequest:rq
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data, NSError *connectionError)
          {
-             NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
-             NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
-             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
-             NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
-             NSLog(@"\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
-             
-             for (Comments *comment in fetchedObjects) {
-                 if( comment.synced  == false ){ //0
-                     comment.synced = [NSNumber numberWithInt:1];
+             if (data.length > 0 && connectionError == nil)
+             {
+                 NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+                 NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
+                 NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
+                 NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+                 NSLog(@"\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
+                 
+                 for (Comments *comment in fetchedObjects) {
+                     if( comment.synced  == NULL ){ //0
+                         comment.synced = [NSNumber numberWithInt:1];
+                     }
                  }
+                 
+                 NSError *error;
+                 NSManagedObjectContext *context = [appDelegate managedObjectContext];
+                 if (![context save:&error]) {
+                     NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+                 } else {
+                     NSLog(@"\n SUCCESS  - User - UPDATED  ");
+                 }
+                 
              }
-             
-             NSError *error;
-             NSManagedObjectContext *context = [appDelegate managedObjectContext];
-             if (![context save:&error]) {
-                 NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-             } else {
-                 NSLog(@"\n SUCCESS  - User - UPDATED  ");
-             }
-             
-         }
-     }];
+         }];
+    }
     
 }
 
@@ -454,27 +451,44 @@
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
-    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentBehaviors" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (Behaviors *behavior in fetchedObjects) {
-        if( behavior.synced  == false ){ //0
+    
+    NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest2 setEntity:entity2];
+    NSArray *fetchedObjects2 = [context executeFetchRequest:fetchRequest2 error:&error];
+    
+    NSInteger count = 0;
+    for (StudentBehaviors *behavior in fetchedObjects) {
+        if( behavior.synced  == NULL ){
+            count ++;
+            NSLog(@" sync StudentBehaviors() Syncing: ");
             
-            NSLog(@" syncBehaviors() Syncing: ");
             NSLog(@" ----------------------------------------");
-            NSLog(@" Behavior : descr      :  %@", behavior.descr);
-            NSLog(@" Behavior : name       :  %@", behavior.name);
-            NSLog(@" Behavior : sortOrder  :  %@", behavior.sortOrder);
-            NSLog(@" Behavior : statusId   :  %@", behavior.statusId);
-            NSLog(@" Behavior : synced     :  %@", behavior.synced);
+            NSLog(@" StudentBehavior : statusId     :  %@", behavior.statusId);
+            NSLog(@" StudentBehavior : studentId    :  %@", behavior.studentId);
+            NSLog(@" StudentBehavior : createdDate  :  %@", behavior.createdDate);
+            NSLog(@" StudentBehavior : synced       :  %@", behavior.synced);
             NSLog(@" ----------------------------------------");
+            
+            for (User *user in fetchedObjects2) {
+                NSLog(@" User studentIdNumber :  %@", user.studentIdNumber);
+                NSLog(@" User ID              :  %@", user.id);
+                NSLog(@" Comment StudentID    :  %@", behavior.studentId);
+                if( user.id == [NSNumber numberWithInteger: [behavior.studentId integerValue] ]){
+                    NSLog(@" MATCHED user to behavior: ");
+                    //comment.studentId = user.studentIdNumber;
+                    [fields setObject:user.studentIdNumber forKey:[[NSString stringWithFormat:@"%ld", (long)count ] stringByAppendingString:@"studentIdNumber"]];
+                }
+            }
             
             for (NSAttributeDescription *attribute in [[behavior entity] properties]) {
                 NSString *attributeName = attribute.name;
                 id attributeValue = [behavior valueForKey:attributeName];
                 if (attributeValue) {
-                    [fields setObject:attributeValue forKey:attributeName];
+                    [fields setObject:attributeValue forKey:[[NSString stringWithFormat:@"%ld", (long)count ] stringByAppendingString:attributeName]];
                 }
             }
         }
@@ -484,66 +498,58 @@
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;
     
-    //
-    // Add the teacherId to associate this student to.
-    //
-    if (appDelegate.userRemoteId == (id)[NSNull null]) {
-        NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
+    if(count > 0 ) {
+        [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
         
-    } else {
-        NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
-    }
-    [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
-    
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    NSLog(@"\n jsonData = %@", jsonString);
-    
-    NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/remoteSync/behaviors"];
-    NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
-    [rq setHTTPMethod:@"POST"];
-    [rq setHTTPBody:jsonData];
-    
-    [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
-    
-    
-    [NSURLConnection sendAsynchronousRequest:rq
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response,
-                                               NSData *data, NSError *connectionError)
-     {
-         if (data.length > 0 && connectionError == nil)
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
+                                                           options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                             error:&error];
+        if (! jsonData) {
+            NSLog(@"Got an error: %@", error);
+        } else {
+            jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        }
+        NSLog(@"\n jsonData = %@", jsonString);
+        
+        NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/remoteSync/behaviors"];
+        NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
+        [rq setHTTPMethod:@"POST"];
+        [rq setHTTPBody:jsonData];
+        
+        [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+        
+        
+        [NSURLConnection sendAsynchronousRequest:rq
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response,
+                                                   NSData *data, NSError *connectionError)
          {
-             NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
-             NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
-             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
-             NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
-             NSLog(@"\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
-             
-             for (Behaviors *behavior in fetchedObjects) {
-                 if( behavior.synced  == false ){ //0
-                     behavior.synced = [NSNumber numberWithInt:1];
+             if (data.length > 0 && connectionError == nil)
+             {
+                 NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+                 NSLog(@"\n    >>>>>    POST sent!  resp data  =  %@ ", data  );
+                 NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
+                 NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+                 NSLog(@"\n >>>>     REST:: RESP : ID %@", [[resp objectForKey:@"id"] stringValue] );
+                 
+                 for (Behaviors *behavior in fetchedObjects) {
+                     if( behavior.synced  == false ){ //0
+                         behavior.synced = [NSNumber numberWithInt:1];
+                     }
                  }
+                 
+                 NSError *error;
+                 NSManagedObjectContext *context = [appDelegate managedObjectContext];
+                 if (![context save:&error]) {
+                     NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+                 } else {
+                     NSLog(@"\n SUCCESS  - User - UPDATED  ");
+                 }
+                 
              }
-             
-             NSError *error;
-             NSManagedObjectContext *context = [appDelegate managedObjectContext];
-             if (![context save:&error]) {
-                 NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-             } else {
-                 NSLog(@"\n SUCCESS  - User - UPDATED  ");
-             }
-             
-         }
-     }];
+         }];
+    }
     
 }
 
