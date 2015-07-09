@@ -65,6 +65,13 @@ AppDelegate *appDelegate = nil;
     // On App Startup lets check for the UserCookie, if found proceed to the main view.
     //
     NSError *error;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserCookie" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (UserCookie *info in fetchedObjects) {
+        hasUserCookie = TRUE;
+    }
   
     
     NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
