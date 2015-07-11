@@ -279,7 +279,9 @@
                                     <constraint firstAttribute="height" constant="30" id="fm3-hb-nNL"/>
                                     <constraint firstAttribute="width" constant="102" id="nsX-SW-PiK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -294,7 +296,9 @@
                                     <constraint firstAttribute="height" constant="30" id="cnT-AM-ZjW"/>
                                     <constraint firstAttribute="width" constant="102" id="eH1-VS-0fP"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2420,12 +2424,12 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SCN-zt-OSQ"/>
-        <segue reference="X0Z-VT-WKG"/>
         <segue reference="toX-GW-WPJ"/>
-        <segue reference="QC3-97-A0x"/>
-        <segue reference="a2J-wy-WMn"/>
+        <segue reference="pN9-YT-7xJ"/>
         <segue reference="CaW-Eu-tbr"/>
+        <segue reference="a2J-wy-WMn"/>
+        <segue reference="QC3-97-A0x"/>
+        <segue reference="SCN-zt-OSQ"/>
         <segue reference="aK1-Qg-wuc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
