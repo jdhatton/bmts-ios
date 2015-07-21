@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"DEBUG:  >>   Loading RootViewController. ::viewDidLoad ");
+    // NSLog(@"DEBUG:  >>   Loading RootViewController. ::viewDidLoad ");
     
     
     // Do any additional setup after loading the view, typically from a nib.

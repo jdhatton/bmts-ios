@@ -141,7 +141,7 @@ BOOL isCancelledAdd = false;
         NSNumber *userId = @(2);
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
-            NSLog(@" Found User : userId: %@", user.id);
+            // NSLog(@" Found User : userId: %@", user.id);
             userId = @([user.id floatValue] + 1);
         }
         
@@ -149,7 +149,7 @@ BOOL isCancelledAdd = false;
         // Create a new User object for the Student with a ROLE of student.
         //
         NSString *strStudentName = [self.studentName text];
-        NSLog(@" AddStudent String STUDENTNAME : %@", strStudentName);
+        // NSLog(@" AddStudent String STUDENTNAME : %@", strStudentName);
         
         if(strStudentName.length > 17){
             NSString *mySmallerString = [strStudentName substringToIndex:17];
@@ -163,52 +163,52 @@ BOOL isCancelledAdd = false;
         newUser.role = [NSNumber numberWithInt:2]; // 2 = student
         newUser.studentIdNumber = self.studentIdNumber.text;
         newUser.synced = false;
-        NSLog(@" Created Student : %@", newUser);
+        // NSLog(@" Created Student : %@", newUser);
         
         //
         // Find and set the selected behavior. >  ClassRoomBehaviors
         //
-        NSLog(@" Looking for any existing CRB's ");
+        // NSLog(@" Looking for any existing CRB's ");
         NSNumber *ClassRoomBehaviorsId = [NSNumber numberWithInteger: 0];
         NSFetchRequest *fetchRequest6 = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity6 = [NSEntityDescription entityForName:@"ClassroomBehaviors"  inManagedObjectContext:context];
         [fetchRequest6 setEntity:entity6];
         NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
         for (ClassroomBehaviors *crb in fetchedObjects6) {
-            NSLog(@" Found ClassRoomBehaviors : id: %@", crb.id);
+            // NSLog(@" Found ClassRoomBehaviors : id: %@", crb.id);
             ClassRoomBehaviorsId = @([crb.id floatValue] + 1);
         }
         
         //
         // Create a new classroomBehavior record for the student-behavior-interval
         //
-        NSLog(@" Creating a new CRB - 1   %@", ClassRoomBehaviorsId);
+        // NSLog(@" Creating a new CRB - 1   %@", ClassRoomBehaviorsId);
         ClassroomBehaviors *newCRB = [NSEntityDescription  insertNewObjectForEntityForName:@"ClassroomBehaviors" inManagedObjectContext:context];
         newCRB.id = ClassRoomBehaviorsId;
         newCRB.studentId = userId;
         newCRB.statusId = @(1);
-        NSLog(@" Createing a new CRB - 2  ");
+        // NSLog(@" Createing a new CRB - 2  ");
         
         NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+        // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
         newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+        // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         newCRB.synced = false;
         
         //
         // Find and set the selected Interval.
         //
 //        NSString *selInterval = [self.intervalArray objectAtIndex:selectedInterval];
-//        NSLog(@" AddStudent Adding Interval : %@", selInterval);
-//        //    NSLog(@" AddStudent Matched    :  %@", selInterval);
+//        // NSLog(@" AddStudent Adding Interval : %@", selInterval);
+//        //    // NSLog(@" AddStudent Matched    :  %@", selInterval);
 //        newCRB.trackingInterval = [NSNumber numberWithInteger:selectedInterval];
-//        NSLog(@" AddStudent Added interval : %@", newCRB.trackingInterval);
+//        // NSLog(@" AddStudent Added interval : %@", newCRB.trackingInterval);
 //        
-        NSLog(@" AddStudent SAVING ");
+        // NSLog(@" AddStudent SAVING ");
         if (![context save:&error]) {
-            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+            // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
-            NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
+            // NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
         }
         
         //
@@ -227,19 +227,19 @@ BOOL isCancelledAdd = false;
         [fetchRequest5 setEntity:entity5];
         NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
         for (User *user in fetchedObjects5) {
-            NSLog(@" AddStudentController:Exiting() ");
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Added Student  :  userId      : %@", user.id);
-            NSLog(@" Added Student  :  firstName   : %@", user.firstName);
-            NSLog(@" Added Student  :  email       : %@", user.email);
-            NSLog(@" Added Student  :  role        : %@", user.role);
-            NSLog(@" Added Student  :  zipcode     : %@", user.zipCode);
-            NSLog(@" Added Student  :  district    : %@", user.schoolDistrict);
-            NSLog(@" Added Student  :  grade       : %@", user.schoolGrade);
-            NSLog(@" Added Student  :  studentId   : %@", user.studentIdNumber);
-            NSLog(@" Added Student  :  status      : %@", user.status);
-            NSLog(@" Added Student  :  synced      : %@", user.synced);
-            NSLog(@" ----------------------------------------\n\n");
+            // NSLog(@" AddStudentController:Exiting() ");
+            // NSLog(@" ----------------------------------------");
+            // NSLog(@" Added Student  :  userId      : %@", user.id);
+            // NSLog(@" Added Student  :  firstName   : %@", user.firstName);
+            // NSLog(@" Added Student  :  email       : %@", user.email);
+            // NSLog(@" Added Student  :  role        : %@", user.role);
+            // NSLog(@" Added Student  :  zipcode     : %@", user.zipCode);
+            // NSLog(@" Added Student  :  district    : %@", user.schoolDistrict);
+            // NSLog(@" Added Student  :  grade       : %@", user.schoolGrade);
+            // NSLog(@" Added Student  :  studentId   : %@", user.studentIdNumber);
+            // NSLog(@" Added Student  :  status      : %@", user.status);
+            // NSLog(@" Added Student  :  synced      : %@", user.synced);
+            // NSLog(@" ----------------------------------------\n\n");
         }
         
         NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
@@ -248,14 +248,14 @@ BOOL isCancelledAdd = false;
         [fetchRequest4 setEntity:entity4];
         NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
         for (ClassroomBehaviors *crb in fetchedObjects4) {
-            NSLog(@" AddStudentController:Exiting() ");
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Found CRB : Id          : %@", crb.id);
-            NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-            NSLog(@" Found CRB : status      : %@", crb.statusId);
-            NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-            NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-            NSLog(@" ----------------------------------------");
+            // NSLog(@" AddStudentController:Exiting() ");
+            // NSLog(@" ----------------------------------------");
+            // NSLog(@" Found CRB : Id          : %@", crb.id);
+            // NSLog(@" Found CRB : studentId   : %@", crb.studentId );
+            // NSLog(@" Found CRB : status      : %@", crb.statusId);
+            // NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
+            // NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
+            // NSLog(@" ----------------------------------------");
         }
         
         isValidStudentName = true;
@@ -277,16 +277,16 @@ BOOL isCancelledAdd = false;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
-     NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
+     // NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
     
     if (!isValidStudentName) {
         //prevent segue from occurring
-        NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
+        // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
         return NO;
     }
     
     // by default perform the segue transition
-    NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
+    // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
     return YES;
 }
 
@@ -301,7 +301,7 @@ BOOL isCancelledAdd = false;
 
 - (IBAction)addStudent:(id)sender {
     
-    NSLog(@" ------  You tapped to add a student!  --------");
+    // NSLog(@" ------  You tapped to add a student!  --------");
 
     if( ! [self.studentName text].length > 0  ) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
@@ -312,7 +312,7 @@ BOOL isCancelledAdd = false;
         [alert show];
         isValidStudentName = false;
     } else {
-        NSLog(@" ------  Everything looks good, lets call the saveForm method...");
+        // NSLog(@" ------  Everything looks good, lets call the saveForm method...");
         isCancelledAdd = false;
         isValidStudentName = true;
         [self saveFormData:sender ];
@@ -324,7 +324,7 @@ BOOL isCancelledAdd = false;
 
 - (BOOL)studentName:(UITextField *)studentName shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-     NSLog(@" >> isMaxCharsLimitExceeded :: shouldChangeCharactersInRange  ");
+     // NSLog(@" >> isMaxCharsLimitExceeded :: shouldChangeCharactersInRange  ");
     NSUInteger newLength = [self.studentName.text length] + [string length] - range.length;
     return (newLength > 17) ? NO : YES;
 }
@@ -343,7 +343,7 @@ BOOL isCancelledAdd = false;
     [fetchRequest6 setEntity:entity6];
     NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
     for (Behaviors *behavior in fetchedObjects6) {
-        NSLog(@" Found Behavior : id: %@", behavior.id);
+        // NSLog(@" Found Behavior : id: %@", behavior.id);
         [self.behaviorArray  addObject:behavior.name];
     }
 

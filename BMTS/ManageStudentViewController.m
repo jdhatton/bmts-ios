@@ -32,7 +32,7 @@ BOOL isCancelledUpdate = false;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
+    // NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
     
     self.inviteStudentBtn.hidden=YES;
     self.deleteStudentBtn.hidden=YES;
@@ -66,7 +66,7 @@ BOOL isCancelledUpdate = false;
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
 
-    NSLog(@" Looking for any existing CRB's ");
+    // NSLog(@" Looking for any existing CRB's ");
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ClassroomBehaviors"  inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -153,18 +153,18 @@ BOOL isCancelledUpdate = false;
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
  
-    NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
+    // NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
     
     NSString *selBehavior = [self.behaviorUpdateArray objectAtIndex:selectedStudentUpdateBehavior];
-    NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+    // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
     studentInfo.behaviorId = [NSNumber numberWithInteger: selectedStudentUpdateBehavior];
-    NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
+    // NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
     
     NSString *selInterval = [self.intervalUpdateArray objectAtIndex:selectedStudentUpdateInterval];
-    NSLog(@" AddStudent Adding Interval : %@", selInterval);
-    //    NSLog(@" AddStudent Matched    :  %@", selInterval);
+    // NSLog(@" AddStudent Adding Interval : %@", selInterval);
+    //    // NSLog(@" AddStudent Matched    :  %@", selInterval);
     studentInfo.trackingInterval = [NSNumber numberWithInteger:selectedStudentUpdateInterval];
-    NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
+    // NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
     
     if(self.studentNameTextField.text.length > 1 ){
         student.firstName = self.studentNameTextField.text;
@@ -174,11 +174,11 @@ BOOL isCancelledUpdate = false;
         student.studentIdNumber = self.studentIDNumber.text;
     }
     
-    NSLog(@" AddStudent SAVING ");
+    // NSLog(@" AddStudent SAVING ");
     if (![context save:&error]) {
-        NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+        // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
     } else {
-        NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
+        // NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
     }
 
     
@@ -192,16 +192,16 @@ BOOL isCancelledUpdate = false;
     [fetchRequest5 setEntity:entity5];
     NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
     for (User *user in fetchedObjects5) {
-        NSLog(@" UPDATE StudentController:Exiting() ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Found User : userId     : %@", user.id);
-        NSLog(@" Found User : firstName  : %@", user.firstName);
-        NSLog(@" Found User : email      : %@", user.email);
-        NSLog(@" Found User : role       : %@", user.role);
-        NSLog(@" Found User : zipcode    : %@", user.zipCode);
-        NSLog(@" Found User : district   : %@", user.schoolDistrict);
-        NSLog(@" Found User : grade      : %@", user.schoolGrade);
-        NSLog(@" ----------------------------------------");
+        // NSLog(@" UPDATE StudentController:Exiting() ");
+        // NSLog(@" ----------------------------------------");
+        // NSLog(@" Found User : userId     : %@", user.id);
+        // NSLog(@" Found User : firstName  : %@", user.firstName);
+        // NSLog(@" Found User : email      : %@", user.email);
+        // NSLog(@" Found User : role       : %@", user.role);
+        // NSLog(@" Found User : zipcode    : %@", user.zipCode);
+        // NSLog(@" Found User : district   : %@", user.schoolDistrict);
+        // NSLog(@" Found User : grade      : %@", user.schoolGrade);
+        // NSLog(@" ----------------------------------------");
     }
     
     NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
@@ -210,14 +210,14 @@ BOOL isCancelledUpdate = false;
     [fetchRequest4 setEntity:entity4];
     NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
     for (ClassroomBehaviors *crb in fetchedObjects4) {
-        NSLog(@" UPDATE StudentController:Exiting() ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Found CRB : Id          : %@", crb.id);
-        NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-        NSLog(@" Found CRB : status      : %@", crb.statusId);
-        NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-        NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-        NSLog(@" ----------------------------------------");
+        // NSLog(@" UPDATE StudentController:Exiting() ");
+        // NSLog(@" ----------------------------------------");
+        // NSLog(@" Found CRB : Id          : %@", crb.id);
+        // NSLog(@" Found CRB : studentId   : %@", crb.studentId );
+        // NSLog(@" Found CRB : status      : %@", crb.statusId);
+        // NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
+        // NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
+        // NSLog(@" ----------------------------------------");
     }
     
  
@@ -264,7 +264,7 @@ BOOL isCancelledUpdate = false;
 //    NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
 //    for (User *user in fetchedObjects5) {
 //        if(user.id == [f numberFromString:student.studentIdNumber] ){
-//            NSLog(@" Deleting the student :  %@ ", student.studentIdNumber);
+//            // NSLog(@" Deleting the student :  %@ ", student.studentIdNumber);
 //            [context deleteObject:user];
 //        }
 // 
@@ -273,9 +273,9 @@ BOOL isCancelledUpdate = false;
 //
 //    
 //    if (![context save:&error]) {
-//        NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+//        // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
 //    } else {
-//        NSLog(@"\n SUCCESS  - STUDENT DELETED  ");
+//        // NSLog(@"\n SUCCESS  - STUDENT DELETED  ");
 //    }
 //    
 //    isCancelledUpdate = false;
@@ -307,16 +307,16 @@ BOOL isCancelledUpdate = false;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
-    NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
+    // NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
     
 //    if (!isCancelledUpdate) {
 //        //prevent segue from occurring
-//        NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
+//        // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
 //        return NO;
 //    }
 //    
 //    // by default perform the segue transition
-//    NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
+//    // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
     return YES;
 }
 

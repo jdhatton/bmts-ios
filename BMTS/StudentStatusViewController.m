@@ -29,7 +29,7 @@ int selectedStatus;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
+    // NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
     
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@%@", @"Select ", student.firstName, @"'s current status."];
@@ -54,7 +54,7 @@ int selectedStatus;
 
 - (IBAction)clickedGreenStatus:(id)sender {
     
-    NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
+    // NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
     selectedStatus = 1; //App.STATUS_GREEN
     
     greenButton.layer.borderWidth=2.0f;
@@ -70,7 +70,7 @@ int selectedStatus;
 
 - (IBAction)clickedYellowStatus:(id)sender {
     
-    NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
+    // NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
     selectedStatus = 2;
     
     greenButton.layer.borderWidth=0.0f;
@@ -87,7 +87,7 @@ int selectedStatus;
 
 
 - (IBAction)clickedRedStatus:(id)sender {
-    NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
+    // NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
     selectedStatus = 3;
     
     greenButton.layer.borderWidth=0.0f;
@@ -113,7 +113,7 @@ int selectedStatus;
         [formatter setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
         NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
         
-        NSLog(@" Creating a new StudentBehaviors");
+        // NSLog(@" Creating a new StudentBehaviors");
         StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
         newStudentBehavior.createdDate =  stringFromDate;
         newStudentBehavior.studentId = self.student.id;
@@ -122,14 +122,14 @@ int selectedStatus;
       
         
         //        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-        //        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+        //        // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
         //        newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-        //        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+        //        // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         
         
-        NSLog(@"\n >>>> Add Student Behavior SAVING ");
+        // NSLog(@"\n >>>> Add Student Behavior SAVING ");
         if (![context save:&error]) {
-            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+            // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
         
  
@@ -139,12 +139,12 @@ int selectedStatus;
             [fetchRequest setEntity:entity];
             NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
             for (StudentBehaviors *behavior in fetchedObjects) {
-                NSLog(@" StudentStatusViewController::Exiting() ");
-                NSLog(@" ----------------------------------------");
-                NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
-                NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
-                NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
-                NSLog(@" ----------------------------------------");
+                // NSLog(@" StudentStatusViewController::Exiting() ");
+                // NSLog(@" ----------------------------------------");
+                // NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
+                // NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
+                // NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
+                // NSLog(@" ----------------------------------------");
             }
         }
         

@@ -85,9 +85,9 @@ bool isValidForSegueNext = false;
 
 - (IBAction)saveFormData:(id)sender {
     
-    NSLog(@"DEBUG: saving form data Register-3 ");
+    // NSLog(@"DEBUG: saving form data Register-3 ");
     NSString *strZip = [self.zipCode text];
-    NSLog(@" Register-2 String ZIP : %@", strZip);
+    // NSLog(@" Register-2 String ZIP : %@", strZip);
     
   
     if( self.firstName.text.length > 0){
@@ -124,10 +124,10 @@ bool isValidForSegueNext = false;
         NSString * selectedGender = [self getTitleForSelectedSegment:gender];
         appDelegate.teacherUser.gender = selectedGender;
         
-        NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
-        NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
-        NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
-        NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
+        // NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
+        // NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
+        // NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
+        // NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
     
 
     }
@@ -137,7 +137,7 @@ bool isValidForSegueNext = false;
         //
         // Segway to the RegisterTwo
         //
-        NSLog(@" \n\n >>  Attempting to segue to REGISTERTWO  view controller :  strZip  =  %@", strZip);
+        // NSLog(@" \n\n >>  Attempting to segue to REGISTERTWO  view controller :  strZip  =  %@", strZip);
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         RegisterTwoViewController *registerTwoViewController = [storyboard instantiateViewControllerWithIdentifier:@"registerTwoMainView"];
         [self.window makeKeyAndVisible];
@@ -156,7 +156,7 @@ bool isValidForSegueNext = false;
     
     [self saveFormData:sender ];
     
-    NSLog(@" \n  AppDelegate::zipCode  =  %@", appDelegate.zipCode);
+    // NSLog(@" \n  AppDelegate::zipCode  =  %@", appDelegate.zipCode);
     
     if (!isValidForSegueNext) {
         //prevent segue from occurring
