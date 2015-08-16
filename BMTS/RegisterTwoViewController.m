@@ -13,11 +13,12 @@
 #import "RestController.h"
 #import "UserCookie.h"
 #import "Behaviors.h"
+#import "IPhone5MainViewController.h"
 
 @interface RegisterTwoViewController ()
 
 @property (strong, nonatomic) NSArray *districtArray;
-@property (strong, nonatomic) NSArray *gradesArray;
+
 
 @end
 
@@ -27,7 +28,7 @@
 @synthesize window = _window;
 
 NSInteger selectedDistrict = 0;
-NSInteger selectedGrade = 0;
+
 bool isSchoolSelected = false;
 bool isValidForSegueToMain = false;
 
@@ -53,29 +54,9 @@ bool isValidForSegueToMain = false;
         self.districtArray = results;
     } else {
         NSArray *data;
-        data = [[NSArray alloc] initWithObjects: @"Blue Valley", @"Shawnee Mission",
-                @"Kansas City", @"Wyandotte",
-                @"Kansas City Missouri", @"Turner",
-                @"Cherokee Hills", @"Desoto",
-                nil];
+        data = [[NSArray alloc] initWithObjects: @"Provide Later", @"Not Found", nil];
         self.districtArray = data;
-        
     }
-    
-    
-    //
-    // Hard coding the grades here for now is OK.
-    //
-    NSArray *data2;
-    data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
-             @"First Grade", @"Second Grade", @"Third Grade",
-             @"Fourth Grade", @"Fifth Grade",
-             @"Sixth grade", @"Seventh Grade",
-             @"Eight Grade", @"Ninth Grade",
-             @"Tenth Grade", @"Eleventh Grade",
-             @"Twelth Grade",
-             nil];
-    self.gradesArray = data2;
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -134,9 +115,9 @@ bool isValidForSegueToMain = false;
     if (pickerView == self.districtPicker ) {
         return [_districtArray  count];
     }
-    else if (pickerView == self.gradePicker) {
-        return [_gradesArray  count];
-    }
+//    else if (pickerView == self.gradePicker) {
+//        return [_gradesArray  count];
+//    }
     return [_districtArray  count];
 }
 
@@ -145,9 +126,9 @@ bool isValidForSegueToMain = false;
     if (pickerView == self.districtPicker ) {
         return [_districtArray  objectAtIndex:row];
     }
-    else if (pickerView == self.gradePicker) {
-        return [_gradesArray  objectAtIndex:row];
-    }
+//    else if (pickerView == self.gradePicker) {
+//        return [_gradesArray  objectAtIndex:row];
+//    }
     return [_districtArray  objectAtIndex:row];
     
 }
@@ -157,9 +138,9 @@ bool isValidForSegueToMain = false;
     if (pickerView == self.districtPicker ) {
         selectedDistrict = row;
     }
-    else if (pickerView == self.gradePicker) {
-        selectedGrade = row;
-    }
+//    else if (pickerView == self.gradePicker) {
+//        selectedGrade = row;
+//    }
     
     
 }
@@ -188,85 +169,7 @@ bool isValidForSegueToMain = false;
         //
         appDelegate.teacherUser.schoolName = self.schoolName.text;
         
-        //
-        // Find and set the selected Grade on to the User.
-        //
-        NSString *selGrade = [self.gradesArray objectAtIndex:selectedGrade];
-        
-        // NSLog(@" Register-2 Adding Grade : %@", selGrade);
-        //
-        // Walk the types to determine the corralating number to store.
-        //
-        if ([selGrade isEqualToString:@"Kindergarten"])
-        {
-            // NSLog(@" Register-2 Matched Kindergarten   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:1];
-        }
-        else if ([selGrade isEqualToString:@"First Grade"])
-        {
-            // NSLog(@" Register-2 Matched First Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:2];
-        }
-        else if ([selGrade isEqualToString:@"Second Grade"])
-        {
-            // NSLog(@" Register-2 Matched Second Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:3];
-        }
-        else if ([selGrade isEqualToString:@"Third Grade"])
-        {
-            // NSLog(@" Register-2 Matched Third Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:4];
-        }
-        else if ([selGrade isEqualToString:@"Fourth Grade"])
-        {
-            // NSLog(@" Register-2 Matched Fourth Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:5];
-        }
-        else if ([selGrade isEqualToString:@"Fifth Grade"])
-        {
-            // NSLog(@" Register-2 Matched Fifth Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:6];
-        }
-        else if ([selGrade isEqualToString:@"Sixth grade"])
-        {
-            // NSLog(@" Register-2 Matched Sixth grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:7];
-        }
-        else if ([selGrade isEqualToString:@"Seventh Grade"])
-        {
-            // NSLog(@" Register-2 Matched Seventh Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:8];
-        }
-        else if ([selGrade isEqualToString:@"Eight Grade"])
-        {
-            // NSLog(@" Register-2 Matched Eight Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:9];
-        }
-        else if ([selGrade isEqualToString:@"Ninth Grade"])
-        {
-            // NSLog(@" Register-2 Matched Ninth Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:10];
-        }
-        else if ([selGrade isEqualToString:@"Tenth Grade"])
-        {
-            // NSLog(@" Register-2 Matched Tenth Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:11];
-        }
-        else if ([selGrade isEqualToString:@"Eleventh Grade"])
-        {
-            // NSLog(@" Register-2 Matched Eleventh Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:12];
-        }
-        else if ([selGrade isEqualToString:@"Twelth Grade"])
-        {
-            // NSLog(@" Register-2 Matched Twelth Grade   :  %@", selGrade);
-            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:13];
-        }
-        else {
-            // NSLog(@" Register-2 FAILED TO MATCH - Grade   :  %@", selGrade);
-        }
-        
-        
+    
         // NSLog(@" Register-2 Added grade : %@", appDelegate.teacherUser.schoolGrade);
         // NSLog(@" UPDATING  User : zipCode   :  %@", appDelegate.teacherUser.zipCode);
         // NSLog(@" UPDATING  User : district  :  %@", appDelegate.teacherUser.schoolDistrict);
@@ -335,14 +238,30 @@ bool isValidForSegueToMain = false;
         
         
         isValidForSegueToMain = true;
+    
+    
+//        if( IS_IPHONE_5 ) {
+//            //
+//            // Segue to iphone5 view
+//            //
+//           NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+//        else {
+            //
+            // Segway to the TeacherMainView
+            //
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+    
         
-        //
-        // Segway to the TeacherMainView
-        //
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-        [self.window makeKeyAndVisible];
-        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+
         
    
     

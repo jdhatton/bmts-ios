@@ -13,11 +13,13 @@
 
 @interface RegisterThreeViewController ()
 
+@property (strong, nonatomic) NSArray *gradesArray;
+
 @end
 
 @implementation RegisterThreeViewController
 
-@synthesize firstName, lastName, gender, zipCode;
+@synthesize firstName, lastName, gender, zipCode, gradePicker, buttonNext;
 @synthesize window = _window;
 
 
@@ -25,6 +27,7 @@ bool isFirstNameProvided = false;
 bool isLastNameProvided = false;
 bool isZipCodeProvided = false;
 bool isValidForSegueNext = false;
+NSInteger selectedGrade = 0;
 
 
 - (void)viewDidLoad {
@@ -42,6 +45,23 @@ bool isValidForSegueNext = false;
     lastName.delegate = self;
     firstName.delegate = self;
     zipCode.delegate = self;
+    gradePicker.delegate = self;
+    
+    //
+    // Hard coding the grades here for now is OK.
+    //
+    NSArray *data2;
+    data2 = [[NSArray alloc] initWithObjects:@"Kindergarten",
+             @"First Grade", @"Second Grade", @"Third Grade",
+             @"Fourth Grade", @"Fifth Grade",
+             @"Sixth grade", @"Seventh Grade",
+             @"Eight Grade", @"Ninth Grade",
+             @"Tenth Grade", @"Eleventh Grade",
+             @"Twelth Grade",
+             nil];
+    self.gradesArray = data2;
+    
+  //  self.buttonNext.enabled = NO;
     
 }
 
@@ -106,8 +126,9 @@ bool isValidForSegueNext = false;
                                                         delegate:self
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles: nil];
-        [alert show];
         isValidForSegueNext = false;
+        [alert show];
+        
     
     } else {
 
@@ -121,17 +142,93 @@ bool isValidForSegueNext = false;
         NSNumber *zip = [f numberFromString:strZip];
         appDelegate.teacherUser.zipCode = zip;
        
-        NSString * selectedGender = [self getTitleForSelectedSegment:gender];
+        NSString * selectedGender = @"M"; // [self getTitleForSelectedSegment:gender];
         appDelegate.teacherUser.gender = selectedGender;
+        
+        
+        //
+        // Find and set the selected Grade on to the User.
+        //
+        NSString *selGrade = [self.gradesArray objectAtIndex:selectedGrade];
+        
+        // NSLog(@" Register-2 Adding Grade : %@", selGrade);
+        //
+        // Walk the types to determine the corralating number to store.
+        //
+        if ([selGrade isEqualToString:@"Kindergarten"])
+        {
+            // NSLog(@" Register-2 Matched Kindergarten   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:1];
+        }
+        else if ([selGrade isEqualToString:@"First Grade"])
+        {
+            // NSLog(@" Register-2 Matched First Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:2];
+        }
+        else if ([selGrade isEqualToString:@"Second Grade"])
+        {
+            // NSLog(@" Register-2 Matched Second Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:3];
+        }
+        else if ([selGrade isEqualToString:@"Third Grade"])
+        {
+            // NSLog(@" Register-2 Matched Third Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:4];
+        }
+        else if ([selGrade isEqualToString:@"Fourth Grade"])
+        {
+            // NSLog(@" Register-2 Matched Fourth Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:5];
+        }
+        else if ([selGrade isEqualToString:@"Fifth Grade"])
+        {
+            // NSLog(@" Register-2 Matched Fifth Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:6];
+        }
+        else if ([selGrade isEqualToString:@"Sixth grade"])
+        {
+            // NSLog(@" Register-2 Matched Sixth grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:7];
+        }
+        else if ([selGrade isEqualToString:@"Seventh Grade"])
+        {
+            // NSLog(@" Register-2 Matched Seventh Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:8];
+        }
+        else if ([selGrade isEqualToString:@"Eight Grade"])
+        {
+            // NSLog(@" Register-2 Matched Eight Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:9];
+        }
+        else if ([selGrade isEqualToString:@"Ninth Grade"])
+        {
+            // NSLog(@" Register-2 Matched Ninth Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:10];
+        }
+        else if ([selGrade isEqualToString:@"Tenth Grade"])
+        {
+            // NSLog(@" Register-2 Matched Tenth Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:11];
+        }
+        else if ([selGrade isEqualToString:@"Eleventh Grade"])
+        {
+            // NSLog(@" Register-2 Matched Eleventh Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:12];
+        }
+        else if ([selGrade isEqualToString:@"Twelth Grade"])
+        {
+            // NSLog(@" Register-2 Matched Twelth Grade   :  %@", selGrade);
+            appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:13];
+        }
+        else {
+            // NSLog(@" Register-2 FAILED TO MATCH - Grade   :  %@", selGrade);
+        }
         
         // NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
         // NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
         // NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
         // NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
     
-
-    }
-        
         isValidForSegueNext = true;
         
         //
@@ -145,18 +242,23 @@ bool isValidForSegueNext = false;
         registerTwoViewController.zipCode = strZip;
         appDelegate.zipCode = strZip;
 
+    }
+        
+    
+        
 
+
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     
-    
+    [self.view setNeedsDisplay];
+    [self viewDidLoad];
 }
 
 
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    
-    [self saveFormData:sender ];
-    
-    // NSLog(@" \n  AppDelegate::zipCode  =  %@", appDelegate.zipCode);
     
     if (!isValidForSegueNext) {
         //prevent segue from occurring
@@ -165,6 +267,23 @@ bool isValidForSegueNext = false;
     
     // by default perform the segue transition
     return YES;
+}
+
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1; // 1 column in the picker.
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return [_gradesArray  count];
+}
+
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_gradesArray  objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    selectedGrade = row;
 }
 
 

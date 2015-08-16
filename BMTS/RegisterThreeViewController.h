@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterThreeViewController : UIViewController <UITextFieldDelegate>
+@interface RegisterThreeViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource ,UITextFieldDelegate>
 
 
 - (IBAction)zipCode:(id)sender;
@@ -23,6 +23,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *zipCode;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *gradePicker;
+@property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *grades;
+
 @property (strong, nonatomic) UIWindow *window;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonNext;
 
 @end

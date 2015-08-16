@@ -167,38 +167,38 @@ BOOL isValidForSegue = true;
     
     // If both are not provided show alert.
     
-    if( ! self.emailAddressTextBox.text.length > 0 ) {
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
-        message:@"Please provided an email and password to get started! "
-                                                    delegate:self
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles: nil];
-        [alert show];
-        isValidForSegue = false;
-    }
-    else if( ! self.passwordTextBox.text.length > 0 ){
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
-                                                         message:@"Please provided an email and password to get started! "
-                                                        delegate:self
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles: nil];
-        [alert show];
-        isValidForSegue = false;
-    }
-    else if( [self isValidEmail:self.emailAddressTextBox.text ] == false) {
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
-                                                         message:@"Please provided a valid email to get started! "
-                                                        delegate:self
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles: nil];
-        [alert show];
-        isValidForSegue = false;
-    }
+//    if( ! self.emailAddressTextBox.text.length > 0 ) {
+//        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+//        message:@"Please provided an email and password to get started! "
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"OK"
+//                                           otherButtonTitles: nil];
+//        [alert show];
+//        isValidForSegue = false;
+//    }
+//    else if( ! self.passwordTextBox.text.length > 0 ){
+//        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+//                                                         message:@"Please provided an email and password to get started! "
+//                                                        delegate:self
+//                                               cancelButtonTitle:@"OK"
+//                                               otherButtonTitles: nil];
+//        [alert show];
+//        isValidForSegue = false;
+//    }
+//    else if( [self isValidEmail:self.emailAddressTextBox.text ] == false) {
+//        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
+//                                                         message:@"Please provided a valid email to get started! "
+//                                                        delegate:self
+//                                               cancelButtonTitle:@"OK"
+//                                               otherButtonTitles: nil];
+//        [alert show];
+//        isValidForSegue = false;
+//    }
     
 //    else if( self.passwordTextBox.text.length > 0 && [self.NSStringIsValidEmail:self.passwordTextBox.text]){
 //        
 //    }
-    else {
+//    else {
     
         // If both are provided - goto next view.
         [emailAddressTextBox resignFirstResponder];
@@ -224,7 +224,7 @@ BOOL isValidForSegue = true;
         [self.window.rootViewController presentViewController:registerOneViewController animated:YES completion:NULL];
         
 
-    }
+//    }
     
 }
 

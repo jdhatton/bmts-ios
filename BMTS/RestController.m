@@ -262,6 +262,12 @@
     } else {
         // NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
     }
+    
+    if (appDelegate.userRemoteId == nil){
+        appDelegate.userRemoteId = appDelegate.teacherUser.remoteId;
+    }
+        
+    
     [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
     [fields setObject:selectedBehavior forKey:@"behavior"];
     

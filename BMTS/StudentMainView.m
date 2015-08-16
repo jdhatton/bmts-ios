@@ -9,6 +9,8 @@
 #import "StudentMainView.h"
 #import "StudentBehaviors.h"
 #import "Comments.h"
+#import "IPhone5MainViewController.h"
+#import "TeacherMainViewController.h"
 
 @implementation StudentMainView
 
@@ -36,7 +38,7 @@
         behaviorList = [NSMutableArray arrayWithObjects: nil];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"EEE,  MM/dd/yyyy - hh:mma"];
+        [formatter setDateFormat:@"MM/dd/yyyy - hh:mma"];
         // MM/dd/yyyy hh:mma
         //Optionally for time zone conversions
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
@@ -60,9 +62,9 @@
             if( behavior.studentId == student.id ){
                 [behaviorList addObject:behavior.statusId];
                 
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
                 
                 NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
                 [formatter2 setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
@@ -132,5 +134,38 @@
     cell.textLabel.text = [items objectAtIndex:indexPath.row];
     
 }
+
+
+- (IBAction)save:(id)sender {
+    
+    
+        //
+        // Segue to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        if( IS_IPHONE_5 ) {
+//            //
+//            // Segue to iphone5 view
+//            //
+//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            
+//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+//        else {
+            //
+            // Segway to the TeacherMainView
+            //
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+    
+        
+}
+    
+
+
 
 @end

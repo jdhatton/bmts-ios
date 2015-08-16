@@ -16,8 +16,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *districts;
 
 
-@property (weak, nonatomic) IBOutlet UIPickerView *gradePicker;
-@property (strong, nonatomic) IBOutletCollection(UIPickerView) NSArray *grades;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *saveData;
 

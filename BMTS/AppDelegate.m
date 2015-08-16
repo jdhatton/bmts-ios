@@ -22,6 +22,7 @@
 #import "RestController.h"
 #import "TeacherIpadMainViewController.h"
 #import "Comments.h"
+#import "IPhone5MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -158,6 +159,28 @@ AppDelegate *appDelegate = nil;
         // TODO: once we have the other views completed we need to check the User.Role to determine the view to go to here.
         //
         
+        
+//        if( IS_IPHONE_5 ) {
+//            //
+//            // Segue to iphone5 view
+//            //
+//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            
+//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+//        else {
+            //
+            // Segway to the TeacherMainView
+            //
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+        
+        
+        
 //        if ( IDIOM == IPAD ) {
 //            /* do something specifically for iPad. */
 //            TeacherIpadMainViewController *teacherIpadMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherIpadMainView"];
@@ -165,9 +188,9 @@ AppDelegate *appDelegate = nil;
 //            [self.window.rootViewController presentViewController:teacherIpadMainViewController animated:YES completion:NULL];
 //        } else {
             /* do something specifically for iPhone or iPod touch. */
-            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-            [self.window makeKeyAndVisible];
-            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
 //        }
         
 

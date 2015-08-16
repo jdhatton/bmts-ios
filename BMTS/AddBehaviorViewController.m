@@ -24,6 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +105,11 @@
         [self.window.rootViewController presentViewController:addStudentViewController animated:YES completion:NULL];
     }
     
+}
+
+-(void)dismissKeyboard {
+    [behavior resignFirstResponder];
+    [self.view endEditing:YES];
 }
 
 

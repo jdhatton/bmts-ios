@@ -13,6 +13,7 @@
 #import "StudentBehaviors.h"
 #import <QuartzCore/QuartzCore.h>
 #import "App.h"
+#import "IPhone5MainViewController.h"
 
 @interface StudentStatusViewController ()
 
@@ -120,11 +121,11 @@ int selectedStatus;
         newStudentBehavior.statusId = [NSNumber numberWithInt:selectedStatus];
         newStudentBehavior.synced = false;
       
-        
-        //        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-        //        // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
-        //        newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-        //        // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+//        
+//                NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
+//                // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+//                newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
+//                // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         
         
         // NSLog(@"\n >>>> Add Student Behavior SAVING ");
@@ -139,12 +140,12 @@ int selectedStatus;
             [fetchRequest setEntity:entity];
             NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
             for (StudentBehaviors *behavior in fetchedObjects) {
-                // NSLog(@" StudentStatusViewController::Exiting() ");
-                // NSLog(@" ----------------------------------------");
-                // NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
-                // NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
-                // NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
-                // NSLog(@" ----------------------------------------");
+                 NSLog(@" StudentStatusViewController::Exiting() ");
+                 NSLog(@" ----------------------------------------");
+                 NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
+                 NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
+                 NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
+                 NSLog(@" ----------------------------------------");
             }
         }
         
@@ -153,15 +154,56 @@ int selectedStatus;
         // Segue to the TeacherMainView
         //
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-        [self.window makeKeyAndVisible];
-        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        if( IS_IPHONE_5 ) {
+//            //
+//            // Segue to iphone5 view
+//            //
+//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            
+//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+//        else {
+            //
+            // Segway to the TeacherMainView
+            //
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
         
 
     }
 
  
     
+}
+
+- (IBAction)cancel:(id)sender {
+    
+        //
+        // Segue to the TeacherMainView
+        //
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        if( IS_IPHONE_5 ) {
+//            //
+//            // Segue to iphone5 view
+//            //
+//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            
+//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
+//            [self.window makeKeyAndVisible];
+//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
+//        else {
+            //
+            // Segway to the TeacherMainView
+            //
+            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+            [self.window makeKeyAndVisible];
+            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+//        }
 }
 
 
