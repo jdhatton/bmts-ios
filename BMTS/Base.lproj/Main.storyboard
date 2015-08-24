@@ -486,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mJ-hV-cjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1142.5" y="398.5"/>
+            <point key="canvasLocation" x="-1850.5" y="-9.5"/>
         </scene>
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
@@ -500,123 +500,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eme-Px-Y8h">
-                                <rect key="frame" x="0.0" y="175" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="7Y5-Dp-tqL" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="nmN-uG-pb9" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="ZpX-Zt-tTl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="5A1-7I-d0p" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="ril-ot-1dw"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="S6I-uv-Est" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="AC7-wn-QMf"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="mCk-TR-dv7" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="m9m-Oh-ruP"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="8HC-T0-tKj"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzK-pL-Vgd">
-                                <rect key="frame" x="0.0" y="232" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="3iY-iT-FVH" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="AO6-Ty-fzw" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="bSV-0L-yVm"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="Tss-ql-JV2" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="ebv-Ot-ie5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="686-q7-gVD" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="2Vx-K9-zE6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="5rF-MO-283" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="tTX-Kc-Ipu"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="MqX-A3-QXH"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvm-MR-KZk">
-                                <rect key="frame" x="0.0" y="286" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="u6c-f4-5JH" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="tYc-FK-Xm5" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="RTZ-2D-Vw1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="2da-Q5-Yr3" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="Aci-Z8-ENE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="Rcp-SH-bxA" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="VpQ-SG-yUS"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="ZA5-4V-7Tw" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="LHr-Qb-keH"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="1iP-di-8Rn"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-WK-Ds1">
-                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="lsd-L8-b2X" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="pY4-V3-h8a" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="ggJ-eW-Q4t"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="VgT-ee-7yX" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="5AG-90-lbd"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="4Ts-6e-cTg" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="It3-7t-ndp"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="SgF-cz-dkC" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="toX-GW-WPJ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="r89-V9-j10"/>
-                                </items>
-                            </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="RKl-2x-TiO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="RKl-2x-TiO">
                                 <rect key="frame" x="16" y="20" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KZy-21-iXR"/>
@@ -632,94 +516,7 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Du9-Fh-3hg">
-                                <rect key="frame" x="0.0" y="399" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="tvr-Py-Jtr" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="D9V-7r-n60" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="XRH-FB-AtV"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="pFL-4s-PaD" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="RcK-nn-GMC"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="MQd-sp-eKl" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="ie8-rn-5nP"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="rz1-Zl-BGs" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="th1-ej-GdS"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="1lA-dW-BPe"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-6R-zkV">
-                                <rect key="frame" x="0.0" y="456" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="gL1-Nf-H8y" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="f6b-GB-mtA" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="Q0N-4R-jSc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="8lt-Rb-yy2" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="a2J-wy-WMn"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="whB-OJ-tUh" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="mG7-uy-fYr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="nql-y8-Y4U" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="LbC-Ht-ll1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="iXx-J8-YJo"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVf-Uc-tjH">
-                                <rect key="frame" x="0.0" y="343" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="6NP-Hr-yx0" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="eSQ-7Q-ubI" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="7nb-PP-qb1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="WEy-SK-RSS" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="QiD-18-otE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="Ucn-9A-nXq" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="dqC-6r-nx0"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="eZk-BG-aw6" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="lgu-qY-8FB"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="zzr-jL-KJE"/>
-                                </items>
-                            </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-13-MhZ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-13-MhZ">
                                 <rect key="frame" x="23" y="606" width="144" height="35"/>
                                 <color key="backgroundColor" red="0.46188446969696972" green="0.0067540864758688229" blue="0.049645731740899667" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -733,38 +530,7 @@
                                     <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4S-s6-pRg" customClass="ManageStu">
-                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem image="user-26" width="35" id="tIj-E7-1iS" customClass="UserUIBarButtonItem">
-                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem title="Name of student" width="140" id="HBz-JO-aYp" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="QC3-97-A0x"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="full_moon-24" width="50" id="gLu-Wa-frr" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="vCa-tn-VeL"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" identifier="showStudentStatusSegue" id="xWW-Ft-f0w"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="emw-UZ-7kB" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="CaW-Eu-tbr"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="Msj-rc-6LM" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="mjQ-gX-Yhb"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem id="VQF-Lz-Dru"/>
-                                </items>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
                                 <rect key="frame" x="16" y="526" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -778,108 +544,38 @@
                                     <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-TS-Og9">
+                                <rect key="frame" x="0.0" y="58" width="375" height="445"/>
+                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i1N-B9-We4" id="sIW-87-ZMm"/>
+                                    <outlet property="delegate" destination="i1N-B9-We4" id="MJf-dh-OxH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Nvm-MR-KZk" firstAttribute="leading" secondItem="hzK-pL-Vgd" secondAttribute="leading" id="1SR-DH-EVX"/>
-                            <constraint firstItem="vVf-Uc-tjH" firstAttribute="top" secondItem="Nvm-MR-KZk" secondAttribute="bottom" constant="13" id="3HJ-nM-Wjc"/>
                             <constraint firstItem="Fht-Fp-Drh" firstAttribute="leading" secondItem="umV-13-MhZ" secondAttribute="leading" constant="-7" id="3xA-bn-Eck"/>
-                            <constraint firstItem="Eme-Px-Y8h" firstAttribute="top" secondItem="Iur-WK-Ds1" secondAttribute="bottom" constant="11" id="6ed-0k-ugl"/>
-                            <constraint firstItem="Iur-WK-Ds1" firstAttribute="leading" secondItem="Z4S-s6-pRg" secondAttribute="leading" id="7sh-WE-pgk"/>
                             <constraint firstItem="RKl-2x-TiO" firstAttribute="trailing" secondItem="Fht-Fp-Drh" secondAttribute="trailing" id="8af-8w-k83"/>
-                            <constraint firstItem="vVf-Uc-tjH" firstAttribute="leading" secondItem="Nvm-MR-KZk" secondAttribute="leading" id="9Ol-sd-zR7"/>
-                            <constraint firstItem="hzK-pL-Vgd" firstAttribute="trailing" secondItem="Eme-Px-Y8h" secondAttribute="trailing" id="A9F-ye-WwM"/>
-                            <constraint firstItem="hzK-pL-Vgd" firstAttribute="trailing" secondItem="Nvm-MR-KZk" secondAttribute="trailing" id="BKA-nH-5SU"/>
-                            <constraint firstItem="QeA-6R-zkV" firstAttribute="top" secondItem="Du9-Fh-3hg" secondAttribute="bottom" constant="13" id="BMi-zf-3mH"/>
                             <constraint firstItem="RKl-2x-TiO" firstAttribute="leading" secondItem="Fht-Fp-Drh" secondAttribute="leading" id="Dbs-Xb-N2n"/>
-                            <constraint firstItem="Eme-Px-Y8h" firstAttribute="leading" secondItem="Kjh-FY-krT" secondAttribute="leading" id="DgU-m3-4xD"/>
-                            <constraint firstItem="Du9-Fh-3hg" firstAttribute="trailing" secondItem="QeA-6R-zkV" secondAttribute="trailing" id="Don-V0-okH"/>
-                            <constraint firstItem="Eme-Px-Y8h" firstAttribute="leading" secondItem="hzK-pL-Vgd" secondAttribute="leading" id="Edp-1U-6qJ"/>
-                            <constraint firstItem="Nvm-MR-KZk" firstAttribute="trailing" secondItem="vVf-Uc-tjH" secondAttribute="trailing" id="F7b-fg-hQ2"/>
-                            <constraint firstItem="QeA-6R-zkV" firstAttribute="centerX" secondItem="Fht-Fp-Drh" secondAttribute="centerX" id="FEN-qC-SnO"/>
-                            <constraint firstItem="QeA-6R-zkV" firstAttribute="leading" secondItem="Du9-Fh-3hg" secondAttribute="leading" id="GrX-y5-4bE"/>
-                            <constraint firstItem="Iur-WK-Ds1" firstAttribute="top" secondItem="Z4S-s6-pRg" secondAttribute="bottom" constant="10" id="KnA-Bc-mhv"/>
-                            <constraint firstItem="Du9-Fh-3hg" firstAttribute="trailing" secondItem="vVf-Uc-tjH" secondAttribute="trailing" id="QN2-2u-Na4"/>
-                            <constraint firstAttribute="trailing" secondItem="Nvm-MR-KZk" secondAttribute="trailing" id="Qjy-CK-7or"/>
-                            <constraint firstItem="Z4S-s6-pRg" firstAttribute="trailing" secondItem="Iur-WK-Ds1" secondAttribute="trailing" id="R0q-rm-VJC"/>
-                            <constraint firstItem="hzK-pL-Vgd" firstAttribute="top" secondItem="Eme-Px-Y8h" secondAttribute="bottom" constant="13" id="XCX-Ez-gQB"/>
-                            <constraint firstItem="Du9-Fh-3hg" firstAttribute="top" secondItem="vVf-Uc-tjH" secondAttribute="bottom" constant="12" id="acn-4L-b2L"/>
-                            <constraint firstItem="Iur-WK-Ds1" firstAttribute="leading" secondItem="Eme-Px-Y8h" secondAttribute="leading" id="eZk-di-IEE"/>
                             <constraint firstItem="RKl-2x-TiO" firstAttribute="top" secondItem="rho-mi-6Dm" secondAttribute="bottom" id="gMp-se-mse"/>
-                            <constraint firstItem="Nvm-MR-KZk" firstAttribute="top" secondItem="hzK-pL-Vgd" secondAttribute="bottom" constant="10" id="hse-fs-6Jz"/>
-                            <constraint firstItem="Z4S-s6-pRg" firstAttribute="top" secondItem="RKl-2x-TiO" secondAttribute="bottom" constant="16" id="m1S-hL-xT7"/>
-                            <constraint firstItem="Iur-WK-Ds1" firstAttribute="trailing" secondItem="Eme-Px-Y8h" secondAttribute="trailing" id="qAp-ZF-8V5"/>
                             <constraint firstItem="umV-13-MhZ" firstAttribute="top" secondItem="Fht-Fp-Drh" secondAttribute="bottom" constant="40" id="qVN-s2-5To"/>
                             <constraint firstItem="umV-13-MhZ" firstAttribute="leading" secondItem="Kjh-FY-krT" secondAttribute="leadingMargin" constant="7" id="qwb-ZM-Ody"/>
-                            <constraint firstItem="RKl-2x-TiO" firstAttribute="centerX" secondItem="Z4S-s6-pRg" secondAttribute="centerX" id="ugR-VH-9bj"/>
-                            <constraint firstItem="Du9-Fh-3hg" firstAttribute="leading" secondItem="vVf-Uc-tjH" secondAttribute="leading" id="wJl-uH-cXX"/>
-                            <constraint firstItem="Fht-Fp-Drh" firstAttribute="top" secondItem="QeA-6R-zkV" secondAttribute="bottom" constant="26" id="yzi-C4-ndj"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addStudentButton" destination="Fht-Fp-Drh" id="OQM-5z-pJv"/>
-                        <outlet property="studentAvatar" destination="tIj-E7-1iS" id="mq9-OW-NJL"/>
-                        <outlet property="studentComment" destination="emw-UZ-7kB" id="Dev-YL-Gcz"/>
-                        <outlet property="studentEightAvatar" destination="gL1-Nf-H8y" id="jTg-hY-9kY"/>
-                        <outlet property="studentEightName" destination="f6b-GB-mtA" id="dwd-eP-UzJ"/>
-                        <outlet property="studentEightNote" destination="whB-OJ-tUh" id="Z0t-oU-YrC"/>
-                        <outlet property="studentEightSettings" destination="nql-y8-Y4U" id="qpc-k0-H7m"/>
-                        <outlet property="studentEightStatus" destination="8lt-Rb-yy2" id="DFE-da-NG4"/>
-                        <outlet property="studentFiveAvatar" destination="u6c-f4-5JH" id="kme-oI-vql"/>
-                        <outlet property="studentFiveName" destination="tYc-FK-Xm5" id="i0b-s8-3ca"/>
-                        <outlet property="studentFiveNote" destination="Rcp-SH-bxA" id="jag-3k-xAR"/>
-                        <outlet property="studentFiveSettings" destination="ZA5-4V-7Tw" id="ilq-K4-S7f"/>
-                        <outlet property="studentFiveStatus" destination="2da-Q5-Yr3" id="QuI-oG-jEK"/>
-                        <outlet property="studentFourAvatar" destination="3iY-iT-FVH" id="G81-FG-aAP"/>
-                        <outlet property="studentFourName" destination="AO6-Ty-fzw" id="IgW-6f-pQb"/>
-                        <outlet property="studentFourNote" destination="686-q7-gVD" id="adb-AO-GL5"/>
-                        <outlet property="studentFourSettings" destination="5rF-MO-283" id="vG7-hC-aUr"/>
-                        <outlet property="studentFourStatus" destination="Tss-ql-JV2" id="zyi-Gr-I1S"/>
-                        <outlet property="studentName" destination="HBz-JO-aYp" id="o5T-VU-AQX"/>
-                        <outlet property="studentOneAvatar" destination="tIj-E7-1iS" id="GBS-Ub-TFR"/>
-                        <outlet property="studentOneName" destination="HBz-JO-aYp" id="NvU-YF-FJB"/>
-                        <outlet property="studentOneNote" destination="emw-UZ-7kB" id="JRT-Nx-MoH"/>
-                        <outlet property="studentOneSettings" destination="Msj-rc-6LM" id="CoX-OX-svV"/>
-                        <outlet property="studentOneStatus" destination="gLu-Wa-frr" id="asR-fi-GEN"/>
-                        <outlet property="studentSettings" destination="Msj-rc-6LM" id="Y9m-1l-j27"/>
-                        <outlet property="studentSevenAvatar" destination="tvr-Py-Jtr" id="rxO-Te-VEV"/>
-                        <outlet property="studentSevenName" destination="D9V-7r-n60" id="v87-Wr-Mcm"/>
-                        <outlet property="studentSevenNote" destination="MQd-sp-eKl" id="yqY-Ow-cPJ"/>
-                        <outlet property="studentSevenSettings" destination="rz1-Zl-BGs" id="c5r-50-De7"/>
-                        <outlet property="studentSevenStatus" destination="pFL-4s-PaD" id="jm8-vF-vni"/>
-                        <outlet property="studentSixAvatar" destination="6NP-Hr-yx0" id="4vR-0b-1dD"/>
-                        <outlet property="studentSixName" destination="eSQ-7Q-ubI" id="JuQ-Ze-wcI"/>
-                        <outlet property="studentSixNote" destination="Ucn-9A-nXq" id="NB3-zI-OQ6"/>
-                        <outlet property="studentSixSettings" destination="eZk-BG-aw6" id="mkT-ei-YIe"/>
-                        <outlet property="studentSixStatus" destination="WEy-SK-RSS" id="tGF-0t-4uL"/>
-                        <outlet property="studentStatus" destination="gLu-Wa-frr" id="NBv-6d-ElX"/>
-                        <outlet property="studentThreeAvatar" destination="7Y5-Dp-tqL" id="tN6-Yl-txA"/>
-                        <outlet property="studentThreeName" destination="nmN-uG-pb9" id="r86-FO-gz5"/>
-                        <outlet property="studentThreeNote" destination="S6I-uv-Est" id="ccq-DB-cw9"/>
-                        <outlet property="studentThreeSettings" destination="mCk-TR-dv7" id="dOo-94-Toq"/>
-                        <outlet property="studentThreeStatus" destination="5A1-7I-d0p" id="D57-Cv-f5z"/>
-                        <outlet property="studentToolbar" destination="Z4S-s6-pRg" id="Kk1-Hp-mEa"/>
-                        <outlet property="studentTwoAvatar" destination="lsd-L8-b2X" id="c4S-3f-9E3"/>
-                        <outlet property="studentTwoName" destination="pY4-V3-h8a" id="JK2-CX-bn1"/>
-                        <outlet property="studentTwoNote" destination="4Ts-6e-cTg" id="aDS-TY-zax"/>
-                        <outlet property="studentTwoSettings" destination="SgF-cz-dkC" id="zrI-fJ-wgF"/>
-                        <outlet property="studentTwoStatus" destination="VgT-ee-7yX" id="NgL-xx-dLs"/>
                         <outlet property="teacherHeader" destination="RKl-2x-TiO" id="Zab-CZ-Bys"/>
-                        <outlet property="toolBarEight" destination="QeA-6R-zkV" id="PBp-UU-R5L"/>
-                        <outlet property="toolBarFive" destination="Nvm-MR-KZk" id="1WQ-Gx-1qC"/>
-                        <outlet property="toolBarFour" destination="hzK-pL-Vgd" id="UB5-H8-3d1"/>
-                        <outlet property="toolBarOne" destination="Z4S-s6-pRg" id="0eE-Fq-O82"/>
-                        <outlet property="toolBarSeven" destination="Du9-Fh-3hg" id="zf9-rF-8Pg"/>
-                        <outlet property="toolBarSix" destination="vVf-Uc-tjH" id="sIV-az-1uD"/>
-                        <outlet property="toolBarThree" destination="Eme-Px-Y8h" id="rfp-yU-hs4"/>
-                        <outlet property="toolBarTwo" destination="Iur-WK-Ds1" id="bwl-8Y-M5F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNW-ad-Fav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1586.5" y="-1159.5"/>
+            <point key="canvasLocation" x="-1828.5" y="-1131.5"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="yWE-3h-lQ7">
@@ -1124,7 +820,159 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-OD-rWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-950.5" y="-580.5"/>
+            <point key="canvasLocation" x="-1337.5" y="23.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nQE-zm-nhi">
+            <objects>
+                <viewController id="eVp-ux-i4A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="511-7j-3Ed"/>
+                        <viewControllerLayoutGuide type="bottom" id="fY5-oM-kq4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YYI-RB-aZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iEV-ZV-MRd">
+                                <rect key="frame" x="107" y="165" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="88N-IN-RZN" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="gmp-0O-Aog" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="xJ8-qX-wRT" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="oYM-3x-DVy" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="pHH-no-1aQ" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="PaF-3z-RGq"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvM-yi-rt6">
+                                <rect key="frame" x="107" y="222" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="mfk-vH-VDH" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="RCS-0k-Guj" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="prC-82-Dmi" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="WNp-ET-VTT" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="r5U-cW-Lke" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="ORz-Dw-Fom"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Tp-gp-Edy">
+                                <rect key="frame" x="107" y="276" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="H52-Pa-wV9" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="RPr-4X-zdh" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="vlY-lv-txq" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="b1Z-br-Ecf" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="uGs-sF-pgA" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="ubt-rr-HyS"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mll-2u-ZDg">
+                                <rect key="frame" x="107" y="110" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="6pj-aK-Jbv" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="lGv-1d-hqe" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="Zwv-0z-XHl" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="tTg-pb-72J" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="EUX-wd-KEo" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="bXS-DK-mz7"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEX-6H-N3N">
+                                <rect key="frame" x="107" y="389" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="dzD-2I-vkM" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="Ci0-JV-TKq" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="u8b-dm-YdU" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="jLZ-I6-d7l" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="00E-dA-Y2q" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="T6P-gp-Q9C"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="98P-zQ-pZE">
+                                <rect key="frame" x="107" y="446" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="qNp-Qg-ykA" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="of2-iK-2jj" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="ZL4-R1-sCB" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="934-MQ-srp" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="ERH-8C-5QP" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="3ds-n4-cew"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-0F-Pgn">
+                                <rect key="frame" x="107" y="333" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="8sR-XX-MP0" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="BTq-07-41a" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="vOo-XS-hCp" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="add_file-26" id="q9M-0F-LAq" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="JpS-Gv-CE0" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="fPd-Pn-cag"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-mG-kc9" customClass="ManageStu">
+                                <rect key="frame" x="107" y="56" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="user-26" width="35" id="DeC-LL-LgS" customClass="UserUIBarButtonItem">
+                                        <color key="tintColor" red="0.091694574079999994" green="0.2384673491" blue="0.55251736110000005" alpha="0.63" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="XpV-a7-NMk" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="full_moon-24" width="50" id="hZO-VW-Jco" customClass="UserUIBarButtonItem">
+                                        <connections>
+                                            <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="L1D-Zs-jao"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="6hA-ns-j4U" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="HaI-5I-roM" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem id="uDl-NX-2Xa"/>
+                                </items>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mll-2u-ZDg" firstAttribute="leading" secondItem="iEV-ZV-MRd" secondAttribute="leading" id="2RM-Wr-dyx"/>
+                            <constraint firstItem="iEV-ZV-MRd" firstAttribute="top" secondItem="Mll-2u-ZDg" secondAttribute="bottom" constant="11" id="35i-iF-RaS"/>
+                            <constraint firstItem="Q7m-0F-Pgn" firstAttribute="top" secondItem="5Tp-gp-Edy" secondAttribute="bottom" constant="13" id="7lg-p2-6aM"/>
+                            <constraint firstItem="98P-zQ-pZE" firstAttribute="leading" secondItem="YEX-6H-N3N" secondAttribute="leading" id="GM5-Ob-emM"/>
+                            <constraint firstItem="YEX-6H-N3N" firstAttribute="top" secondItem="Q7m-0F-Pgn" secondAttribute="bottom" constant="12" id="GpV-NQ-DpT"/>
+                            <constraint firstItem="eRE-mG-kc9" firstAttribute="trailing" secondItem="Mll-2u-ZDg" secondAttribute="trailing" id="LFc-cC-VHs"/>
+                            <constraint firstItem="YEX-6H-N3N" firstAttribute="trailing" secondItem="Q7m-0F-Pgn" secondAttribute="trailing" id="QWX-OB-Meb"/>
+                            <constraint firstItem="5Tp-gp-Edy" firstAttribute="top" secondItem="uvM-yi-rt6" secondAttribute="bottom" constant="10" id="Re6-xL-AeI"/>
+                            <constraint firstItem="uvM-yi-rt6" firstAttribute="trailing" secondItem="5Tp-gp-Edy" secondAttribute="trailing" id="V6m-X9-tvH"/>
+                            <constraint firstItem="Mll-2u-ZDg" firstAttribute="top" secondItem="eRE-mG-kc9" secondAttribute="bottom" constant="10" id="Ytd-4w-Oua"/>
+                            <constraint firstItem="iEV-ZV-MRd" firstAttribute="leading" secondItem="uvM-yi-rt6" secondAttribute="leading" id="acX-rs-EWM"/>
+                            <constraint firstItem="uvM-yi-rt6" firstAttribute="top" secondItem="iEV-ZV-MRd" secondAttribute="bottom" constant="13" id="cYL-Ta-LUB"/>
+                            <constraint firstItem="5Tp-gp-Edy" firstAttribute="trailing" secondItem="Q7m-0F-Pgn" secondAttribute="trailing" id="dvL-mI-COq"/>
+                            <constraint firstItem="uvM-yi-rt6" firstAttribute="trailing" secondItem="iEV-ZV-MRd" secondAttribute="trailing" id="heD-6A-BeW"/>
+                            <constraint firstItem="YEX-6H-N3N" firstAttribute="trailing" secondItem="98P-zQ-pZE" secondAttribute="trailing" id="idp-av-PCg"/>
+                            <constraint firstItem="98P-zQ-pZE" firstAttribute="top" secondItem="YEX-6H-N3N" secondAttribute="bottom" constant="13" id="n5p-tA-K1u"/>
+                            <constraint firstItem="YEX-6H-N3N" firstAttribute="leading" secondItem="Q7m-0F-Pgn" secondAttribute="leading" id="puz-hK-i2E"/>
+                            <constraint firstItem="Mll-2u-ZDg" firstAttribute="trailing" secondItem="iEV-ZV-MRd" secondAttribute="trailing" id="t7q-pt-3gp"/>
+                            <constraint firstItem="Q7m-0F-Pgn" firstAttribute="leading" secondItem="5Tp-gp-Edy" secondAttribute="leading" id="u4R-RL-QBE"/>
+                            <constraint firstItem="Mll-2u-ZDg" firstAttribute="leading" secondItem="eRE-mG-kc9" secondAttribute="leading" id="xUk-g3-I4a"/>
+                            <constraint firstItem="5Tp-gp-Edy" firstAttribute="leading" secondItem="uvM-yi-rt6" secondAttribute="leading" id="xbP-Sc-0HA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6n-Z5-meg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-862" y="-347"/>
         </scene>
         <!--Phone5 Main View Controller-->
         <scene sceneID="TzP-TH-0eN">
@@ -1144,9 +992,6 @@
                                 <state key="normal" title="Feedback">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="agV-c6-dxF" kind="show" id="Mbe-0k-0Kh"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-fU-ePI">
                                 <rect key="frame" x="26" y="460" width="269" height="35"/>
@@ -1155,9 +1000,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hte-3k-ekS" kind="show" id="ODM-3O-tdU"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xvs-Jl-Qga">
                                 <rect key="frame" x="12" y="20" width="297" height="30"/>
@@ -1175,27 +1017,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-th-345" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="70" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="8Th-1c-0U1" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="SV7-1y-Iig"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="8Th-1c-0U1" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="awo-om-7pT" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="KVP-TA-ILi"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="seF-OI-tyi"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="caD-Tj-2K1" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="6pC-GH-Lvo"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="6zE-OA-k6u" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="pEJ-Gd-DLY"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="caD-Tj-2K1" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="6zE-OA-k6u" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="6GQ-CJ-tt4"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1203,27 +1032,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEF-1T-UXR" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="192" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="lvi-qI-afE" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="Xnk-iP-mbg"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="lvi-qI-afE" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="gyc-vK-SOK" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="7Ng-8e-Bht"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="eCX-jH-AMz"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="0mV-lh-AKT" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="peL-aF-1RN"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="2na-KA-1z0" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="Hdj-3E-ANq"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="0mV-lh-AKT" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="2na-KA-1z0" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="a03-rk-9Gd"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1231,27 +1047,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ml0-da-3FS" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="253" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="Jab-Lr-6Dv" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="LNC-Gm-s60"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="Jab-Lr-6Dv" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="Yn9-k2-5N7" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="hzb-9r-Eh3"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="AcM-MZ-edS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="BpG-K8-afb" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="QKa-qd-0Ld"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="i5b-FY-xFI" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="XaR-sn-NbN"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="BpG-K8-afb" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="i5b-FY-xFI" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="1XW-Fe-zEb"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1259,27 +1062,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxP-0V-UKQ" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="312" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="hXL-Eu-BTf" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="MmC-lK-aqq"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="hXL-Eu-BTf" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="DwB-ow-3up" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="jrJ-of-kLZ"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="5Ig-My-opA"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="4il-y6-ZWl" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="C91-nc-oxx"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="ZJu-sr-wBb" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="ANA-zE-PMB"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="4il-y6-ZWl" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="ZJu-sr-wBb" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="8Ru-dQ-YYz"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1287,27 +1077,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3B-ms-ABs" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="370" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="81l-tx-3u7" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="7PG-LG-dZA"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="81l-tx-3u7" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="t6s-AF-hvz" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="xIT-p0-nrx"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="C5m-uh-tSe"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="4o3-wc-qdE" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="etf-or-0ne"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="oqn-wp-x5l" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="MOd-Tl-QNB"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="4o3-wc-qdE" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="oqn-wp-x5l" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="1UL-FP-rTi"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1315,27 +1092,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-YB-WtW" customClass="ManageStu">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Name of student" width="140" id="NMv-Jl-fvI" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="ifV-aA-ZTq" kind="show" id="z9P-ai-fCd"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Name of student" width="140" id="NMv-Jl-fvI" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem image="full_moon-24" width="50" id="8Wy-JV-PY7" customClass="UserUIBarButtonItem">
                                         <connections>
                                             <action selector="clickedStudentOneStatus:" destination="i1N-B9-We4" id="eSh-uD-alC"/>
-                                            <segue destination="7x5-HR-zIs" kind="show" id="gbi-On-HSQ"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="add_file-26" id="dXV-WE-lKc" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="a1m-Cq-yIh" kind="show" id="dqu-Db-JAu"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem image="settings-24" width="54" id="duN-z4-j0T" customClass="UserUIBarButtonItem">
-                                        <connections>
-                                            <segue destination="wrl-0o-CLV" kind="show" id="s7v-02-tnZ"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="add_file-26" id="dXV-WE-lKc" customClass="UserUIBarButtonItem"/>
+                                    <barButtonItem image="settings-24" width="54" id="duN-z4-j0T" customClass="UserUIBarButtonItem"/>
                                     <barButtonItem id="oTm-z4-pK1"/>
                                 </items>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1377,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmR-EW-n1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1865" y="124"/>
+            <point key="canvasLocation" x="-3035" y="1009"/>
         </scene>
         <!--Student Status View Controller-->
         <scene sceneID="V1N-1B-EMZ">
@@ -1500,7 +1264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2442.5" y="-427.5"/>
+            <point key="canvasLocation" x="-2650.5" y="-441.5"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Mac-g0-RuQ">
@@ -1590,7 +1354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-c1-rTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205.5" y="165.5"/>
+            <point key="canvasLocation" x="-1202.5" y="-1112.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
@@ -1754,7 +1518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x6-4V-ofg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-444.5" y="-1000.5"/>
+            <point key="canvasLocation" x="-556.5" y="-1200.5"/>
         </scene>
         <!--Add Behavior View Controller-->
         <scene sceneID="ap9-If-hoQ">
@@ -2179,7 +1943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-uf-jSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2147" y="1154"/>
+            <point key="canvasLocation" x="-2389" y="988"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-Hz-nJE">
@@ -2603,13 +2367,8 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toX-GW-WPJ"/>
-        <segue reference="Cf7-Pc-IAz"/>
-        <segue reference="ggJ-eW-Q4t"/>
-        <segue reference="xWW-Ft-f0w"/>
-        <segue reference="mG7-uy-fYr"/>
-        <segue reference="TZc-Eb-WDz"/>
         <segue reference="SCN-zt-OSQ"/>
+        <segue reference="X0Z-VT-WKG"/>
         <segue reference="QZZ-Ei-SBn"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

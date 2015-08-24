@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserUIBarButtonItem.h"
 
-@interface TeacherMainViewController : UIViewController
+@interface TeacherMainViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>
 
 - (IBAction)studentAvatar:(id)sender;
 - (IBAction)studentName:(id)sender;
@@ -93,8 +93,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-
-
-
+@property (copy, nonatomic) NSArray *students;
 
 @end

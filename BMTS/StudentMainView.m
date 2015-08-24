@@ -62,9 +62,9 @@
             if( behavior.studentId == student.id ){
                 [behaviorList addObject:behavior.statusId];
                 
-                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
-                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
-                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
+                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
+                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
+                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
                 
                 NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
                 [formatter2 setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];

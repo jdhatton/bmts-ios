@@ -140,12 +140,12 @@ int selectedStatus;
             [fetchRequest setEntity:entity];
             NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
             for (StudentBehaviors *behavior in fetchedObjects) {
-                 NSLog(@" StudentStatusViewController::Exiting() ");
-                 NSLog(@" ----------------------------------------");
-                 NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
-                 NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
-                 NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
-                 NSLog(@" ----------------------------------------");
+               //  NSLog(@" StudentStatusViewController::Exiting() ");
+               //  NSLog(@" ----------------------------------------");
+               ////  NSLog(@" SAVED StudentBehaviors : studentId      :  %@", behavior.studentId);
+                // NSLog(@" SAVED StudentBehaviors : statusId       :  %@", behavior.statusId);
+                // NSLog(@" SAVED StudentBehaviors : createdDate    :  %@", behavior.createdDate);
+               //  NSLog(@" ----------------------------------------");
             }
         }
         

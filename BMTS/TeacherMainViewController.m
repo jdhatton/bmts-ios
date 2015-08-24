@@ -30,7 +30,12 @@ studentFourAvatar, studentFourName, studentFourStatus, studentFourNote, studentF
 studentFiveAvatar, studentFiveName, studentFiveStatus, studentFiveNote, studentFiveSettings,
 studentSixAvatar, studentSixName, studentSixStatus, studentSixNote, studentSixSettings,
 studentSevenAvatar, studentSevenName, studentSevenStatus, studentSevenNote, studentSevenSettings,
-studentEightAvatar, studentEightName, studentEightStatus, studentEightNote, studentEightSettings,window = _window;
+studentEightAvatar, studentEightName, studentEightStatus, studentEightNote, studentEightSettings,window = _window, students;
+
+
+ NSMutableArray *behaviorList;
+
+
 
 User *selectedStudent;
 
@@ -48,6 +53,11 @@ User *userEight;
     [super viewDidLoad];
     
     // NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
+    
+   
+    behaviorList = [NSMutableArray arrayWithObjects: nil];
+    
+    self.students = @[@"Rupert Higgins",@"Caleb Worth", @"Monifa Jones"];
     
     NSNumber *STATUS_GREEN = [NSNumber numberWithInt:1];
     NSNumber *STATUS_YELLOW = [NSNumber numberWithInt:2];
@@ -452,5 +462,49 @@ User *userEight;
 //}
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.students count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+    }
+    
+//    cell.backgroundColor = [UIColor clearColor];
+//    cell.textLabel.text = self.students[indexPath.row];
+//    
+//    cell.imageView.image = [UIImage imageNamed:@"user-26.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"full_moon-24.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"add_file-26.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"settings-24.jpg"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    cell.backgroundColor = [UIColor clearColor];
+    
+    cell.imageView.image = [UIImage imageNamed:@"user-26.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"full_moon-24.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"add_file-26.jpg"];
+//    cell.imageView.image = [UIImage imageNamed:@"settings-24.jpg"];
+    
+    cell.textLabel.text = [self.students objectAtIndex:indexPath.row];
+    
+    cell.detailTextLabel.text = @"Tracking:  Homework";
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 2;
+}
 
 @end
