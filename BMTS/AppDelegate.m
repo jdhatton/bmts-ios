@@ -23,6 +23,8 @@
 #import "TeacherIpadMainViewController.h"
 #import "Comments.h"
 #import "IPhone5MainViewController.h"
+#include "Liquid.h"
+#import "DeviceUID.h"
 
 @interface AppDelegate ()
 
@@ -147,7 +149,16 @@ AppDelegate *appDelegate = nil;
     }
     
 
+    // assuming that you're using a DEBUG flag
+    #ifdef DEBUG
+        [Liquid sharedInstanceWithToken:@"5ABBS7D5_cxq5m5PDh1HMQDixm0KeMVT" development:YES];
+    #else
+        [Liquid sharedInstanceWithToken:@"YOUR-PRODUCTION-APP-TOKEN"];
+    #endif
     
+    NSString* deviceUID = [DeviceUID uid];
+    NSLog(@"\n\n  deviceUID = %@ ", deviceUID);
+    self.deviceID = deviceUID;
     
     //
     // Goto Main View.

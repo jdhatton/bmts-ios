@@ -16,6 +16,9 @@
 #import "CommentViewController.h"
 #import "ManageStudentViewController.h"
 #import "StudentMainView.h"
+#import "StudentViewController.h"
+#include "Liquid.h"
+
 
 @interface TeacherMainViewController ()
 
@@ -23,7 +26,7 @@
 
 @implementation TeacherMainViewController
 
-@synthesize teacherHeader, addStudentButton, toolBarOne, toolBarTwo, toolBarThree, toolBarFour, toolBarFive, toolBarSix, toolBarSeven, toolBarEight, studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings,
+@synthesize addStudentButton, toolBarOne, toolBarTwo, toolBarThree, toolBarFour, toolBarFive, toolBarSix, toolBarSeven, toolBarEight, studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings,
 studentTwoAvatar, studentTwoName, studentTwoStatus, studentTwoNote, studentTwoSettings,
 studentThreeAvatar, studentThreeName, studentThreeStatus, studentThreeNote, studentThreeSettings,
 studentFourAvatar, studentFourName, studentFourStatus, studentFourNote, studentFourSettings,
@@ -54,10 +57,12 @@ User *userEight;
     
     // NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
     
+//    [[Liquid sharedInstance] identifyUserWithIdentifier:appDelegate.deviceID
+//                               attributes:@{ @"name": appDelegate.userRemoteId ,@"remoteId":appDelegate.userRemoteId }];
    
-    behaviorList = [NSMutableArray arrayWithObjects: nil];
+    behaviorList = [NSMutableArray new];
     
-    self.students = @[@"Rupert Higgins",@"Caleb Worth", @"Monifa Jones"];
+    self.students = @[@"Rupert Higgins",@"Caleb Worth", @"Monifa Jones", @"Anton Williams", @"Louis Lane", @"Harvey Milk", @"Jebadiah Bush", @"Shanae Reemes"];
     
     NSNumber *STATUS_GREEN = [NSNumber numberWithInt:1];
     NSNumber *STATUS_YELLOW = [NSNumber numberWithInt:2];
@@ -100,13 +105,6 @@ User *userEight;
         
     }
 
-    
-    //
-    // Set the header label
-    //
-    teacherHeader.text = userName;
-    [teacherHeader setFont:[UIFont fontWithName:@"Helvetica" size:17.0]];
-    teacherHeader.textColor = [UIColor colorWithRed:(11/255.0) green:(11/255.0) blue:(11/255.0) alpha:1];
     
     
     //
@@ -360,7 +358,7 @@ User *userEight;
     //
     // TODO: when tapping AddStudent we need to know that here and skip the processing here..
     //
-    if([segue.identifier isEqualToString:@"addStudentSegue"]) {
+    if([segue.identifier isEqualToString:@"addStudentSegue"] ) {  //|| [segue.identifier isEqualToString:@"studentViewSegue"]) {
         
         // NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
     } else {
@@ -371,6 +369,10 @@ User *userEight;
         ManageStudentViewController *settingsCtrl = (ManageStudentViewController *)segue.destinationViewController;
         
         StudentMainView *studentMainCtrl = (StudentMainView *)segue.destinationViewController;
+        
+        
+        StudentViewController *studentViewCtrl = (StudentViewController *)segue.destinationViewController;
+        
         
         UserUIBarButtonItem *selected = sender;
         
@@ -398,6 +400,7 @@ User *userEight;
         avatarCtrl.student = selectedStudent;
         settingsCtrl.student = selectedStudent;
         studentMainCtrl.student = selectedStudent;
+        studentViewCtrl.student = selectedStudent;
     }
     
 }
@@ -506,5 +509,21 @@ User *userEight;
 -(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 2;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *cellText = cell.textLabel.text;
+    
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Row Selected" message:cellText delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // Display Alert Message
+    [messageAlert show];
+    
+}
+
+
 
 @end

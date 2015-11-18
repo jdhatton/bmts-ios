@@ -30,5 +30,6 @@
 @property (nonatomic, retain) NSNumber * zipCode;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * studentIdNumber;
+@property (nonatomic, retain) NSString * deviceId;
 
 @end

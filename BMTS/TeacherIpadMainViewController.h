@@ -26,8 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *studentComment;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *studentSettings;
 
-@property (weak, nonatomic) IBOutlet UITextField *teacherHeader;
-
 @property (weak, nonatomic) IBOutlet UIButton *addStudentButton;
 
 -(void)refreshView:(NSNotification *) notification;

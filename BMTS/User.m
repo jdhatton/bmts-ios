@@ -29,4 +29,5 @@
 @dynamic zipCode;
 @dynamic password;
 @dynamic studentIdNumber;
+@dynamic deviceId;
 @end

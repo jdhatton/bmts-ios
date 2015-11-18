@@ -17,14 +17,13 @@
 
 @implementation RestController
 
-///  NSString *REST_SERVER_HOST = [@"http://homeroomtechnologies.com:8080"];
+///  NSString *REST_SERVER_HOST = [@"https://homeroomtechnologies.com:8443"];
 
  
 
-  NSString *const SERVICES_HOST_PREFIX = @"http://";
+  NSString *const SERVICES_HOST_PREFIX = @"https://";
   NSString *const SERVICES_HOST_URL = @"homeroomtechnologies.com" ;
-  NSString *const SERVICES_HOST_PORT = @"8080";
-
+  NSString *const SERVICES_HOST_PORT = @"8443";
 
 //
 // This a method to perform a ping that validates connectivity.
@@ -55,7 +54,6 @@
 //
 - (NSArray*)fetchDistrictsForZipCode:(NSString *)srcZipCode;
 {
- 
     NSArray *districts;
     NSString *searchURL = [@"http://homeroomtechnologies.com:8080/schoolSearch?zip=" stringByAppendingString:srcZipCode];
     // NSLog(@"\n >>>>  ..2..    REST::  fsearchURL =  %@", searchURL);
@@ -113,6 +111,7 @@
     
     // Add the password to be sent
     user.password = appDelegate.userPassword;
+    user.deviceId = appDelegate.deviceID;
     
     // Convert your data and set your request's HTTPBody property
     NSString *jsonString;

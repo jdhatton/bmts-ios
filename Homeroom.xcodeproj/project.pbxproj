@@ -21,7 +21,6 @@
 		890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D41A159C23000A30DA /* AddStudentViewController.m */; };
 		890759D81A159C43000A30DA /* AddParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D71A159C43000A30DA /* AddParentViewController.m */; };
 		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
-		890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890759E01A159CAF000A30DA /* ParentViewViewController.xib */; };
 		89088C201B3C58F600F2CDC7 /* AddBehaviorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */; };
 		893BD49E1B5565B400DCB3E0 /* AppIcon-29-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 893BD4991B5565B400DCB3E0 /* AppIcon-29-29.png */; };
 		893BD49F1B5565B400DCB3E0 /* AppIcon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 893BD49A1B5565B400DCB3E0 /* AppIcon-76x76.png */; };
@@ -56,6 +55,31 @@
 		89442F671ABDD589007CEDFE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F661ABDD589007CEDFE /* FeedbackViewController.m */; };
 		89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F691ABF032C007CEDFE /* StudentStatusViewController.m */; };
 		89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */; };
+		8959E9931BEFF0070016BDBE /* NSData+LQData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9631BEFF0070016BDBE /* NSData+LQData.m */; };
+		8959E9941BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9651BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.m */; };
+		8959E9951BEFF0070016BDBE /* NSString+LQString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9671BEFF0070016BDBE /* NSString+LQString.m */; };
+		8959E9961BEFF0070016BDBE /* UIColor+LQColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9691BEFF0070016BDBE /* UIColor+LQColor.m */; };
+		8959E9971BEFF0070016BDBE /* Liquid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E96C1BEFF0070016BDBE /* Liquid.m */; };
+		8959E9981BEFF0070016BDBE /* LQHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E96F1BEFF0070016BDBE /* LQHelpers.m */; };
+		8959E9991BEFF0070016BDBE /* LQKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9711BEFF0070016BDBE /* LQKeychain.m */; };
+		8959E99A1BEFF0070016BDBE /* LQNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9731BEFF0070016BDBE /* LQNetworking.m */; };
+		8959E99B1BEFF0070016BDBE /* LQStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9751BEFF0070016BDBE /* LQStorage.m */; };
+		8959E99C1BEFF0070016BDBE /* LQUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9771BEFF0070016BDBE /* LQUserDefaults.m */; };
+		8959E99D1BEFF0070016BDBE /* LQDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E97A1BEFF0070016BDBE /* LQDataPoint.m */; };
+		8959E99E1BEFF0070016BDBE /* LQDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E97C1BEFF0070016BDBE /* LQDate.m */; };
+		8959E99F1BEFF0070016BDBE /* LQDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E97E1BEFF0070016BDBE /* LQDevice.m */; };
+		8959E9A01BEFF0070016BDBE /* LQEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9801BEFF0070016BDBE /* LQEntity.m */; };
+		8959E9A11BEFF0070016BDBE /* LQEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9821BEFF0070016BDBE /* LQEvent.m */; };
+		8959E9A21BEFF0070016BDBE /* LQKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9841BEFF0070016BDBE /* LQKeychainItem.m */; };
+		8959E9A31BEFF0070016BDBE /* LQLiquidPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9861BEFF0070016BDBE /* LQLiquidPackage.m */; };
+		8959E9A41BEFF0070016BDBE /* LQRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9881BEFF0070016BDBE /* LQRequest.m */; };
+		8959E9A51BEFF0070016BDBE /* LQSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E98A1BEFF0070016BDBE /* LQSession.m */; };
+		8959E9A61BEFF0070016BDBE /* LQTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E98C1BEFF0070016BDBE /* LQTarget.m */; };
+		8959E9A71BEFF0070016BDBE /* LQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E98E1BEFF0070016BDBE /* LQUser.m */; };
+		8959E9A81BEFF0070016BDBE /* LQValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9901BEFF0070016BDBE /* LQValue.m */; };
+		8959E9A91BEFF0070016BDBE /* LQVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9921BEFF0070016BDBE /* LQVariable.m */; };
+		8959E9AB1BF8E3490016BDBE /* DeviceUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9AA1BF8E3490016BDBE /* DeviceUID.m */; };
+		8959E9B01BFB87C20016BDBE /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8959E9AF1BFB87C20016BDBE /* StudentViewController.m */; };
 		8986916F1A5313C9009E8F52 /* RegisterFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */; };
 		89AF63061AA9E6A10022F035 /* listastic-2014.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AF63051AA9E6A10022F035 /* listastic-2014.png */; };
 		89B6F5851B2DD7F200CE7C06 /* TeacherIpadMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6F5841B2DD7F200CE7C06 /* TeacherIpadMainViewController.m */; };
@@ -122,7 +146,6 @@
 		890759D71A159C43000A30DA /* AddParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddParentViewController.m; sourceTree = "<group>"; };
 		890759DE1A159CAF000A30DA /* ParentViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewViewController.h; sourceTree = "<group>"; };
 		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
-		890759E01A159CAF000A30DA /* ParentViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewViewController.xib; sourceTree = "<group>"; };
 		89088C1E1B3C58F600F2CDC7 /* AddBehaviorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBehaviorViewController.h; sourceTree = "<group>"; };
 		89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBehaviorViewController.m; sourceTree = "<group>"; };
 		893BD4991B5565B400DCB3E0 /* AppIcon-29-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29-29.png"; sourceTree = "<group>"; };
@@ -163,6 +186,59 @@
 		89442F691ABF032C007CEDFE /* StudentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentStatusViewController.m; sourceTree = "<group>"; };
 		89442F6D1ABF10B7007CEDFE /* UserUIBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUIBarButtonItem.h; sourceTree = "<group>"; };
 		89442F6E1ABF10B7007CEDFE /* UserUIBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUIBarButtonItem.m; sourceTree = "<group>"; };
+		8959E9621BEFF0070016BDBE /* NSData+LQData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LQData.h"; sourceTree = "<group>"; };
+		8959E9631BEFF0070016BDBE /* NSData+LQData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LQData.m"; sourceTree = "<group>"; };
+		8959E9641BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+LQDateFormatter.h"; sourceTree = "<group>"; };
+		8959E9651BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+LQDateFormatter.m"; sourceTree = "<group>"; };
+		8959E9661BEFF0070016BDBE /* NSString+LQString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LQString.h"; sourceTree = "<group>"; };
+		8959E9671BEFF0070016BDBE /* NSString+LQString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LQString.m"; sourceTree = "<group>"; };
+		8959E9681BEFF0070016BDBE /* UIColor+LQColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LQColor.h"; sourceTree = "<group>"; };
+		8959E9691BEFF0070016BDBE /* UIColor+LQColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LQColor.m"; sourceTree = "<group>"; };
+		8959E96A1BEFF0070016BDBE /* Liquid-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Liquid-Prefix.pch"; sourceTree = "<group>"; };
+		8959E96B1BEFF0070016BDBE /* Liquid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liquid.h; sourceTree = "<group>"; };
+		8959E96C1BEFF0070016BDBE /* Liquid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Liquid.m; sourceTree = "<group>"; };
+		8959E96D1BEFF0070016BDBE /* LQDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQDefaults.h; sourceTree = "<group>"; };
+		8959E96E1BEFF0070016BDBE /* LQHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQHelpers.h; sourceTree = "<group>"; };
+		8959E96F1BEFF0070016BDBE /* LQHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQHelpers.m; sourceTree = "<group>"; };
+		8959E9701BEFF0070016BDBE /* LQKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQKeychain.h; sourceTree = "<group>"; };
+		8959E9711BEFF0070016BDBE /* LQKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQKeychain.m; sourceTree = "<group>"; };
+		8959E9721BEFF0070016BDBE /* LQNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQNetworking.h; sourceTree = "<group>"; };
+		8959E9731BEFF0070016BDBE /* LQNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQNetworking.m; sourceTree = "<group>"; };
+		8959E9741BEFF0070016BDBE /* LQStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQStorage.h; sourceTree = "<group>"; };
+		8959E9751BEFF0070016BDBE /* LQStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQStorage.m; sourceTree = "<group>"; };
+		8959E9761BEFF0070016BDBE /* LQUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQUserDefaults.h; sourceTree = "<group>"; };
+		8959E9771BEFF0070016BDBE /* LQUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQUserDefaults.m; sourceTree = "<group>"; };
+		8959E9791BEFF0070016BDBE /* LQDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQDataPoint.h; sourceTree = "<group>"; };
+		8959E97A1BEFF0070016BDBE /* LQDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQDataPoint.m; sourceTree = "<group>"; };
+		8959E97B1BEFF0070016BDBE /* LQDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQDate.h; sourceTree = "<group>"; };
+		8959E97C1BEFF0070016BDBE /* LQDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQDate.m; sourceTree = "<group>"; };
+		8959E97D1BEFF0070016BDBE /* LQDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQDevice.h; sourceTree = "<group>"; };
+		8959E97E1BEFF0070016BDBE /* LQDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQDevice.m; sourceTree = "<group>"; };
+		8959E97F1BEFF0070016BDBE /* LQEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQEntity.h; sourceTree = "<group>"; };
+		8959E9801BEFF0070016BDBE /* LQEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQEntity.m; sourceTree = "<group>"; };
+		8959E9811BEFF0070016BDBE /* LQEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQEvent.h; sourceTree = "<group>"; };
+		8959E9821BEFF0070016BDBE /* LQEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQEvent.m; sourceTree = "<group>"; };
+		8959E9831BEFF0070016BDBE /* LQKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQKeychainItem.h; sourceTree = "<group>"; };
+		8959E9841BEFF0070016BDBE /* LQKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQKeychainItem.m; sourceTree = "<group>"; };
+		8959E9851BEFF0070016BDBE /* LQLiquidPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQLiquidPackage.h; sourceTree = "<group>"; };
+		8959E9861BEFF0070016BDBE /* LQLiquidPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQLiquidPackage.m; sourceTree = "<group>"; };
+		8959E9871BEFF0070016BDBE /* LQRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQRequest.h; sourceTree = "<group>"; };
+		8959E9881BEFF0070016BDBE /* LQRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQRequest.m; sourceTree = "<group>"; };
+		8959E9891BEFF0070016BDBE /* LQSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQSession.h; sourceTree = "<group>"; };
+		8959E98A1BEFF0070016BDBE /* LQSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQSession.m; sourceTree = "<group>"; };
+		8959E98B1BEFF0070016BDBE /* LQTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQTarget.h; sourceTree = "<group>"; };
+		8959E98C1BEFF0070016BDBE /* LQTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQTarget.m; sourceTree = "<group>"; };
+		8959E98D1BEFF0070016BDBE /* LQUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQUser.h; sourceTree = "<group>"; };
+		8959E98E1BEFF0070016BDBE /* LQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQUser.m; sourceTree = "<group>"; };
+		8959E98F1BEFF0070016BDBE /* LQValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQValue.h; sourceTree = "<group>"; };
+		8959E9901BEFF0070016BDBE /* LQValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQValue.m; sourceTree = "<group>"; };
+		8959E9911BEFF0070016BDBE /* LQVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQVariable.h; sourceTree = "<group>"; };
+		8959E9921BEFF0070016BDBE /* LQVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQVariable.m; sourceTree = "<group>"; };
+		8959E9AA1BF8E3490016BDBE /* DeviceUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUID.m; sourceTree = "<group>"; };
+		8959E9AC1BF8E3780016BDBE /* DeviceUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceUID.h; sourceTree = "<group>"; };
+		8959E9AD1BF92E350016BDBE /* AppDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "AppDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		8959E9AE1BFB87C20016BDBE /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
+		8959E9AF1BFB87C20016BDBE /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 		8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFourViewController.h; sourceTree = "<group>"; };
 		8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFourViewController.m; sourceTree = "<group>"; };
 		89AF63051AA9E6A10022F035 /* listastic-2014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "listastic-2014.png"; path = "BMTS/images/listastic-2014.png"; sourceTree = "<group>"; };
@@ -254,6 +330,7 @@
 				890759911A0B110B000A30DA /* BMTS */,
 				890759B11A0B110B000A30DA /* BMTSTests */,
 				890759901A0B110B000A30DA /* Products */,
+				8959E9601BEFF0070016BDBE /* Liquid */,
 				893BD4D01B55BF8E00DCB3E0 /* JawBone */,
 			);
 			sourceTree = "<group>";
@@ -324,6 +401,8 @@
 				89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */,
 				89FD8FD41B7D250600969754 /* IPhone5MainViewController.h */,
 				89FD8FD51B7D250600969754 /* IPhone5MainViewController.m */,
+				8959E9AA1BF8E3490016BDBE /* DeviceUID.m */,
+				8959E9AC1BF8E3780016BDBE /* DeviceUID.h */,
 			);
 			path = BMTS;
 			sourceTree = "<group>";
@@ -372,7 +451,6 @@
 			children = (
 				890759DE1A159CAF000A30DA /* ParentViewViewController.h */,
 				890759DF1A159CAF000A30DA /* ParentViewViewController.m */,
-				890759E01A159CAF000A30DA /* ParentViewViewController.xib */,
 			);
 			name = ParentView;
 			sourceTree = "<group>";
@@ -397,6 +475,8 @@
 				89C8549E1AD7336100740DB3 /* ManageStudentViewController.m */,
 				89B6F5831B2DD7F200CE7C06 /* TeacherIpadMainViewController.h */,
 				89B6F5841B2DD7F200CE7C06 /* TeacherIpadMainViewController.m */,
+				8959E9AE1BFB87C20016BDBE /* StudentViewController.h */,
+				8959E9AF1BFB87C20016BDBE /* StudentViewController.m */,
 			);
 			name = TeacherView;
 			sourceTree = "<group>";
@@ -456,6 +536,78 @@
 			children = (
 			);
 			name = Registration;
+			sourceTree = "<group>";
+		};
+		8959E9601BEFF0070016BDBE /* Liquid */ = {
+			isa = PBXGroup;
+			children = (
+				8959E9611BEFF0070016BDBE /* Categories */,
+				8959E96A1BEFF0070016BDBE /* Liquid-Prefix.pch */,
+				8959E96B1BEFF0070016BDBE /* Liquid.h */,
+				8959E96C1BEFF0070016BDBE /* Liquid.m */,
+				8959E96D1BEFF0070016BDBE /* LQDefaults.h */,
+				8959E96E1BEFF0070016BDBE /* LQHelpers.h */,
+				8959E96F1BEFF0070016BDBE /* LQHelpers.m */,
+				8959E9701BEFF0070016BDBE /* LQKeychain.h */,
+				8959E9711BEFF0070016BDBE /* LQKeychain.m */,
+				8959E9721BEFF0070016BDBE /* LQNetworking.h */,
+				8959E9731BEFF0070016BDBE /* LQNetworking.m */,
+				8959E9741BEFF0070016BDBE /* LQStorage.h */,
+				8959E9751BEFF0070016BDBE /* LQStorage.m */,
+				8959E9761BEFF0070016BDBE /* LQUserDefaults.h */,
+				8959E9771BEFF0070016BDBE /* LQUserDefaults.m */,
+				8959E9781BEFF0070016BDBE /* Model */,
+			);
+			name = Liquid;
+			path = JawBone/Liquid;
+			sourceTree = "<group>";
+		};
+		8959E9611BEFF0070016BDBE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8959E9621BEFF0070016BDBE /* NSData+LQData.h */,
+				8959E9631BEFF0070016BDBE /* NSData+LQData.m */,
+				8959E9641BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.h */,
+				8959E9651BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.m */,
+				8959E9661BEFF0070016BDBE /* NSString+LQString.h */,
+				8959E9671BEFF0070016BDBE /* NSString+LQString.m */,
+				8959E9681BEFF0070016BDBE /* UIColor+LQColor.h */,
+				8959E9691BEFF0070016BDBE /* UIColor+LQColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8959E9781BEFF0070016BDBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8959E9791BEFF0070016BDBE /* LQDataPoint.h */,
+				8959E97A1BEFF0070016BDBE /* LQDataPoint.m */,
+				8959E97B1BEFF0070016BDBE /* LQDate.h */,
+				8959E97C1BEFF0070016BDBE /* LQDate.m */,
+				8959E97D1BEFF0070016BDBE /* LQDevice.h */,
+				8959E97E1BEFF0070016BDBE /* LQDevice.m */,
+				8959E97F1BEFF0070016BDBE /* LQEntity.h */,
+				8959E9801BEFF0070016BDBE /* LQEntity.m */,
+				8959E9811BEFF0070016BDBE /* LQEvent.h */,
+				8959E9821BEFF0070016BDBE /* LQEvent.m */,
+				8959E9831BEFF0070016BDBE /* LQKeychainItem.h */,
+				8959E9841BEFF0070016BDBE /* LQKeychainItem.m */,
+				8959E9851BEFF0070016BDBE /* LQLiquidPackage.h */,
+				8959E9861BEFF0070016BDBE /* LQLiquidPackage.m */,
+				8959E9871BEFF0070016BDBE /* LQRequest.h */,
+				8959E9881BEFF0070016BDBE /* LQRequest.m */,
+				8959E9891BEFF0070016BDBE /* LQSession.h */,
+				8959E98A1BEFF0070016BDBE /* LQSession.m */,
+				8959E98B1BEFF0070016BDBE /* LQTarget.h */,
+				8959E98C1BEFF0070016BDBE /* LQTarget.m */,
+				8959E98D1BEFF0070016BDBE /* LQUser.h */,
+				8959E98E1BEFF0070016BDBE /* LQUser.m */,
+				8959E98F1BEFF0070016BDBE /* LQValue.h */,
+				8959E9901BEFF0070016BDBE /* LQValue.m */,
+				8959E9911BEFF0070016BDBE /* LQVariable.h */,
+				8959E9921BEFF0070016BDBE /* LQVariable.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		899711831A75D9480044AB66 /* Models */ = {
@@ -615,7 +767,6 @@
 				893BD4CD1B5586DC00DCB3E0 /* iTunesArtwork@2x.png in Resources */,
 				893BD4A11B5565B400DCB3E0 /* AppIcon-152x152.png in Resources */,
 				893BD4CF1B55898300DCB3E0 /* Images.xcassets in Resources */,
-				890759E21A159CAF000A30DA /* ParentViewViewController.xib in Resources */,
 				893BD4BC1B5586DC00DCB3E0 /* Icon-40@2x.png in Resources */,
 				893BD4CA1B5586DC00DCB3E0 /* Icon.png in Resources */,
 				893BD4BB1B5586DC00DCB3E0 /* Icon-40.png in Resources */,
@@ -646,6 +797,10 @@
 				890759D81A159C43000A30DA /* AddParentViewController.m in Sources */,
 				89D277AC1AC7830200673CC2 /* StudentMainView.m in Sources */,
 				89D3277B1A968A4F00CF3214 /* ClassroomParents.m in Sources */,
+				8959E9A71BEFF0070016BDBE /* LQUser.m in Sources */,
+				8959E9A91BEFF0070016BDBE /* LQVariable.m in Sources */,
+				8959E9931BEFF0070016BDBE /* NSData+LQData.m in Sources */,
+				8959E9941BEFF0070016BDBE /* NSDateFormatter+LQDateFormatter.m in Sources */,
 				890759C91A159B4F000A30DA /* ForgotPasswordViewController.m in Sources */,
 				89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */,
 				89442F6A1ABF032C007CEDFE /* StudentStatusViewController.m in Sources */,
@@ -655,10 +810,15 @@
 				8907599E1A0B110B000A30DA /* DataViewController.m in Sources */,
 				89D327691A968A4E00CF3214 /* UserCookie.m in Sources */,
 				89B6F5851B2DD7F200CE7C06 /* TeacherIpadMainViewController.m in Sources */,
+				8959E99F1BEFF0070016BDBE /* LQDevice.m in Sources */,
 				89D3277E1A968A4F00CF3214 /* UserRoleEnums.m in Sources */,
+				8959E9971BEFF0070016BDBE /* Liquid.m in Sources */,
 				89C8549C1AD08B8A00740DB3 /* RestController.m in Sources */,
+				8959E99D1BEFF0070016BDBE /* LQDataPoint.m in Sources */,
 				89C8549F1AD7336100740DB3 /* ManageStudentViewController.m in Sources */,
 				89D327781A968A4F00CF3214 /* Behaviors.m in Sources */,
+				8959E99A1BEFF0070016BDBE /* LQNetworking.m in Sources */,
+				8959E99C1BEFF0070016BDBE /* LQUserDefaults.m in Sources */,
 				89CD4EFB1AC0E741002B20D0 /* Comments.m in Sources */,
 				89D327631A968A4E00CF3214 /* Classroom.m in Sources */,
 				89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */,
@@ -670,26 +830,42 @@
 				89D327541A956C4300CF3214 /* SyncService.m in Sources */,
 				890759981A0B110B000A30DA /* AppDelegate.m in Sources */,
 				890759A11A0B110B000A30DA /* ModelController.m in Sources */,
+				8959E9951BEFF0070016BDBE /* NSString+LQString.m in Sources */,
+				8959E9A01BEFF0070016BDBE /* LQEntity.m in Sources */,
+				8959E9A61BEFF0070016BDBE /* LQTarget.m in Sources */,
+				8959E9A41BEFF0070016BDBE /* LQRequest.m in Sources */,
+				8959E9A81BEFF0070016BDBE /* LQValue.m in Sources */,
+				8959E9A21BEFF0070016BDBE /* LQKeychainItem.m in Sources */,
 				89D3275A1A96435900CF3214 /* Reachability.m in Sources */,
 				890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */,
 				89FD8FD61B7D250600969754 /* IPhone5MainViewController.m in Sources */,
 				89F4A7C91AC6E38600F2203F /* App.m in Sources */,
 				89088C201B3C58F600F2CDC7 /* AddBehaviorViewController.m in Sources */,
+				8959E9A11BEFF0070016BDBE /* LQEvent.m in Sources */,
 				890759CF1A159BDB000A30DA /* RegisterTwoViewController.m in Sources */,
 				89D327661A968A4E00CF3214 /* IntervalEnum.m in Sources */,
 				893BD4D71B55BF8E00DCB3E0 /* JBBarChartView.m in Sources */,
+				8959E9961BEFF0070016BDBE /* UIColor+LQColor.m in Sources */,
 				893BD4D91B55BF8E00DCB3E0 /* JBLineChartView.m in Sources */,
 				89CD4EF81ABF98EC002B20D0 /* StudentBehaviors.m in Sources */,
 				89D3276F1A968A4F00CF3214 /* StatusEnums.m in Sources */,
+				8959E9AB1BF8E3490016BDBE /* DeviceUID.m in Sources */,
+				8959E99B1BEFF0070016BDBE /* LQStorage.m in Sources */,
 				89D3275D1A968A4D00CF3214 /* ClassroomStudents.m in Sources */,
 				89442F6F1ABF10B7007CEDFE /* UserUIBarButtonItem.m in Sources */,
+				8959E9A31BEFF0070016BDBE /* LQLiquidPackage.m in Sources */,
+				8959E9A51BEFF0070016BDBE /* LQSession.m in Sources */,
 				890759CC1A159BBC000A30DA /* RegisterOneViewController.m in Sources */,
+				8959E9991BEFF0070016BDBE /* LQKeychain.m in Sources */,
 				890759951A0B110B000A30DA /* main.m in Sources */,
 				89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */,
 				89D327751A968A4F00CF3214 /* PaidEnum.m in Sources */,
+				8959E9B01BFB87C20016BDBE /* StudentViewController.m in Sources */,
+				8959E9981BEFF0070016BDBE /* LQHelpers.m in Sources */,
 				890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */,
 				8907599B1A0B110B000A30DA /* RootViewController.m in Sources */,
 				89D3276C1A968A4F00CF3214 /* Status.m in Sources */,
+				8959E99E1BEFF0070016BDBE /* LQDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +1078,7 @@
 		89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				8959E9AD1BF92E350016BDBE /* AppDataModel 2.xcdatamodel */,
 				89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */,
 			);
 			currentVersion = 89F2F6F31A605A93001B0D17 /* AppDataModel.xcdatamodel */;

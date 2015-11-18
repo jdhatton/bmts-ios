@@ -24,7 +24,7 @@
 
 @implementation TeacherIpadMainViewController
 
-@synthesize teacherHeader, addStudentButton, toolBarOne, toolBarTwo, toolBarThree, toolBarFour, toolBarFive, toolBarSix, toolBarSeven, toolBarEight, studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings,
+@synthesize addStudentButton, toolBarOne, toolBarTwo, toolBarThree, toolBarFour, toolBarFive, toolBarSix, toolBarSeven, toolBarEight, studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings,
 studentTwoAvatar, studentTwoName, studentTwoStatus, studentTwoNote, studentTwoSettings,
 studentThreeAvatar, studentThreeName, studentThreeStatus, studentThreeNote, studentThreeSettings,
 studentFourAvatar, studentFourName, studentFourStatus, studentFourNote, studentFourSettings,
@@ -92,14 +92,7 @@ User *userEight;
     }
     
     
-    //
-    // Set the header label
-    //
-    teacherHeader.text = userName;
-    [teacherHeader setFont:[UIFont fontWithName:@"Helvetica" size:17.0]];
-    teacherHeader.textColor = [UIColor colorWithRed:(11/255.0) green:(11/255.0) blue:(11/255.0) alpha:1];
-    
-    
+
     //
     // Hide the toolbars, then show them for each student in the DB.
     //
