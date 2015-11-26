@@ -26,6 +26,14 @@
     [super viewDidLoad];
     // NSLog(@"DEBUG: CommentViewController::loading...   student = %@", student);
     
+    //
+    // TODO: trying this to see if this is OK.
+    //
+    if(self.student == nil){
+        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        self.student = appDelegate.currentSelectedStudent;
+    }
+    
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Comments for ", student.firstName];
     headerLabel.text = headerText;

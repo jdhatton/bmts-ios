@@ -32,6 +32,8 @@
 
 @property (strong, nonatomic) NSString *deviceID;
 
+@property (weak, nonatomic) User *currentSelectedStudent;
+
 extern AppDelegate *appDelegate;
 
 - (void)saveContext;

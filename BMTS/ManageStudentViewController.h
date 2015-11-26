@@ -27,5 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *inviteStudentBtn;
 
+@property (weak, nonatomic) IBOutlet UIImageView *studentImg;
+
 @property (weak, nonatomic) IBOutlet UIButton *deleteStudentBtn;
 @end

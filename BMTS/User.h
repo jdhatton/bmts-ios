@@ -31,5 +31,8 @@
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * studentIdNumber;
 @property (nonatomic, retain) NSString * deviceId;
+@property (nonatomic, retain) NSNumber * deleted;
+@property (nonatomic, retain) NSData  * profileImg;
+
 
 @end

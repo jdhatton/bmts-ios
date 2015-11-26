@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-4192.5" y="-625.5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Student View Controller-->
         <scene sceneID="jxS-71-wQu">
             <objects>
-                <tabBarController id="0wF-Nr-3yK" sceneMemberID="viewController">
+                <tabBarController id="0wF-Nr-3yK" customClass="StudentViewController" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zRc-tG-AJT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -121,7 +121,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIB-0N-0ES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2557.5" y="-864.5"/>
+            <point key="canvasLocation" x="-2861.5" y="-1108.5"/>
         </scene>
         <!--Register Three View Controller-->
         <scene sceneID="5Wq-ad-VHz">
@@ -512,6 +512,11 @@
                                     <action selector="deleteStudent:" destination="wrl-0o-CLV" eventType="touchUpInside" id="ppO-og-F4E"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_user_pic-128" translatesAutoresizingMaskIntoConstraints="NO" id="X2I-Cv-qhi" propertyAccessControl="all">
+                                <rect key="frame" x="88" y="341" width="161" height="142"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -544,6 +549,7 @@
                         <outlet property="inviteStudentBtn" destination="qcz-eE-oHn" id="p8l-al-Dbc"/>
                         <outlet property="studentHeaderLabel" destination="46h-bu-uwg" id="rck-Vy-5u1"/>
                         <outlet property="studentIDNumber" destination="9hE-qj-Ewv" id="dRr-a5-sMF"/>
+                        <outlet property="studentImg" destination="X2I-Cv-qhi" id="7eG-f1-oNN"/>
                         <outlet property="studentNameTextField" destination="7ds-1N-5oq" id="wfB-Eb-6xa"/>
                     </connections>
                 </viewController>
@@ -563,23 +569,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-13-MhZ">
-                                <rect key="frame" x="12" y="612" width="214" height="35"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.46188446969696972" green="0.0067540864758688229" blue="0.049645731740899667" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="OMU-9R-Bhy"/>
-                                    <constraint firstAttribute="width" constant="214" id="YrN-lZ-y7c"/>
-                                </constraints>
-                                <state key="normal" title="Feedback">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-Fp-Drh">
-                                <rect key="frame" x="12" y="557" width="351" height="40"/>
+                                <rect key="frame" x="-4" y="514" width="383" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -593,8 +584,8 @@
                                     <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-TS-Og9">
-                                <rect key="frame" x="0.0" y="20" width="375" height="483"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-TS-Og9">
+                                <rect key="frame" x="0.0" y="7" width="375" height="469"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -605,15 +596,19 @@
                                     <outlet property="delegate" destination="i1N-B9-We4" id="MJf-dh-OxH"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-bW-NGO">
-                                <rect key="frame" x="247" y="612" width="102" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-13-MhZ">
+                                <rect key="frame" x="76" y="569" width="214" height="35"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.85150552820000003" green="0.85707134039999999" blue="0.87628235480000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Show Tab">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.46188446969696972" green="0.0067540864758688229" blue="0.049645731740899667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="OMU-9R-Bhy"/>
+                                    <constraint firstAttribute="width" constant="214" id="YrN-lZ-y7c"/>
+                                </constraints>
+                                <state key="normal" title="Give Feedback">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0wF-Nr-3yK" kind="show" identifier="studentViewSegue" id="eAy-8w-UGY"/>
+                                    <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -621,13 +616,13 @@
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Fht-Fp-Drh" firstAttribute="leading" secondItem="umV-13-MhZ" secondAttribute="leading" id="3xA-bn-Eck"/>
-                            <constraint firstItem="bVX-TS-Og9" firstAttribute="top" secondItem="rho-mi-6Dm" secondAttribute="bottom" id="7gK-Pa-4zA"/>
-                            <constraint firstItem="Fht-Fp-Drh" firstAttribute="top" secondItem="bVX-TS-Og9" secondAttribute="bottom" constant="54" id="Qas-AU-1E2"/>
+                            <constraint firstItem="Fht-Fp-Drh" firstAttribute="leading" secondItem="umV-13-MhZ" secondAttribute="leading" constant="-80" id="3xA-bn-Eck"/>
+                            <constraint firstItem="bVX-TS-Og9" firstAttribute="top" secondItem="rho-mi-6Dm" secondAttribute="bottom" constant="-13" id="7gK-Pa-4zA"/>
+                            <constraint firstItem="Fht-Fp-Drh" firstAttribute="top" secondItem="bVX-TS-Og9" secondAttribute="bottom" constant="38" id="Qas-AU-1E2"/>
                             <constraint firstAttribute="trailing" secondItem="bVX-TS-Og9" secondAttribute="trailing" id="W5x-ZW-ZLd"/>
-                            <constraint firstItem="Yjf-ow-VrK" firstAttribute="top" secondItem="umV-13-MhZ" secondAttribute="bottom" constant="20" id="Z3y-F9-ROn"/>
+                            <constraint firstItem="Yjf-ow-VrK" firstAttribute="top" secondItem="umV-13-MhZ" secondAttribute="bottom" constant="14" id="Z3y-F9-ROn"/>
                             <constraint firstItem="umV-13-MhZ" firstAttribute="top" secondItem="Fht-Fp-Drh" secondAttribute="bottom" constant="15" id="qVN-s2-5To"/>
-                            <constraint firstItem="umV-13-MhZ" firstAttribute="leading" secondItem="Kjh-FY-krT" secondAttribute="leadingMargin" constant="-4" id="qwb-ZM-Ody"/>
+                            <constraint firstItem="umV-13-MhZ" firstAttribute="leading" secondItem="Kjh-FY-krT" secondAttribute="leadingMargin" constant="60" id="qwb-ZM-Ody"/>
                             <constraint firstItem="Fht-Fp-Drh" firstAttribute="centerX" secondItem="bVX-TS-Og9" secondAttribute="centerX" id="t8s-H8-Dk4"/>
                             <constraint firstItem="bVX-TS-Og9" firstAttribute="leading" secondItem="Kjh-FY-krT" secondAttribute="leading" id="tOh-v8-mO2"/>
                         </constraints>
@@ -635,11 +630,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addStudentButton" destination="Fht-Fp-Drh" id="OQM-5z-pJv"/>
+                        <segue destination="0wF-Nr-3yK" kind="show" identifier="studentViewSegue" id="gw1-S4-jwU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNW-ad-Fav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3412.5" y="-651.5"/>
+            <point key="canvasLocation" x="-3453.5" y="-686.5"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="yWE-3h-lQ7">
@@ -778,9 +774,6 @@
                                     <color key="titleColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="i1N-B9-We4" kind="show" id="5kX-0f-Cg7"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srL-IA-Fpg">
                                 <rect key="frame" x="209" y="499" width="118" height="30"/>
@@ -837,12 +830,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xob-dC-uHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622.5" y="-677.5"/>
+            <point key="canvasLocation" x="-846.5" y="-887.5"/>
         </scene>
         <!--StudentMainView-->
         <scene sceneID="zYt-IH-rH3">
             <objects>
-                <viewController id="ifV-aA-ZTq" userLabel="StudentMainView" customClass="StudentMainView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentMainView" id="ifV-aA-ZTq" userLabel="StudentMainView" customClass="StudentMainView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uVg-uq-AlT"/>
                         <viewControllerLayoutGuide type="bottom" id="zUx-3B-5ga"/>
@@ -865,7 +858,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LI9-wp-AlB">
                                 <rect key="frame" x="21" y="55" width="333" height="517"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="517" id="o8P-pK-F5r"/>
                                 </constraints>
@@ -1257,7 +1250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmR-EW-n1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3651" y="45"/>
+            <point key="canvasLocation" x="-3805" y="131"/>
         </scene>
         <!--Status-->
         <scene sceneID="V1N-1B-EMZ">
@@ -1627,6 +1620,23 @@
                                     <segue destination="i1N-B9-We4" kind="show" id="X0Z-VT-WKG"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_user_pic-128" translatesAutoresizingMaskIntoConstraints="NO" id="k7R-j1-kC8" propertyAccessControl="all">
+                                <rect key="frame" x="107" y="425" width="161" height="142"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOE-VC-Hr9">
+                                <rect key="frame" x="107" y="425" width="161" height="143"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="hte-3k-ekS" eventType="touchUpInside" id="MQI-Ps-bwF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1652,6 +1662,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="behaviorPicker" destination="Cah-3X-g6V" id="wi1-eZ-ozZ"/>
+                        <outlet property="imagePicker" destination="k7R-j1-kC8" id="qbN-Rp-q9a"/>
                         <outlet property="studentIdNumber" destination="mpK-Wi-OSU" id="eq1-8M-9Wd"/>
                         <outlet property="studentName" destination="kkA-MW-e1S" id="Voj-MN-CvF"/>
                     </connections>
@@ -2556,6 +2567,7 @@ Internet traffic will be routed through it.</string>
         <image name="LockIcon3" width="25" height="33"/>
         <image name="Notebook3" width="120" height="120"/>
         <image name="add_file-26" width="26" height="26"/>
+        <image name="add_user_pic-128" width="128" height="128"/>
         <image name="angel-24" width="24" height="24"/>
         <image name="floating_guru-24" width="24" height="24"/>
         <image name="full_moon-24" width="24" height="24"/>
@@ -2581,8 +2593,8 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="R0f-of-f9K"/>
         <segue reference="SCN-zt-OSQ"/>
+        <segue reference="X0Z-VT-WKG"/>
         <segue reference="aK1-Qg-wuc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

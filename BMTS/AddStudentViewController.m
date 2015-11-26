@@ -29,7 +29,8 @@ NSInteger selectedBehavior = 0;
 NSInteger selectedInterval = 0;
 BOOL isValidStudentName = true;
 BOOL isCancelledAdd = false;
-
+CGFloat height;
+CGFloat width;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +46,11 @@ BOOL isCancelledAdd = false;
     
     studentName.delegate = self;
     studentIdNumber.delegate = self;
-
+    
+    CGRect imageRect = self.imagePicker.frame;
+    height = imageRect.size.height;
+    width = imageRect.size.width;
+    
     self.studentName.autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
 }
@@ -130,6 +135,7 @@ BOOL isCancelledAdd = false;
         isValidStudentName = false;
     } else {
 
+        NSNumber *userId = @(2);
         NSError *error;
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -139,18 +145,23 @@ BOOL isCancelledAdd = false;
         //
         // Find the next available userId
         //
-        NSNumber *userId = @(2);
+        NSNumber *cntNumber = [NSNumber numberWithInt:1];
+        int count = [cntNumber intValue];
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
-            // NSLog(@" Found User : userId: %@", user.id);
-            userId = @([user.id floatValue] + 1);
+            userId = @([user.id integerValue]);
+            count = count +1;
+            cntNumber = [NSNumber numberWithInt:count];
+            
         }
+        userId = @([cntNumber integerValue] );
+        
         
         //
         // Create a new User object for the Student with a ROLE of student.
         //
         NSString *strStudentName = [self.studentName text];
-        // NSLog(@" AddStudent String STUDENTNAME : %@", strStudentName);
+        NSLog(@" AddStudent String STUDENTNAME : %@", strStudentName);
         
         if(strStudentName.length > 17){
             NSString *mySmallerString = [strStudentName substringToIndex:17];
@@ -164,7 +175,8 @@ BOOL isCancelledAdd = false;
         newUser.role = [NSNumber numberWithInt:2]; // 2 = student
         newUser.studentIdNumber = self.studentIdNumber.text;
         newUser.synced = false;
-        // NSLog(@" Created Student : %@", newUser);
+        newUser.profileImg = UIImagePNGRepresentation(self.imagePicker.image);
+        NSLog(@" Created Student : %@", newUser);
         
         //
         // Find and set the selected behavior. >  ClassRoomBehaviors
@@ -177,8 +189,27 @@ BOOL isCancelledAdd = false;
         NSArray *fetchedObjects6 = [context executeFetchRequest:fetchRequest6 error:&error];
         for (ClassroomBehaviors *crb in fetchedObjects6) {
             // NSLog(@" Found ClassRoomBehaviors : id: %@", crb.id);
-            ClassRoomBehaviorsId = @([crb.id floatValue] + 1);
+            ClassRoomBehaviorsId = @([ClassRoomBehaviorsId integerValue] + 1);
         }
+        
+        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
+        NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+        
+        //
+        // Use a predicate to query the behaviors table to get the id to be behaviorId
+        //
+        NSFetchRequest *fetchRequest7 = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity7 = [NSEntityDescription entityForName:@"Behaviors"  inManagedObjectContext:context];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE %@",selBehavior];
+        fetchRequest7.predicate = predicate;
+        [fetchRequest7 setEntity:entity7];
+        NSArray *fetchedObjects7 = [context executeFetchRequest:fetchRequest7 error:&error];
+        for (Behaviors *behavior in fetchedObjects7) {
+            NSLog(@" Found Behaviors : id: %@", behavior.id);
+            selectedBehavior = [behavior.id integerValue];
+        }
+        NSLog(@" selectedBehavior :    %ld", (long)selectedBehavior);
+        
         
         //
         // Create a new classroomBehavior record for the student-behavior-interval
@@ -188,12 +219,11 @@ BOOL isCancelledAdd = false;
         newCRB.id = ClassRoomBehaviorsId;
         newCRB.studentId = userId;
         newCRB.statusId = @(1);
-        // NSLog(@" Createing a new CRB - 2  ");
+        NSLog(@" Createing a new CRB - 2  ");
         
-        NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-        // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+
         newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-        // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+        NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         newCRB.synced = false;
         
         //
@@ -249,14 +279,14 @@ BOOL isCancelledAdd = false;
         [fetchRequest4 setEntity:entity4];
         NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
         for (ClassroomBehaviors *crb in fetchedObjects4) {
-            // NSLog(@" AddStudentController:Exiting() ");
-            // NSLog(@" ----------------------------------------");
-            // NSLog(@" Found CRB : Id          : %@", crb.id);
-            // NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-            // NSLog(@" Found CRB : status      : %@", crb.statusId);
-            // NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-            // NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-            // NSLog(@" ----------------------------------------");
+             NSLog(@" AddStudentController:Exiting() ");
+             NSLog(@" ----------------------------------------");
+             NSLog(@" Found CRB : Id          : %@", crb.id);
+             NSLog(@" Found CRB : studentId   : %@", crb.studentId );
+             NSLog(@" Found CRB : status      : %@", crb.statusId);
+             NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
+             NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
+             NSLog(@" ----------------------------------------");
         }
         
         isValidStudentName = true;
@@ -266,28 +296,10 @@ BOOL isCancelledAdd = false;
         // Segway to the TeacherMainView
         //
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-//        [self.window makeKeyAndVisible];
-//        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-        
-//        if( IS_IPHONE_5 ) {
-//            //
-//            // Segue to iphone5 view
-//            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
-//            
-//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
-//            [self.window makeKeyAndVisible];
-//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
-//        else {
-            //
-            // Segway to the TeacherMainView
-            //
-            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-            [self.window makeKeyAndVisible];
-            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+ 
 
     }
     
@@ -370,4 +382,120 @@ BOOL isCancelledAdd = false;
     
     [self.behaviorPicker reloadAllComponents];
 }
+
+
+
+- (IBAction)takePicture:(id)sender {
+    
+    // NSLog(@"DEBUG: you touched the take picture button.");
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
+    
+}
+
+
+- (IBAction)selectPicture:(id)sender {
+    
+    // NSLog(@"DEBUG: you touched the select picture button.");
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    // NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
+    
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imagePicker.image = chosenImage;
+    self.imagePicker.clearsContextBeforeDrawing = true;
+    self.imagePicker.clipsToBounds = true;
+    self.imagePicker.center = self.imagePicker.superview.center;
+    self.imagePicker.image = [self resizedImageWithContentMode :self.imagePicker];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    // NSLog(@"DEBUG: didCancelPickMedia");
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+// Resizes the image according to the given content mode, taking into account the image's orientation
+//- (UIImage *)resizedImageWithContentMode  :(UIImage*)imageToScale  :(CGSize)bounds  :(CGInterpolationQuality)quality {
+- (UIImage *)resizedImageWithContentMode  :(UIImageView*)imgPicker  {
+    
+    
+    CGRect bounds = self.imagePicker.bounds;
+    
+    
+    //Get the size we want to scale it to
+    CGFloat horizontalRatio = width / self.imagePicker.image.size.width;     // <----------  THIS COULD WRONG width & heigt values.  !!!!!!!
+    CGFloat verticalRatio = height / self.imagePicker.image.size.height;
+    CGFloat ratio;
+    
+   // switch (contentMode) {
+   //     case UIViewContentModeScaleAspectFill:
+   //         ratio = MAX(horizontalRatio, verticalRatio);
+   //         break;
+            
+   //     case UIViewContentModeScaleAspectFit:
+            ratio = MIN(horizontalRatio, verticalRatio);
+  //          break;
+            
+   //     default:
+   //         NSLog(@"DEBUG: Unsupported content mode");
+          //  [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %d", contentMode];
+   // }
+    
+    //...and here it is
+    CGSize newSize = CGSizeMake(self.imagePicker.image.size.width * ratio, self.imagePicker.image.size.height * ratio);
+    
+    
+    //start scaling it
+    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
+    CGImageRef imageRef = self.imagePicker.image.CGImage;
+    CGContextRef bitmap = CGBitmapContextCreate(NULL,
+                                                newRect.size.width,
+                                                newRect.size.height,
+                                                CGImageGetBitsPerComponent(imageRef),
+                                                0,
+                                                CGImageGetColorSpace(imageRef),
+                                                CGImageGetBitmapInfo(imageRef));
+    
+    CGContextSetInterpolationQuality(bitmap, kCGInterpolationLow);
+    
+    // Draw into the context; this scales the image
+    CGContextDrawImage(bitmap, newRect, imageRef);
+    
+    // Get the resized image from the context and a UIImage
+    CGImageRef newImageRef = CGBitmapContextCreateImage(bitmap);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
+    // Clean up
+    CGContextRelease(bitmap);
+    CGImageRelease(newImageRef);
+    
+    return newImage;
+}
+
 @end

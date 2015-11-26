@@ -117,11 +117,14 @@
     NSString *jsonString;
     
     NSMutableDictionary *fields = [NSMutableDictionary dictionary];
+    NSLog(@" fields   :   %@ ", fields);
     for (NSAttributeDescription *attribute in [[user entity] properties]) {
         NSString *attributeName = attribute.name;
-        id attributeValue = [user valueForKey:attributeName];
-        if (attributeValue) {
-            [fields setObject:attributeValue forKey:attributeName];
+        if(! [attributeName isEqualToString:@"profileImg"]){
+            id attributeValue = [user valueForKey:attributeName];
+            if (attributeValue) {
+                [fields setObject:attributeValue forKey:attributeName];
+            }
         }
     }
     
@@ -129,7 +132,7 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
-    // NSLog(@"\n jsonData = %@", jsonData);
+    NSLog(@"\n jsonData = %@", jsonData);
  
     if (! jsonData) {
         // NSLog(@"Got an error: %@", error);
@@ -244,13 +247,17 @@
     NSString *jsonString;
     
     NSMutableDictionary *fields = [NSMutableDictionary dictionary];
+    NSLog(@" fields   :   %@ ", fields);
     for (NSAttributeDescription *attribute in [[user entity] properties]) {
         NSString *attributeName = attribute.name;
-        id attributeValue = [user valueForKey:attributeName];
-        if (attributeValue) {
-            [fields setObject:attributeValue forKey:attributeName];
+        if(! [attributeName isEqualToString:@"profileImg"]){
+            id attributeValue = [user valueForKey:attributeName];
+            if (attributeValue) {
+                [fields setObject:attributeValue forKey:attributeName];
+            }
         }
     }
+    NSLog(@" fields   :   %@ ", fields);
     
     //
     // Add the teacherId to associate this student to.
@@ -265,7 +272,7 @@
     if (appDelegate.userRemoteId == nil){
         appDelegate.userRemoteId = appDelegate.teacherUser.remoteId;
     }
-        
+    
     
     [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
     [fields setObject:selectedBehavior forKey:@"behavior"];

@@ -35,7 +35,16 @@ BOOL isCancelledUpdate = false;
     
     // NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
     
-    self.inviteStudentBtn.hidden=YES;
+    //
+    // TODO: trying this to see if this is OK.
+    //
+    if(self.student == nil){
+        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        self.student = appDelegate.currentSelectedStudent;
+    }
+    
+    
+    //self.inviteStudentBtn.hidden=YES;
     self.deleteStudentBtn.hidden=YES;
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@", @"Manage ", student.firstName];
@@ -77,11 +86,31 @@ BOOL isCancelledUpdate = false;
             studentInfo = crb;
         }
     }
+    NSLog(@" studentInfo.behaviorId  :    %@", studentInfo.behaviorId );
+    
     //
     // Set the selected behavior and interval.
     //
-    [self.behaviorUpdatePicker selectRow:[studentInfo.behaviorId integerValue] inComponent:0 animated:YES];
+    
+    //
+    // HACK!!
+    //
+    NSNumber *bid = studentInfo.behaviorId;
+    int count = [bid intValue] -1;
+    NSLog(@" USING :  behaviorId  :    %d", count );
+
+    
+    [self.behaviorUpdatePicker selectRow:count inComponent:0 animated:YES];
     [self.intervalUpdatePicker selectRow:[studentInfo.trackingInterval integerValue] inComponent:0 animated:YES];
+    
+    
+    //
+    // Set the selected image from stored core data image selected on Add Student.
+    //
+    //NSData *selectedObject = self.student.profileImg;
+    UIImage* image = [UIImage imageWithData:self.student.profileImg];
+    self.studentImg.image = image;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -311,6 +340,7 @@ BOOL isCancelledUpdate = false;
 
 
 - (IBAction)inviteStudent:(id)sender {
+    
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"COMING SOON"
                                                      message:@"This feature is still under development."
                                                     delegate:self

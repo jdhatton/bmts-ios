@@ -23,13 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NSLog(@"DEBUG: StudentViewController::loading...   student = %@", student);
+    NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
     
     
     
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
     
-    NSString *headerText = [NSString stringWithFormat:@"%@%@", @" ", student.firstName];
+
+    
+    //
+    // TODO: trying this to see if this is OK.
+    //
+    if(self.student == nil){
+        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        self.student = appDelegate.currentSelectedStudent;
+    }
+    
+     NSLog(@"DEBUG: StudentViewController::loading... [.2.]  student = %@", self.student);
+    
+    
+    //
+    // TODO: move down to if block?
+    //
+    NSString *headerText = [NSString stringWithFormat:@"%@%@", @" ", self.student.firstName];
     self.dayHeaderLabel.text = headerText;
     
     if( self.student != nil) {

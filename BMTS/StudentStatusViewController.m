@@ -32,6 +32,14 @@ int selectedStatus;
     
     // NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
     
+    //
+    // TODO: trying this to see if this is OK.
+    //
+    if(self.student == nil){
+        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        self.student = appDelegate.currentSelectedStudent;
+    }
+    
     
     NSString *headerText = [NSString stringWithFormat:@"%@%@%@", @"Select ", student.firstName, @"'s current status."];
     statusHeaderLabel.text = headerText;
@@ -154,24 +162,10 @@ int selectedStatus;
         // Segue to the TeacherMainView
         //
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        if( IS_IPHONE_5 ) {
-//            //
-//            // Segue to iphone5 view
-//            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
-//            
-//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
-//            [self.window makeKeyAndVisible];
-//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
-//        else {
-            //
-            // Segway to the TeacherMainView
-            //
-            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-            [self.window makeKeyAndVisible];
-            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
+
         
 
     }

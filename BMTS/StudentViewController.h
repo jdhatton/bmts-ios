@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "User.h"
 
 
-@interface StudentViewController : UIViewController
+@interface StudentViewController : UITabBarController
 
 @property (weak, nonatomic) User *student;
 @property (strong, nonatomic) UIWindow *window;

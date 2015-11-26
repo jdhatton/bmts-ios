@@ -40,6 +40,7 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize userRemoteId, userPassword, teacherUser;
+@synthesize currentSelectedStudent;
 
 
 AppDelegate *appDelegate = nil;
@@ -208,6 +209,13 @@ AppDelegate *appDelegate = nil;
     } else {
         // NSLog(@" FAILED TO FIND THE USERCOOKIE and USER to forward to main view - Showing Login/CreateAccount flow........ ");
     }
+    
+    
+    //
+    // TODO: does this actually work? is it a good idea? Maybe we need to revisit this at some point?
+    //
+    currentSelectedStudent = Nil;
+    
     
     return YES;
 }

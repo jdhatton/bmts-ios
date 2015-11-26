@@ -30,4 +30,5 @@
 @dynamic password;
 @dynamic studentIdNumber;
 @dynamic deviceId;
+@dynamic deleted;
 @end

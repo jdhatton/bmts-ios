@@ -186,14 +186,20 @@ bool isValidForSegueToMain = false;
         // Here we are going to load the list of behaviors one time from the static list.
         // Now we can add a new behavior to the list when the user performs that flow.
         //
-        NSInteger count = @1;
+    
+    
+    NSNumber *cntNumber = [NSNumber numberWithInt:1];
+    int count = [cntNumber intValue];
+    
         for(NSString *behaviorName in appDelegate.behaviorListData ){
             Behaviors *newBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"Behaviors" inManagedObjectContext:context];
             newBehavior.id = [NSNumber numberWithInteger:count];
             newBehavior.name = behaviorName;
             newBehavior.descr = behaviorName;
             newBehavior.synced = false;
-            count ++;
+            cntNumber = [NSNumber numberWithInt:count];
+            count = count +1;
+
         }
     
             if (![context save:&error]) {

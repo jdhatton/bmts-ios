@@ -7,16 +7,36 @@
 //
 
 #import "StudentViewController.h"
+#import "AppDelegate.h"
+#import "User.h"
+#import "TeacherMainViewController.h"
+#import "StudentStatusViewController.h"
+#import "UserUIBarButtonItem.h"
+#import "StudentStatusViewController.h"
+#import "AvatarViewController.h"
+#import "CommentViewController.h"
+#import "ManageStudentViewController.h"
+#import "StudentMainView.h"
+#import "StudentViewController.h"
+#include "Liquid.h"
 
-@interface StudentViewController ()
-
-@end
 
 @implementation StudentViewController
 
+@synthesize student, window;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //
+    // Set data (student) on the tabbed view controllers.
+    //
+    
+    NSArray *viewControllers = [self.tabBarController viewControllers];
+    NSLog(@"DEBUG: TAB:viewControllers  %@",viewControllers);
+    NSLog(@"DEBUG: self.student  %@",self.student);
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +53,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    StudentStatusViewController *controller = (StudentStatusViewController *)segue.destinationViewController;
+    CommentViewController *commentCtrl = (CommentViewController *)segue.destinationViewController;
+    AvatarViewController *avatarCtrl = (AvatarViewController *)segue.destinationViewController;
+    ManageStudentViewController *settingsCtrl = (ManageStudentViewController *)segue.destinationViewController;
+    StudentMainView *studentMainCtrl = (StudentMainView *)segue.destinationViewController;
+    StudentViewController *studentViewCtrl = (StudentViewController *)segue.destinationViewController;
+    
+    controller.student = self.student;
+    commentCtrl.student = self.student;
+    avatarCtrl.student = self.student;
+    settingsCtrl.student = self.student;
+    studentMainCtrl.student = self.student;
+    studentViewCtrl.student = self.student;
+    
+}
+
+
 
 @end
