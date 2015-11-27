@@ -22,7 +22,7 @@
 
 @implementation StudentStatusViewController
 
-@synthesize student, window = _window, greenButton, yellowButon, redButton, statusHeaderLabel;
+@synthesize student, window = _window, greenButton, yellowButon, redButton, statusHeaderLabel,statusCommentText;
 
 
 int selectedStatus;
@@ -32,9 +32,12 @@ int selectedStatus;
     
     // NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
     
-    //
-    // TODO: trying this to see if this is OK.
-    //
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    
     if(self.student == nil){
         NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
@@ -50,6 +53,22 @@ int selectedStatus;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+-(void)dismissKeyboard {
+    [statusCommentText resignFirstResponder];
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [statusCommentText resignFirstResponder];
+    [self.view endEditing:YES];
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation
@@ -128,6 +147,7 @@ int selectedStatus;
         newStudentBehavior.studentId = self.student.id;
         newStudentBehavior.statusId = [NSNumber numberWithInt:selectedStatus];
         newStudentBehavior.synced = false;
+        newStudentBehavior.statusComment = statusCommentText.text;
       
 //        
 //                NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];

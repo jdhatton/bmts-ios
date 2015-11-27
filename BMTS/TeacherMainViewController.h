@@ -39,4 +39,8 @@
 
 @property (weak, nonatomic) User *selectedStudent;
 
+
+@property (weak, nonatomic) IBOutlet UITableView *studentListTableView;
+
+
 @end

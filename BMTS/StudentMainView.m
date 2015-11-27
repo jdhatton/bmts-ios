@@ -25,23 +25,13 @@
     
     NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
     
-    
-    
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
     
-
-    
-    //
-    // TODO: trying this to see if this is OK.
-    //
     if(self.student == nil){
         NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
-    
-     NSLog(@"DEBUG: StudentViewController::loading... [.2.]  student = %@", self.student);
-    
-    
+
     //
     // TODO: move down to if block?
     //
@@ -148,37 +138,19 @@
             cell.imageView.image = [UIImage imageNamed:@"statusCircleGREEN.jpg"];
  
     cell.textLabel.text = [items objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = @"  We can put the comment text here from StudentBehaviors.statusComment. Cool stuff...";
     
 }
 
 
 - (IBAction)save:(id)sender {
-    
-    
         //
         // Segue to the TeacherMainView
         //
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        if( IS_IPHONE_5 ) {
-//            //
-//            // Segue to iphone5 view
-//            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
-//            
-//            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
-//            [self.window makeKeyAndVisible];
-//            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
-//        else {
-            //
-            // Segway to the TeacherMainView
-            //
-            TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
-            [self.window makeKeyAndVisible];
-            [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
-//        }
-    
-        
+        TeacherMainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
+        [self.window makeKeyAndVisible];
+        [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
 }
     
 

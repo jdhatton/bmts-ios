@@ -113,10 +113,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ifV-aA-ZTq" kind="relationship" relationship="viewControllers" id="Z3m-Si-UmE"/>
-                        <segue destination="wrl-0o-CLV" kind="relationship" relationship="viewControllers" id="K85-tb-8EI"/>
-                        <segue destination="a1m-Cq-yIh" kind="relationship" relationship="viewControllers" id="ol1-oP-p51"/>
                         <segue destination="7x5-HR-zIs" kind="relationship" relationship="viewControllers" id="h5R-V1-vB2"/>
+                        <segue destination="a1m-Cq-yIh" kind="relationship" relationship="viewControllers" id="ol1-oP-p51"/>
+                        <segue destination="wrl-0o-CLV" kind="relationship" relationship="viewControllers" id="K85-tb-8EI"/>
+                        <segue destination="ifV-aA-ZTq" kind="relationship" relationship="viewControllers" id="Z3m-Si-UmE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIB-0N-0ES" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -555,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mJ-hV-cjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3004.5" y="168.5"/>
+            <point key="canvasLocation" x="-3404.5" y="118.5"/>
         </scene>
         <!--Teacher Main View-->
         <scene sceneID="xf7-Y8-jq3">
@@ -584,18 +584,6 @@
                                     <segue destination="hte-3k-ekS" kind="show" identifier="addStudentSegue" id="SCN-zt-OSQ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-TS-Og9">
-                                <rect key="frame" x="0.0" y="7" width="375" height="469"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="i1N-B9-We4" id="sIW-87-ZMm"/>
-                                    <outlet property="delegate" destination="i1N-B9-We4" id="MJf-dh-OxH"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umV-13-MhZ">
                                 <rect key="frame" x="76" y="569" width="214" height="35"/>
                                 <animations/>
@@ -611,6 +599,19 @@
                                     <segue destination="agV-c6-dxF" kind="show" id="TZc-Eb-WDz"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-TS-Og9">
+                                <rect key="frame" x="0.0" y="7" width="375" height="469"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i1N-B9-We4" id="sIW-87-ZMm"/>
+                                    <outlet property="delegate" destination="i1N-B9-We4" id="MJf-dh-OxH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -630,6 +631,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addStudentButton" destination="Fht-Fp-Drh" id="OQM-5z-pJv"/>
+                        <outlet property="studentListTableView" destination="bVX-TS-Og9" id="lch-b9-FLJ"/>
                         <segue destination="0wF-Nr-3yK" kind="show" identifier="studentViewSegue" id="gw1-S4-jwU"/>
                     </connections>
                 </viewController>
@@ -855,16 +857,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LI9-wp-AlB">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LI9-wp-AlB">
                                 <rect key="frame" x="21" y="55" width="333" height="517"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="517" id="o8P-pK-F5r"/>
                                 </constraints>
-                                <color key="separatorColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ifV-aA-ZTq" id="zU7-Sx-MYc"/>
                                     <outlet property="delegate" destination="ifV-aA-ZTq" id="ABQ-f9-jhy"/>
@@ -910,7 +913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-OD-rWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2459.5" y="44.5"/>
+            <point key="canvasLocation" x="-2923.5" y="45.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nQE-zm-nhi">
@@ -1250,7 +1253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmR-EW-n1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3805" y="131"/>
+            <point key="canvasLocation" x="-4172" y="901"/>
         </scene>
         <!--Status-->
         <scene sceneID="V1N-1B-EMZ">
@@ -1265,11 +1268,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-Ff-8FO">
-                                <rect key="frame" x="78" y="209" width="218" height="111"/>
+                                <rect key="frame" x="78" y="198" width="218" height="93"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.88045601220000003" green="0.80196422909840692" blue="0.12864722057913369" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="111" id="QfV-48-QY8"/>
+                                    <constraint firstAttribute="height" constant="93" id="QfV-48-QY8"/>
                                     <constraint firstAttribute="width" constant="218" id="s7E-2T-VVk"/>
                                 </constraints>
                                 <connections>
@@ -1277,23 +1280,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-It-V0w">
-                                <rect key="frame" x="78" y="77" width="218" height="114"/>
+                                <rect key="frame" x="78" y="77" width="218" height="97"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.050797815489123765" green="0.88045601220000003" blue="0.039303237737600638" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="218" id="HeP-ii-6rc"/>
-                                    <constraint firstAttribute="height" constant="114" id="Wzv-H8-7la"/>
+                                    <constraint firstAttribute="height" constant="97" id="Wzv-H8-7la"/>
                                 </constraints>
                                 <connections>
                                     <action selector="clickedGreenStatus:" destination="7x5-HR-zIs" eventType="touchUpInside" id="dW3-di-Tex"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-WH-P6o">
-                                <rect key="frame" x="78" y="337" width="218" height="108"/>
+                                <rect key="frame" x="78" y="323" width="218" height="96"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.88045601220000003" green="0.017056482330000001" blue="0.1001961267" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="108" id="dMS-sh-Uc0"/>
+                                    <constraint firstAttribute="height" constant="96" id="dMS-sh-Uc0"/>
                                     <constraint firstAttribute="width" constant="218" id="fAA-69-pvn"/>
                                 </constraints>
                                 <connections>
@@ -1301,7 +1304,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uF-RD-fng">
-                                <rect key="frame" x="49" y="28" width="277" height="21"/>
+                                <rect key="frame" x="49" y="20" width="277" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="99j-v7-SA7"/>
@@ -1352,6 +1355,14 @@
                                     <segue destination="i1N-B9-We4" kind="show" id="0ir-Nf-oCm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" borderStyle="bezel" placeholder="Add Comment" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FBs-5M-Hf5">
+                                <rect key="frame" x="49" y="450" width="277" height="82"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.79376675507552552" green="0.85900815095295868" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1360,14 +1371,14 @@
                             <constraint firstItem="3uF-RD-fng" firstAttribute="centerX" secondItem="rv3-It-V0w" secondAttribute="centerX" constant="0.5" id="4RV-B3-8Gr"/>
                             <constraint firstItem="hZG-WH-P6o" firstAttribute="centerX" secondItem="MXA-Ff-8FO" secondAttribute="centerX" id="6a9-cG-Zkl"/>
                             <constraint firstItem="hZG-WH-P6o" firstAttribute="centerX" secondItem="h2e-0X-onC" secondAttribute="centerX" constant="104.5" id="C9e-nn-YGx"/>
-                            <constraint firstItem="MXA-Ff-8FO" firstAttribute="top" secondItem="rv3-It-V0w" secondAttribute="bottom" constant="18" id="Iam-GS-aGa"/>
+                            <constraint firstItem="MXA-Ff-8FO" firstAttribute="top" secondItem="rv3-It-V0w" secondAttribute="bottom" constant="24" id="Iam-GS-aGa"/>
                             <constraint firstAttribute="centerX" secondItem="3uF-RD-fng" secondAttribute="centerX" id="PeU-Xv-QiP"/>
                             <constraint firstItem="rv3-It-V0w" firstAttribute="centerX" secondItem="MXA-Ff-8FO" secondAttribute="centerX" id="W8b-Ic-oDQ"/>
-                            <constraint firstItem="rv3-It-V0w" firstAttribute="top" secondItem="3uF-RD-fng" secondAttribute="bottom" constant="28" id="ZN7-XL-1FH"/>
-                            <constraint firstItem="3uF-RD-fng" firstAttribute="top" secondItem="IAo-u9-uAm" secondAttribute="top" constant="28" id="cfX-zC-1cA"/>
+                            <constraint firstItem="rv3-It-V0w" firstAttribute="top" secondItem="3uF-RD-fng" secondAttribute="bottom" constant="36" id="ZN7-XL-1FH"/>
+                            <constraint firstItem="3uF-RD-fng" firstAttribute="top" secondItem="IAo-u9-uAm" secondAttribute="top" constant="20" id="cfX-zC-1cA"/>
                             <constraint firstAttribute="bottom" secondItem="h2e-0X-onC" secondAttribute="bottom" constant="83" id="ufp-Jf-pLv"/>
                             <constraint firstItem="hZG-WH-P6o" firstAttribute="centerX" secondItem="oyJ-EP-epC" secondAttribute="centerX" constant="-92.5" id="wn5-1e-F7i"/>
-                            <constraint firstItem="hZG-WH-P6o" firstAttribute="top" secondItem="MXA-Ff-8FO" secondAttribute="bottom" constant="17" id="yj1-Jr-Awg"/>
+                            <constraint firstItem="hZG-WH-P6o" firstAttribute="top" secondItem="MXA-Ff-8FO" secondAttribute="bottom" constant="32" id="yj1-Jr-Awg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" image="full_moon-24" id="0xs-G9-Mch"/>
@@ -1375,13 +1386,14 @@
                     <connections>
                         <outlet property="greenButton" destination="rv3-It-V0w" id="ZcW-Uh-q7r"/>
                         <outlet property="redButton" destination="hZG-WH-P6o" id="K3v-ek-5nx"/>
+                        <outlet property="statusCommentText" destination="FBs-5M-Hf5" id="bPN-7g-9xE"/>
                         <outlet property="statusHeaderLabel" destination="3uF-RD-fng" id="hpg-kE-mQS"/>
                         <outlet property="yellowButon" destination="MXA-Ff-8FO" id="8Xu-PZ-1bg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1990.5" y="-171.5"/>
+            <point key="canvasLocation" x="-2202.5" y="-67.5"/>
         </scene>
         <!--Comment-->
         <scene sceneID="Mac-g0-RuQ">
@@ -2127,7 +2139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-uf-jSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2169" y="1118"/>
+            <point key="canvasLocation" x="-3421" y="1382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-Hz-nJE">
@@ -2593,8 +2605,8 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Cf7-Pc-IAz"/>
         <segue reference="SCN-zt-OSQ"/>
-        <segue reference="X0Z-VT-WKG"/>
         <segue reference="aK1-Qg-wuc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

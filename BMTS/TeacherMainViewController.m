@@ -21,7 +21,7 @@
 #import "ClassroomBehaviors.h"
 #import "Behaviors.h"
 #include "Liquid.h"
-
+#include <QuartzCore/QuartzCore.h>
 
 @interface TeacherMainViewController ()
 
@@ -56,6 +56,9 @@ NSNumber *STATUS_RED;
     self.students = [NSMutableArray new];
     
 
+    self.studentListTableView.layer.cornerRadius=5;
+    
+    
     
     NSString *userName = @"";
     
@@ -296,11 +299,11 @@ NSNumber *STATUS_RED;
     
     NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity4 = [NSEntityDescription entityForName:@"ClassroomBehaviors" inManagedObjectContext:context];
-    fetchRequest.predicate = predicate;
+    fetchRequest4.predicate = predicate;
     [fetchRequest4 setEntity:entity4];
     NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
     for (ClassroomBehaviors *crb in fetchedObjects4) {
-         NSLog(@" AddStudentController:Exiting() ");
+
          NSLog(@" ----------------------------------------");
          NSLog(@" Found CRB : Id          : %@", crb.id);
          NSLog(@" Found CRB : studentId   : %@", crb.studentId );
@@ -309,12 +312,31 @@ NSNumber *STATUS_RED;
          NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
          NSLog(@" ----------------------------------------");
         
-         cell.detailTextLabel.text = @"        Tracking:  [TODO: Set to the selected]";
-
+        NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %d",[crb.behaviorId intValue]];
+        fetchRequest5.predicate = predicate;
+        [fetchRequest5 setEntity:entity5];
+        NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
+        for (Behaviors *behavior in fetchedObjects5) {
+            NSLog(@" ----------------------------------------");
+            NSLog(@" Found Behavior : Id          : %@", behavior.id);
+            NSLog(@" Found Behavior : studentId   : %@", behavior.name );
+            NSLog(@" Found Behavior : status      : %@", behavior.descr);
+            NSLog(@" ----------------------------------------");
+            
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tracking:      %@ ", behavior.name];
+            
+        }
     }
 
-
     cell.textLabel.text = student.firstName;
+    
+    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 4)];/// change size as you need.
+    separatorLineView.backgroundColor = [UIColor blueColor];// you can also put image here
+    [cell.contentView addSubview:separatorLineView];
+    
+ 
     
 }
 
@@ -329,7 +351,6 @@ NSNumber *STATUS_RED;
     self.selectedStudent = student;
     [self performSegueWithIdentifier:@"studentViewSegue" sender:self];
 }
-
 
 
 @end

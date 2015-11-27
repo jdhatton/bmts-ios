@@ -71,6 +71,7 @@
     </entity>
     <entity name="StudentBehaviors" representedClassName="StudentBehaviors" syncable="YES">
         <attribute name="createdDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusComment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="statusId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -130,7 +131,7 @@
         <element name="PaidEnum" positionX="18" positionY="63" width="128" height="90"/>
         <element name="Status" positionX="-36" positionY="9" width="128" height="105"/>
         <element name="StatusEnums" positionX="0" positionY="45" width="128" height="90"/>
-        <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="105"/>
+        <element name="StudentBehaviors" positionX="-9" positionY="90" width="128" height="120"/>
         <element name="StudentStatusLog" positionX="0" positionY="117" width="128" height="150"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="360"/>
         <element name="UserCookie" positionX="-54" positionY="-9" width="128" height="103"/>
