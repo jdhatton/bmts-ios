@@ -350,6 +350,7 @@
 		890759911A0B110B000A30DA /* BMTS */ = {
 			isa = PBXGroup;
 			children = (
+				8936AC5D1C0E86AF001844A8 /* IPadViews */,
 				8941B43D1B0BE8C200ADE9C7 /* Registration */,
 				89C854991AD089E600740DB3 /* REST */,
 				899711831A75D9480044AB66 /* Models */,
@@ -361,12 +362,6 @@
 				890759D41A159C23000A30DA /* AddStudentViewController.m */,
 				890759D61A159C43000A30DA /* AddParentViewController.h */,
 				890759D71A159C43000A30DA /* AddParentViewController.m */,
-				890759CD1A159BDB000A30DA /* RegisterTwoViewController.h */,
-				890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */,
-				890759D01A159BF0000A30DA /* RegisterThreeViewController.h */,
-				890759D11A159BF0000A30DA /* RegisterThreeViewController.m */,
-				890759CA1A159BBC000A30DA /* RegisterOneViewController.h */,
-				890759CB1A159BBC000A30DA /* RegisterOneViewController.m */,
 				890759961A0B110B000A30DA /* AppDelegate.h */,
 				890759971A0B110B000A30DA /* AppDelegate.m */,
 				890759991A0B110B000A30DA /* RootViewController.h */,
@@ -486,6 +481,13 @@
 			name = TeacherView;
 			sourceTree = "<group>";
 		};
+		8936AC5D1C0E86AF001844A8 /* IPadViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = IPadViews;
+			sourceTree = "<group>";
+		};
 		893BD4A31B5586DC00DCB3E0 /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +541,12 @@
 		8941B43D1B0BE8C200ADE9C7 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				890759D01A159BF0000A30DA /* RegisterThreeViewController.h */,
+				890759D11A159BF0000A30DA /* RegisterThreeViewController.m */,
+				890759CA1A159BBC000A30DA /* RegisterOneViewController.h */,
+				890759CB1A159BBC000A30DA /* RegisterOneViewController.m */,
+				890759CD1A159BDB000A30DA /* RegisterTwoViewController.h */,
+				890759CE1A159BDB000A30DA /* RegisterTwoViewController.m */,
 			);
 			name = Registration;
 			sourceTree = "<group>";

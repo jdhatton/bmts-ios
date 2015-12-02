@@ -19,6 +19,7 @@
 
  NSMutableArray *items;
  NSMutableArray *behaviorList; // = [[NSMutableArray alloc] init];
+ NSMutableArray *comments; // = [[NSMutableArray alloc] init];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +27,7 @@
     NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
     
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
+ 
     
     if(self.student == nil){
         NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
@@ -42,6 +44,7 @@
         
         items = [NSMutableArray arrayWithObjects: nil];
         behaviorList = [NSMutableArray arrayWithObjects: nil];
+        comments = [NSMutableArray arrayWithObjects: nil];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MM/dd/yyyy - hh:mma"];
@@ -79,8 +82,16 @@
                 
                 NSString *stringCreatedDate = [formatter stringFromDate:dateObject];
                 [items addObject:stringCreatedDate];
+                
+                NSLog(@"DEBUG: behavior.statusComment    =    %@",behavior.statusComment);
+                
+                [comments addObject:behavior.statusComment];
             }
         }
+        
+        NSLog(@"DEBUG: AAA:   comments    =    %@",comments);
+        
+        
         
         NSFetchRequest *fetchRequest2 = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];
@@ -145,7 +156,12 @@
     //
     // TODO: set the real value here.
     //
-    cell.detailTextLabel.text = @" TESTING...1.2..3...  We can put the comment text here from StudentBehaviors.statusComment object. Cool stuff that will be here.";
+    NSLog(@"DEBUG: comments    =    %@",comments);
+    
+    NSString* statComment = [comments objectAtIndex:indexPath.row];
+    NSLog(@"DEBUG: statComment    =    %@",statComment);
+    
+    cell.detailTextLabel.text =statComment;
 
     cell.detailTextLabel.numberOfLines = 2;
   //  cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
