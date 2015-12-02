@@ -22,6 +22,7 @@
 		890759D81A159C43000A30DA /* AddParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759D71A159C43000A30DA /* AddParentViewController.m */; };
 		890759E11A159CAF000A30DA /* ParentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890759DF1A159CAF000A30DA /* ParentViewViewController.m */; };
 		89088C201B3C58F600F2CDC7 /* AddBehaviorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */; };
+		8936AC5C1C0CCD41001844A8 /* CustomModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8936AC5B1C0CCD41001844A8 /* CustomModalSegue.m */; };
 		893BD49E1B5565B400DCB3E0 /* AppIcon-29-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 893BD4991B5565B400DCB3E0 /* AppIcon-29-29.png */; };
 		893BD49F1B5565B400DCB3E0 /* AppIcon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 893BD49A1B5565B400DCB3E0 /* AppIcon-76x76.png */; };
 		893BD4A01B5565B400DCB3E0 /* AppIcon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 893BD49B1B5565B400DCB3E0 /* AppIcon-120x120.png */; };
@@ -148,6 +149,8 @@
 		890759DF1A159CAF000A30DA /* ParentViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewViewController.m; sourceTree = "<group>"; };
 		89088C1E1B3C58F600F2CDC7 /* AddBehaviorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBehaviorViewController.h; sourceTree = "<group>"; };
 		89088C1F1B3C58F600F2CDC7 /* AddBehaviorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBehaviorViewController.m; sourceTree = "<group>"; };
+		8936AC5A1C0CCD41001844A8 /* CustomModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModalSegue.h; sourceTree = "<group>"; };
+		8936AC5B1C0CCD41001844A8 /* CustomModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModalSegue.m; sourceTree = "<group>"; };
 		893BD4991B5565B400DCB3E0 /* AppIcon-29-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29-29.png"; sourceTree = "<group>"; };
 		893BD49A1B5565B400DCB3E0 /* AppIcon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-76x76.png"; sourceTree = "<group>"; };
 		893BD49B1B5565B400DCB3E0 /* AppIcon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-120x120.png"; sourceTree = "<group>"; };
@@ -460,6 +463,8 @@
 			children = (
 				89D277AA1AC7830200673CC2 /* StudentMainView.h */,
 				89D277AB1AC7830200673CC2 /* StudentMainView.m */,
+				8936AC5A1C0CCD41001844A8 /* CustomModalSegue.h */,
+				8936AC5B1C0CCD41001844A8 /* CustomModalSegue.m */,
 			);
 			name = StudentView;
 			sourceTree = "<group>";
@@ -861,6 +866,7 @@
 				89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */,
 				89D327751A968A4F00CF3214 /* PaidEnum.m in Sources */,
 				8959E9B01BFB87C20016BDBE /* StudentViewController.m in Sources */,
+				8936AC5C1C0CCD41001844A8 /* CustomModalSegue.m in Sources */,
 				8959E9981BEFF0070016BDBE /* LQHelpers.m in Sources */,
 				890759D51A159C23000A30DA /* AddStudentViewController.m in Sources */,
 				8907599B1A0B110B000A30DA /* RootViewController.m in Sources */,

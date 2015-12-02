@@ -331,10 +331,11 @@ NSNumber *STATUS_RED;
     }
 
     cell.textLabel.text = student.firstName;
-    
-    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 4)];/// change size as you need.
-    separatorLineView.backgroundColor = [UIColor blueColor];// you can also put image here
-    [cell.contentView addSubview:separatorLineView];
+
+// -- seperator
+//    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 4)];/// change size as you need.
+//    separatorLineView.backgroundColor = [UIColor blueColor];// you can also put image here
+//    [cell.contentView addSubview:separatorLineView];
     
  
     
@@ -351,6 +352,16 @@ NSNumber *STATUS_RED;
     self.selectedStudent = student;
     [self performSegueWithIdentifier:@"studentViewSegue" sender:self];
 }
-
+ 
+//Change the Height of the Cell [Default is 44]:
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+//    if (indexPath.section == 0) {
+//        if (indexPath.row == 1) {
+            return 80;
+//        }
+//    }
+//    return 44;
+}
 
 @end

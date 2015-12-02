@@ -121,7 +121,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIB-0N-0ES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2861.5" y="-1108.5"/>
+            <point key="canvasLocation" x="-2859.5" y="-770.5"/>
         </scene>
         <!--Register Three View Controller-->
         <scene sceneID="5Wq-ad-VHz">
@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXR-NT-zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2168.5" y="-1630.5"/>
+            <point key="canvasLocation" x="-3412.5" y="-1662.5"/>
         </scene>
         <!--Manage-->
         <scene sceneID="0BT-Pc-ep8">
@@ -832,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xob-dC-uHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846.5" y="-887.5"/>
+            <point key="canvasLocation" x="-4134.5" y="1224.5"/>
         </scene>
         <!--StudentMainView-->
         <scene sceneID="zYt-IH-rH3">
@@ -857,22 +857,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LI9-wp-AlB">
-                                <rect key="frame" x="21" y="55" width="333" height="517"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="517" id="o8P-pK-F5r"/>
-                                </constraints>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ifV-aA-ZTq" id="zU7-Sx-MYc"/>
-                                    <outlet property="delegate" destination="ifV-aA-ZTq" id="ABQ-f9-jhy"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrB-vX-7sK">
                                 <rect key="frame" x="122" y="580" width="131" height="30"/>
                                 <animations/>
@@ -890,6 +874,22 @@
                                     <segue destination="i1N-B9-We4" kind="show" id="Cf7-Pc-IAz"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LI9-wp-AlB">
+                                <rect key="frame" x="21" y="55" width="333" height="517"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.083338304180000003" green="0.1116451567" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="517" id="o8P-pK-F5r"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ifV-aA-ZTq" id="zU7-Sx-MYc"/>
+                                    <outlet property="delegate" destination="ifV-aA-ZTq" id="ABQ-f9-jhy"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.38179067770000003" green="0.67841342569999996" blue="0.97729245580000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1253,7 +1253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmR-EW-n1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4172" y="901"/>
+            <point key="canvasLocation" x="-3679" y="1225"/>
         </scene>
         <!--Status-->
         <scene sceneID="V1N-1B-EMZ">
@@ -1393,7 +1393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RL-ke-mto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2202.5" y="-67.5"/>
+            <point key="canvasLocation" x="-2340.5" y="12.5"/>
         </scene>
         <!--Comment-->
         <scene sceneID="Mac-g0-RuQ">
@@ -1489,7 +1489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHU-c1-rTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1534.5" y="-558.5"/>
+            <point key="canvasLocation" x="-1876.5" y="-458.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
@@ -1681,7 +1681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8x6-4V-ofg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1502.5" y="-1374.5"/>
+            <point key="canvasLocation" x="-2354.5" y="-1192.5"/>
         </scene>
         <!--Add Behavior View Controller-->
         <scene sceneID="ap9-If-hoQ">
@@ -1771,7 +1771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4V-aF-MBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-827.5" y="-2009.5"/>
+            <point key="canvasLocation" x="-1579.5" y="-1313.5"/>
         </scene>
         <!--Register Two View Controller-->
         <scene sceneID="ocI-RB-d3M">
@@ -2139,7 +2139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvn-uf-jSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3421" y="1382"/>
+            <point key="canvasLocation" x="-3038" y="1446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Td-Hz-nJE">
@@ -2606,8 +2606,8 @@ Internet traffic will be routed through it.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cf7-Pc-IAz"/>
-        <segue reference="SCN-zt-OSQ"/>
         <segue reference="aK1-Qg-wuc"/>
+        <segue reference="bkl-86-E2c"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

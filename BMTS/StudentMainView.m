@@ -117,7 +117,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     return cell;
 }
@@ -126,6 +126,9 @@
     
    cell.backgroundColor = [UIColor clearColor];
     
+    //
+    //
+    //
     NSNumber *status = [behaviorList objectAtIndex:indexPath.row];
  
         if( status == [NSNumber numberWithInteger:1])
@@ -138,8 +141,20 @@
             cell.imageView.image = [UIImage imageNamed:@"statusCircleGREEN.jpg"];
  
     cell.textLabel.text = [items objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @"  We can put the comment text here from StudentBehaviors.statusComment. Cool stuff...";
-    
+
+    //
+    // TODO: set the real value here.
+    //
+    cell.detailTextLabel.text = @" TESTING...1.2..3...  We can put the comment text here from StudentBehaviors.statusComment object. Cool stuff that will be here.";
+
+    cell.detailTextLabel.numberOfLines = 2;
+  //  cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+  //  cell.detailTextLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+ 
+    // -- seperator
+        UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 1)];/// change size as you need.
+        separatorLineView.backgroundColor = [UIColor blackColor];// you can also put image here
+        [cell.contentView addSubview:separatorLineView];
 }
 
 
@@ -153,6 +168,39 @@
         [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
 }
     
+//Change the Height of the Cell [Default is 44]:
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    return 70;
+    //    return 44;
+}
+
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    
+    
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Status Comment:"
+                                                     message:cell.detailTextLabel.text
+                                                    delegate:self
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles: nil];
+    [alert show];
+}
+
+
+
+
+
 
 
 
