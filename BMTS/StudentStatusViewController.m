@@ -44,7 +44,7 @@ int selectedStatus;
     }
     
     
-    NSString *headerText = [NSString stringWithFormat:@"%@%@%@", @"Select ", student.firstName, @"'s current status."];
+    NSString *headerText = [NSString stringWithFormat:@"%@%@%@", @" ", student.firstName, @" "];
     statusHeaderLabel.text = headerText;
     
 }

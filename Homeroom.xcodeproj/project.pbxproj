@@ -381,8 +381,6 @@
 				890759921A0B110B000A30DA /* Supporting Files */,
 				89D3611B1A2366700002EF25 /* DebugViewController.h */,
 				89D3611C1A2366700002EF25 /* DebugViewController.m */,
-				8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */,
-				8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */,
 				89DA45E01A59994F00F7E23D /* AvatarViewController.h */,
 				89DA45E11A59994F00F7E23D /* AvatarViewController.m */,
 				89F2F6ED1A5C9523001B0D17 /* CommentViewController.h */,
@@ -541,6 +539,8 @@
 		8941B43D1B0BE8C200ADE9C7 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				8986916D1A5313C9009E8F52 /* RegisterFourViewController.h */,
+				8986916E1A5313C9009E8F52 /* RegisterFourViewController.m */,
 				890759D01A159BF0000A30DA /* RegisterThreeViewController.h */,
 				890759D11A159BF0000A30DA /* RegisterThreeViewController.m */,
 				890759CA1A159BBC000A30DA /* RegisterOneViewController.h */,

@@ -80,9 +80,13 @@
         
         // NSLog(@" AddBehavior SAVING ");
         if (![context save:&error]) {
-            // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+             NSLog(@"\n\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
             // NSLog(@"\n SUCCESS  - Behavior - UPDATED  ");
+            //
+            // Add to the appDelegate behaviorsList
+            //
+            [appDelegate.behaviorListData addObject:newBehavior];
         }
         
         //

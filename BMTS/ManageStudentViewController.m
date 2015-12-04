@@ -11,10 +11,11 @@
 #import "ClassroomBehaviors.h"
 #import "TeacherMainViewController.h"
 #import "IPhone5MainViewController.h"
+#import "Behaviors.h"
 
 @interface ManageStudentViewController ()
 
-@property (strong, nonatomic) NSArray *behaviorUpdateArray;
+@property (strong, nonatomic) NSMutableArray *behaviorUpdateArray;
 @property (strong, nonatomic) NSArray *intervalUpdateArray;
 
 @end
@@ -34,6 +35,31 @@ BOOL isCancelledUpdate = false;
     [super viewDidLoad];
     
     // NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
+    
+    
+    
+    
+    NSError *errorB;
+    NSManagedObjectContext *contextB = [appDelegate managedObjectContext];
+    NSFetchRequest *fetchRequestB = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityB = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:contextB];
+    [fetchRequestB setEntity:entityB];
+    NSArray *fetchedObjectsB = [contextB executeFetchRequest:fetchRequestB error:&errorB];
+    for (Behaviors *behavior in fetchedObjectsB) {
+         NSLog(@" ----------------------------------------");
+         NSLog(@" Behavior : Id        :  %@", behavior.id);
+         NSLog(@" Behavior : name      :  %@", behavior.name);
+         NSLog(@" Behavior : descr     :  %@", behavior.descr);
+         NSLog(@" Behavior : synced    :  %@", behavior.synced);
+         NSLog(@" ----------------------------------------");
+        //[self.behaviorUpdateArray addObject:behavior.name];
+    }
+    
+    NSLog(@"\n\n Dumping AppDelegate Behaviors Array \n\n ");
+    
+    NSLog(@"%@", appDelegate.behaviorListData);
+    
+    NSLog(@"\n \n ");
     
     //
     // TODO: trying this to see if this is OK.

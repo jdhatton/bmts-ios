@@ -37,6 +37,7 @@ CGFloat width;
  
     //self.behaviorArray = [appDelegate behaviorListData];
     self.behaviorArray = [NSMutableArray array];
+    
     self.intervalArray = [appDelegate intervalListData];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
