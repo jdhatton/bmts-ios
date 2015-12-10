@@ -379,8 +379,6 @@ CGFloat width;
         // NSLog(@" Found Behavior : id: %@", behavior.id);
         [self.behaviorArray  addObject:behavior.name];
     }
-
-    
     [self.behaviorPicker reloadAllComponents];
 }
 
@@ -396,9 +394,6 @@ CGFloat width;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
-    
-    
-    
 }
 
 
@@ -412,15 +407,12 @@ CGFloat width;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
-    
-    
+ 
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     // NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
-    
-    
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.imagePicker.image = chosenImage;
     self.imagePicker.clearsContextBeforeDrawing = true;
@@ -429,7 +421,6 @@ CGFloat width;
     self.imagePicker.image = [self resizedImageWithContentMode :self.imagePicker];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

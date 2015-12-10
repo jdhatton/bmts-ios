@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface ManageStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+@interface ManageStudentViewController : UIViewController < UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate>
+
+
+
 
 @property (weak, nonatomic) User *student;
 @property (strong, nonatomic) UIWindow *window;
@@ -27,7 +30,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *inviteStudentBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *deleteStudentBtn;
+
 @property (weak, nonatomic) IBOutlet UIImageView *studentImg;
 
-@property (weak, nonatomic) IBOutlet UIButton *deleteStudentBtn;
+- (IBAction)takePicture:(id)sender;
+
+- (IBAction)selectPicture:(id)sender;
 @end

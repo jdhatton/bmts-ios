@@ -29,14 +29,17 @@ NSInteger selectedStudentUpdateBehavior = 0;
 NSInteger selectedStudentUpdateInterval = 0;
 ClassroomBehaviors *studentInfo = nil;
 BOOL isCancelledUpdate = false;
-
+CGFloat height;
+CGFloat width;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
     
-    
+    CGRect imageRect = self.studentImg.frame;
+    height = imageRect.size.height;
+    width = imageRect.size.width;
     
     
     NSError *errorB;
@@ -230,6 +233,8 @@ BOOL isCancelledUpdate = false;
         student.studentIdNumber = self.studentIDNumber.text;
     }
     
+    student.profileImg = UIImagePNGRepresentation(self.studentImg.image);
+    
     // NSLog(@" AddStudent SAVING ");
     if (![context save:&error]) {
         // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
@@ -392,6 +397,112 @@ BOOL isCancelledUpdate = false;
     return YES;
 }
 
+
+- (IBAction)takePicture:(id)sender {
+    
+    // NSLog(@"DEBUG: you touched the take picture button.");
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+
+- (IBAction)selectPicture:(id)sender {
+    
+    // NSLog(@"DEBUG: you touched the select picture button.");
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    // NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.studentImg.image = chosenImage;
+    self.studentImg.clearsContextBeforeDrawing = true;
+    self.studentImg.clipsToBounds = true;
+    self.studentImg.center = self.studentImg.superview.center;
+    self.studentImg.image = [self resizedImageWithContentMode :self.studentImg];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    // NSLog(@"DEBUG: didCancelPickMedia");
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+// Resizes the image according to the given content mode, taking into account the image's orientation
+//- (UIImage *)resizedImageWithContentMode  :(UIImage*)imageToScale  :(CGSize)bounds  :(CGInterpolationQuality)quality {
+- (UIImage *)resizedImageWithContentMode  :(UIImageView*)imgPicker  {
+    
+    
+    CGRect bounds = self.studentImg.bounds;
+    
+    
+    //Get the size we want to scale it to
+    CGFloat horizontalRatio = width / self.studentImg.image.size.width;     // <----------  THIS COULD WRONG width & heigt values.  !!!!!!!
+    CGFloat verticalRatio = height / self.studentImg.image.size.height;
+    CGFloat ratio;
+    
+    // switch (contentMode) {
+    //     case UIViewContentModeScaleAspectFill:
+    //         ratio = MAX(horizontalRatio, verticalRatio);
+    //         break;
+    
+    //     case UIViewContentModeScaleAspectFit:
+    ratio = MIN(horizontalRatio, verticalRatio);
+    //          break;
+    
+    //     default:
+    //         NSLog(@"DEBUG: Unsupported content mode");
+    //  [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %d", contentMode];
+    // }
+    
+    //...and here it is
+    CGSize newSize = CGSizeMake(self.studentImg.image.size.width * ratio, self.studentImg.image.size.height * ratio);
+    
+    
+    //start scaling it
+    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
+    CGImageRef imageRef = self.studentImg.image.CGImage;
+    CGContextRef bitmap = CGBitmapContextCreate(NULL,
+                                                newRect.size.width,
+                                                newRect.size.height,
+                                                CGImageGetBitsPerComponent(imageRef),
+                                                0,
+                                                CGImageGetColorSpace(imageRef),
+                                                CGImageGetBitmapInfo(imageRef));
+    
+    CGContextSetInterpolationQuality(bitmap, kCGInterpolationLow);
+    
+    // Draw into the context; this scales the image
+    CGContextDrawImage(bitmap, newRect, imageRef);
+    
+    // Get the resized image from the context and a UIImage
+    CGImageRef newImageRef = CGBitmapContextCreateImage(bitmap);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
+    // Clean up
+    CGContextRelease(bitmap);
+    CGImageRelease(newImageRef);
+    
+    return newImage;
+}
 
 
 @end
