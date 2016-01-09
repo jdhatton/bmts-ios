@@ -38,7 +38,7 @@
 
 - (IBAction)save:(id)sender {
     
-    // NSLog(@" SAVING a new Behavior   :   %@", behavior.text);
+    // //NSLog(@" SAVING a new Behavior   :   %@", behavior.text);
     //
     // Save the value of behavior to the list of behaviors then go back to
     //  Add Student view refreshing the list.
@@ -56,15 +56,15 @@
         if(count == NSNotFound) {
             //Handle error
         }
-        // NSLog(@" Behavior count  :   %lu", (unsigned long)count);
+        // //NSLog(@" Behavior count  :   %lu", (unsigned long)count);
         
         for (Behaviors *behavior in fetchedObjects) {
-            // NSLog(@" ----------------------------------------");
-            // NSLog(@" Behavior : Id        :  %@", behavior.id);
-            // NSLog(@" Behavior : name      :  %@", behavior.name);
-            // NSLog(@" Behavior : descr     :  %@", behavior.descr);
-            // NSLog(@" Behavior : synced    :  %@", behavior.synced);
-            // NSLog(@" ----------------------------------------");
+            // //NSLog(@" ----------------------------------------");
+            // //NSLog(@" Behavior : Id        :  %@", behavior.id);
+            // //NSLog(@" Behavior : name      :  %@", behavior.name);
+            // //NSLog(@" Behavior : descr     :  %@", behavior.descr);
+            // //NSLog(@" Behavior : synced    :  %@", behavior.synced);
+            // //NSLog(@" ----------------------------------------");
         }
         
         //
@@ -76,13 +76,13 @@
         newBehavior.name = behavior.text;
         newBehavior.descr = behavior.text;
         newBehavior.synced = false;
-        // NSLog(@" Creating a new Behavior  ");
+        // //NSLog(@" Creating a new Behavior  ");
         
-        // NSLog(@" AddBehavior SAVING ");
+        // //NSLog(@" AddBehavior SAVING ");
         if (![context save:&error]) {
-             NSLog(@"\n\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+             //NSLog(@"\n\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
-            // NSLog(@"\n SUCCESS  - Behavior - UPDATED  ");
+            // //NSLog(@"\n SUCCESS  - Behavior - UPDATED  ");
             //
             // Add to the appDelegate behaviorsList
             //

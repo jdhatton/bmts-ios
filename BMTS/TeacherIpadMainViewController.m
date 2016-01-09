@@ -48,7 +48,7 @@ User *userEight;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
+    // //NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
     
     NSNumber *STATUS_GREEN = [NSNumber numberWithInt:1];
     NSNumber *STATUS_YELLOW = [NSNumber numberWithInt:2];
@@ -68,20 +68,20 @@ User *userEight;
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (User *user in fetchedObjects) {
-        // NSLog(@" RTeacherMainViewController::Exiting() ");
-        // NSLog(@" ----------------------------------------");
-        // NSLog(@" Found User : userId      :  %@", user.id);
-        // NSLog(@" Found User : email       :  %@", user.email);
-        // NSLog(@" Found User : role        :  %@", user.role);
-        // NSLog(@" Found User : zipcode     :  %@", user.zipCode);
-        // NSLog(@" Found User : district    :  %@", user.schoolDistrict);
-        // NSLog(@" Found User : grade       :  %@", user.schoolGrade);
-        // NSLog(@" Found User : firstName   :  %@", user.firstName);
-        // NSLog(@" Found User : lastName    :  %@", user.lastName);
-        // NSLog(@" Found User : gender      :  %@", user.gender);
-        // NSLog(@" Found User : schoolName  :  %@", user.schoolName);
-        // NSLog(@" Found User : remoteId    :  %@", user.remoteId);
-        // NSLog(@" ----------------------------------------");
+        // //NSLog(@" RTeacherMainViewController::Exiting() ");
+        // //NSLog(@" ----------------------------------------");
+        // //NSLog(@" Found User : userId      :  %@", user.id);
+        // //NSLog(@" Found User : email       :  %@", user.email);
+        // //NSLog(@" Found User : role        :  %@", user.role);
+        // //NSLog(@" Found User : zipcode     :  %@", user.zipCode);
+        // //NSLog(@" Found User : district    :  %@", user.schoolDistrict);
+        // //NSLog(@" Found User : grade       :  %@", user.schoolGrade);
+        // //NSLog(@" Found User : firstName   :  %@", user.firstName);
+        // //NSLog(@" Found User : lastName    :  %@", user.lastName);
+        // //NSLog(@" Found User : gender      :  %@", user.gender);
+        // //NSLog(@" Found User : schoolName  :  %@", user.schoolName);
+        // //NSLog(@" Found User : remoteId    :  %@", user.remoteId);
+        // //NSLog(@" ----------------------------------------");
         
         if([user.id integerValue] == 1 ){
             userName = [NSString stringWithFormat:@"%@%@%@%@", user.firstName,@" ", user.lastName, @"'s Class Room "];
@@ -96,7 +96,7 @@ User *userEight;
     //
     // Hide the toolbars, then show them for each student in the DB.
     //
-    // NSLog(@"DEBUG: TeacherMainViewController - Hiding the toolbars. ");
+    // //NSLog(@"DEBUG: TeacherMainViewController - Hiding the toolbars. ");
     
     toolBarOne.hidden = YES;
     toolBarTwo.hidden = YES;
@@ -113,24 +113,24 @@ User *userEight;
     NSInteger studentCount = 0;
     
     for (User *user in fetchedObjects) {
-        // NSLog(@" TeacherMainView ->  ");
-        // NSLog(@" ----------------------------------------");
-        // NSLog(@" Found User : userId      :  %@", user.id);
-        // NSLog(@" Found User : email       :  %@", user.email);
-        // NSLog(@" Found User : role        :  %@", user.role);
-        // NSLog(@" Found User : zipcode     :  %@", user.zipCode);
-        // NSLog(@" Found User : district    :  %@", user.schoolDistrict);
-        // NSLog(@" Found User : grade       :  %@", user.schoolGrade);
-        // NSLog(@" Found User : firstName   :  %@", user.firstName);
-        // NSLog(@" Found User : lastName    :  %@", user.lastName);
-        // NSLog(@" Found User : gender      :  %@", user.gender);
-        // NSLog(@" Found User : schoolName  :  %@", user.schoolName);
-        // NSLog(@" Found User : status      :  %@", user.status);
-        // NSLog(@" ----------------------------------------");
+        // //NSLog(@" TeacherMainView ->  ");
+        // //NSLog(@" ----------------------------------------");
+        // //NSLog(@" Found User : userId      :  %@", user.id);
+        // //NSLog(@" Found User : email       :  %@", user.email);
+        // //NSLog(@" Found User : role        :  %@", user.role);
+        // //NSLog(@" Found User : zipcode     :  %@", user.zipCode);
+        // //NSLog(@" Found User : district    :  %@", user.schoolDistrict);
+        // //NSLog(@" Found User : grade       :  %@", user.schoolGrade);
+        // //NSLog(@" Found User : firstName   :  %@", user.firstName);
+        // //NSLog(@" Found User : lastName    :  %@", user.lastName);
+        // //NSLog(@" Found User : gender      :  %@", user.gender);
+        // //NSLog(@" Found User : schoolName  :  %@", user.schoolName);
+        // //NSLog(@" Found User : status      :  %@", user.status);
+        // //NSLog(@" ----------------------------------------");
         
         if([user.role integerValue] == 2 ){
             studentCount ++;
-            // NSLog(@" Found Student - [%ld]  : %@", (long)studentCount, user.firstName);
+            // //NSLog(@" Found Student - [%ld]  : %@", (long)studentCount, user.firstName);
             
             // studentOneAvatar, studentOneName, studentOneStatus, studentOneNote, studentOneSettings
             
@@ -144,7 +144,7 @@ User *userEight;
                 studentOneName.title = user.firstName;
                 userOne = user;
                 
-                // NSLog(@"  Student Status - [%ld]  : %@", (long)studentCount, user.status);
+                // //NSLog(@"  Student Status - [%ld]  : %@", (long)studentCount, user.status);
                 if([user.status intValue] == [STATUS_GREEN intValue]){
                     studentOneStatus.tintColor = [UIColor greenColor];
                     //   [[ self.studentOneStatus.class appearance] setImage:greenCircle] ;
@@ -313,7 +313,7 @@ User *userEight;
                 }
             }
             else {
-                // NSLog(@" TOO MANY STUDENTS !!!  Fix!");
+                // //NSLog(@" TOO MANY STUDENTS !!!  Fix!");
             }
         }
     }
@@ -327,7 +327,7 @@ User *userEight;
     }
     
     
-    // NSLog(@"DEBUG: TeacherMainViewController LOADING COMPLETE...");
+    // //NSLog(@"DEBUG: TeacherMainViewController LOADING COMPLETE...");
     
 }
 
@@ -339,14 +339,14 @@ User *userEight;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    // NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
+    // //NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
     
     //
     // TODO: when tapping AddStudent we need to know that here and skip the processing here..
     //
     if([segue.identifier isEqualToString:@"addStudentSegue"]) {
         
-        // NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
+        // //NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
     } else {
         
         StudentStatusViewController *controller = (StudentStatusViewController *)segue.destinationViewController;
@@ -404,7 +404,7 @@ User *userEight;
 
 - (IBAction)clickedStudentOneStatus:(id)sender {
     
-    // NSLog(@"DEBUG:  TeacherMainView:: you clicked the STUDENT-1 status icon.   .");
+    // //NSLog(@"DEBUG:  TeacherMainView:: you clicked the STUDENT-1 status icon.   .");
     
     //
     // Segway to the TeacherMainView
@@ -428,10 +428,10 @@ User *userEight;
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    // NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB - 1   - ");
+    // //NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB - 1   - ");
     [self.view setNeedsDisplay];
     [self viewDidLoad];
-    // NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB  - 2  - ");
+    // //NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB  - 2  - ");
     
 }
 

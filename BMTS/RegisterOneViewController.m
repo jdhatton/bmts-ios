@@ -59,7 +59,7 @@ bool isTeacherSelected = false;
 
 - (IBAction)teacherButtonClicked:(id)sender {
     
-    // NSLog(@"DEBUG: >>>     you touched the TEACHER button");
+    // //NSLog(@"DEBUG: >>>     you touched the TEACHER button");
     [self.teacherButton setBackgroundColor:[UIColor blueColor]];
     isTeacherSelected = true;
 }
@@ -68,7 +68,7 @@ bool isTeacherSelected = false;
 
 - (IBAction)saveTeacher:(id)sender {
     
-    // NSLog(@"DEBUG: >>>  saving teacher  ");
+    // //NSLog(@"DEBUG: >>>  saving teacher  ");
     
 //    if( ! isTeacherSelected ){
     
@@ -82,21 +82,21 @@ bool isTeacherSelected = false;
 //    User *user = nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (User *info in fetchedObjects) {
-        // NSLog(@" Found User : userId: %@", info.id);
+        // //NSLog(@" Found User : userId: %@", info.id);
 //        if(info.id == [NSNumber numberWithInt:1]) {
             //user = info;
             info.role = [NSNumber numberWithInt:1];
-            // NSLog(@" UPDATING  User : Role  :  %@", info.role);
+            // //NSLog(@" UPDATING  User : Role  :  %@", info.role);
             
             if (![context save:&error]) {
-                // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+                // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
             } else {
-                // NSLog(@"\n SUCCESS  - User - UPDATED  ");
-                // NSLog(@"-----------------------------------");
-                // NSLog(@" SUCCESS  - User: id    :  %@", info.id);
-                // NSLog(@" SUCCESS  - User: email :  %@", info.email);
-                // NSLog(@" SUCCESS  - User: role  :  %@", info.role);
-                // NSLog(@"-----------------------------------");
+                // //NSLog(@"\n SUCCESS  - User - UPDATED  ");
+                // //NSLog(@"-----------------------------------");
+                // //NSLog(@" SUCCESS  - User: id    :  %@", info.id);
+                // //NSLog(@" SUCCESS  - User: email :  %@", info.email);
+                // //NSLog(@" SUCCESS  - User: role  :  %@", info.role);
+                // //NSLog(@"-----------------------------------");
             }
         }
 //    }
@@ -137,10 +137,10 @@ bool isTeacherSelected = false;
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    // NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-1   - ");
+    // //NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-1   - ");
     [self.view setNeedsDisplay];
     [self viewDidLoad];
-    // NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-2  - ");
+    // //NSLog(@"DEBUG: RegisterOneViewController  ---   RELOADING VIEW CONTROLLER --- AA-2  - ");
     
 }
 

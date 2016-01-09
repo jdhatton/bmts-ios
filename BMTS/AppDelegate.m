@@ -48,7 +48,7 @@ AppDelegate *appDelegate = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    // NSLog(@"DEBUG:  >>   Loading AppDelegate. ::didFinishLaunchingWithOptions ");
+    // //NSLog(@"DEBUG:  >>   Loading AppDelegate. ::didFinishLaunchingWithOptions ");
     
     BOOL hasUserCookie = false;
     BOOL hasUser = FALSE;
@@ -137,12 +137,12 @@ AppDelegate *appDelegate = nil;
     //
     // Perform the data syncs on load up of the app.  appDelegate.userRemoteId
     //
-    // NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is  :  %@  ", self.userRemoteId);
+    // //NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is  :  %@  ", self.userRemoteId);
     if (self.userRemoteId == nil || self.userRemoteId == (id)[NSNull null]) {
-        // NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
+        // //NSLog(@"\n >>>>  ..2A..    appDelegate.userRemoteId  is NULL  ");
         
     } else {
-        // NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
+        // //NSLog(@"\n >>>>  ..2B..    appDelegate.userRemoteId  =   %@ ", appDelegate.userRemoteId);
         RestController *restCntrlr  = [RestController alloc];
         
         [restCntrlr syncComments: teacherUser];
@@ -158,7 +158,7 @@ AppDelegate *appDelegate = nil;
     #endif
     
     NSString* deviceUID = [DeviceUID uid];
-    NSLog(@"\n\n  deviceUID = %@ ", deviceUID);
+    //NSLog(@"\n\n  deviceUID = %@ ", deviceUID);
     self.deviceID = deviceUID;
     
     //
@@ -176,7 +176,7 @@ AppDelegate *appDelegate = nil;
 //            //
 //            // Segue to iphone5 view
 //            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            //NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
 //            
 //            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
 //            [self.window makeKeyAndVisible];
@@ -207,7 +207,7 @@ AppDelegate *appDelegate = nil;
         
 
     } else {
-        // NSLog(@" FAILED TO FIND THE USERCOOKIE and USER to forward to main view - Showing Login/CreateAccount flow........ ");
+        // //NSLog(@" FAILED TO FIND THE USERCOOKIE and USER to forward to main view - Showing Login/CreateAccount flow........ ");
     }
     
     
@@ -251,7 +251,7 @@ AppDelegate *appDelegate = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            // NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            // //NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }
@@ -324,7 +324,7 @@ AppDelegate *appDelegate = nil;
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
-        // NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        // //NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
     

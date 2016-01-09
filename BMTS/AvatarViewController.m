@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    // NSLog(@"DEBUG: Loading the Avatar View Controller...");
-    // NSLog(@"DEBUG: AvatarViewController::loading...   student = %@", student);
+    // //NSLog(@"DEBUG: Loading the Avatar View Controller...");
+    // //NSLog(@"DEBUG: AvatarViewController::loading...   student = %@", student);
     
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -57,7 +57,7 @@
 
 - (IBAction)takePicture:(id)sender {
     
-    // NSLog(@"DEBUG: you touched the take picture button.");
+    // //NSLog(@"DEBUG: you touched the take picture button.");
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -73,7 +73,7 @@
 
 - (IBAction)selectPicture:(id)sender {
     
-    // NSLog(@"DEBUG: you touched the select picture button.");
+    // //NSLog(@"DEBUG: you touched the select picture button.");
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -87,7 +87,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    // NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
+    // //NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
     
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
@@ -99,7 +99,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
-    // NSLog(@"DEBUG: didCancelPickMedia");
+    // //NSLog(@"DEBUG: didCancelPickMedia");
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -108,7 +108,7 @@
 
 - (IBAction)saveSelection:(id)sender {
     
-    // NSLog(@"DEBUG: saving your selections.");
+    // //NSLog(@"DEBUG: saving your selections.");
     
 }
 

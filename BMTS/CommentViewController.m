@@ -24,13 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // NSLog(@"DEBUG: CommentViewController::loading...   student = %@", student);
+    // //NSLog(@"DEBUG: CommentViewController::loading...   student = %@", student);
     
     //
     // TODO: trying this to see if this is OK.
     //
     if(self.student == nil){
-        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        //NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
     
@@ -55,9 +55,9 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)commentTextField
 {
    
-    // NSLog(@"DEBUG: saving the comment.");
-    // NSLog(@"DEBUG: hiding the keyboard.");
-    // NSLog(@"DEBUG: done.");
+    // //NSLog(@"DEBUG: saving the comment.");
+    // //NSLog(@"DEBUG: hiding the keyboard.");
+    // //NSLog(@"DEBUG: done.");
     
     [self.commentTextField resignFirstResponder];
     return YES;
@@ -91,9 +91,9 @@
         newComment.comment = self.commentTextField.text;
         newComment.synced = 0L;
  
-        // NSLog(@" Add Comments SAVING ");
+        // //NSLog(@" Add Comments SAVING ");
         if (![context save:&error]) {
-            // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+            // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
             //
             // Nothing to do here ??
@@ -106,13 +106,13 @@
 //        [fetchRequest setEntity:entity];
 //        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
 //        for (Comments *comment in fetchedObjects) {
-//            // NSLog(@" StudentStatusViewController::Exiting() ");
-//            // NSLog(@" ----------------------------------------");
-//            // NSLog(@" Saved Comments : studentId      :  %@", comment.studentId);
-//            // NSLog(@" Saved Comments : statusId       :  %@", comment.comment);
-//            // NSLog(@" Saved Comments : createdDate    :  %@", comment.createdDate);
-//            // NSLog(@" Saved Comments : synced         :  %@", comment.synced);
-//            // NSLog(@" ----------------------------------------");
+//            // //NSLog(@" StudentStatusViewController::Exiting() ");
+//            // //NSLog(@" ----------------------------------------");
+//            // //NSLog(@" Saved Comments : studentId      :  %@", comment.studentId);
+//            // //NSLog(@" Saved Comments : statusId       :  %@", comment.comment);
+//            // //NSLog(@" Saved Comments : createdDate    :  %@", comment.createdDate);
+//            // //NSLog(@" Saved Comments : synced         :  %@", comment.synced);
+//            // //NSLog(@" ----------------------------------------");
 //        }
         
         //
@@ -123,7 +123,7 @@
 //            //
 //            // Segue to iphone5 view
 //            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            //NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
 //            
 //            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
 //            [self.window makeKeyAndVisible];

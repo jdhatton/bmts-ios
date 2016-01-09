@@ -64,13 +64,13 @@
 */
 
 - (IBAction)saveComment:(id)sender {
-    // NSLog(@"DEBUG: Saving Feedback... ");
+    // //NSLog(@"DEBUG: Saving Feedback... ");
     RestController *restCntrlr  = [RestController alloc];
     [restCntrlr sendFeedback:self.feedback.text];
 }
 
 - (IBAction)saveFormData:(id)sender {
-    // NSLog(@"DEBUG: Saving Feedback... ");
+    // //NSLog(@"DEBUG: Saving Feedback... ");
 }
 
 

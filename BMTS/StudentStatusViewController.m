@@ -30,7 +30,7 @@ int selectedStatus;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
+    // //NSLog(@"DEBUG: StudentStatusViewController::loading...   student = %@", student);
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -39,7 +39,7 @@ int selectedStatus;
     
     
     if(self.student == nil){
-        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        //NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
     
@@ -82,7 +82,7 @@ int selectedStatus;
 
 - (IBAction)clickedGreenStatus:(id)sender {
     
-    // NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
+    // //NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
     selectedStatus = 1; //App.STATUS_GREEN
     
     greenButton.layer.borderWidth=2.0f;
@@ -98,7 +98,7 @@ int selectedStatus;
 
 - (IBAction)clickedYellowStatus:(id)sender {
     
-    // NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
+    // //NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
     selectedStatus = 2;
     
     greenButton.layer.borderWidth=0.0f;
@@ -115,7 +115,7 @@ int selectedStatus;
 
 
 - (IBAction)clickedRedStatus:(id)sender {
-    // NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
+    // //NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
     selectedStatus = 3;
     
     greenButton.layer.borderWidth=0.0f;
@@ -141,7 +141,7 @@ int selectedStatus;
         [formatter setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
         NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
         
-        // NSLog(@" Creating a new StudentBehaviors");
+        // //NSLog(@" Creating a new StudentBehaviors");
         StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
         newStudentBehavior.createdDate =  stringFromDate;
         newStudentBehavior.studentId = self.student.id;
@@ -151,14 +151,14 @@ int selectedStatus;
       
 //        
 //                NSString *selBehavior = [self.behaviorArray objectAtIndex:selectedBehavior];
-//                // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+//                // //NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
 //                newCRB.behaviorId = [NSNumber numberWithInteger: selectedBehavior];
-//                // NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
+//                // //NSLog(@" AddStudent Added behavior : %@", newCRB.behaviorId);
         
         
-        // NSLog(@"\n >>>> Add Student Behavior SAVING ");
+        // //NSLog(@"\n >>>> Add Student Behavior SAVING ");
         if (![context save:&error]) {
-            NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+            //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
         
  
@@ -168,13 +168,13 @@ int selectedStatus;
             [fetchRequest setEntity:entity];
             NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
             for (StudentBehaviors *behavior in fetchedObjects) {
-                 NSLog(@" StudentStatusViewController::Exiting() ");
-                 NSLog(@" ----------------------------------------");
-                 NSLog(@" SAVED StudentBehaviors : studentId       :  %@", behavior.studentId);
-                 NSLog(@" SAVED StudentBehaviors :  statusId       :  %@", behavior.statusId);
-                 NSLog(@" SAVED StudentBehaviors :  createdDate    :  %@", behavior.createdDate);
-                 NSLog(@" SAVED StudentBehaviors :  statusComment  :  %@", behavior.statusComment);
-                 NSLog(@" ----------------------------------------");
+                 //NSLog(@" StudentStatusViewController::Exiting() ");
+                 //NSLog(@" ----------------------------------------");
+                 //NSLog(@" SAVED StudentBehaviors : studentId       :  %@", behavior.studentId);
+                 //NSLog(@" SAVED StudentBehaviors :  statusId       :  %@", behavior.statusId);
+                 //NSLog(@" SAVED StudentBehaviors :  createdDate    :  %@", behavior.createdDate);
+                 //NSLog(@" SAVED StudentBehaviors :  statusComment  :  %@", behavior.statusComment);
+                 //NSLog(@" ----------------------------------------");
             }
         }
         
@@ -205,7 +205,7 @@ int selectedStatus;
 //            //
 //            // Segue to iphone5 view
 //            //
-//            NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//            //NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
 //            
 //            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
 //            [self.window makeKeyAndVisible];

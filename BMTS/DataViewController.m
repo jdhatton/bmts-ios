@@ -34,12 +34,12 @@ BOOL isValidForSegue = true;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // NSLog(@"DEBUG: loading main view");
-    // NSLog(@"HOME > %@", NSHomeDirectory());
+    // //NSLog(@"DEBUG: loading main view");
+    // //NSLog(@"HOME > %@", NSHomeDirectory());
     
     NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documents = [directories firstObject];
-    // NSLog(@"DOCUMENTS > %@", documents);
+    // //NSLog(@"DOCUMENTS > %@", documents);
  
 
     /*
@@ -52,7 +52,7 @@ BOOL isValidForSegue = true;
     [self updateInterfaceWithReachability:self.hostReachability];
     
 
-    // NSLog(@"DEBUG: Attempting Segway to TeacherMainView");
+    // //NSLog(@"DEBUG: Attempting Segway to TeacherMainView");
 //    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    TeacherMainViewController *main = [storyboard instantiateViewControllerWithIdentifier:@"teacherMainView"];
 //    [self presentViewController:main animated:YES completion:nil];
@@ -61,7 +61,7 @@ BOOL isValidForSegue = true;
 //    TeacherMainViewController *mainView = [[TeacherMainViewController alloc]init];
 //    [self.navigationController presentViewController:mainView animated:NO completion:nil];
     //    [self presentViewController:cameraView animated:NO completion:nil]; //this will cause view is not in the window hierarchy error
-    // NSLog(@"DEBUG: Should have gone to to TeacherMain View....");
+    // //NSLog(@"DEBUG: Should have gone to to TeacherMain View....");
     
 }
 
@@ -92,7 +92,7 @@ BOOL isValidForSegue = true;
     BOOL connectionRequired = [reachability connectionRequired];
     NSString* statusString = @"";
     
-    // NSLog(@"DEBUG: Network Status = %ld", netStatus);
+    // //NSLog(@"DEBUG: Network Status = %ld", netStatus);
     
     switch (netStatus)
     {
@@ -159,9 +159,9 @@ BOOL isValidForSegue = true;
  */
 - (void)createAccount:(id)sender
 {
-    // NSLog(@"DEBUG: you touched the createAccount button");
+    // //NSLog(@"DEBUG: you touched the createAccount button");
     
-    // NSLog(@"DEBUG: validating the form when clicking create account.");
+    // //NSLog(@"DEBUG: validating the form when clicking create account.");
     
     // Email and Password must be provided for form submission.
     
@@ -230,13 +230,13 @@ BOOL isValidForSegue = true;
 
 - (void)alreadyHaveAccount:(id)sender
 {
-    // NSLog(@"DEBUG: you touched the alreadyHaveAccount button");
+    // //NSLog(@"DEBUG: you touched the alreadyHaveAccount button");
 
 }
 
 - (void)debug:(id)sender
 {
-    // NSLog(@"DEBUG: you touched the debug button");
+    // //NSLog(@"DEBUG: you touched the debug button");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

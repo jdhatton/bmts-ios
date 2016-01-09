@@ -33,8 +33,8 @@
     //
     
     NSArray *viewControllers = [self.tabBarController viewControllers];
-    NSLog(@"DEBUG: TAB:viewControllers  %@",viewControllers);
-    NSLog(@"DEBUG: self.student  %@",self.student);
+    //NSLog(@"DEBUG: TAB:viewControllers  %@",viewControllers);
+    //NSLog(@"DEBUG: self.student  %@",self.student);
     
 }
 

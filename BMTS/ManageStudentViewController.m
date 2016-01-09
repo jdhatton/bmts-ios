@@ -35,7 +35,7 @@ CGFloat width;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
+    // //NSLog(@"DEBUG: ManageStudentViewController::loading...   student = %@", student);
     
     CGRect imageRect = self.studentImg.frame;
     height = imageRect.size.height;
@@ -49,26 +49,26 @@ CGFloat width;
     [fetchRequestB setEntity:entityB];
     NSArray *fetchedObjectsB = [contextB executeFetchRequest:fetchRequestB error:&errorB];
     for (Behaviors *behavior in fetchedObjectsB) {
-         NSLog(@" ----------------------------------------");
-         NSLog(@" Behavior : Id        :  %@", behavior.id);
-         NSLog(@" Behavior : name      :  %@", behavior.name);
-         NSLog(@" Behavior : descr     :  %@", behavior.descr);
-         NSLog(@" Behavior : synced    :  %@", behavior.synced);
-         NSLog(@" ----------------------------------------");
+         //NSLog(@" ----------------------------------------");
+         //NSLog(@" Behavior : Id        :  %@", behavior.id);
+         //NSLog(@" Behavior : name      :  %@", behavior.name);
+         //NSLog(@" Behavior : descr     :  %@", behavior.descr);
+         //NSLog(@" Behavior : synced    :  %@", behavior.synced);
+         //NSLog(@" ----------------------------------------");
         //[self.behaviorUpdateArray addObject:behavior.name];
     }
     
-    NSLog(@"\n\n Dumping AppDelegate Behaviors Array \n\n ");
+    //NSLog(@"\n\n Dumping AppDelegate Behaviors Array \n\n ");
     
-    NSLog(@"%@", appDelegate.behaviorListData);
+    //NSLog(@"%@", appDelegate.behaviorListData);
     
-    NSLog(@"\n \n ");
+    //NSLog(@"\n \n ");
     
     //
     // TODO: trying this to see if this is OK.
     //
     if(self.student == nil){
-        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        //NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
     
@@ -105,7 +105,7 @@ CGFloat width;
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
 
-    // NSLog(@" Looking for any existing CRB's ");
+    // //NSLog(@" Looking for any existing CRB's ");
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"ClassroomBehaviors"  inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
@@ -115,7 +115,7 @@ CGFloat width;
             studentInfo = crb;
         }
     }
-    NSLog(@" studentInfo.behaviorId  :    %@", studentInfo.behaviorId );
+    //NSLog(@" studentInfo.behaviorId  :    %@", studentInfo.behaviorId );
     
     //
     // Set the selected behavior and interval.
@@ -126,7 +126,7 @@ CGFloat width;
     //
     NSNumber *bid = studentInfo.behaviorId;
     int count = [bid intValue] -1;
-    NSLog(@" USING :  behaviorId  :    %d", count );
+    //NSLog(@" USING :  behaviorId  :    %d", count );
 
     
     [self.behaviorUpdatePicker selectRow:count inComponent:0 animated:YES];
@@ -212,18 +212,18 @@ CGFloat width;
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
  
-    // NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
+    // //NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
     
     NSString *selBehavior = [self.behaviorUpdateArray objectAtIndex:selectedStudentUpdateBehavior];
-    // NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+    // //NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
     studentInfo.behaviorId = [NSNumber numberWithInteger: selectedStudentUpdateBehavior];
-    // NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
+    // //NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
     
     NSString *selInterval = [self.intervalUpdateArray objectAtIndex:selectedStudentUpdateInterval];
-    // NSLog(@" AddStudent Adding Interval : %@", selInterval);
-    //    // NSLog(@" AddStudent Matched    :  %@", selInterval);
+    // //NSLog(@" AddStudent Adding Interval : %@", selInterval);
+    //    // //NSLog(@" AddStudent Matched    :  %@", selInterval);
     studentInfo.trackingInterval = [NSNumber numberWithInteger:selectedStudentUpdateInterval];
-    // NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
+    // //NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
     
     if(self.studentNameTextField.text.length > 1 ){
         student.firstName = self.studentNameTextField.text;
@@ -235,11 +235,11 @@ CGFloat width;
     
     student.profileImg = UIImagePNGRepresentation(self.studentImg.image);
     
-    // NSLog(@" AddStudent SAVING ");
+    // //NSLog(@" AddStudent SAVING ");
     if (![context save:&error]) {
-        // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+        // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
     } else {
-        // NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
+        // //NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
     }
 
     
@@ -253,16 +253,16 @@ CGFloat width;
     [fetchRequest5 setEntity:entity5];
     NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
     for (User *user in fetchedObjects5) {
-        // NSLog(@" UPDATE StudentController:Exiting() ");
-        // NSLog(@" ----------------------------------------");
-        // NSLog(@" Found User : userId     : %@", user.id);
-        // NSLog(@" Found User : firstName  : %@", user.firstName);
-        // NSLog(@" Found User : email      : %@", user.email);
-        // NSLog(@" Found User : role       : %@", user.role);
-        // NSLog(@" Found User : zipcode    : %@", user.zipCode);
-        // NSLog(@" Found User : district   : %@", user.schoolDistrict);
-        // NSLog(@" Found User : grade      : %@", user.schoolGrade);
-        // NSLog(@" ----------------------------------------");
+        // //NSLog(@" UPDATE StudentController:Exiting() ");
+        // //NSLog(@" ----------------------------------------");
+        // //NSLog(@" Found User : userId     : %@", user.id);
+        // //NSLog(@" Found User : firstName  : %@", user.firstName);
+        // //NSLog(@" Found User : email      : %@", user.email);
+        // //NSLog(@" Found User : role       : %@", user.role);
+        // //NSLog(@" Found User : zipcode    : %@", user.zipCode);
+        // //NSLog(@" Found User : district   : %@", user.schoolDistrict);
+        // //NSLog(@" Found User : grade      : %@", user.schoolGrade);
+        // //NSLog(@" ----------------------------------------");
     }
     
     NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
@@ -271,14 +271,14 @@ CGFloat width;
     [fetchRequest4 setEntity:entity4];
     NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
     for (ClassroomBehaviors *crb in fetchedObjects4) {
-        // NSLog(@" UPDATE StudentController:Exiting() ");
-        // NSLog(@" ----------------------------------------");
-        // NSLog(@" Found CRB : Id          : %@", crb.id);
-        // NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-        // NSLog(@" Found CRB : status      : %@", crb.statusId);
-        // NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-        // NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-        // NSLog(@" ----------------------------------------");
+        // //NSLog(@" UPDATE StudentController:Exiting() ");
+        // //NSLog(@" ----------------------------------------");
+        // //NSLog(@" Found CRB : Id          : %@", crb.id);
+        // //NSLog(@" Found CRB : studentId   : %@", crb.studentId );
+        // //NSLog(@" Found CRB : status      : %@", crb.statusId);
+        // //NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
+        // //NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
+        // //NSLog(@" ----------------------------------------");
     }
     
  
@@ -292,7 +292,7 @@ CGFloat width;
 //        //
 //        // Segue to iphone5 view
 //        //
-//        NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//        //NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
 //        
 //        IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
 //        [self.window makeKeyAndVisible];
@@ -340,7 +340,7 @@ CGFloat width;
 //    NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
 //    for (User *user in fetchedObjects5) {
 //        if(user.id == [f numberFromString:student.studentIdNumber] ){
-//            // NSLog(@" Deleting the student :  %@ ", student.studentIdNumber);
+//            // //NSLog(@" Deleting the student :  %@ ", student.studentIdNumber);
 //            [context deleteObject:user];
 //        }
 // 
@@ -349,9 +349,9 @@ CGFloat width;
 //
 //    
 //    if (![context save:&error]) {
-//        // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+//        // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
 //    } else {
-//        // NSLog(@"\n SUCCESS  - STUDENT DELETED  ");
+//        // //NSLog(@"\n SUCCESS  - STUDENT DELETED  ");
 //    }
 //    
 //    isCancelledUpdate = false;
@@ -384,23 +384,23 @@ CGFloat width;
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
-    // NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
+    // //NSLog(@" >>>    shouldPerformSegueWithIdentifier    ");
     
 //    if (!isCancelledUpdate) {
 //        //prevent segue from occurring
-//        // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
+//        // //NSLog(@" >>>    shouldPerformSegueWithIdentifier  - NO   ");
 //        return NO;
 //    }
 //    
 //    // by default perform the segue transition
-//    // NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
+//    // //NSLog(@" >>>    shouldPerformSegueWithIdentifier  - YES   ");
     return YES;
 }
 
 
 - (IBAction)takePicture:(id)sender {
     
-    // NSLog(@"DEBUG: you touched the take picture button.");
+    // //NSLog(@"DEBUG: you touched the take picture button.");
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -413,7 +413,7 @@ CGFloat width;
 
 - (IBAction)selectPicture:(id)sender {
     
-    // NSLog(@"DEBUG: you touched the select picture button.");
+    // //NSLog(@"DEBUG: you touched the select picture button.");
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -426,7 +426,7 @@ CGFloat width;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    // NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
+    // //NSLog(@"DEBUG: didFinishPickingMediaWithInfo");
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.studentImg.image = chosenImage;
     self.studentImg.clearsContextBeforeDrawing = true;
@@ -439,7 +439,7 @@ CGFloat width;
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
-    // NSLog(@"DEBUG: didCancelPickMedia");
+    // //NSLog(@"DEBUG: didCancelPickMedia");
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -469,7 +469,7 @@ CGFloat width;
     //          break;
     
     //     default:
-    //         NSLog(@"DEBUG: Unsupported content mode");
+    //         //NSLog(@"DEBUG: Unsupported content mode");
     //  [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %d", contentMode];
     // }
     

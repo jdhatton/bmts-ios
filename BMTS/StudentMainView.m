@@ -24,13 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
+    //NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
     
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
  
     
     if(self.student == nil){
-        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        //NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
 
@@ -71,9 +71,9 @@
             if( behavior.studentId == student.id ){
                 [behaviorList addObject:behavior.statusId];
                 
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
-                // NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
+                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
+                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
+                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
                 
                 NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
                 [formatter2 setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
@@ -83,13 +83,13 @@
                 NSString *stringCreatedDate = [formatter stringFromDate:dateObject];
                 [items addObject:stringCreatedDate];
                 
-                NSLog(@"DEBUG: behavior.statusComment    =    %@",behavior.statusComment);
+                //NSLog(@"DEBUG: behavior.statusComment    =    %@",behavior.statusComment);
                 
                 [comments addObject:behavior.statusComment];
             }
         }
         
-        NSLog(@"DEBUG: AAA:   comments    =    %@",comments);
+        //NSLog(@"DEBUG: AAA:   comments    =    %@",comments);
         
         
         
@@ -156,10 +156,10 @@
     //
     // TODO: set the real value here.
     //
-    NSLog(@"DEBUG: comments    =    %@",comments);
+    //NSLog(@"DEBUG: comments    =    %@",comments);
     
     NSString* statComment = [comments objectAtIndex:indexPath.row];
-    NSLog(@"DEBUG: statComment    =    %@",statComment);
+    //NSLog(@"DEBUG: statComment    =    %@",statComment);
     
     cell.detailTextLabel.text =statComment;
 

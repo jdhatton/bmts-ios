@@ -38,14 +38,14 @@ bool isValidForSegueToMain = false;
     
     self.zipCode = appDelegate.zipCode;
     schoolName.delegate = self;
-    // NSLog(@" LOADING: RegisterTwoViewController  :  zipCode =  %@", zipCode);
+    // //NSLog(@" LOADING: RegisterTwoViewController  :  zipCode =  %@", zipCode);
     
     //
     // Load and test a REST call
     //
     RestController *restCntrlr  = [RestController alloc];
     NSArray *results =[restCntrlr fetchDistrictsForZipCode:zipCode];
-    // NSLog(@" LOADING: RegisterTwoViewController  :  results  =  %@", results);
+    // //NSLog(@" LOADING: RegisterTwoViewController  :  results  =  %@", results);
     
 
     self.districtArray = results;
@@ -149,7 +149,7 @@ bool isValidForSegueToMain = false;
 - (IBAction)saveFormData:(id)sender {
 
     
-    // NSLog(@"DEBUG: saving form data Register-2 ");
+    // //NSLog(@"DEBUG: saving form data Register-2 ");
     
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -162,7 +162,7 @@ bool isValidForSegueToMain = false;
         //
         appDelegate.teacherUser.schoolDistrict = [self.districtArray objectAtIndex:selectedDistrict];
         
-        // NSLog(@" Register-2 Added schoolDistrict : %@", appDelegate.teacherUser.schoolDistrict);
+        // //NSLog(@" Register-2 Added schoolDistrict : %@", appDelegate.teacherUser.schoolDistrict);
         
         //
         // Find and set the selected school name on to the User.
@@ -170,10 +170,10 @@ bool isValidForSegueToMain = false;
         appDelegate.teacherUser.schoolName = self.schoolName.text;
         
     
-        // NSLog(@" Register-2 Added grade : %@", appDelegate.teacherUser.schoolGrade);
-        // NSLog(@" UPDATING  User : zipCode   :  %@", appDelegate.teacherUser.zipCode);
-        // NSLog(@" UPDATING  User : district  :  %@", appDelegate.teacherUser.schoolDistrict);
-        // NSLog(@" UPDATING  User : grade     :  %@", appDelegate.teacherUser.schoolGrade);
+        // //NSLog(@" Register-2 Added grade : %@", appDelegate.teacherUser.schoolGrade);
+        // //NSLog(@" UPDATING  User : zipCode   :  %@", appDelegate.teacherUser.zipCode);
+        // //NSLog(@" UPDATING  User : district  :  %@", appDelegate.teacherUser.schoolDistrict);
+        // //NSLog(@" UPDATING  User : grade     :  %@", appDelegate.teacherUser.schoolGrade);
     
         UserCookie *userCookie1 = [NSEntityDescription
                                    insertNewObjectForEntityForName:@"UserCookie"
@@ -203,9 +203,9 @@ bool isValidForSegueToMain = false;
         }
     
             if (![context save:&error]) {
-                // NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+                // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
             } else {
-                // NSLog(@"\n SUCCESS  - Behavior loaded. ");
+                // //NSLog(@"\n SUCCESS  - Behavior loaded. ");
             }
 //        }
         
@@ -215,15 +215,15 @@ bool isValidForSegueToMain = false;
         NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
         for (User *user in fetchedObjects) {
             completedUser = user;
-            // NSLog(@" RegisterTwoViewController:Exiting() ");
-            // NSLog(@" ----------------------------------------");
-            // NSLog(@" Found User : userId    : %@", user.id);
-            // NSLog(@" Found User : email     : %@", user.email);
-            // NSLog(@" Found User : role      : %@", user.role);
-            // NSLog(@" Found User : zipcode   : %@", user.zipCode);
-            // NSLog(@" Found User : district  : %@", user.schoolDistrict);
-            // NSLog(@" Found User : grade     : %@", user.schoolGrade);
-            // NSLog(@" ----------------------------------------");
+            // //NSLog(@" RegisterTwoViewController:Exiting() ");
+            // //NSLog(@" ----------------------------------------");
+            // //NSLog(@" Found User : userId    : %@", user.id);
+            // //NSLog(@" Found User : email     : %@", user.email);
+            // //NSLog(@" Found User : role      : %@", user.role);
+            // //NSLog(@" Found User : zipcode   : %@", user.zipCode);
+            // //NSLog(@" Found User : district  : %@", user.schoolDistrict);
+            // //NSLog(@" Found User : grade     : %@", user.schoolGrade);
+            // //NSLog(@" ----------------------------------------");
             
         }
         
@@ -236,7 +236,7 @@ bool isValidForSegueToMain = false;
         //
         RestController *restCntrlr  = [RestController alloc];
         [restCntrlr registerUser:completedUser];
-        // NSLog(@" LOADING: RegisterTwoViewController  :  POSTED - DONE  ");
+        // //NSLog(@" LOADING: RegisterTwoViewController  :  POSTED - DONE  ");
         
         
 
@@ -250,7 +250,7 @@ bool isValidForSegueToMain = false;
 //            //
 //            // Segue to iphone5 view
 //            //
-//           NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
+//           //NSLog(@"\n\n  FOUND iPHONE 5 !!!  \n\n  ");
 //            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //            IPhone5MainViewController *teacherMainViewController = [storyboard instantiateViewControllerWithIdentifier:@"iPhone5MainView"];
 //            [self.window makeKeyAndVisible];

@@ -105,9 +105,9 @@ NSInteger selectedGrade = 0;
 
 - (IBAction)saveFormData:(id)sender {
     
-    // NSLog(@"DEBUG: saving form data Register-3 ");
+    // //NSLog(@"DEBUG: saving form data Register-3 ");
     NSString *strZip = [self.zipCode text];
-    // NSLog(@" Register-2 String ZIP : %@", strZip);
+    // //NSLog(@" Register-2 String ZIP : %@", strZip);
     
   
     if( self.firstName.text.length > 0){
@@ -151,90 +151,90 @@ NSInteger selectedGrade = 0;
         //
         NSString *selGrade = [self.gradesArray objectAtIndex:selectedGrade];
         
-        // NSLog(@" Register-2 Adding Grade : %@", selGrade);
+        // //NSLog(@" Register-2 Adding Grade : %@", selGrade);
         //
         // Walk the types to determine the corralating number to store.
         //
         if ([selGrade isEqualToString:@"Kindergarten"])
         {
-            // NSLog(@" Register-2 Matched Kindergarten   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Kindergarten   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:1];
         }
         else if ([selGrade isEqualToString:@"First Grade"])
         {
-            // NSLog(@" Register-2 Matched First Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched First Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:2];
         }
         else if ([selGrade isEqualToString:@"Second Grade"])
         {
-            // NSLog(@" Register-2 Matched Second Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Second Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:3];
         }
         else if ([selGrade isEqualToString:@"Third Grade"])
         {
-            // NSLog(@" Register-2 Matched Third Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Third Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:4];
         }
         else if ([selGrade isEqualToString:@"Fourth Grade"])
         {
-            // NSLog(@" Register-2 Matched Fourth Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Fourth Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:5];
         }
         else if ([selGrade isEqualToString:@"Fifth Grade"])
         {
-            // NSLog(@" Register-2 Matched Fifth Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Fifth Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:6];
         }
         else if ([selGrade isEqualToString:@"Sixth grade"])
         {
-            // NSLog(@" Register-2 Matched Sixth grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Sixth grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:7];
         }
         else if ([selGrade isEqualToString:@"Seventh Grade"])
         {
-            // NSLog(@" Register-2 Matched Seventh Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Seventh Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:8];
         }
         else if ([selGrade isEqualToString:@"Eight Grade"])
         {
-            // NSLog(@" Register-2 Matched Eight Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Eight Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:9];
         }
         else if ([selGrade isEqualToString:@"Ninth Grade"])
         {
-            // NSLog(@" Register-2 Matched Ninth Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Ninth Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:10];
         }
         else if ([selGrade isEqualToString:@"Tenth Grade"])
         {
-            // NSLog(@" Register-2 Matched Tenth Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Tenth Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:11];
         }
         else if ([selGrade isEqualToString:@"Eleventh Grade"])
         {
-            // NSLog(@" Register-2 Matched Eleventh Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Eleventh Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:12];
         }
         else if ([selGrade isEqualToString:@"Twelth Grade"])
         {
-            // NSLog(@" Register-2 Matched Twelth Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 Matched Twelth Grade   :  %@", selGrade);
             appDelegate.teacherUser.schoolGrade = [NSNumber numberWithInteger:13];
         }
         else {
-            // NSLog(@" Register-2 FAILED TO MATCH - Grade   :  %@", selGrade);
+            // //NSLog(@" Register-2 FAILED TO MATCH - Grade   :  %@", selGrade);
         }
         
-        // NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
-        // NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
-        // NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
-        // NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
+        // //NSLog(@" UPDATING  Teacher : firstName   :  %@", appDelegate.teacherUser.firstName);
+        // //NSLog(@" UPDATING  Teacher : lastName    :  %@", appDelegate.teacherUser.lastName);
+        // //NSLog(@" UPDATING  Teacher : gender      :  %@", appDelegate.teacherUser.gender);
+        // //NSLog(@" UPDATING  Teacher : zipcode     :  %@", appDelegate.teacherUser.zipCode);
     
         isValidForSegueNext = true;
         
         //
         // Segway to the RegisterTwo
         //
-        // NSLog(@" \n\n >>  Attempting to segue to REGISTERTWO  view controller :  strZip  =  %@", strZip);
+        // //NSLog(@" \n\n >>  Attempting to segue to REGISTERTWO  view controller :  strZip  =  %@", strZip);
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         RegisterTwoViewController *registerTwoViewController = [storyboard instantiateViewControllerWithIdentifier:@"registerTwoMainView"];
         [self.window makeKeyAndVisible];

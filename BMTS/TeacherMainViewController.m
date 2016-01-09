@@ -42,7 +42,7 @@ NSNumber *STATUS_RED;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
+    // //NSLog(@"DEBUG: TeacherMainViewController::viewDidLoad()   --   LOADING...");
     
 //    [[Liquid sharedInstance] identifyUserWithIdentifier:appDelegate.deviceID
 //                               attributes:@{ @"name": appDelegate.userRemoteId ,@"remoteId":appDelegate.userRemoteId }];
@@ -75,25 +75,25 @@ NSNumber *STATUS_RED;
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (User *user in fetchedObjects) {
-         NSLog(@" RTeacherMainViewController::Exiting() ");
-         NSLog(@" ----------------------------------------");
-         NSLog(@"User : userId      :  %@", user.id);
-         NSLog(@"User : email       :  %@", user.email);
-         NSLog(@"User : role        :  %@", user.role);
-         NSLog(@"User : zipcode     :  %@", user.zipCode);
-         NSLog(@"User : district    :  %@", user.schoolDistrict);
-         NSLog(@"User : grade       :  %@", user.schoolGrade);
-         NSLog(@"User : firstName   :  %@", user.firstName);
-         NSLog(@"User : lastName    :  %@", user.lastName);
-         NSLog(@"User : gender      :  %@", user.gender);
-         NSLog(@"User : schoolName  :  %@", user.schoolName);
-         NSLog(@"User : remoteId    :  %@", user.remoteId);
-         NSLog(@"User : deviceId    :  %@", user.deviceId);
-         NSLog(@" ----------------------------------------");
+         //NSLog(@" RTeacherMainViewController::Exiting() ");
+         //NSLog(@" ----------------------------------------");
+         //NSLog(@"User : userId      :  %@", user.id);
+         //NSLog(@"User : email       :  %@", user.email);
+         //NSLog(@"User : role        :  %@", user.role);
+         //NSLog(@"User : zipcode     :  %@", user.zipCode);
+         //NSLog(@"User : district    :  %@", user.schoolDistrict);
+         //NSLog(@"User : grade       :  %@", user.schoolGrade);
+         //NSLog(@"User : firstName   :  %@", user.firstName);
+         //NSLog(@"User : lastName    :  %@", user.lastName);
+         //NSLog(@"User : gender      :  %@", user.gender);
+         //NSLog(@"User : schoolName  :  %@", user.schoolName);
+         //NSLog(@"User : remoteId    :  %@", user.remoteId);
+         //NSLog(@"User : deviceId    :  %@", user.deviceId);
+         //NSLog(@" ----------------------------------------");
         
         if([user.id integerValue] == 1 ){
             userName = [NSString stringWithFormat:@"%@%@%@%@", user.firstName,@" ", user.lastName, @"'s Class Room "];
-            NSLog(@"userName :  %@", userName);
+            //NSLog(@"userName :  %@", userName);
             appDelegate.teacherUser.remoteId = user.remoteId;
             appDelegate.userRemoteId = user.remoteId;
         } else {
@@ -105,7 +105,7 @@ NSNumber *STATUS_RED;
             }
         }
         
-        NSLog(@"User : students   :  %@", students);
+        //NSLog(@"User : students   :  %@", students);
     }
     
     NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
@@ -116,17 +116,17 @@ NSNumber *STATUS_RED;
     if(count == NSNotFound) {
         //Handle error
     }
-    NSLog(@" Behavior count  :   %lu", (unsigned long)count);
+    //NSLog(@" Behavior count  :   %lu", (unsigned long)count);
     
     for (Behaviors *behavior in fetchedObjects2) {
-        NSLog(@" ----------------------------------------");
-        NSLog(@" Behavior : Id        :  %@", behavior.id);
-        NSLog(@" Behavior : name      :  %@", behavior.name);
-        NSLog(@" Behavior : descr     :  %@", behavior.descr);
-        NSLog(@" Behavior : synced    :  %@", behavior.synced);
-        NSLog(@" ----------------------------------------");
+        //NSLog(@" ----------------------------------------");
+        //NSLog(@" Behavior : Id        :  %@", behavior.id);
+        //NSLog(@" Behavior : name      :  %@", behavior.name);
+        //NSLog(@" Behavior : descr     :  %@", behavior.descr);
+        //NSLog(@" Behavior : synced    :  %@", behavior.synced);
+        //NSLog(@" ----------------------------------------");
     }
-    // NSLog(@"DEBUG: TeacherMainViewController LOADING COMPLETE...");
+    // //NSLog(@"DEBUG: TeacherMainViewController LOADING COMPLETE...");
     
 }
 
@@ -138,13 +138,13 @@ NSNumber *STATUS_RED;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-     // NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
+     // //NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue()   ");
 
     //
     // TODO: when tapping AddStudent we need to know that here and skip the processing here..
     //
     if([segue.identifier isEqualToString:@"addStudentSegue"] ) {           
-        // NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
+        // //NSLog(@"DEBUG:  TeacherMainView:: prepareForSegue() TO ADD_STUDENT    ");
     }
     
     // Make sure your segue name in storyboard is the same as this line
@@ -186,7 +186,7 @@ NSNumber *STATUS_RED;
 
 - (IBAction)clickedStudentOneStatus:(id)sender {
     
-    // NSLog(@"DEBUG:  TeacherMainView:: you clicked the STUDENT-1 status icon.   .");
+    // //NSLog(@"DEBUG:  TeacherMainView:: you clicked the STUDENT-1 status icon.   .");
     
     //
     // Segway to the TeacherMainView
@@ -210,10 +210,10 @@ NSNumber *STATUS_RED;
 
 -(void)viewWillAppear:(BOOL)animated {
     
-     // NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB - 1   - ");
+     // //NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB - 1   - ");
      [self.view setNeedsDisplay];
      [self viewDidLoad];
-    // NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB  - 2  - ");
+    // //NSLog(@"DEBUG: TeacherMainViewController  ---   RELOADING VIEW CONTROLLER --- BBBB  - 2  - ");
     
 }
 
@@ -260,7 +260,7 @@ NSNumber *STATUS_RED;
     
     NSNumber *currentStudentStatus = [NSNumber numberWithInt:1];
     User* student = [self.students objectAtIndex:indexPath.row];
-    NSLog(@" STUDENT    :   %@", student);
+    //NSLog(@" STUDENT    :   %@", student);
     
     UIImage* image = [UIImage imageWithData:student.profileImg];
     cell.imageView.image = image;
@@ -275,12 +275,12 @@ NSNumber *STATUS_RED;
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (StudentBehaviors *behavior in fetchedObjects) {
-        NSLog(@" --- LOADING --- ");
-        NSLog(@" ----------------------------------------");
-        NSLog(@"  StudentBehaviors : studentId      :  %@", behavior.studentId);
-        NSLog(@"  StudentBehaviors : statusId       :  %@", behavior.statusId);
-        NSLog(@"  StudentBehaviors : createdDate    :  %@", behavior.createdDate);
-        NSLog(@" ----------------------------------------");
+        //NSLog(@" --- LOADING --- ");
+        //NSLog(@" ----------------------------------------");
+        //NSLog(@"  StudentBehaviors : studentId      :  %@", behavior.studentId);
+        //NSLog(@"  StudentBehaviors : statusId       :  %@", behavior.statusId);
+        //NSLog(@"  StudentBehaviors : createdDate    :  %@", behavior.createdDate);
+        //NSLog(@" ----------------------------------------");
         currentStudentStatus = behavior.statusId;
     }
     
@@ -304,13 +304,13 @@ NSNumber *STATUS_RED;
     NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
     for (ClassroomBehaviors *crb in fetchedObjects4) {
 
-         NSLog(@" ----------------------------------------");
-         NSLog(@" Found CRB : Id          : %@", crb.id);
-         NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-         NSLog(@" Found CRB : status      : %@", crb.statusId);
-         NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-         NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-         NSLog(@" ----------------------------------------");
+         //NSLog(@" ----------------------------------------");
+         //NSLog(@" Found CRB : Id          : %@", crb.id);
+         //NSLog(@" Found CRB : studentId   : %@", crb.studentId );
+         //NSLog(@" Found CRB : status      : %@", crb.statusId);
+         //NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
+         //NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
+         //NSLog(@" ----------------------------------------");
         
         NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"Behaviors" inManagedObjectContext:context];
@@ -319,14 +319,14 @@ NSNumber *STATUS_RED;
         [fetchRequest5 setEntity:entity5];
         NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
         for (Behaviors *behavior in fetchedObjects5) {
-            NSLog(@" ----------------------------------------");
-            NSLog(@" Found Behavior : Id          : %@", behavior.id);
-            NSLog(@" Found Behavior : studentId   : %@", behavior.name );
-            NSLog(@" Found Behavior : status      : %@", behavior.descr);
-            NSLog(@" ----------------------------------------");
+            //NSLog(@" ----------------------------------------");
+            //NSLog(@" Found Behavior : Id          : %@", behavior.id);
+            //NSLog(@" Found Behavior : studentId   : %@", behavior.name );
+            //NSLog(@" Found Behavior : status      : %@", behavior.descr);
+            //NSLog(@" ----------------------------------------");
             
             cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tracking:      %@ ", behavior.name];
-             NSLog(@" Should be showing...");
+             //NSLog(@" Should be showing...");
         }
     }
 
