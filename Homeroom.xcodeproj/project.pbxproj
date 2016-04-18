@@ -108,6 +108,7 @@
 		89D3611D1A2366700002EF25 /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D3611C1A2366700002EF25 /* DebugViewController.m */; };
 		89DA45DF1A5860F000F7E23D /* TeacherMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */; };
 		89DA45E21A59994F00F7E23D /* AvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA45E11A59994F00F7E23D /* AvatarViewController.m */; };
+		89E5C4411C41922100E13FC8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89E5C4401C41922100E13FC8 /* Info.plist */; };
 		89F2F6EF1A5C9523001B0D17 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */; };
 		89F2F6F11A605967001B0D17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F2F6F01A605967001B0D17 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		89F2F6F41A605A93001B0D17 /* AppDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89F2F6F21A605A93001B0D17 /* AppDataModel.xcdatamodeld */; };
@@ -295,6 +296,7 @@
 		89DA45DE1A5860F000F7E23D /* TeacherMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherMainViewController.m; sourceTree = "<group>"; };
 		89DA45E01A59994F00F7E23D /* AvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarViewController.h; sourceTree = "<group>"; };
 		89DA45E11A59994F00F7E23D /* AvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarViewController.m; sourceTree = "<group>"; };
+		89E5C4401C41922100E13FC8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89F2F6ED1A5C9523001B0D17 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		89F2F6EE1A5C9523001B0D17 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		89F2F6F01A605967001B0D17 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -413,6 +415,7 @@
 				893BD49C1B5565B400DCB3E0 /* AppIcon-152x152.png */,
 				893BD49D1B5565B400DCB3E0 /* AppIcon-180-180.png */,
 				890759931A0B110B000A30DA /* Info.plist */,
+				89E5C4401C41922100E13FC8 /* Info.plist */,
 				890759941A0B110B000A30DA /* main.m */,
 			);
 			name = "Supporting Files";
@@ -766,6 +769,7 @@
 				890759A41A0B110B000A30DA /* Main.storyboard in Resources */,
 				893BD4C51B5586DC00DCB3E0 /* Icon-60.png in Resources */,
 				893BD4BE1B5586DC00DCB3E0 /* Icon-60@2x.png in Resources */,
+				89E5C4411C41922100E13FC8 /* Info.plist in Resources */,
 				893BD4C71B5586DC00DCB3E0 /* Icon-72@2x.png in Resources */,
 				893BD4BD1B5586DC00DCB3E0 /* Icon-40@3x.png in Resources */,
 				893BD4CC1B5586DC00DCB3E0 /* iTunesArtwork.png in Resources */,
