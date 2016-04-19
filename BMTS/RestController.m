@@ -238,6 +238,63 @@
      }];
 }
 
+
+//
+// This is a method to save the user feedback to the server.
+//
+- (IBAction)sendBehaviorStatus:(StudentBehaviors *) behavior;
+{
+    
+    NSError *error;
+
+    //User* teacher = [appDelegate teacherUser];
+    
+    // Convert your data and set your request's HTTPBody property
+    NSString *jsonString;
+    
+    NSMutableDictionary *fields = [NSMutableDictionary dictionary];
+    for (NSAttributeDescription *attribute in [[behavior entity] properties]) {
+        NSString *attributeName = attribute.name;
+        id attributeValue = [behavior valueForKey:attributeName];
+        if (attributeValue) {
+            [fields setObject:attributeValue forKey:attributeName];
+        }
+    }
+    
+    [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields options:NSJSONWritingPrettyPrinted error:&error];
+    NSLog(@"\n jsonData = %@", jsonData);
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    
+    NSURL *url = [NSURL URLWithString:@"http://homeroomtechnologies.com:8080/remoteSync/behavior"];
+    NSMutableURLRequest *rq = [NSMutableURLRequest requestWithURL:url];
+    [rq setHTTPMethod:@"POST"];
+    [rq setHTTPBody:jsonData];
+    
+    [rq setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [rq setValue:[NSString stringWithFormat:@"%ldn", (long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
+    
+    [NSURLConnection sendAsynchronousRequest:rq
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data, NSError *connectionError)
+     {
+         if (data.length > 0 && connectionError == nil)
+         {
+             // //NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+             NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
+             // //NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+         }
+     }];
+}
+
+
 //
 // This is a method to add a student to the server.
 //

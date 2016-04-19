@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "AppDelegate.h"
+#import "StudentBehaviors.h"
 
 @interface RestController : NSObject
 
@@ -28,6 +29,7 @@
 
 - (IBAction)syncAll:(User *)user;
 
+- (IBAction)sendBehaviorStatus:(StudentBehaviors *) behavior;
 
 //
 // TODO: Implement these.

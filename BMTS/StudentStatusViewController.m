@@ -14,6 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "App.h"
 #import "IPhone5MainViewController.h"
+#import "RestController.h"
 
 @interface StudentStatusViewController ()
 
@@ -161,6 +162,13 @@ int selectedStatus;
             //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
         
+            
+            //
+            // Call the rest service to save the student on the server.
+            //
+            RestController *restCntrlr  = [RestController alloc];
+            [restCntrlr sendBehaviorStatus:newStudentBehavior ];
+            
  
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
             NSEntityDescription *entity = [NSEntityDescription entityForName:@"StudentBehaviors" inManagedObjectContext:context];
