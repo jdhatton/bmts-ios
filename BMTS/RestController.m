@@ -240,7 +240,7 @@
 
 
 //
-// This is a method to save the user feedback to the server.
+// This is a method to save the added student behavior to the server.
 //
 - (IBAction)sendBehaviorStatus:(StudentBehaviors *) behavior;
 {
@@ -562,6 +562,9 @@
             }
         }
     }
+    
+    
+    [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
     
     
     // Convert your data and set your request's HTTPBody property
