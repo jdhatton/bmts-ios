@@ -128,6 +128,8 @@
         }
     }
     
+    [fields setObject:appDelegate.deviceToken forKey:@"deviceToken"];
+    
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
@@ -264,10 +266,10 @@
     [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields options:NSJSONWritingPrettyPrinted error:&error];
-    NSLog(@"\n jsonData = %@", jsonData);
+    //NSLog(@"\n jsonData = %@", jsonData);
     
     if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
+       // NSLog(@"Got an error: %@", error);
     } else {
         jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     }

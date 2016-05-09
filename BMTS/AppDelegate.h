@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSString *zipCode;
 @property (strong, nonatomic) NSString *userRemoteId;
 @property (strong, nonatomic) NSString *userPassword;
+@property (strong, nonatomic) NSString *deviceToken;
 @property (strong, nonatomic) NSMutableArray *behaviorListData;
 @property (strong, nonatomic) NSArray *intervalListData;
 

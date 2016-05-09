@@ -39,7 +39,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize userRemoteId, userPassword, teacherUser;
+@synthesize userRemoteId, userPassword, teacherUser, deviceToken;
 @synthesize currentSelectedStudent;
 
 
@@ -132,6 +132,24 @@ AppDelegate *appDelegate = nil;
              @"Every Other Day", @"Once a Week",
              @"Every Other Week",@"Once a Month",@"Other",
              nil];
+    
+    
+    
+    //
+    // Get the device token
+    //
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+    
+    NSLog(@"deviceToken: %@", deviceToken);
     
     
     //
@@ -338,5 +356,30 @@ AppDelegate *appDelegate = nil;
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings // NS_AVAILABLE_IOS(8_0);
+{
+     NSLog(@"notificationSettings: %@", notificationSettings);
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceTokn{
+    
+    NSLog(@"deviceToken: %@", deviceTokn);
+    NSString * token = [NSString stringWithFormat:@"%@", deviceTokn];
+    //Format token as you need:
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    appDelegate.deviceToken = token;
+    NSLog(@"appDelegate.deviceToken: %@", appDelegate.deviceToken);
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"ERR: %@", err);
+}
+
 
 @end

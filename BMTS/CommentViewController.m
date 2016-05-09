@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "TeacherMainViewController.h"
 #import "IPhone5MainViewController.h"
+#import "RestController.h"
+#import "StudentBehaviors.h"
 
 
 @interface CommentViewController ()
@@ -99,6 +101,20 @@
             // Nothing to do here ??
             //
         }
+        
+        //
+        // Call the rest service to save the student on the server.
+        //
+        StudentBehaviors *newStudentBehavior = [NSEntityDescription  insertNewObjectForEntityForName:@"StudentBehaviors" inManagedObjectContext:context];
+        newStudentBehavior.createdDate =  stringFromDate;
+        newStudentBehavior.studentId = self.student.id;
+        newStudentBehavior.statusId = [NSNumber numberWithInt:4];
+        newStudentBehavior.synced = false;
+        newStudentBehavior.statusComment = self.commentTextField.text;
+        
+        RestController *restCntrlr  = [RestController alloc];
+        [restCntrlr sendBehaviorStatus:newStudentBehavior ];
+        
         
 //        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 //        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Comments" inManagedObjectContext:context];

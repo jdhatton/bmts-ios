@@ -12,6 +12,7 @@
 #import "TeacherMainViewController.h"
 #import "IPhone5MainViewController.h"
 #import "Behaviors.h"
+#import "RestController.h"
 
 @interface ManageStudentViewController ()
 
@@ -209,21 +210,36 @@ CGFloat width;
 
 - (IBAction)saveStudentUpdate:(id)sender {
     
+    //
+    // TODO: dump out all the data here to see what is not getting saved.
+    // Looks like there is not context user to save.
+    //
+    
     NSError *error;
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
  
-    // //NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
+    NSLog(@" Updating the student info. StudentName, Tracked Behavior, Tracking Interval  ");
+    
+    NSLog(@" Manage Student - User ID : %@", student.id);
+    NSLog(@" Manage Student - User firstName : %@", student.firstName);
+
+    NSLog(@" Manage Student - User studentIdNumber : %@", student.studentIdNumber);
     
     NSString *selBehavior = [self.behaviorUpdateArray objectAtIndex:selectedStudentUpdateBehavior];
-    // //NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
+    
+    NSLog(@" AddStudent String BEHAVIOR : %@", selBehavior);
     studentInfo.behaviorId = [NSNumber numberWithInteger: selectedStudentUpdateBehavior];
-    // //NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
+    NSLog(@" AddStudent Added behavior : %@", studentInfo.behaviorId);
     
     NSString *selInterval = [self.intervalUpdateArray objectAtIndex:selectedStudentUpdateInterval];
-    // //NSLog(@" AddStudent Adding Interval : %@", selInterval);
-    //    // //NSLog(@" AddStudent Matched    :  %@", selInterval);
+    NSLog(@" AddStudent Adding Interval : %@", selInterval);
+    NSLog(@" AddStudent Matched    :  %@", selInterval);
     studentInfo.trackingInterval = [NSNumber numberWithInteger:selectedStudentUpdateInterval];
-    // //NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
+    NSLog(@" AddStudent Added interval : %@", studentInfo.trackingInterval);
     
     if(self.studentNameTextField.text.length > 1 ){
         student.firstName = self.studentNameTextField.text;
@@ -235,17 +251,24 @@ CGFloat width;
     
     student.profileImg = UIImagePNGRepresentation(self.studentImg.image);
     
-    // //NSLog(@" AddStudent SAVING ");
-    if (![context save:&error]) {
-        // //NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
-    } else {
-        // //NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
-    }
-
+    NSLog(@" Manage Student - User firstName : %@", student.firstName);
+    NSLog(@" Manage Student - User studentIdNumber : %@", student.studentIdNumber);
     
     //
-    // Lets dump the User (student) and the ClassRoomBehavior objects created.
+    // Set the values on the user then save.
     //
+//    User *updateUser = [NSEntityDescription  updateObjectForEntityForName:@"User" inManagedObjectContext:context];
+//    updateUser.id = student.id;
+//    updateUser.firstName = student.firstName;
+//    updateUser.studentIdNumber = student.studentIdNumber;
+//    updateUser.synced = false;
+//    updateUser.profileImg = UIImagePNGRepresentation(self.studentImg.image);
+    
+//    ClassroomBehaviors *studentBehavior = [NSEntityDescription insertNewObjectForEntityForName:@"ClassroomBehaviors" inManagedObjectContext:context];
+//    studentBehavior.behaviorId = studentInfo.behaviorId;
+//    studentBehavior.trackingInterval = studentInfo.trackingInterval;
+//    studentBehavior.studentId = student.id;
+    
     
     NSFetchRequest *fetchRequest5 = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity5 = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
@@ -253,16 +276,12 @@ CGFloat width;
     [fetchRequest5 setEntity:entity5];
     NSArray *fetchedObjects5 = [context executeFetchRequest:fetchRequest5 error:&error];
     for (User *user in fetchedObjects5) {
-        // //NSLog(@" UPDATE StudentController:Exiting() ");
-        // //NSLog(@" ----------------------------------------");
-        // //NSLog(@" Found User : userId     : %@", user.id);
-        // //NSLog(@" Found User : firstName  : %@", user.firstName);
-        // //NSLog(@" Found User : email      : %@", user.email);
-        // //NSLog(@" Found User : role       : %@", user.role);
-        // //NSLog(@" Found User : zipcode    : %@", user.zipCode);
-        // //NSLog(@" Found User : district   : %@", user.schoolDistrict);
-        // //NSLog(@" Found User : grade      : %@", user.schoolGrade);
-        // //NSLog(@" ----------------------------------------");
+        if(user.id == student.id){
+            user.firstName = student.firstName;
+            user.studentIdNumber = student.studentIdNumber;
+            user.synced = false;
+            user.profileImg = UIImagePNGRepresentation(self.studentImg.image);
+        }
     }
     
     NSFetchRequest *fetchRequest4 = [[NSFetchRequest alloc] init];
@@ -271,17 +290,24 @@ CGFloat width;
     [fetchRequest4 setEntity:entity4];
     NSArray *fetchedObjects4 = [context executeFetchRequest:fetchRequest4 error:&error];
     for (ClassroomBehaviors *crb in fetchedObjects4) {
-        // //NSLog(@" UPDATE StudentController:Exiting() ");
-        // //NSLog(@" ----------------------------------------");
-        // //NSLog(@" Found CRB : Id          : %@", crb.id);
-        // //NSLog(@" Found CRB : studentId   : %@", crb.studentId );
-        // //NSLog(@" Found CRB : status      : %@", crb.statusId);
-        // //NSLog(@" Found CRB : behaviorId  : %@", crb.behaviorId);
-        // //NSLog(@" Found CRB : intervalId  : %@", crb.trackingInterval);
-        // //NSLog(@" ----------------------------------------");
+        if( crb.studentId == student.id){
+            crb.behaviorId = @([studentInfo.behaviorId integerValue] + 1);
+        }
     }
+
+    NSLog(@" Update Student SAVING ");
+    if (![context save:&error]) {
+        NSLog(@"\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
+    } else {
+        NSLog(@"\n SUCCESS  - User & ClassroomBehavior - UPDATED  ");
+    }
+
+    //
+    // Call the rest service to save the student on the server.
+    //
+ //   RestController *restCntrlr  = [RestController alloc];
+ //   [restCntrlr addStudent:newUser :selBehavior];
     
- 
     isCancelledUpdate = false;
     
     //
