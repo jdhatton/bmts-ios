@@ -1,0 +1,75 @@
+
+------------------------------
+--  App View Data Elements  --
+------------------------------
+
+Create Account [ email, password ] - [ DataViewController ] 
+
+Login [ email, password ] - [ DataViewController ] 
+
+Forgot Password [ email ] - [ ForgotPasswordViewController ] 
+
+Registration One [ role ] - [ RegistrationOneViewController ] 
+
+Registration Two [ zipcode, school district, grade] - [ RegisterTwoViewController ]
+
+Registration Three [ firstname, lastname, gender, schoolname ] - [ RegisterThreeViewController ]
+
+Registration Four []
+
+
+Add Student [ studentname, behavior, interval ] - [ classroomid ]
+
+Add Parent [ parentname, email, phone ] - [ studentid ]
+
+Student Avatar [ image ] - [ studentid, classroomid ]
+
+Document [ text ] - [studentid, classroomid]
+
+Status [ status ] - [studentid, classroomid] - [ status list ]
+
+Main View [] - [ teacherid, classroomid ] - [ student list [ name, avatarimage, laststatus] ]
+
+
+
+-------------------------
+--  Registration Flow  --
+-------------------------
+
+Create Account Clicked with email & password 
+  - Create User [email, password]
+RegisterOne Selection
+  - save role to User
+RegisterTwo Next with zipcode, district, and grade
+  - save zipcode, district, grade to User
+RegisterThree Done or Add Student with firstName, lastName, gender, and school
+  - save fistName, lastName, gender, school to User 
+  - create Classroom
+  - associate UserId -> Classroom.TeacherId
+AddStudent Done or Add Parent with studentName, behavior, school
+  - create User for new student - set Role = STUDENT
+  - create ClassroomStudents
+  - create ClassroomBehaviors
+AddParent Done or Add Another Parent with studentName, firstName, lastName
+  - create ClassroomParents
+ 
+
+
+
+-- ssh 
+
+scp ~/.ssh/id_rsa.pub jdhatton@homeroomtechnologies.com:/home/user/.ssh/uploaded_key.pub
+
+ssh jdhatton@homeroomtechnologies.com "cat ~/.ssh/uploaded_key.pub >> ~/.ssh/authorized_keys"
+
+
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'superj00' WITH GRANT OPTION
+
+FLUSH PRIVILEGES
+
+export PATH=$PATH:/opt/play-1.2.4
+
+
+echo "127.0.0.1 localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf

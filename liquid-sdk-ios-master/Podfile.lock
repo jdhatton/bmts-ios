@@ -1,0 +1,21 @@
+PODS:
+  - Kiwi (2.3.0)
+  - OCMock (2.2.4)
+  - OHHTTPStubs (3.1.2)
+
+DEPENDENCIES:
+  - Kiwi (from `https://github.com/kiwi-bdd/Kiwi.git`, tag `2.3.0`)
+  - OCMock (~> 2.2.4)
+  - OHHTTPStubs (~> 3.1.2)
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :git: https://github.com/kiwi-bdd/Kiwi.git
+    :tag: 2.3.0
+
+SPEC CHECKSUMS:
+  Kiwi: 5729ed4241c40195f35a597c834e6a48e88a465f
+  OCMock: a6a7dc0e3997fb9f35d99f72528698ebf60d64f2
+  OHHTTPStubs: c93230597bc5c8b74bcfdb403cc8773515b8b08c
+
+COCOAPODS: 0.33.1
