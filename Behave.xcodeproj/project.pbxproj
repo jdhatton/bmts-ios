@@ -136,7 +136,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8907598F1A0B110B000A30DA /* Homeroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homeroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8907598F1A0B110B000A30DA /* Behaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Behaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		890759931A0B110B000A30DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		890759941A0B110B000A30DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		890759961A0B110B000A30DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 		89CD4EF71ABF98EC002B20D0 /* StudentBehaviors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentBehaviors.m; sourceTree = "<group>"; };
 		89CD4EF91AC0E741002B20D0 /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
 		89CD4EFA1AC0E741002B20D0 /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
-		89D20FD01D0DA1F0000DD9D2 /* Behave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Behave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D20FD01D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Behave.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D20FD31D0DA1F2000DD9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		89D20FD51D0DA1F2000DD9D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89D20FD61D0DA1F2000DD9D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 		89D20FE11D0DA1F2000DD9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D20FE41D0DA1F2000DD9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D20FE61D0DA1F2000DD9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89D20FEB1D0DA1F2000DD9D2 /* BehaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BehaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D20FEB1D0DA1F2000DD9D2 /* Behave.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Behave.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D20FEF1D0DA1F2000DD9D2 /* BehaveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BehaveTests.m; sourceTree = "<group>"; };
 		89D20FF11D0DA1F2000DD9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D20FFA1D0DA1F2000DD9D2 /* BehaveUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BehaveUITests.m; sourceTree = "<group>"; };
@@ -399,10 +399,10 @@
 		890759901A0B110B000A30DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8907598F1A0B110B000A30DA /* Homeroom.app */,
+				8907598F1A0B110B000A30DA /* Behaver.app */,
 				890759AE1A0B110B000A30DA /* HomeroomTests.xctest */,
-				89D20FD01D0DA1F0000DD9D2 /* Behave.app */,
-				89D20FEB1D0DA1F2000DD9D2 /* BehaveTests.xctest */,
+				89D20FD01D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename.app */,
+				89D20FEB1D0DA1F2000DD9D2 /* Behave.temp_caseinsensitive_rename.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -799,7 +799,7 @@
 			);
 			name = Homeroom;
 			productName = BMTS;
-			productReference = 8907598F1A0B110B000A30DA /* Homeroom.app */;
+			productReference = 8907598F1A0B110B000A30DA /* Behaver.app */;
 			productType = "com.apple.product-type.application";
 		};
 		890759AD1A0B110B000A30DA /* HomeroomTests */ = {
@@ -819,9 +819,9 @@
 			productReference = 890759AE1A0B110B000A30DA /* HomeroomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		89D20FCF1D0DA1F0000DD9D2 /* Behave */ = {
+		89D20FCF1D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89D210031D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave" */;
+			buildConfigurationList = 89D210031D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				89D20FCC1D0DA1F0000DD9D2 /* Sources */,
 				89D20FCD1D0DA1F0000DD9D2 /* Frameworks */,
@@ -831,14 +831,14 @@
 			);
 			dependencies = (
 			);
-			name = Behave;
+			name = Behave.temp_caseinsensitive_rename;
 			productName = Behave;
-			productReference = 89D20FD01D0DA1F0000DD9D2 /* Behave.app */;
+			productReference = 89D20FD01D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		89D20FEA1D0DA1F2000DD9D2 /* BehaveTests */ = {
+		89D20FEA1D0DA1F2000DD9D2 /* Behave.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89D210041D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "BehaveTests" */;
+			buildConfigurationList = 89D210041D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				89D20FE71D0DA1F2000DD9D2 /* Sources */,
 				89D20FE81D0DA1F2000DD9D2 /* Frameworks */,
@@ -849,9 +849,9 @@
 			dependencies = (
 				89D20FED1D0DA1F2000DD9D2 /* PBXTargetDependency */,
 			);
-			name = BehaveTests;
+			name = Behave.temp_caseinsensitive_renameTests;
 			productName = BehaveTests;
-			productReference = 89D20FEB1D0DA1F2000DD9D2 /* BehaveTests.xctest */;
+			productReference = 89D20FEB1D0DA1F2000DD9D2 /* Behave.temp_caseinsensitive_rename.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -866,9 +866,11 @@
 					8907598E1A0B110B000A30DA = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = JZ9J646EQ5;
+						ProvisioningStyle = Automatic;
 					};
 					890759AD1A0B110B000A30DA = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = JZ9J646EQ5;
 						TestTargetID = 8907598E1A0B110B000A30DA;
 					};
 					89D20FCF1D0DA1F0000DD9D2 = {
@@ -904,8 +906,8 @@
 			targets = (
 				8907598E1A0B110B000A30DA /* Homeroom */,
 				890759AD1A0B110B000A30DA /* HomeroomTests */,
-				89D20FCF1D0DA1F0000DD9D2 /* Behave */,
-				89D20FEA1D0DA1F2000DD9D2 /* BehaveTests */,
+				89D20FCF1D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename */,
+				89D20FEA1D0DA1F2000DD9D2 /* Behave.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1088,7 +1090,7 @@
 /* Begin PBXTargetDependency section */
 		89D20FED1D0DA1F2000DD9D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 89D20FCF1D0DA1F0000DD9D2 /* Behave */;
+			target = 89D20FCF1D0DA1F0000DD9D2 /* Behave.temp_caseinsensitive_rename */;
 			targetProxy = 89D20FEC1D0DA1F2000DD9D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1216,14 +1218,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathon Hatton (6VKB6MH263)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathon Hatton (6VKB6MH263)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Homeroom;
-				PROVISIONING_PROFILE = "52c1c30a-f89e-4fe3-9c24-beb1a649d863";
+				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.Behave";
+				PRODUCT_NAME = Behaver;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1232,21 +1236,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jonathon Hatton (6VKB6MH263)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathon Hatton (6VKB6MH263)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BMTS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Homeroom;
-				PROVISIONING_PROFILE = "52c1c30a-f89e-4fe3-9c24-beb1a649d863";
+				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.Behave";
+				PRODUCT_NAME = Behaver;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		890759BC1A0B110B000A30DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JZ9J646EQ5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1266,6 +1273,7 @@
 		890759BD1A0B110B000A30DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JZ9J646EQ5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1288,7 +1296,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.Behave";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Behave.temp_caseinsensitive_rename;
 			};
 			name = Debug;
 		};
@@ -1304,7 +1312,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.Behave";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Behave.temp_caseinsensitive_rename;
 			};
 			name = Release;
 		};
@@ -1319,8 +1327,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.BehaveTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behave.app/Behave";
+				PRODUCT_NAME = Behave.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behave.temp_caseinsensitive_rename.app/Behave.temp_caseinsensitive_rename";
 			};
 			name = Debug;
 		};
@@ -1336,8 +1344,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "homeroom-tech.com.BehaveTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behave.app/Behave";
+				PRODUCT_NAME = Behave.temp_caseinsensitive_rename;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Behave.temp_caseinsensitive_rename.app/Behave.temp_caseinsensitive_rename";
 			};
 			name = Release;
 		};
@@ -1371,7 +1379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89D210031D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave" */ = {
+		89D210031D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89D20FFD1D0DA1F2000DD9D2 /* Debug */,
@@ -1380,7 +1388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89D210041D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "BehaveTests" */ = {
+		89D210041D0DA1F2000DD9D2 /* Build configuration list for PBXNativeTarget "Behave.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89D20FFF1D0DA1F2000DD9D2 /* Debug */,

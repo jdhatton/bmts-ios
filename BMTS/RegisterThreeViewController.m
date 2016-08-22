@@ -113,14 +113,12 @@ NSInteger selectedGrade = 0;
     if( self.firstName.text.length > 0){
         isFirstNameProvided = true;
     }
-    if( self.lastName.text.length > 0) {
-        isLastNameProvided = true;
-    }
+    
     if( self.zipCode.text.length > 0) {
         isZipCodeProvided = true;
     }
  
-    if( ! isFirstNameProvided || !isLastNameProvided || !isZipCodeProvided) {
+    if( ! isFirstNameProvided || !isZipCodeProvided) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"INFO:"
                                                          message:@"Please provided your first name, last name, and zipCode to get started! "
                                                         delegate:self

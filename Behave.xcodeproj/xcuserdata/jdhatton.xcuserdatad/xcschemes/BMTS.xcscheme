@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-               BuildableName = "Homeroom.app"
+               BuildableName = "Behaver.app"
                BlueprintName = "Homeroom"
                ReferencedContainer = "container:Behave.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "Homeroom.app"
+            BuildableName = "Behaver.app"
             BlueprintName = "Homeroom"
             ReferencedContainer = "container:Behave.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "Homeroom.app"
+            BuildableName = "Behaver.app"
             BlueprintName = "Homeroom"
             ReferencedContainer = "container:Behave.xcodeproj">
          </BuildableReference>
@@ -112,7 +112,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8907598E1A0B110B000A30DA"
-            BuildableName = "Homeroom.app"
+            BuildableName = "Behaver.app"
             BlueprintName = "Homeroom"
             ReferencedContainer = "container:Behave.xcodeproj">
          </BuildableReference>
