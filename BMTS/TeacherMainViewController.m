@@ -325,10 +325,21 @@ NSNumber *STATUS_RED;
             //NSLog(@" Found Behavior : status      : %@", behavior.descr);
             //NSLog(@" ----------------------------------------");
             
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"         Tracking:      %@ ", behavior.name];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"         Behavior:      %@ ", behavior.name];
              //NSLog(@" Should be showing...");
         }
     }
+    
+    
+    // THIS ATTRIBUTED TEXT SHOULD WORK BUT DOES NOT
+//    NSString *studentFirstName = student.firstName;
+//    UIFont *fontLight = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+//    UIFont *fontBold = [UIFont fontWithName:@"HelveticaNeue-Bold" size:14];
+//    NSMutableAttributedString *cellVal = [[NSMutableAttributedString alloc]initWithString:studentFirstName];
+//    [cellVal addAttribute:NSFontAttributeName value:fontLight range:NSMakeRange(0, 20)];
+//    [cellVal addAttribute:NSFontAttributeName value:fontBold range:NSMakeRange(0, 5)];
+//    cell.textLabel.attributedText = cellVal;
+    
 
     cell.textLabel.text = student.firstName;
 
