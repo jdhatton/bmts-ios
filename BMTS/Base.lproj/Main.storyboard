@@ -1312,12 +1312,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" borderStyle="bezel" placeholder="Enter comment..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-Ds-q2y">
-                                <rect key="frame" x="36" y="58" width="303" height="347"/>
+                                <rect key="frame" x="36" y="58" width="303" height="290"/>
                                 <color key="backgroundColor" red="0.87891782510000005" green="0.94055771079999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="4UV-lF-HqQ"/>
-                                    <constraint firstAttribute="height" constant="347" id="mgG-vx-iHX"/>
+                                    <constraint firstAttribute="height" constant="290" id="mgG-vx-iHX"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -1326,7 +1326,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k5-v2-mOd">
-                                <rect key="frame" x="256" y="540" width="83" height="33"/>
+                                <rect key="frame" x="256" y="364" width="83" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="Ghs-Xx-gTd"/>
                                     <constraint firstAttribute="height" constant="33" id="otB-gH-AG7"/>
@@ -1342,7 +1342,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-NI-nge">
-                                <rect key="frame" x="36" y="540" width="83" height="32"/>
+                                <rect key="frame" x="36" y="364" width="83" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="8rE-cH-ApU"/>
                                     <constraint firstAttribute="width" constant="83" id="ERH-Bw-6PD"/>
@@ -1366,7 +1366,7 @@
                             <constraint firstItem="BlJ-NI-nge" firstAttribute="centerX" secondItem="pzd-Ds-q2y" secondAttribute="centerX" constant="-110" id="KPi-uz-HS6"/>
                             <constraint firstItem="BlJ-NI-nge" firstAttribute="centerY" secondItem="9k5-v2-mOd" secondAttribute="centerY" constant="-0.5" id="mKx-4o-MAo"/>
                             <constraint firstItem="pzd-Ds-q2y" firstAttribute="centerX" secondItem="Piv-GL-ljf" secondAttribute="centerX" id="mng-TM-tMf"/>
-                            <constraint firstAttribute="bottom" secondItem="BlJ-NI-nge" secondAttribute="bottom" constant="95" id="v0B-QD-ws0"/>
+                            <constraint firstAttribute="bottom" secondItem="BlJ-NI-nge" secondAttribute="bottom" constant="271" id="v0B-QD-ws0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Comment" image="add_file-26" id="hzZ-5g-6AS"/>
@@ -2392,7 +2392,7 @@ Internet traffic will be routed through it.</string>
         <image name="worker-24" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ith-ws-uEt"/>
+        <segue reference="R0f-of-f9K"/>
         <segue reference="aK1-Qg-wuc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

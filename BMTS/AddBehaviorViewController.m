@@ -82,7 +82,7 @@
         if (![context save:&error]) {
              //NSLog(@"\n\n\n ERROR!!!    Whoops, couldn't save: %@", [error localizedDescription]);
         } else {
-            // //NSLog(@"\n SUCCESS  - Behavior - UPDATED  ");
+            NSLog(@"\n SUCCESS  - Behavior - ADDED  ");
             //
             // Add to the appDelegate behaviorsList
             //

@@ -42,6 +42,7 @@ CGFloat width;
     height = imageRect.size.height;
     width = imageRect.size.width;
     
+    self.behaviorUpdateArray = [NSMutableArray array];
     
     NSError *errorB;
     NSManagedObjectContext *contextB = [appDelegate managedObjectContext];
@@ -50,13 +51,13 @@ CGFloat width;
     [fetchRequestB setEntity:entityB];
     NSArray *fetchedObjectsB = [contextB executeFetchRequest:fetchRequestB error:&errorB];
     for (Behaviors *behavior in fetchedObjectsB) {
-         //NSLog(@" ----------------------------------------");
-         //NSLog(@" Behavior : Id        :  %@", behavior.id);
-         //NSLog(@" Behavior : name      :  %@", behavior.name);
-         //NSLog(@" Behavior : descr     :  %@", behavior.descr);
-         //NSLog(@" Behavior : synced    :  %@", behavior.synced);
-         //NSLog(@" ----------------------------------------");
-        //[self.behaviorUpdateArray addObject:behavior.name];
+//         NSLog(@" ----------------------------------------");
+//         NSLog(@" Behavior : Id        :  %@", behavior.id);
+//         NSLog(@" Behavior : name      :  %@", behavior.name);
+//         NSLog(@" Behavior : descr     :  %@", behavior.descr);
+//         NSLog(@" Behavior : synced    :  %@", behavior.synced);
+//         NSLog(@" ----------------------------------------");
+        [self.behaviorUpdateArray addObject:behavior.name];
     }
     
     //NSLog(@"\n\n Dumping AppDelegate Behaviors Array \n\n ");
@@ -84,7 +85,8 @@ CGFloat width;
 
     self.studentNameTextField.text = student.firstName;
     
-    self.behaviorUpdateArray = [appDelegate behaviorListData];
+    //self.behaviorUpdateArray = [appDelegate behaviorListData];
+     //self.behaviorUpdateArray = [NSMutableArray array];
     
     self.intervalUpdateArray = [appDelegate intervalListData];
     
@@ -179,7 +181,7 @@ CGFloat width;
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     if (pickerView == self.behaviorUpdatePicker ) {
-        return [self.behaviorUpdateArray  count];
+        return [_behaviorUpdateArray  count];
     }
     else if (pickerView == self.intervalUpdatePicker) {
         return [self.intervalUpdateArray  count];
@@ -189,7 +191,7 @@ CGFloat width;
 
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (pickerView == self.behaviorUpdatePicker ) {
-        return [self.behaviorUpdateArray  objectAtIndex:row];
+        return [_behaviorUpdateArray  objectAtIndex:row];
     }
     else if (pickerView == self.intervalUpdatePicker) {
         return [self.intervalUpdateArray  objectAtIndex:row];
