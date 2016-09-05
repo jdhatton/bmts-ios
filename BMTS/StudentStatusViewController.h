@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-@interface StudentStatusViewController : UIViewController
+@interface StudentStatusViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) User *student;
 @property (strong, nonatomic) UIWindow *window;

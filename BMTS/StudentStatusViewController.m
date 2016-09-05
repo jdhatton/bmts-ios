@@ -83,7 +83,7 @@ int selectedStatus;
 
 - (IBAction)clickedGreenStatus:(id)sender {
     
-    // //NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
+    NSLog(@"DEBUG: StudentStatusViewController::clickedGreenStatus()  setting selectedStatus");
     selectedStatus = 1; //App.STATUS_GREEN
     
     greenButton.layer.borderWidth=2.0f;
@@ -99,7 +99,7 @@ int selectedStatus;
 
 - (IBAction)clickedYellowStatus:(id)sender {
     
-    // //NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
+    NSLog(@"DEBUG: StudentStatusViewController::clickedYellowStatus()  setting selectedStatus");
     selectedStatus = 2;
     
     greenButton.layer.borderWidth=0.0f;
@@ -116,7 +116,7 @@ int selectedStatus;
 
 
 - (IBAction)clickedRedStatus:(id)sender {
-    // //NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
+     NSLog(@"DEBUG: StudentStatusViewController::clickedRedStatus()  setting selectedStatus");
     selectedStatus = 3;
     
     greenButton.layer.borderWidth=0.0f;
@@ -228,6 +228,29 @@ int selectedStatus;
             [self.window.rootViewController presentViewController:teacherMainViewController animated:YES completion:NULL];
 //        }
 }
+
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.35f];
+    CGRect frame = self.view.frame;
+    frame.origin.y = -120;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.35f];
+    CGRect frame = self.view.frame;
+    frame.origin.y = 0;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+
 
 
 @end

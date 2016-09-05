@@ -24,13 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
+    NSLog(@"DEBUG: StudentViewController::loading...  [.1.] student = %@", self.student);
     
     NSMutableArray *commentList = [[NSMutableArray alloc] init];
  
     
     if(self.student == nil){
-        //NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
+        NSLog(@"DEBUG: StudentViewController::appDelegate.currentSelectedStudent    =    %@",appDelegate.currentSelectedStudent);
         self.student = appDelegate.currentSelectedStudent;
     }
 
@@ -42,9 +42,9 @@
     
     if( self.student != nil) {
         
-        items = [NSMutableArray arrayWithObjects: nil];
-        behaviorList = [NSMutableArray arrayWithObjects: nil];
-        comments = [NSMutableArray arrayWithObjects: nil];
+        items =  [NSMutableArray array];
+        behaviorList =  [NSMutableArray array];
+        comments =  [NSMutableArray array];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MM/dd/yyyy - hh:mma"];
@@ -71,9 +71,9 @@
             if( behavior.studentId == student.id ){
                 [behaviorList addObject:behavior.statusId];
                 
-                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
-                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
-                // //NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.statusId);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.studentId);
+                 NSLog(@" StudentBehavior :statudId  =  %@", behavior.createdDate);
                 
                 NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
                 [formatter2 setDateFormat:@"YYYY-MM-dd\'T\'HH:mm:ss"];
@@ -83,9 +83,11 @@
                 NSString *stringCreatedDate = [formatter stringFromDate:dateObject];
                 [items addObject:stringCreatedDate];
                 
-                //NSLog(@"DEBUG: behavior.statusComment    =    %@",behavior.statusComment);
+                NSLog(@"DEBUG: behavior.statusComment    =    %@",behavior.statusComment);
                 
-                [comments addObject:behavior.statusComment];
+                if(behavior.statusComment){
+                    [comments addObject:behavior.statusComment];
+                }
             }
         }
         
@@ -193,9 +195,6 @@
 
 
 
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -212,12 +211,5 @@
                                            otherButtonTitles: nil];
     [alert show];
 }
-
-
-
-
-
-
-
 
 @end
