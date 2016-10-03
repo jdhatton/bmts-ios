@@ -44,6 +44,12 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Student pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Student pictures.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Student pictures.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

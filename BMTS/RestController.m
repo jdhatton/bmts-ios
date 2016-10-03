@@ -128,8 +128,12 @@
         }
     }
     
-    [fields setObject:appDelegate.deviceToken forKey:@"deviceToken"];
-    
+    if(appDelegate.userRemoteId == Nil){
+        [fields setObject:@"-1" forKey:@"deviceToken"];
+    } else {
+        [fields setObject:appDelegate.deviceToken forKey:@"deviceToken"];
+    }
+
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
@@ -263,7 +267,23 @@
         }
     }
     
-    [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
+    //
+    // TODO: what if no teacherId ???
+    //  Set to 0 and/or fetch again ?
+    //
+     NSLog(@"appDelegate.userRemoteId : %@", appDelegate.userRemoteId);
+     NSLog(@"appDelegate.deviceID: %@", appDelegate.deviceID);
+    if(appDelegate.userRemoteId == Nil){
+        [fields setObject:@"-1" forKey:@"teacherId"];
+    } else {
+        [fields setObject:appDelegate.userRemoteId forKey:@"teacherId"];
+    }
+    
+    
+    //
+    // ------
+    //
+    
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:fields options:NSJSONWritingPrettyPrinted error:&error];
     //NSLog(@"\n jsonData = %@", jsonData);
@@ -289,9 +309,9 @@
      {
          if (data.length > 0 && connectionError == nil)
          {
-             // //NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
+             NSLog(@"\n    >>>>>    POST sent!  response   =  %@ ", response );
              NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data   options:0  error:NULL];
-             // //NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
+             NSLog(@"\n    >>>>>    POST sent!  resp   =  %@ ", resp );
          }
      }];
 }
