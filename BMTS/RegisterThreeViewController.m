@@ -19,7 +19,7 @@
 
 @implementation RegisterThreeViewController
 
-@synthesize firstName, lastName, gender, zipCode, gradePicker, buttonNext;
+@synthesize emailAddressTextBox, firstName, lastName, gender, zipCode, gradePicker, buttonNext;
 @synthesize window = _window;
 
 
@@ -134,6 +134,8 @@ NSInteger selectedGrade = 0;
         appDelegate.teacherUser.firstName = strFirstName;
         NSString *strLastName = [self.lastName text];
         appDelegate.teacherUser.lastName = strLastName;
+        
+        appDelegate.teacherUser.email = emailAddressTextBox.text;
         
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;

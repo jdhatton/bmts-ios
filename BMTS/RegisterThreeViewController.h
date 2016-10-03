@@ -15,6 +15,8 @@
 
 - (IBAction)saveFormData:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *emailAddressTextBox;
+
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
