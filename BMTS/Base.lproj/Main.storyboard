@@ -98,7 +98,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-wV-RVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4192.5" y="-625.5"/>
+            <point key="canvasLocation" x="-4841" y="-652"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kxt-HM-gq1">
+            <objects>
+                <viewController id="pLL-1G-3g5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6pT-mQ-9vO"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNm-D9-OV7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ibu-0A-Dwa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-MD-JWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3852" y="-941"/>
         </scene>
         <!--Student View Controller-->
         <scene sceneID="jxS-71-wQu">
